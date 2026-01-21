@@ -1,38 +1,219 @@
-interface IconProps {
-  name: "arrow-right" | "chevron-down" | "menu" | "x";
+interface IconConfig {
+  path: React.ReactNode;
+  viewBox?: string;
+  strokeWidth?: number;
+  filled?: boolean;
+}
+
+export interface IconProps {
+  name:
+    | "arrow-right"
+    | "chevron-down"
+    | "menu"
+    | "x"
+    | "badge-check"
+    | "atom"
+    | "layers"
+    | "chart-bar"
+    | "play"
+    | "connector-top-left"
+    | "connector-bottom-left"
+    | "connector-top-right"
+    | "connector-bottom-right";
   className?: string;
   "aria-hidden"?: boolean;
 }
 
-const icons: Record<IconProps["name"], React.ReactNode> = {
-  "arrow-right": (
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-    />
-  ),
-  "chevron-down": (
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="m19.5 8.25-7.5 7.5-7.5-7.5"
-    />
-  ),
-  menu: (
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-    />
-  ),
-  x: (
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M6 18 18 6M6 6l12 12"
-    />
-  ),
+const icons: Record<IconProps["name"], IconConfig> = {
+  "arrow-right": {
+    path: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+      />
+    ),
+  },
+  "chevron-down": {
+    path: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="m19.5 8.25-7.5 7.5-7.5-7.5"
+      />
+    ),
+  },
+  menu: {
+    path: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+      />
+    ),
+  },
+  x: {
+    path: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M6 18 18 6M6 6l12 12"
+      />
+    ),
+  },
+  "badge-check": {
+    path: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M17.2487 23.0007L21.082 26.834L29.707 18.209M14.0551 7.31982C15.5958 7.19687 17.0584 6.59103 18.2348 5.58854C20.9799 3.24913 25.0175 3.24913 27.7626 5.58854C28.939 6.59103 30.4016 7.19687 31.9423 7.31982C35.5376 7.60673 38.3926 10.4617 38.6795 14.057C38.8025 15.5977 39.4083 17.0604 40.4108 18.2367C42.7502 20.9819 42.7502 25.0194 40.4108 27.7646C39.4083 28.9409 38.8025 30.4036 38.6795 31.9443C38.3926 35.5396 35.5376 38.3946 31.9423 38.6815C30.4016 38.8044 28.939 39.4103 27.7626 40.4128C25.0175 42.7522 20.9799 42.7522 18.2348 40.4128C17.0584 39.4103 15.5958 38.8044 14.0551 38.6815C10.4598 38.3946 7.60477 35.5396 7.31786 31.9443C7.19492 30.4036 6.58907 28.9409 5.58659 27.7646C3.24718 25.0194 3.24718 20.9819 5.58659 18.2367C6.58907 17.0604 7.19492 15.5977 7.31786 14.057C7.60477 10.4617 10.4598 7.60673 14.0551 7.31982Z"
+      />
+    ),
+    viewBox: "0 0 46 46",
+    strokeWidth: 4,
+  },
+  atom: {
+    path: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M32.1981 29.0256C31.7094 29.5782 31.1965 30.1239 30.6602 30.6602C22.9041 38.4163 13.1869 41.2743 8.95633 37.0437C6.05593 34.1433 6.48726 28.6641 9.5445 23.0061M13.7355 17.0497C14.2441 16.4714 14.7792 15.9005 15.3398 15.3398C23.0959 7.58371 32.8131 4.72572 37.0437 8.95633C39.9461 11.8587 39.5121 17.3434 36.4492 23.0056M30.6602 15.3398C38.4163 23.0959 41.2743 32.8131 37.0437 37.0437C32.8131 41.2743 23.0959 38.4163 15.3398 30.6602C7.58371 22.9041 4.72572 13.1869 8.95633 8.95633C13.1869 4.72572 22.9041 7.58371 30.6602 15.3398ZM24.7679 22.9623C24.7679 23.9595 23.9596 24.7678 22.9624 24.7678C21.9653 24.7678 21.1569 23.9595 21.1569 22.9623C21.1569 21.9651 21.9653 21.1568 22.9624 21.1568C23.9596 21.1568 24.7679 21.9651 24.7679 22.9623Z"
+      />
+    ),
+    viewBox: "0 0 46 46",
+    strokeWidth: 4,
+  },
+  layers: {
+    path: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M6 23L22.3918 31.2446C22.6148 31.3567 22.7263 31.4128 22.8433 31.4349C22.9468 31.4544 23.0532 31.4544 23.1567 31.4349C23.2737 31.4128 23.3852 31.3567 23.6082 31.2446L40 23M6 31.5505L22.3918 39.795C22.6148 39.9072 22.7263 39.9633 22.8433 39.9853C22.9468 40.0049 23.0532 40.0049 23.1567 39.9853C23.2737 39.9633 23.3852 39.9072 23.6082 39.795L40 31.5505M6 14.4495L22.3918 6.20499C22.6148 6.09282 22.7263 6.03674 22.8433 6.01466C22.9468 5.99511 23.0532 5.99511 23.1567 6.01466C23.2737 6.03674 23.3852 6.09282 23.6082 6.20499L40 14.4495L23.6082 22.6941C23.3852 22.8063 23.2737 22.8623 23.1567 22.8844C23.0532 22.904 22.9468 22.904 22.8433 22.8844C22.7263 22.8623 22.6148 22.8063 22.3918 22.6941L6 14.4495Z"
+      />
+    ),
+    viewBox: "0 0 46 46",
+    strokeWidth: 4,
+  },
+  "chart-bar": {
+    path: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M17.6667 23H9.84444C8.8488 23 8.35097 23 7.97068 23.1938C7.63617 23.3642 7.36421 23.6362 7.19377 23.9707C7 24.351 7 24.8488 7 25.8444V36.1556C7 37.1512 7 37.649 7.19377 38.0293C7.36421 38.3638 7.63617 38.6358 7.97068 38.8062C8.35097 39 8.8488 39 9.84444 39H17.6667M17.6667 39H28.3333M17.6667 39L17.6667 16.9556C17.6667 15.9599 17.6667 15.4621 17.8604 15.0818C18.0309 14.7473 18.3028 14.4753 18.6374 14.3049C19.0176 14.1111 19.5155 14.1111 20.5111 14.1111H25.4889C26.4845 14.1111 26.9824 14.1111 27.3626 14.3049C27.6972 14.4753 27.9691 14.7473 28.1396 15.0818C28.3333 15.4621 28.3333 15.9599 28.3333 16.9556V39M28.3333 39H36.1556C37.1512 39 37.649 39 38.0293 38.8062C38.3638 38.6358 38.6358 38.3638 38.8062 38.0293C39 37.649 39 37.1512 39 36.1556V9.84444C39 8.8488 39 8.35097 38.8062 7.97068C38.6358 7.63617 38.3638 7.36421 38.0293 7.19377C37.649 7 37.1512 7 36.1556 7H31.1778C30.1821 7 29.6843 7 29.304 7.19377C28.9695 7.36421 28.6975 7.63617 28.5271 7.97068C28.3333 8.35097 28.3333 8.8488 28.3333 9.84444V15.8889"
+      />
+    ),
+    viewBox: "0 0 46 46",
+    strokeWidth: 4,
+  },
+  play: {
+    path: <path d="M0 0L10 6L0 12V0Z" />,
+    viewBox: "0 0 10 12",
+    filled: true,
+  },
+  "connector-top-left": {
+    path: (
+      <>
+        <line
+          y1="-1"
+          x2="45.2101"
+          y2="-1"
+          transform="matrix(-0.909474 -0.41576 -0.41576 0.909474 48.4922 27.3438)"
+          stroke="black"
+          strokeWidth="2"
+          strokeDasharray="3 3"
+        />
+        <circle
+          cx="4.69914"
+          cy="4.69914"
+          r="5.44914"
+          transform="matrix(-1 0 0 1 10.8984 1.5)"
+          fill="white"
+          stroke="#D4D4D4"
+          strokeWidth="1.5"
+        />
+        <circle
+          cx="4.69914"
+          cy="4.69914"
+          r="5.44914"
+          transform="matrix(-1 0 0 1 59.0645 23.8203)"
+          fill="white"
+          stroke="#D4D4D4"
+          strokeWidth="1.5"
+        />
+      </>
+    ),
+    viewBox: "0 0 61 35",
+  },
+  "connector-bottom-left": {
+    path: (
+      <>
+        <line
+          x1="11.6585"
+          y1="26.4343"
+          x2="52.7759"
+          y2="7.63773"
+          stroke="black"
+          strokeWidth="2"
+          strokeDasharray="3 3"
+        />
+        <circle cx="54.3671" cy="6.19914" r="5.44914" fill="white" stroke="#D4D4D4" strokeWidth="1.5" />
+        <circle cx="6.19914" cy="28.5194" r="5.44914" fill="white" stroke="#D4D4D4" strokeWidth="1.5" />
+      </>
+    ),
+    viewBox: "0 0 61 35",
+  },
+  "connector-top-right": {
+    path: (
+      <>
+        <line
+          x1="11.6546"
+          y1="26.4343"
+          x2="52.772"
+          y2="7.63773"
+          stroke="black"
+          strokeWidth="2"
+          strokeDasharray="3 3"
+        />
+        <circle cx="54.3671" cy="6.19914" r="5.44914" fill="white" stroke="#D4D4D4" strokeWidth="1.5" />
+        <circle cx="6.19914" cy="28.5194" r="5.44914" fill="white" stroke="#D4D4D4" strokeWidth="1.5" />
+      </>
+    ),
+    viewBox: "0 0 61 35",
+  },
+  "connector-bottom-right": {
+    path: (
+      <>
+        <line
+          y1="-1"
+          x2="45.2101"
+          y2="-1"
+          transform="matrix(-0.909474 -0.41576 -0.41576 0.909474 48.4922 27.3438)"
+          stroke="black"
+          strokeWidth="2"
+          strokeDasharray="3 3"
+        />
+        <circle
+          cx="4.69914"
+          cy="4.69914"
+          r="5.44914"
+          transform="matrix(-1 0 0 1 10.8984 1.5)"
+          fill="white"
+          stroke="#D4D4D4"
+          strokeWidth="1.5"
+        />
+        <circle
+          cx="4.69914"
+          cy="4.69914"
+          r="5.44914"
+          transform="matrix(-1 0 0 1 59.0664 23.8203)"
+          fill="white"
+          stroke="#D4D4D4"
+          strokeWidth="1.5"
+        />
+      </>
+    ),
+    viewBox: "0 0 61 35",
+  },
 };
 
 export function Icon({
@@ -40,17 +221,19 @@ export function Icon({
   className = "w-5 h-5",
   "aria-hidden": ariaHidden = true,
 }: IconProps) {
+  const icon = icons[name];
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
+      fill={icon.filled ? "currentColor" : "none"}
+      viewBox={icon.viewBox ?? "0 0 24 24"}
+      strokeWidth={icon.filled ? undefined : (icon.strokeWidth ?? 1.5)}
+      stroke={icon.filled ? undefined : "currentColor"}
       className={className}
       aria-hidden={ariaHidden}
     >
-      {icons[name]}
+      {icon.path}
     </svg>
   );
 }

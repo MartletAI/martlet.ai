@@ -1,6 +1,6 @@
 
 import { Hero } from "./components/hero";
-
+import { TrustAndAccuracy } from "./components/trust-and-accuracy";
 
 
 /**
@@ -12,6 +12,9 @@ export default function Home() {
     <main>
       {/* Hero Section */}
       <Hero />
+      
+      {/* Trust and Accuracy Section */}
+      <TrustAndAccuracy />
     </main>
   );
 }

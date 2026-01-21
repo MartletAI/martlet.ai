@@ -1,16 +1,15 @@
 import { Button } from "@/components/button";
-import { NavLinks, type NavLink } from "./nav-links";
+import { NavLinks } from "./nav-links";
 
 interface MobileMenuProps {
   id: string;
   isOpen: boolean;
-  links: NavLink[];
 }
 
 /**
  * MobileMenu - Dropdown navigation menu for mobile devices.
  */
-export function MobileMenu({ id, isOpen, links }: MobileMenuProps) {
+export function MobileMenu({ id, isOpen }: MobileMenuProps) {
   if (!isOpen) return null;
 
   return (
@@ -20,7 +19,6 @@ export function MobileMenu({ id, isOpen, links }: MobileMenuProps) {
       aria-label="Mobile navigation"
     >
       <NavLinks
-        links={links}
         className="flex flex-col gap-md"
         linkClassName="block py-sm text-base font-medium no-underline transition-all duration-150"
         activeLinkClassName="text-primary"

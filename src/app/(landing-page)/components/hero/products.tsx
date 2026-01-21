@@ -1,4 +1,4 @@
-import { WORKFLOWS } from "@/constants/static";
+import { LANDING_PAGE } from "@/constants/landing-page";
 import { WorkflowCard } from "./workflow-card";
 
 export function Products() {
@@ -9,20 +9,20 @@ export function Products() {
     >
       {/* Section Header */}
       <header className="text-center mb-[30px]">
-        <span className="section-label mb-md block" aria-hidden="true">
-          Products
+        <span className="section-label mb-md block -ml-3" aria-hidden="true">
+          {LANDING_PAGE.HERO.WORKFLOWS_LABEL}
         </span>
-        <h2 id="products-heading" className="section-heading">
-          Three Workflows
+        <h2 id="products-heading" className="section-heading tracking-tight -ml-3">
+          {LANDING_PAGE.HERO.WORKFLOWS_TITLE}
         </h2>
       </header>
 
       {/* Cards Grid */}
       <ul
-        className="grid grid-cols-[repeat(auto-fit,minmax(var(--size-products-min),1fr))] gap-xl list-none p-0 m-0 animate-stagger"
+        className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-3 list-none p-0 m-0 animate-stagger"
         role="list"
       >
-        {WORKFLOWS.map((workflow) => (
+        {LANDING_PAGE.HERO.WORKFLOWS.map((workflow) => (
           <li key={workflow.type} className="contents">
             <WorkflowCard {...workflow} />
           </li>

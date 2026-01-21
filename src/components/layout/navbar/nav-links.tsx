@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { NAV_LINKS } from "@/constants/nav-links";
 
 export interface NavLink {
   label: string;
@@ -7,7 +10,6 @@ export interface NavLink {
 }
 
 interface NavLinksProps {
-  links: NavLink[];
   className?: string;
   linkClassName?: string;
   activeLinkClassName?: string;
@@ -26,17 +28,16 @@ function isLinkActive(href: string, pathname: string): boolean {
  * NavLinks - Renders navigation links with active state styling.
  */
 export function NavLinks({
-  links,
   className = "",
-  linkClassName = "text-sm font-medium no-underline transition-all duration-150",
-  activeLinkClassName = "nav-link-active",
+  linkClassName = "text-lg font-medium no-underline transition-all duration-150",
+  activeLinkClassName = "h-12 py-3 px-4.5 rounded-lg bg-white border-[1.5px] border-[#0375E2]",
   inactiveLinkClassName = "text-black hover:text-primary",
 }: NavLinksProps) {
   const pathname = usePathname();
 
   return (
     <ul className={className}>
-      {links.map((link) => {
+      {NAV_LINKS.map((link) => {
         const isActive = isLinkActive(link.href, pathname);
         
         return (

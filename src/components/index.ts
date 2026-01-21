@@ -1,4 +1,4 @@
 export { Button } from "./button";
-export { Icon } from "./Icon";
 
 export * from "./layout";
+export * from "./Icon";

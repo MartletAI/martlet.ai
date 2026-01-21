@@ -22,10 +22,10 @@ export function WorkflowCard({
 }: WorkflowCardProps) {
   return (
     <article
-      className="flex items-center justify-center p-2 bg-surface border border-black/8 rounded-[3rem] shadow-[0_3px_20.6px_0_rgba(0,0,0,0.1)] min-h-[270px] h-full transition-shadow duration-200 hover:shadow-[0_6px_28px_0_rgba(0,0,0,0.12)]"
+      className="flex items-center justify-center p-1.5 bg-surface border border-black/8 rounded-[3rem] shadow-[0_3px_20.6px_0_rgba(0,0,0,0.1)] min-h-[270px] h-full transition-shadow duration-200 hover:shadow-[0_6px_28px_0_rgba(0,0,0,0.12)]"
       aria-labelledby={`card-title-${label}`}
     >
-      <div className="bg-border rounded-[3rem] p-2 h-full">
+      <div className="bg-border-light rounded-[3rem] p-2 h-full">
         <div className="flex flex-col gap-md p-2 bg-surface border-[0.625rem] border-transparent rounded-[2.75rem] w-full min-w-[280px] h-full justify-start">
           {/* Pill Label */}
           <div

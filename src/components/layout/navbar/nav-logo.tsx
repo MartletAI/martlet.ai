@@ -16,8 +16,8 @@ export function NavLogo({
   href = "/",
   src = "/logo.png",
   alt = "Martlet AI Logo",
-  width = 120,
-  height = 40,
+  width = 163,
+  height = 39.2,
 }: NavLogoProps) {
   return (
     <Link href={href} aria-label="Martlet AI Home">

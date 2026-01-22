@@ -67,6 +67,9 @@
   
   /* Colors - Hero background */
   --color-hero-bg-stroke: #0066C7;
+
+  /* Colors - Footer */
+  --color-footer-bg: #1A41B5;
   
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -159,6 +162,7 @@
   --color-text-black: var(--color-text-black);
   --color-text-white: var(--color-text-white);
   --color-indicator-prospective: var(--color-indicator-prospective);
+  --color-footer-bg: var(--color-footer-bg);
   
   
   /* Spacing */

@@ -1,11 +1,19 @@
 
 
+import { JohnSnowLabs } from "@/app/(landing-page)/components/industry-partners/john-snow-labs";
+import { WVUMedicine } from "@/app/(landing-page)/components/industry-partners/wvu-medicine";
+import { ArkosHealth } from "@/app/(landing-page)/components/industry-partners/arkos-health";
+import { IconProps } from "@/components/Icon";
+
+type IconName = IconProps["name"];
+
 export const LANDING_PAGE = {
   HERO: {
     TITLE: "Smarter Risk Adjustment with",
     TITLE_HIGHLIGHT: "MARTLET AI",
     TAGLINE: "On-premise, Secure, Real-time HCC Coding & Risk Profiling",
     CTA: "Book a Demo",
+    PARROT: "/assets/parrot.svg",
     WORKFLOWS_TITLE: "Three Workflows",
     WORKFLOWS_LABEL: "Products",
     WORKFLOWS: [
@@ -44,7 +52,7 @@ export const LANDING_PAGE = {
   TRUST_AND_ACCURACY: {
     TITLE: "Built for Trust and Accuracy",
     SUBTITLE: "Martlet AI is designed for environments where compliance, precisions and transparency are non-negotiable",
-    TRUST_AND_ACCURACY_IMAGE: "/trust-and-accuracy.svg",
+    TRUST_AND_ACCURACY_IMAGE: "/assets/trust-and-accuracy.svg",
     TRUST_FACTORS: [
       {
         title:"Hippa-Compiance On-Premise Deployment",
@@ -83,5 +91,49 @@ export const LANDING_PAGE = {
         width: "w-[240px]"
       }
     ]
+  },
+  INDUSTRY_PARTNERS: {
+    TITLE: "Industry Partners",
+    CLIENTS: {
+      johnSnowLabs: {
+        logo: "/clients/john-snow-labs.svg",
+        id: "johnSnowLabs",
+        description: "John Snow Labs uses Martlet AI's engine to power it's own suite of medical coding solutions",
+        component: JohnSnowLabs
+      },
+      wvuMedicine: {
+        logo: "/clients/wvu-medicine.svg",
+        id: "wvuMedicine",
+        description: "John Snow Labs uses Martlet AI's engine to power it's own suite of medical coding solutions",
+        component: WVUMedicine,
+        featureText: [
+          {
+            icon: "intersect-circle" as IconName,
+            text: "Retrospective risk adjustment"
+          },
+          {
+            icon: "bar-line-chart" as IconName,
+            text: "Fully automated chart review"
+          },
+          {
+            icon: "data-flow" as IconName,
+            text: "Embedded in Epic workflows"
+          },
+          {
+            icon: "brackets-check" as IconName,
+            text: "Provider-focused code validation"
+          }
+        ]
+      },
+      arkosHealth: {
+        logo: "/clients/arkos-health.svg",
+        id: "arkosHealth",
+        description: "Arkos uses Martlet across the full risk cycle - Retrospective, Prospective, and RADV - to drive measurable financial and operational impact.",
+        component: ArkosHealth
+      }
+    }
   }
 } as const;
+
+
+

@@ -1,5 +1,6 @@
 
 import { Hero } from "./components/hero";
+import { IndustryPartners } from "./components/industry-partners";
 import { TrustAndAccuracy } from "./components/trust-and-accuracy";
 
 
@@ -15,6 +16,9 @@ export default function Home() {
       
       {/* Trust and Accuracy Section */}
       <TrustAndAccuracy />
+
+      {/* Industry partners */}
+      <IndustryPartners />
     </main>
   );
 }

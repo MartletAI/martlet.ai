@@ -8,31 +8,34 @@ interface IconConfig {
 export interface IconProps {
   name:
     | "arrow-right"
+    | "atom"
+    | "badge-check"
+    | "bar-line-chart"
+    | "brackets-check"
+    | "chart-bar"
     | "chevron-down"
     | "chevron-left"
     | "chevron-right"
-    | "menu"
-    | "x"
-    | "badge-check"
-    | "atom"
-    | "layers"
-    | "chart-bar"
-    | "play"
-    | "connector-top-left"
-    | "connector-bottom-left"
-    | "connector-top-right"
-    | "connector-bottom-right"
-    | "intersect-circle"
-    | "bar-line-chart"
-    | "data-flow"
-    | "brackets-check"
-    | "featured-icon"
     | "coins-stacked"
+    | "connector-bottom-left"
+    | "connector-bottom-right"
+    | "connector-top-left"
+    | "connector-top-right"
+    | "data-flow"
+    | "document"
+    | "ellipse"
+    | "facebook"
+    | "checked"
+    | "intersect-circle"
+    | "layers"
     | "layers-three"
     | "linkedin"
-    | "facebook"
+    | "menu"
+    | "parrot"
+    | "play"
+    | "shield-check"
     | "social-x"
-    | "parrot";
+    | "x";
   className?: string;
   "aria-hidden"?: boolean;
 }
@@ -280,7 +283,7 @@ const icons: Record<IconProps["name"], IconConfig> = {
       />
     ),
   },
-  "featured-icon": {
+  "checked": {
     path: (
       <path
         fillRule="evenodd"
@@ -364,6 +367,33 @@ const icons: Record<IconProps["name"], IconConfig> = {
     ),
     viewBox: "0 0 40 39",
     filled: true,
+  },
+  ellipse: {
+    path: <circle cx="4" cy="4" r="4" fill="#33C020" />,
+    viewBox: "0 0 8 8",
+    filled: true,
+  },
+  document: {
+    path: (
+      <path
+        d="M11.8333 1.30322V5.95008C11.8333 6.58014 11.8333 6.89517 11.9514 7.13582C12.0553 7.3475 12.221 7.5196 12.4248 7.62746C12.6566 7.75008 12.9599 7.75008 13.5667 7.75008H18.0414M11.8333 17.875H5.33333M14 13.375H5.33333M18.3333 9.98675V18.1C18.3333 19.9902 18.3333 20.9353 17.9791 21.6572C17.6675 22.2923 17.1703 22.8086 16.5588 23.1321C15.8636 23.5 14.9535 23.5 13.1333 23.5H6.2C4.37983 23.5 3.46974 23.5 2.77453 23.1321C2.163 22.8086 1.66582 22.2923 1.35423 21.6572C1 20.9353 1 19.9902 1 18.1V6.4C1 4.50982 1 3.56473 1.35423 2.84278C1.66582 2.20774 2.163 1.69143 2.77453 1.36785C3.46974 1 4.37983 1 6.2 1H9.67942C10.4743 1 10.8718 1 11.2458 1.09325C11.5775 1.17593 11.8945 1.31229 12.1853 1.49734C12.5132 1.70606 12.7943 1.99791 13.3564 2.58162L16.8103 6.16838C17.3724 6.75209 17.6534 7.04394 17.8544 7.38454C18.0326 7.68651 18.1639 8.01572 18.2435 8.36009C18.3333 8.74851 18.3333 9.16126 18.3333 9.98675Z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    ),
+    viewBox: "0 0 20 25",
+    strokeWidth: 2,
+  },
+  "shield-check": {
+    path: (
+      <path
+        d="M6.41667 11.218L8.58333 13.3847L13.4583 8.50967M18.3333 11.7597C18.3333 17.0771 12.5332 20.9446 10.4228 22.1758C10.183 22.3157 10.0631 22.3857 9.89382 22.422C9.76248 22.4501 9.57086 22.4501 9.43951 22.422C9.27027 22.3857 9.15035 22.3157 8.91051 22.1758C6.80012 20.9446 1 17.0771 1 11.7597V6.57873C1 5.7126 1 5.27953 1.14166 4.90726C1.2668 4.5784 1.47015 4.28497 1.73413 4.05232C2.03295 3.78898 2.43845 3.63691 3.24944 3.33279L9.05805 1.15456C9.28327 1.07011 9.39588 1.02788 9.51173 1.01114C9.61449 0.996288 9.71885 0.996288 9.8216 1.01114C9.93745 1.02788 10.0501 1.07011 10.2753 1.15456L16.0839 3.33279C16.8949 3.63691 17.3004 3.78898 17.5992 4.05232C17.8632 4.28497 18.0665 4.5784 18.1917 4.90726C18.3333 5.27953 18.3333 5.7126 18.3333 6.57873V11.7597Z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    ),
+    viewBox: "0 0 20 24",
+    strokeWidth: 2,
   },
 };
 

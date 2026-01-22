@@ -3,7 +3,7 @@
 import { JohnSnowLabs } from "@/app/(landing-page)/components/industry-partners/john-snow-labs";
 import { WVUMedicine } from "@/app/(landing-page)/components/industry-partners/wvu-medicine";
 import { ArkosHealth } from "@/app/(landing-page)/components/industry-partners/arkos-health";
-import { IconProps } from "@/components/Icon";
+import { IconProps } from "@/components/icon";
 
 type IconName = IconProps["name"];
 
@@ -140,7 +140,7 @@ export const LANDING_PAGE = {
       {
         title: "Industry-leading performance",
         description: "Validated by peer reviewed publications",
-        icon: "featured-icon" as IconName
+        icon: "checked" as IconName
       },
       {
         title: "Proven ROI",

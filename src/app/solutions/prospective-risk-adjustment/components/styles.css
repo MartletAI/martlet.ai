@@ -1,0 +1,11 @@
+.prospective-hero-section {
+    background: linear-gradient(180deg, #E7EEFF 0%, #FFF 57.21%);
+}
+
+.prospective-hero-gradient-text {
+  background: linear-gradient(201deg, #F354F9 4.56%, #5491FC 61.04%, #1224FF 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+}

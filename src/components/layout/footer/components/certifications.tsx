@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Icon } from "@/components/Icon";
+import { Icon } from "@/components/icon";
 import FOOTER_CERTIFICATIONS from "@/../public/assets/footer-certifications.svg";
 
 export function FooterCertifications() {

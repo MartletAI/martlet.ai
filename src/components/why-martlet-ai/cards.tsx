@@ -1,11 +1,6 @@
-import { Icon, IconProps } from "@/components/Icon";
+import { Icon } from "../icon";
+import { FeatureCardProps } from "./types";
 
-
-interface FeatureCardProps {
-  title: string;
-  description: string;
-  icon: IconProps["name"];
-}
 
 export function FeatureCard({ title, description, icon }: FeatureCardProps) {
   return (

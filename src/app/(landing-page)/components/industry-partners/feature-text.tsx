@@ -1,4 +1,4 @@
-import { Icon, IconProps } from "@/components/Icon";
+import { Icon, IconProps } from "@/components/icon";
 
 interface FeatureTextProps {
   icon: IconProps["name"];

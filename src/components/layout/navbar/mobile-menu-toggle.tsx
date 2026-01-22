@@ -1,4 +1,4 @@
-import { Icon } from "@/components/Icon";
+import { Icon } from "@/components/icon";
 
 interface MobileMenuToggleProps {
   isOpen: boolean;

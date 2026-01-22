@@ -132,6 +132,34 @@ export const LANDING_PAGE = {
         component: ArkosHealth
       }
     }
+  },
+  WHY_MARTLET_AI: {
+    TITLE: "Why Martlet AI ?",
+    SUBTITLE: "Proven technology that delivers measurable results at enterprise scale",
+    FEATURES: [
+      {
+        title: "Industry-leading performance",
+        description: "Validated by peer reviewed publications",
+        icon: "featured-icon" as IconName
+      },
+      {
+        title: "Proven ROI",
+        description: "Measurable lift in throughput and captured value.",
+        icon: "coins-stacked" as IconName
+      },
+      {
+        title: "Scalable by design",
+        description: "High-volume workloads across millions of records.",
+        icon: "layers-three" as IconName
+      }
+    ]
+  },
+  CTA: {
+    TITLE: "Ready to Transform Your Risk Adjustment?",
+    SUBTITLE: "Get Started",
+    DESCRIPTION:"Join forward-thinking healthcare teams using Martlet AI for smarter coding and better outcomes.",
+    CTA: "Request a Demo",
+    IMAGE: "/assets/cta-bg.svg"
   }
 } as const;
 

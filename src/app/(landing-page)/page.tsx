@@ -2,6 +2,8 @@
 import { Hero } from "./components/hero";
 import { IndustryPartners } from "./components/industry-partners";
 import { TrustAndAccuracy } from "./components/trust-and-accuracy";
+import { WhyMartletAI } from "./components/why-martlet-ai";
+import { CTA } from "./components/cta";
 
 
 /**
@@ -19,6 +21,12 @@ export default function Home() {
 
       {/* Industry partners */}
       <IndustryPartners />
+
+      {/* Why Martlet AI Section */}
+      <WhyMartletAI />
+
+      {/* CTA Section */}
+      <CTA />
     </main>
   );
 }

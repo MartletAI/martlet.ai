@@ -233,6 +233,31 @@ body {
   background: linear-gradient(180deg, rgba(247, 251, 255, 0.50) -18.06%, #E9F8FF 100%);
 }
 
+.gradient-why-martlet {
+  background: linear-gradient(180deg, #E9F8FF -18.06%, rgba(247, 251, 255, 0.50) 100%);
+}
+
+.icon-container-blue {
+  background: white;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+  border-radius: 10px;
+}
+
+.feature-icon-wrapper {
+   border-radius: 10px;
+   border: 1px solid #D0D5DD;
+   background: #FFF;
+   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
+.feature-icon-inner {
+  border-radius: 8px;
+  border: 1px solid #2E90FA;
+  background: #1570EF;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) inset;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;

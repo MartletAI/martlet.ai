@@ -1,13 +1,32 @@
 import Image from "next/image";
 import { FeatureText } from "./feature-text";
-import { LANDING_PAGE } from "@/constants/landing-page";
 import VideoThumbnail from "@/../public/assets/video-thubmain.svg";
+import { FeatureTextProps } from "./types";
+
+const FEATURES: FeatureTextProps[] = [
+  {
+    icon: "intersect-circle",
+    text: "Retrospective risk adjustment",
+  },
+  {
+    icon: "bar-line-chart",
+    text: "Fully automated chart review",
+  },
+  {
+    icon: "data-flow",
+    text: "Embedded in Epic workflows",
+  },
+  {
+    icon: "brackets-check",
+    text: "Provider-focused code validation",
+  },
+];
 
 export function WVUMedicine() {
   return (
     <div className="flex items-start justify-center gap-7">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {LANDING_PAGE.INDUSTRY_PARTNERS.CLIENTS.wvuMedicine.featureText.map((item) => (
+        {FEATURES.map((item) => (
           <FeatureText key={item.icon} icon={item.icon} text={item.text} />
         ))}
       </div>

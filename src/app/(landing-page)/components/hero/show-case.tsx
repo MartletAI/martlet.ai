@@ -1,5 +1,10 @@
 import { Button, Icon } from "@/components";
-import { LANDING_PAGE } from "@/constants/landing-page";
+const HERO_CONTENT = {
+  TITLE: "Smarter Risk Adjustment with",
+  TITLE_HIGHLIGHT: "MARTLET AI",
+  TAGLINE: "On-premise, Secure, Real-time HCC Coding & Risk Profiling",
+  CTA: "Book a Demo",
+} as const;
 
 /**
  * ShowCase - Landing page hero section with headline, tagline, and CTA.
@@ -16,22 +21,22 @@ export function ShowCase() {
         id="hero-heading"
         className="text-black text-[64px] font-extrabold leading-tight animate-fade-in mb-lg -ml-4"
       >
-        {LANDING_PAGE.HERO.TITLE}
+        {HERO_CONTENT.TITLE}
         <br />
         <span className="gradient-text-primary ml-4">
-          {LANDING_PAGE.HERO.TITLE_HIGHLIGHT}
+          {HERO_CONTENT.TITLE_HIGHLIGHT}
         </span>
       </h1>
 
       {/* Tagline */}
       <p className="text-2xl text-foreground font-medium italic animate-fade-in animation-delay-100 mb-lg">
-        {LANDING_PAGE.HERO.TAGLINE}
+        {HERO_CONTENT.TAGLINE}
       </p>
 
       {/* CTA */}
       <div className="animate-fade-in animation-delay-200">
         <Button as="a" href="/demo" size="lg" className="w-[231px] h-[50px]! py-3! px-4.5! text-lg! font-semibold! leading-6.5 gap-3!">
-          {LANDING_PAGE.HERO.CTA}
+          {HERO_CONTENT.CTA}
           <Icon name="play" className="h-3 w-2.5 text-[#CCE6FF]" aria-hidden />
         </Button>
       </div>

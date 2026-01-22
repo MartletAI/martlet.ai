@@ -1,7 +1,6 @@
-import { LANDING_PAGE } from "@/constants/landing-page";
 import { Clients } from "./clients";
 
-const { TITLE } = LANDING_PAGE.INDUSTRY_PARTNERS;
+const TITLE = "Industry Partners";
 
 
 export function IndustryPartners() {

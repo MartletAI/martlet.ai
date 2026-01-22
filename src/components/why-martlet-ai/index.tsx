@@ -4,9 +4,11 @@ import { FeatureCardProps } from "./types";
 interface WhyMartletAIProps {
   features: FeatureCardProps[];
   sectionGAP: number;
+  title?: string;
+  subtitle?: string;
 }
 
-export function WhyMartletAI({ features, sectionGAP }: WhyMartletAIProps) {
+export function WhyMartletAI({ features, sectionGAP, title, subtitle }: WhyMartletAIProps) {
   return (
     <section 
       aria-labelledby="why-martlet-heading"
@@ -14,10 +16,10 @@ export function WhyMartletAI({ features, sectionGAP }: WhyMartletAIProps) {
     >
       <header className="text-center max-w-[768px]" style={{ paddingBottom: sectionGAP }}>
         <h2 id="why-martlet-heading" className="section-heading">
-          Why Martlet AI?
+          {title || "Why Martlet AI?"}
         </h2>
         <p className="text-xl text-text-tertiary-600 leading-7 font-normal pt-5">
-          Proven technology that delivers measurable results at enterprise scale
+          {subtitle || "Proven technology that delivers measurable results at enterprise scale"}
         </p>
       </header>
 

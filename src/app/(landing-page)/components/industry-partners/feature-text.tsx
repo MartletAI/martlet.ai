@@ -1,9 +1,7 @@
-import { Icon, IconProps } from "@/components/icon";
+import { Icon } from "@/components/icon";
+import { FeatureTextProps } from "./types";
 
-interface FeatureTextProps {
-  icon: IconProps["name"];
-  text: string;
-}
+
 export function FeatureText({ icon, text }: FeatureTextProps) {
   return (
     <div className="h-[193px] w-[193px] p-xl rounded-xl border border-black/8 bg-white shadow-[0_6px_20.6px_0_rgba(0,0,0,0.08)] flex flex-col items-center justify-center gap-4">

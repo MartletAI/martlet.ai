@@ -1,12 +1,36 @@
 "use client";
 
-import { LANDING_PAGE } from "@/constants/landing-page";
+import { JohnSnowLabs } from "./john-snow-labs";
+import { WVUMedicine } from "./wvu-medicine";
+import { ArkosHealth } from "./arkos-health";
 import { useCallback, useId, useState } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { SliderPagination } from "@/components/SliderPagination";
 
-const { CLIENTS } = LANDING_PAGE.INDUSTRY_PARTNERS;
+const CLIENTS = {
+  johnSnowLabs: {
+    logo: "/clients/john-snow-labs.svg",
+    id: "johnSnowLabs",
+    description:
+      "John Snow Labs uses Martlet AI's engine to power it's own suite of medical coding solutions",
+    component: JohnSnowLabs,
+  },
+  wvuMedicine: {
+    logo: "/clients/wvu-medicine.svg",
+    id: "wvuMedicine",
+    description:
+      "John Snow Labs uses Martlet AI's engine to power it's own suite of medical coding solutions",
+    component: WVUMedicine,
+  },
+  arkosHealth: {
+    logo: "/clients/arkos-health.svg",
+    id: "arkosHealth",
+    description:
+      "Arkos uses Martlet across the full risk cycle - Retrospective, Prospective, and RADV - to drive measurable financial and operational impact.",
+    component: ArkosHealth,
+  },
+} as const;
 
 type ClientId = keyof typeof CLIENTS;
 

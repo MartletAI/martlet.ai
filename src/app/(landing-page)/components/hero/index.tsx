@@ -1,9 +1,7 @@
 import Image from "next/image";
 import { Products } from "./products";
 import { ShowCase } from "./show-case";
-import { LANDING_PAGE } from "@/constants/landing-page";
-
-const { PARROT } = LANDING_PAGE.HERO;
+const PARROT = "/assets/parrot.svg";
 
 
 export function Hero() {

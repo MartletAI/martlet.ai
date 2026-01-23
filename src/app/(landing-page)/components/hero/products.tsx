@@ -1,3 +1,4 @@
+import { SectionLabel } from "@/components/section-label";
 import { WorkflowCard } from "./workflow-card";
 
 const WORKFLOW_CONTENT = {
@@ -45,10 +46,8 @@ export function Products() {
     >
       {/* Section Header */}
       <header className="text-center mb-[30px]">
-        <span className="section-label mb-md block -ml-3" aria-hidden="true">
-          {WORKFLOW_CONTENT.LABEL}
-        </span>
-        <h2 id="products-heading" className="section-heading tracking-tight -ml-3">
+        <SectionLabel className="text-indicator-prospective mb-md">{WORKFLOW_CONTENT.LABEL}</SectionLabel>
+        <h2 id="products-heading" className="section-heading tracking-tight">
           {WORKFLOW_CONTENT.TITLE}
         </h2>
       </header>

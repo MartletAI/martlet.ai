@@ -1,6 +1,7 @@
 
 import Image from "next/image";
 import { Icon } from "@/components/icon";
+import { SectionLabel } from "@/components/section-label";
 
 const DATA = [
   {
@@ -39,17 +40,15 @@ export function TrustAndAccuracy() {
       id="trust-and-accuracy"
       className="bg-white py-10"
     >
-      <div className="flex flex-col items-center pb-11.5">
-				<span className="font-semibold text-base leading-normal text-center text-indicator-prospective pb-3">
-					Outcomes
-				</span>
-				<h2 className="section-heading pb-5">
-					Built for Trust and Accuracy
-				</h2>
-				<p className="font-normal text-xl leading-normal text-center text-text-tertiary-600">
-					Martlet AI is designed for environments where compliance, precision
-					and transparency are non-negotiable.
-				</p>
+      <div className="flex flex-col items-center mb-11.5">
+			<SectionLabel className="text-indicator-prospective mb-3">Outcomes</SectionLabel>
+			<h2 className="section-heading pb-5">
+				Built for Trust and Accuracy
+			</h2>
+			<p className="font-normal text-xl leading-normal text-center text-text-tertiary-600">
+				Martlet AI is designed for environments where compliance, precision
+				and transparency are non-negotiable.
+			</p>
       </div>
 
       <div className="mb-11.5 flex flex-col justify-center items-center gap-16 self-stretch max-w-container mx-auto bg-white rounded-xl border border-black/8 shadow-[0_6px_20.6px_0_rgba(0,0,0,0.04)] p-8">

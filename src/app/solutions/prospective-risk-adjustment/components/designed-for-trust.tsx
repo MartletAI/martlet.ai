@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SectionLabel } from "@/components/section-label";
 
 /**
  * Feature items for the Designed for Trust section.
@@ -42,7 +43,7 @@ export function DesignedForTrust() {
       <div className="container-main flex flex-col gap-[46px]">
         {/* Header Section */}
         <header className="flex flex-col items-center mb-11.5">
-					<span className="section-label text-center mb-3">Designed for trust</span>
+					<SectionLabel className="text-indicator-prospective mb-3">Designed for trust</SectionLabel>
 					<h2
 						id="designed-for-trust-heading"
 						className="font-semibold text-[36px] leading-[44px] tracking-[-0.72px] text-center text-foreground mb-5"

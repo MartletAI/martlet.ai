@@ -1,4 +1,5 @@
 import { Icon } from "@/components/icon";
+import { SectionLabel } from "@/components/section-label";
 import { ReactNode } from "react";
 
 export interface Step {
@@ -23,9 +24,9 @@ export function HowItWorks({
   subheading,
 }: HowItWorksProps) {
   return (
-    <section id="how-it-works" className="gradient-why-martlet py-section">
+    <section id="how-it-works" className="gradient-why-martlet py-10">
       <div className="flex flex-col items-center pb-12">
-        <span className="section-label pb-3">{label}</span>
+        <SectionLabel className="text-indicator-prospective mb-3">{label}</SectionLabel>
         <h2 className="section-heading pb-5">{heading}</h2>
         <p className="font-normal text-xl text-center text-text-tertiary-600 max-w-content">
           {subheading}

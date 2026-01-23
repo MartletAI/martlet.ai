@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Icon } from "@/components/icon";
+import { SectionLabel } from "@/components/section-label";
 
 const CARDS = [
   {
@@ -42,9 +43,7 @@ export function WhatTeamsCare() {
       <div className="container-main flex flex-col gap-[46px] relative z-10">
         {/* Header Section */}
         <header className="flex flex-col items-center gap-spacing-xl mb-11.5">
-					<span className="font-semibold text-base text-center text-[#682FE9] leading-6 mb-3">
-						Outputs
-					</span>
+					<SectionLabel className="text-outputs-accent mb-3">Outputs</SectionLabel>
 					<h2
 						id="outputs-heading"
 						className="font-semibold text-[36px] leading-[44px] tracking-[-0.72px] text-center text-foreground mb-[16px]"

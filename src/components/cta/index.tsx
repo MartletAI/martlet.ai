@@ -1,6 +1,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { SectionLabel } from "../section-label";
 
 export interface CTAProps {
   title: string;
@@ -31,9 +32,7 @@ export function CTA({ title, subtitle, description, ctaText, ctaLink, background
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center">
           {/* Subtitle */}
-          <p className="mb-2 text-center text-base font-semibold leading-6 text-white">
-            {subtitle}
-          </p>
+          <SectionLabel className="mb-2 text-white">{subtitle}</SectionLabel>
 
           {/* Title */}
           <h2 id="cta-heading" className="mb-2 text-center text-4xl font-semibold leading-[44px] tracking-[-0.72px] text-white">

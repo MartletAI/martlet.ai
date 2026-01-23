@@ -74,6 +74,13 @@
   /* Colors - Accent Purple */
   --color-accent-purple: #6841cc;
   
+  /* Colors - Outputs Section */
+  --color-outputs-accent: #682fe9;
+  --color-outputs-icon-bg: #F3EEFF;
+  --color-outputs-icon-border: #E9D7FE;
+  --color-text-card-body: #252b37;
+  --color-outputs-gradient-end: #f7f3ff;
+  
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   
@@ -165,6 +172,11 @@
   --color-indicator-prospective: var(--color-indicator-prospective);
   --color-footer-bg: var(--color-footer-bg);
   --color-accent-purple: var(--color-accent-purple);
+  --color-outputs-accent: var(--color-outputs-accent);
+  --color-outputs-icon-bg: var(--color-outputs-icon-bg);
+  --color-outputs-icon-border: var(--color-outputs-icon-border);
+  --color-text-card-body: var(--color-text-card-body);
+  --color-outputs-gradient-end: var(--color-outputs-gradient-end);
   
   /* Spacing */
   --spacing-xs: var(--spacing-xs);

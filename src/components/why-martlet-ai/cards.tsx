@@ -10,7 +10,7 @@ export function FeatureCard({ title, description, icon }: FeatureCardProps) {
       </div>
       
       <div className="flex flex-col gap-2">
-        <h3 className="text-base font-semibold text-[#181D27] leading-7 text-center">
+        <h3 className="text-base font-semibold text-foreground leading-7 text-center">
           {title}
         </h3>
         <p className="text-text-tertiary-600 text-base leading-6">

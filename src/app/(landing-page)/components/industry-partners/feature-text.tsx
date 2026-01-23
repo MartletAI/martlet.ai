@@ -8,7 +8,7 @@ export function FeatureText({ icon, text }: FeatureTextProps) {
       <div className="rounded-lg border-2 border-white/12 bg-indicator-prospective h-12 w-12 flex justify-center items-center">
         <Icon name={icon} className="text-white size-5" />
       </div>
-      <p className="text-[#181D27] text-center text-base font-semibold leading-6">{text}</p>
+      <p className="text-foreground text-center text-base font-semibold leading-6">{text}</p>
     </div>
   )
 }

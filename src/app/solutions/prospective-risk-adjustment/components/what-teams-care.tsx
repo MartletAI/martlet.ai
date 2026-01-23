@@ -1,0 +1,93 @@
+import Image from "next/image";
+import { Icon } from "@/components/icon";
+
+const CARDS = [
+  {
+    icon: "file-checked" as const,
+    title: "Visit Prep Summary",
+    description: "Prioritized gaps, documentation cues, and routing signals.",
+  },
+  {
+    icon: "message-notification" as const,
+    title: "Suggestion Card",
+    description:
+      "Condition + evidence snippets + MEAT signals + recommended next action.",
+  },
+  {
+    icon: "data-flow" as const,
+    title: "Workflow Export",
+    description: "Structured output for queues, QA, and integration pipelines.",
+  },
+];
+
+export function WhatTeamsCare() {
+  return (
+    <section
+      aria-labelledby="outputs-heading"
+      className="outputs-section relative py-10 overflow-hidden"
+    >
+      {/* Background Image */}
+      <div className="max-w-[1440px] m-auto absolute inset-0 z-0">
+        <Image
+          src="/assets/why-we-care-bg.png"
+          alt=""
+          width={1440}
+          height={800}
+          className="absolute right-0 top-0 opacity-5 w-full h-auto pointer-events-none"
+          aria-hidden="true"
+          priority={false}
+        />
+      </div>
+
+      <div className="container-main flex flex-col gap-[46px] relative z-10">
+        {/* Header Section */}
+        <header className="flex flex-col items-center gap-spacing-xl mb-11.5">
+					<span className="font-semibold text-base text-center text-[#682FE9] leading-6 mb-3">
+						Outputs
+					</span>
+					<h2
+						id="outputs-heading"
+						className="font-semibold text-[36px] leading-[44px] tracking-[-0.72px] text-center text-foreground mb-[16px]"
+					>
+						What care teams get in one view
+					</h2>
+
+					<p className="text-xl leading-[30px] text-center text-[#535862] font-normal">
+						Everything needed to act without forcing people to dig through
+						charts.
+					</p>
+        </header>
+
+        {/* Cards Grid */}
+        <ul
+          role="list"
+          className="flex flex-col md:flex-row items-stretch justify-center gap-[22px]"
+        >
+          {CARDS.map((card) => (
+            <li key={card.title} className="flex-1 max-w-[400px] h-[210px]">
+              <article className="outputs-card h-full flex flex-col gap-[17px]">
+                {/* Icon Container */}
+                <div className="outputs-icon-container" aria-hidden="true">
+                  <Icon
+                    name={card.icon}
+                    className="w-5 h-5 text-outputs-accent"
+                  />
+                </div>
+
+                {/* Card Content */}
+                <div className="flex flex-col gap-spacing-xs">
+                  <h3 className="font-semibold text-lg leading-7 text-foreground">
+                    {card.title}
+                  </h3>
+                  <p className="text-base leading-6 font-normal text-text-card-body">
+                    {card.description}
+                  </p>
+                </div>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}

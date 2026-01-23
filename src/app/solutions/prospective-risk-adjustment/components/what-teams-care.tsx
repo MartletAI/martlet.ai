@@ -52,7 +52,7 @@ export function WhatTeamsCare() {
 						What care teams get in one view
 					</h2>
 
-					<p className="text-xl leading-[30px] text-center text-[#535862] font-normal">
+					<p className="text-xl leading-[30px] text-center text-text-tertiary-600 font-normal">
 						Everything needed to act without forcing people to dig through
 						charts.
 					</p>

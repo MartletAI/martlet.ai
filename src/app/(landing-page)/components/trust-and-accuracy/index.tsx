@@ -50,7 +50,7 @@ export function TrustAndAccuracy() {
   return (
     <section
       aria-labelledby="trust-and-accuracy-heading"
-      className="gradient-hero py-10 flex flex-col items-center justify-center max-w-container mx-auto"
+      className="gradient-hero py-10 flex flex-col items-center justify-center mx-auto"
     >
       <header className="text-center max-w-[600px]">
         <h2 id="trust-and-accuracy-heading" className="section-heading">

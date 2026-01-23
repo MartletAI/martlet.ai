@@ -7,7 +7,7 @@ export function FooterBottom() {
 
   return (
     <section className="py-12 border-t border-indicator-prospective">
-      <div className="max-w-[1230px] mx-auto flex justify-between items-center sm:flex-row flex-col gap-6 sm:gap-0">
+      <div className="max-w-container mx-auto flex justify-between items-center sm:flex-row flex-col gap-6 sm:gap-0">
         {/* Copyright */}
         <p className="text-white text-base leading-6 font-normal max-w-[426px] w-full text-center sm:text-left">
             {FOOTER_LINKS.COPY_RIGHT}

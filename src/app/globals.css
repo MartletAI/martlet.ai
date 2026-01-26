@@ -253,6 +253,16 @@ body {
 .gradient-why-martlet {
   background: linear-gradient(180deg, #E9F8FF -18.06%, rgba(247, 251, 255, 0.50) 100%);
 }
+.gradient-approaches {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) -18.06%, #FFFAF6 100%);
+}
+.gradient-approaches-2 {
+  background: linear-gradient(180deg, #FFF 45%, #ECECF3 100%);
+}
+
+.gradient-outputs {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) -18.06%, #F5F1FF 100%);
+}
 
 .icon-container-blue {
   background: white;

@@ -6,7 +6,7 @@ import { FeatureTextProps } from "./types";
 const FEATURES: FeatureTextProps[] = [
   {
     icon: "intersect-circle",
-    text: "Retrospective risk adjustment",
+    text: "Prospective risk adjustment",
   },
   {
     icon: "bar-line-chart",
@@ -38,7 +38,6 @@ export function WVUMedicine() {
             className="object-contain"
           />
         </div>
-        <span className="text-black text-base font-normal">Real impact powered by AI - directly inside the clinical workflow</span>
       </div>
     </div>
   )

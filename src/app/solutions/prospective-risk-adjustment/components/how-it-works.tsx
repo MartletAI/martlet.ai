@@ -1,8 +1,8 @@
 import "./styles.css";
 import { HowItWorks as HowItWorksComponent, Step } from "@/components/how-it-works";
-import { StepOne } from "@/components/assets/step-one";
-import { StepTwo } from "@/components/assets/step-two";
-import { StepThree } from "@/components/assets/step-three";
+import { StepOne } from "@/components/assets/prospective/step-one";
+import { StepTwo } from "@/components/assets/prospective/step-two";
+import { StepThree } from "@/components/assets/prospective/step-three";
 
 const steps: Step[] = [
   {
@@ -15,6 +15,7 @@ const steps: Step[] = [
     ],
     fill: "bg-[#F48220]",
     icon: <StepOne />,
+    id: "step-1"
   },
   {
     title: "Point-of-care suggestions",
@@ -27,6 +28,7 @@ const steps: Step[] = [
     ],
     fill: "bg-[#7F56D9]",
     icon: <StepTwo />,
+    id: "step-2"
   },
   {
     title: "Close the loop",
@@ -39,6 +41,7 @@ const steps: Step[] = [
     ],
     fill: "bg-[#0993DA]",
     icon: <StepThree />,
+    id: "step-3"
   },
 ];
 

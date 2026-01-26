@@ -8,6 +8,7 @@ export interface Step {
   points: string[];
   fill: string;
   icon: ReactNode;
+  id: string;
 }
 
 interface HowItWorksProps {
@@ -67,9 +68,9 @@ export function HowItWorks({
         {steps.map((step, index) => (
           <article
             key={index}
-            className="relative step-card w-full max-w-[400px] bg-white py-3 px-4 rounded-[44px] shadow-card border border-border-light"
+            className="relative step-card w-full max-w-[400px] h-[496px] bg-white py-3 px-4 rounded-[44px] shadow-card border border-border-light"
           >
-            {step.title === "Point-of-care suggestions" && (
+            {step.id === "step-2" && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="438"
@@ -136,7 +137,7 @@ export function HowItWorks({
                 </defs>
               </svg>
             )}
-            <div className="flex bg-white flex-col items-center gap-[17px] px-6 py-6 rounded-[40px] border-10 border-border-light h-full">
+            <div className="flex bg-white flex-col items-center gap-[17px] px-6 py-6 rounded-[40px] border-10 border-border-light h-full relative z-10">
               {step.icon}
               <div className="flex flex-col gap-1 text-start">
                 <h3 className="font-semibold text-xl leading-7 text-foreground">

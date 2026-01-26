@@ -15,11 +15,6 @@ export function FooterNav() {
               <Link href={product.href} className="leading-6 font-semibold text-base text-white hover:text-white/80 transition-colors">
                 {product.label}
               </Link>
-              {product.label === "RADV Audit Readiness" && (
-                <span className="rounded-sm border border-white/30 bg-white/10 px-2 py-0.5 text-xs text-white ml-2">
-                  New
-                </span>
-              )}
             </li>
           ))}
         </ul>

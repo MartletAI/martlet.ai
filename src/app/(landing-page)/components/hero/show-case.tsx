@@ -1,7 +1,7 @@
 import { Button, Icon } from "@/components";
 const HERO_CONTENT = {
   TITLE: "Smarter Risk Adjustment with",
-  TITLE_HIGHLIGHT: "MARTLET AI",
+  TITLE_HIGHLIGHT: "Martlet AI",
   TAGLINE: "On-premise, Secure, Real-time HCC Coding & Risk Profiling",
   CTA: "Book a Demo",
 } as const;
@@ -19,11 +19,11 @@ export function ShowCase() {
       {/* Headline */}
       <h1
         id="hero-heading"
-        className="text-black text-[64px] font-extrabold leading-tight animate-fade-in mb-lg -ml-4"
+        className="gradient-landing-page-text-primary text-[64px] font-extrabold leading-tight animate-fade-in mb-lg -ml-4"
       >
         {HERO_CONTENT.TITLE}
         <br />
-        <span className="gradient-text-primary ml-4">
+        <span className="gradient-landing-page-text-secondary ml-4">
           {HERO_CONTENT.TITLE_HIGHLIGHT}
         </span>
       </h1>

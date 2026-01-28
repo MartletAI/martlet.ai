@@ -221,39 +221,124 @@ body {
 }
 
 /* Gradients */
-.gradient-hero {
-  background: linear-gradient(180deg, var(--color-hero-start) 0%, var(--color-hero-end) 57%);
-  overflow: hidden; /* Clips the rotated hero background */
-}
 
-.gradient-contact-hero {
+/* Landing Page */
+.gradient-landing-page-hero {
   background: 
-    url('/assets/contact-bg.png') no-repeat,
-    linear-gradient(180deg, #E7EEFF 0%, #FFF 100%);
-  background-position: center top 126px, center;
-  background-size: 1447px auto, cover;
+    url('/assets/hero/landing.png') no-repeat,
+    linear-gradient(180deg, #E7EEFF 3.85%, #FFF 50%, #E7EEFF 100%);
+  background-position: center top 110px, center;
+  background-size: 1440px auto, cover;
 }
 
-.gradient-text-primary {
-  background: linear-gradient(90deg, var(--color-accent-start) 0%, var(--color-accent-end) 100%);
+.gradient-landing-page-text-primary {
+  background: linear-gradient(201deg, #0163BC 5.06%, #051C68 61.04%, #010127 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+}
+.gradient-landing-page-text-secondary {
+  background: linear-gradient(201deg, #F354F9 4.56%, #5491FC 61.04%, #1224FF 95.44%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 1.75px;
 }
 
-.gradient-text-contact-primary {
-  background: linear-gradient(201deg, #0163BC 5.06%, #051C68 61.04%, #010127 95.44%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Prospective Risk Adjustment */
+.gradient-prospective-hero {
+  background:
+    url('/assets/hero/prospective.png') no-repeat,
+    linear-gradient(180deg, #E7EEFF 0%, #FFF 57.21%);
+  background-position: center top 106px, center;
+  background-size: 1440px auto, cover;
 }
-
-.gradient-text-contact-secondary {
+.gradient-prospective-text-primary {
   background: linear-gradient(201deg, #F354F9 4.56%, #5491FC 61.04%, #1224FF 95.44%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+}
+.gradient-prospective-text-secondary {
+  background: linear-gradient(201deg, #0163BC 5.06%, #051C68 61.04%, #010127 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+}
+
+/* Retrospective Risk Adjustment */
+.gradient-retrospective-hero {
+  background:
+    url('/assets/hero/retrospective.png') no-repeat,
+    linear-gradient(180deg, #E7EEFF 0%, #FFF 57.21%);
+  background-position: center top 108px, center;
+  background-size: 1440px auto, cover;
+}
+.gradient-retrospective-text-primary {
+  background: linear-gradient(159deg, #0058E0 4.56%, #009EF2 61.04%, #00FCF1 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+}
+.gradient-retrospective-text-secondary {
+  background: linear-gradient(201deg, #0163BC 5.06%, #051C68 61.04%, #010127 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+}
+
+/* RADV */
+.gradient-radv-hero {
+  background:
+    url('/assets/hero/radv.png') no-repeat,
+    #fff;
+  background-position: center top 109px, center;
+  background-size: 1440px auto, cover;
+}
+.gradient-radv-text-primary {
+  background: linear-gradient(201deg, #F354F9 4.56%, #5491FC 61.04%, #1224FF 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+}
+.gradient-radv-text-secondary {
+  background: linear-gradient(201deg, #FC794D 4.56%, #DD08F8 61.04%, #7A03FF 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+}
+
+/* Contact */
+.gradient-contact-hero {
+  background: 
+    url('/assets/hero/contact.png') no-repeat,
+    linear-gradient(180deg, #E7EEFF 0%, #FFF 100%);
+  background-position: center top 126px, center;
+  background-size: 1447px auto, cover;
+}
+
+
+.gradient-contact-text-primary {
+  background: linear-gradient(201deg, #0163BC 5.06%, #051C68 61.04%, #010127 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+}
+
+.gradient-contact-text-secondary {
+  background: linear-gradient(201deg, #F354F9 4.56%, #5491FC 61.04%, #1224FF 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
 }
 
 .gradient-industry-partners {

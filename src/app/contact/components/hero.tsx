@@ -10,8 +10,8 @@ export function Hero() {
           <p className="text-black font-medium text-[14px]">Contact Us</p>
         </div>
         <h1 className="flex flex-wrap justify-center text-center font-extrabold text-[64px] leading-[77px] tracking-[-0.02em] mx-auto">
-          <span className="gradient-text-contact-primary block">Tell Us About&nbsp;</span>
-          <span className="gradient-text-contact-secondary block">Your Needs</span>
+          <span className="gradient-text gradient-contact-text-primary block">Tell Us About&nbsp;</span>
+          <span className="gradient-text gradient-contact-text-secondary block">Your Needs</span>
         </h1>
         <p className="my-8 text-center text-2xl italic font-medium leading-8 text-foreground mx-auto">Join healthcare teams using Martlet AI for smarter coding and better outcomes</p>
         <Form />

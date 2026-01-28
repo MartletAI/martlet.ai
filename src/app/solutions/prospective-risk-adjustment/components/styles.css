@@ -43,7 +43,3 @@
     background-color: var(--color-outputs-icon-bg);
     border-radius: 10px;
 }
-
-.prospective-cta-section {
-    background: linear-gradient(180deg, #E9F8FF -18.06%, rgba(247, 251, 255, 0.50) 100%);
-}

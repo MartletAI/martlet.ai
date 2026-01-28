@@ -226,12 +226,34 @@ body {
   overflow: hidden; /* Clips the rotated hero background */
 }
 
+.gradient-contact-hero {
+  background: 
+    url('/assets/contact-bg.png') no-repeat,
+    linear-gradient(180deg, #E7EEFF 0%, #FFF 100%);
+  background-position: center top 126px, center;
+  background-size: 1447px auto, cover;
+}
+
 .gradient-text-primary {
   background: linear-gradient(90deg, var(--color-accent-start) 0%, var(--color-accent-end) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 1.75px;
+}
+
+.gradient-text-contact-primary {
+  background: linear-gradient(201deg, #0163BC 5.06%, #051C68 61.04%, #010127 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-contact-secondary {
+  background: linear-gradient(201deg, #F354F9 4.56%, #5491FC 61.04%, #1224FF 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .gradient-industry-partners {

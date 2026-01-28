@@ -22,7 +22,4 @@ export const FOOTER_LINKS = {
     { label: "Terms of Services", href: "/terms-of-services" },
     { label: "AI Acceptable Use Policy", href: "/ai-acceptable-use-policy" },
   ],
-  SOCIAL: [
-    { icon: "linkedin" as IconProps["name"], href: "https://www.linkedin.com/company/martlet-ai/posts/?feedView=all" },
-  ],
 };

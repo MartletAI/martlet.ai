@@ -34,7 +34,7 @@ export function HowItWorks({
         </p>
       </div>
 
-      <div className="relative container-main flex max-w-[1240px]!">
+      <div className="relative container-main flex max-w-[1250px]! h-[510px] overflow-x-auto overflow-y-hidden no-scrollbar">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1240"
@@ -68,7 +68,9 @@ export function HowItWorks({
         {steps.map((step, index) => (
           <article
             key={index}
-            className="relative step-card w-full max-w-[400px] h-[496px] bg-white py-3 px-4 rounded-[44px] shadow-card border border-border-light"
+            className={`relative w-full max-w-[400px] min-w-[400px] h-[496px] bg-white py-3 px-4 rounded-[44px] shadow-card border border-border-light mt-1 ${
+              index === 1 ? "mx-[22px]" : ""
+            }`}
           >
             {step.id === "step-2" && (
               <svg

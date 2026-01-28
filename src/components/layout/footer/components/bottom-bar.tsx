@@ -16,33 +16,16 @@ export function FooterBottom() {
         <div className="flex gap-6 items-center flex-col sm:flex-row w-full sm:w-auto">
             {/* Legal */}
             <nav aria-labelledby="footer-legal">
-            <h2 id="footer-legal" className="sr-only">Legal Links</h2>
-            <ul className="flex gap-5">
-                {FOOTER_LINKS.LEGAL.map((legal) => (
-                <li key={legal.label}>
-                    <Link href={legal.href} className="text-white text-base leading-6 font-normal hover:text-white/80 transition-colors">
-                    {legal.label}
-                    </Link>
-                </li>
-                ))}
-            </ul>
-            </nav>
-            {/* Social */}
-            <nav aria-labelledby="footer-social">
-            <h2 id="footer-social" className="sr-only">Social Media Links</h2>
-            <ul className="flex gap-6">
-                {FOOTER_LINKS.SOCIAL.map((social) => (
-                <li key={social.href}>
-                    <Link 
-                        href={social.href} 
-                        className="text-white text-base leading-6 font-normal hover:text-white/80 transition-colors"
-                        aria-label={`Visit our ${social.icon} page`}
-                    >
-                    <Icon name={social.icon} className="w-6 h-6" aria-hidden={true} />
-                    </Link>
-                </li>
-                ))}
-            </ul>
+              <h2 id="footer-legal" className="sr-only">Legal Links</h2>
+              <ul className="flex gap-5">
+                  {FOOTER_LINKS.LEGAL.map((legal) => (
+                  <li key={legal.label}>
+                      <Link href={legal.href} className="text-white text-base leading-6 font-normal hover:text-white/80 transition-colors">
+                      {legal.label}
+                      </Link>
+                  </li>
+                  ))}
+              </ul>
             </nav>
         </div>
       </div>

@@ -30,9 +30,9 @@ export function Approaches() {
       aria-labelledby="approaches-heading"
       className="gradient-approaches py-10"
     >
-      <div className="container-main flex flex-col gap-[46px]">
+      <div className="container-main flex flex-col gap-6">
         {/* Header Section */}
-        <header className="flex flex-col items-center mb-11.5">
+        <header className="flex flex-col items-center">
 					<SectionLabel className="text-indicator-prospective mb-3">Approaches</SectionLabel>
 					<h2
 						id="designed-for-trust-heading"

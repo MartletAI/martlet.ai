@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FOOTER_LINKS } from "@/constants/footer-links";
+import { Icon } from "@/components/icon";
 
 export function FooterNav() {
   return (
@@ -60,6 +61,15 @@ export function FooterNav() {
               className="leading-6 font-semibold text-base text-white hover:text-white/80 transition-colors"
             >
               16192 Coastal Highway Lewes, <br /> DE 19958, USA
+            </Link>
+          </li>
+          <li>
+            <Link 
+                href="https://www.linkedin.com/company/martlet-ai/posts/?feedView=all" 
+                className="text-white text-base leading-6 font-normal hover:text-white/80 transition-colors"
+                aria-label={`Visit our LinkedIn page`}
+            >
+            <Icon name="linkedin" className="w-6 h-6" aria-hidden={true} />
             </Link>
           </li>
         </ul>

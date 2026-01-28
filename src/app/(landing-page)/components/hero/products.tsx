@@ -12,7 +12,7 @@ const WORKFLOW_CONTENT = {
       title: "Clinicians-friendly gap capture",
       description:
         "Pre-visit and in-visit suggestions that are concise, actionable, and evidence-linked.",
-      href: "/solutions/prospective",
+      href: "/solutions/prospective-risk-adjustment",
       linkText: "View Prospective",
     },
     {
@@ -22,7 +22,7 @@ const WORKFLOW_CONTENT = {
       title: "High-precision chart review",
       description:
         "Find undercoded HCCs and validate existing codes with MEAT-aware evidence.",
-      href: "/solutions/retrospective",
+      href: "/solutions/retrospective-risk-adjustment",
       linkText: "View Retrospective",
     },
     {

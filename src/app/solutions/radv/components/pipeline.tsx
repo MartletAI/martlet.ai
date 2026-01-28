@@ -26,14 +26,14 @@ function Svg2() {
       <path d="M799.436 32.069V0L820.629 16.094L799.436 32.069Z" fill="url(#paint1_linear_1902_8684)"/>
       <defs>
         <linearGradient id="paint0_linear_1902_8684" x1="0.00131548" y1="174.462" x2="799.437" y2="174.462" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#005AFF"/>
-          <stop offset="0.485577" stop-color="#7C45DA"/>
-          <stop offset="1" stop-color="#FF2FB2"/>
+          <stop stopColor="#005AFF"/>
+          <stop offset="0.485577" stopColor="#7C45DA"/>
+          <stop offset="1" stopColor="#FF2FB2"/>
         </linearGradient>
         <linearGradient id="paint1_linear_1902_8684" x1="0.00131548" y1="174.462" x2="799.437" y2="174.462" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#005AFF"/>
-          <stop offset="0.485577" stop-color="#7C45DA"/>
-          <stop offset="1" stop-color="#FF2FB2"/>
+          <stop stopColor="#005AFF"/>
+          <stop offset="0.485577" stopColor="#7C45DA"/>
+          <stop offset="1" stopColor="#FF2FB2"/>
         </linearGradient>
       </defs>
     </svg>

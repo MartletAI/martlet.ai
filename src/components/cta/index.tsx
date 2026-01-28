@@ -1,7 +1,7 @@
 
 import Image from "next/image";
-import Link from "next/link";
 import { SectionLabel } from "../section-label";
+import { SmartLink } from "./smart-link";
 
 export interface CTAProps {
   title: string;
@@ -45,12 +45,13 @@ export function CTA({ title, subtitle, description, ctaText, ctaLink, background
           </p>
 
           {/* Buttons */}
-          <Link
+          {/* Buttons */}
+          <SmartLink
             href={ctaLink}
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-border-light bg-white px-6 py-3 text-base font-semibold text-footer-bg shadow-sm transition-all hover:bg-blue-50"
           >
             {ctaText}
-          </Link>
+          </SmartLink>
         </div>
       </div>
     </section>

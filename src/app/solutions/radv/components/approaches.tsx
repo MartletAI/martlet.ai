@@ -38,7 +38,7 @@ export function Approaches() {
 						id="designed-for-trust-heading"
 						className="font-semibold text-[36px] leading-[44px] tracking-[-0.72px] text-center text-foreground mb-5"
 					>
-						Reactive RADV vs proactive RADV
+						Proactive & Reactive RADV
 					</h2>
           <p className="text-xl leading-[30px] text-center text-text-tertiary-600 font-normal">
             Same tooling. Different posture.

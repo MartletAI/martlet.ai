@@ -20,7 +20,7 @@ const CLIENTS = {
     logo: "/clients/wvu-medicine.svg",
     id: "wvuMedicine",
     description:
-      "John Snow Labs uses Martlet AI's engine to power it's own suite of medical coding solutions",
+      "WVU Medicine uses Martlet Al's prospective engine to run longitudinal (vertical) chart analysis and deliver point-of-care suggestions - strengthening documentation, improving care, and capturing appropriate value.",
     component: WVUMedicine,
   },
   arkosHealth: {
@@ -71,7 +71,7 @@ export function Clients() {
 
     const interval = setInterval(() => {
       handleNext();
-    }, 40000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [handleNext, isPaused]);
@@ -137,17 +137,15 @@ export function Clients() {
         role="tabpanel"
         aria-labelledby={`tab-${currentClient.id}`}
         aria-live="polite"
-        className="flex flex-col items-center gap-[46px] w-full"
+        className="flex flex-col items-center gap-[46px] h-[520px] w-full"
       >
         {/* Client description */}
-        <p className="text-center text-muted-foreground text-lg font-medium">
+        <p className="text-center text-muted-foreground text-lg font-medium max-w-container w-full">
           {currentClient.description}
         </p>
 
         {/* Client-specific content component */}
-        <div className="w-full h-[450px] flex items-start">
-          <ClientComponent />
-        </div>
+        <ClientComponent />
       </div>
 
       {/* Slider pagination controls */}

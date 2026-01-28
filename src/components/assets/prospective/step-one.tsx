@@ -100,14 +100,14 @@ export function StepOne() {
   <path d="M50.493 13.9316C45.92 13.9316 42.2129 17.6388 42.2129 22.2118C42.2129 26.7848 45.92 30.492 50.493 30.492C55.0661 30.492 58.7732 26.7848 58.7732 22.2118C58.7732 17.6388 55.0661 13.9316 50.493 13.9316ZM54.968 20.7545L50.2281 25.4944C49.9882 25.7343 49.6694 25.8663 49.3303 25.8663C48.9912 25.8663 48.6723 25.7342 48.4325 25.4944L46.4721 23.534C46.1231 23.185 46.1231 22.6192 46.4721 22.2702C46.8211 21.9212 47.3869 21.9212 47.7359 22.2702L49.3304 23.8646L53.7043 19.4907C54.0532 19.1417 54.6191 19.1417 54.9681 19.4907C55.317 19.8397 55.317 20.4055 54.968 20.7545Z" fill="#2FD155"/>
   <defs>
     <linearGradient id="paint0_linear_1902_2699" x1="33.9212" y1="32.5626" x2="33.9212" y2="36.2402" gradientUnits="userSpaceOnUse">
-      <stop offset="0.0021" stop-color="#FFD26A"/>
-      <stop offset="1" stop-color="#FF9400"/>
+      <stop offset="0.0021" stopColor="#FFD26A"/>
+      <stop offset="1" stopColor="#FF9400"/>
     </linearGradient>
     <linearGradient id="paint1_linear_1902_2699" x1="33.918" y1="54.1287" x2="33.918" y2="70.8023" gradientUnits="userSpaceOnUse">
-      <stop offset="0.0045" stop-color="#FFC400"/>
-      <stop offset="1" stop-color="#FF9D00"/>
+      <stop offset="0.0045" stopColor="#FFC400"/>
+      <stop offset="1" stopColor="#FF9D00"/>
     </linearGradient>
   </defs>
 </svg>
-    )
+  )
 }

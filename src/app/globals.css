@@ -37,7 +37,7 @@
   --color-indicator-radv: #2563eb;
 
   /* Colors - Navbar */
-  --color-navbar: #F2F8FF;
+  --color-navbar: #F8FBFF;
   
   /* Colors - Text Hierarchy */
   --color-text-primary-900: #101828;
@@ -107,7 +107,7 @@
   --spacing-3xl: 4rem; /* 64px */
   --spacing-4xl: 6rem; /* 96px */
   --spacing-section: 5rem; /* 80px */
-  --spacing-container: 1230px;
+  --spacing-container: 1240px;
   --spacing-content: 920px;
   
   /* Border Radius */

@@ -8,7 +8,7 @@ import { MobileNav } from "./mobile-nav";
  */
 export function Navbar() {
   return (
-    <header className="container-main bg-navbar absolute top-6 left-0 right-0 z-50 h-[86px] px-xl flex items-center justify-between rounded-2xl transition-all duration-300">
+    <header className="container-main bg-navbar absolute top-6 left-0 right-0 z-50 h-[86px] px-xl flex items-center justify-between rounded-2xl">
       <NavLogo />
       <DesktopNav />
       <MobileNav />      

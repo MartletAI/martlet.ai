@@ -15,7 +15,7 @@ export function DesktopNav() {
       </nav>
 
       <div className="hidden md:block">
-        <Button as="a" href="/contact" variant="outline" className="mr-[32px]! w-[165px] h-11 text-base! font-semibold! leading-normal flex items-center justify-center p-0! -mt-0.25">
+        <Button as="a" href="/contact" variant="outline" className="w-[165px] h-11 text-base! font-semibold! flex items-center justify-center p-0! -mt-0.25">
           Contact us
         </Button>
       </div>

@@ -29,7 +29,7 @@ function isLinkActive(href: string, pathname: string): boolean {
  */
 export function NavLinks({
   className = "",
-  linkClassName = "text-lg font-medium no-underline transition-all duration-150",
+  linkClassName = "text-lg font-medium no-underline leading-normal transition-all duration-150",
   activeLinkClassName = "h-12 py-3 px-4.5 rounded-lg bg-white border-[1.5px] border-[#0375E2]",
   inactiveLinkClassName = "text-black hover:text-primary",
 }: NavLinksProps) {

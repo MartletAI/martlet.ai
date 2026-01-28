@@ -8,7 +8,7 @@ export function CTA() {
       subtitle="Get Started"
       description="Join forward-thinking healthcare teams using Martlet AI for smarter coding and better outcomes."
       ctaText="Request a Demo"
-      ctaLink="/demo"
+      ctaLink="/contact"
       backgroundColor="bg-white"
     />
   );

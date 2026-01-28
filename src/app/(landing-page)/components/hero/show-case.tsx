@@ -35,7 +35,7 @@ export function ShowCase() {
 
       {/* CTA */}
       <div className="animate-fade-in animation-delay-200">
-        <Button as="a" href="/demo" size="lg" className="w-[231px] h-[50px]! py-3! px-4.5! text-lg! font-semibold! leading-6.5 gap-3!">
+        <Button as="a" href="/contact" size="lg" className="w-[231px] h-[50px]! py-3! px-4.5! text-lg! font-semibold! leading-6.5 gap-3!">
           {HERO_CONTENT.CTA}
           <Icon name="play" className="h-3 w-2.5 text-[#CCE6FF]" aria-hidden />
         </Button>

@@ -11,10 +11,11 @@ interface HeroProps {
   headerText2Class?: string;
   description: string;
   buttonLabel: string;
+  buttonHref?: string;
   className?: string; 
 }
 
-export function Hero({ badgeText, headerText1, headerText2, description, buttonLabel, className, headerText1Class, headerText2Class, headerTextClass }: HeroProps) {
+export function Hero({ badgeText, headerText1, headerText2, description, buttonLabel, className, headerText1Class, headerText2Class, headerTextClass, buttonHref = "/contact" }: HeroProps) {
   return (
     <section className={cn("pt-[156px] pb-10 relative overflow-hidden", className)}>
       <div className="container-main mx-auto flex flex-col justify-center relative z-10">
@@ -27,7 +28,7 @@ export function Hero({ badgeText, headerText1, headerText2, description, buttonL
           <span className={cn("block", headerText2Class)}>{headerText2}</span>
         </h1>
         <p className="my-8 text-center text-[25.75px] italic font-medium leading-8 text-foreground mx-auto max-w-[1030px]">{description}</p>
-        <Button className="w-[182px] h-12! bg-footer-bg! text-lg! text-white mx-auto">
+        <Button as="a" href={buttonHref} className="w-[182px] h-12! bg-footer-bg! text-lg! text-white mx-auto">
           {buttonLabel}
           <Icon name="play" className="ml-2 size-3 fill-[#CCE6FF]" />
         </Button>

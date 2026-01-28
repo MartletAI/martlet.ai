@@ -8,7 +8,7 @@ export function CTA() {
       subtitle="Get Started"
       description="Improve capture and accuracy at point of care - while keeping outputs defensible and easy to validate."
       ctaText="Request a Demo"
-      ctaLink="/demo"
+      ctaLink="/contact"
       backgroundColor="gradient-why-martlet"
     />
   );

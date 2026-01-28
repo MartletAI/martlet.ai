@@ -1,4 +1,5 @@
 import { CTA as SharedCTA } from "@/components/cta"
+
 export function CTA(){
   return (
     <SharedCTA
@@ -6,7 +7,7 @@ export function CTA(){
       subtitle="Get Started"
       description="Run proactive mock audits and execute reactive audits under deadline-without chaos."
       ctaText="Request a Demo"
-      ctaLink="/demo"
+      ctaLink="/contact"
       backgroundColor="gradient-why-martlet"
     />
   )

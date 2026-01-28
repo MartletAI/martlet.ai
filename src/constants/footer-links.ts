@@ -1,5 +1,3 @@
-import { IconProps } from "@/components";
-
 export const FOOTER_LINKS = {
   PRODUCTS: {
     title: "Products",

@@ -341,6 +341,23 @@ body {
   letter-spacing: 1.75px;
 }
 
+/* Blogs */
+.gradient-blogs-hero {
+  background: 
+    url('/assets/hero/blogs.png') no-repeat,
+    linear-gradient(180deg, #E7EEFF 0%, #FFF 100%);
+  background-position: 100px top, center;
+  background-size: 1447px auto, cover;
+}
+
+.gradient-blog-text-primary {
+  background: linear-gradient(201deg, #F354F9 4.56%, #5491FC 61.04%, #1224FF 95.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+}
+
 .gradient-industry-partners {
   background: linear-gradient(180deg, rgba(247, 251, 255, 0.50) -18.06%, #E9F8FF 100%);
 }

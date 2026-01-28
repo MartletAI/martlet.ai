@@ -3,7 +3,7 @@
 import { JohnSnowLabs } from "./john-snow-labs";
 import { WVUMedicine } from "./wvu-medicine";
 import { ArkosHealth } from "./arkos-health";
-import { useCallback, useId, useState } from "react";
+import { useCallback, useId, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { SliderPagination } from "@/components/SliderPagination";
@@ -42,6 +42,7 @@ const clientIds = Object.keys(CLIENTS) as ClientId[];
  */
 export function Clients() {
   const [selectedClient, setSelectedClient] = useState<ClientId>("johnSnowLabs");
+  const [isPaused, setIsPaused] = useState(false);
   const tabPanelId = useId();
   const currentIndex = clientIds.indexOf(selectedClient);
   const currentClient = CLIENTS[selectedClient];
@@ -54,21 +55,35 @@ export function Clients() {
   const handlePrev = useCallback(() => {
     const prevIndex = currentIndex === 0 ? clientIds.length - 1 : currentIndex - 1;
     setSelectedClient(clientIds[prevIndex]);
-  }, [currentIndex]);
+  }, [currentIndex, clientIds]);
 
   const handleNext = useCallback(() => {
     const nextIndex = currentIndex === clientIds.length - 1 ? 0 : currentIndex + 1;
     setSelectedClient(clientIds[nextIndex]);
-  }, [currentIndex]);
+  }, [currentIndex, clientIds]);
 
   const handleDotClick = useCallback((index: number) => {
     setSelectedClient(clientIds[index]);
-  }, []);
+  }, [clientIds]);
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      handleNext();
+    }, 40000);
+
+    return () => clearInterval(interval);
+  }, [handleNext, isPaused]);
 
   return (
     <section
       className="flex flex-col items-center justify-center gap-section"
       aria-labelledby="clients-heading"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={() => setIsPaused(false)}
     >
       {/* Visually hidden heading for screen readers and SEO */}
       <h3 id="clients-heading" className="sr-only">
@@ -122,15 +137,17 @@ export function Clients() {
         role="tabpanel"
         aria-labelledby={`tab-${currentClient.id}`}
         aria-live="polite"
-        className="flex flex-col items-center gap-lg w-full"
+        className="flex flex-col items-center gap-[46px] w-full"
       >
         {/* Client description */}
-        <p className="text-center text-muted-foreground text-lg font-medium max-w-content">
+        <p className="text-center text-muted-foreground text-lg font-medium">
           {currentClient.description}
         </p>
 
         {/* Client-specific content component */}
-        <ClientComponent />
+        <div className="w-full h-[450px] flex items-start">
+          <ClientComponent />
+        </div>
       </div>
 
       {/* Slider pagination controls */}

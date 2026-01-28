@@ -25,11 +25,10 @@ export function SliderPagination({
         onClick={onPrev}
         className="group size-10 flex items-center justify-center rounded-full border border-[#A7A9AC] bg-transparent shadow-[0_1px_2px_0_rgba(10,13,18,0.05)] cursor-pointer transition-colors"
         aria-label="Previous"
-        disabled={currentIndex === 0}
       >
         <Icon
           name="chevron-left"
-          className="size-4 text-black transition-all group-disabled:text-[#A7A9AC] group-[:not(:disabled)]:hover:stroke-3"
+          className="size-4 text-black transition-all group-hover:stroke-3"
         />
       </button>
 
@@ -54,11 +53,10 @@ export function SliderPagination({
         onClick={onNext}
         className="group size-10 flex items-center justify-center rounded-full border border-[#A7A9AC] bg-transparent shadow-[0_1px_2px_0_rgba(10,13,18,0.05)] cursor-pointer transition-colors"
         aria-label="Next"
-        disabled={currentIndex === totalItems - 1}
       >
         <Icon
           name="chevron-right"
-          className="size-4 stroke-current text-black transition-all group-hover:stroke-3 group-disabled:text-[#A7A9AC]"
+          className="size-4 stroke-current text-black transition-all group-hover:stroke-3"
         />
       </button>
     </div>

@@ -32,7 +32,7 @@ export function TrustAndAccuracy() {
 					{
 						title: "Faster workflows",
 						description:
-							"Evidence-linked recommendations are quick to validate—no “hunt through the chart.”",
+							"Evidence-linked recommendations are linked to exact documents, reducing chart hunting.",
 						icon: "shield" as const,
 						iconColor: "#6D44C9",
 						bg: "bg-[#f2f3ff]",

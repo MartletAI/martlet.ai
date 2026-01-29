@@ -5,7 +5,7 @@ export function Hero() {
   return(
     <section className="gradient-blogs-hero pt-[156px] pb-10 relative overflow-hidden">
       <div className="container-main mx-auto flex flex-col justify-center relative z-10">
-        <div className="mx-auto flex w-[188px] h-[37px] px-4 py-1.5 justify-center items-center gap-1.5 rounded-full bg-white shadow-[0_2px_4px_0_rgba(0,0,0,0.10)] mb-6">
+        <div className="mx-auto flex w-fit h-[37px] px-4 py-1.5 justify-center items-center gap-1.5 rounded-full bg-white shadow-[0_2px_4px_0_rgba(0,0,0,0.10)] mb-6">
           <Icon name="ellipse" className="fill-[#33C020] size-2" />
           <p className="text-black font-medium text-[14px]">The Blog</p>
         </div>

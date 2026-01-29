@@ -19,7 +19,7 @@ export function Hero({ badgeText, headerText1, headerText2, description, buttonL
   return (
     <section className={cn("pt-[156px] pb-10 relative overflow-hidden", className)}>
       <div className="container-main mx-auto flex flex-col justify-center relative z-10">
-        <div className="mx-auto flex w-[188px] h-[37px] px-4 py-1.5 justify-center items-center gap-1.5 rounded-full bg-white shadow-[0_2px_4px_0_rgba(0,0,0,0.10)] mb-11.5">
+        <div className="mx-auto flex w-fit h-[37px] px-4 py-1.5 justify-center items-center gap-1.5 rounded-full bg-white shadow-[0_2px_4px_0_rgba(0,0,0,0.10)] mb-11.5">
           <Icon name="ellipse" className="fill-[#33C020] size-2" />
           <p className="text-black font-medium text-[14px]">{badgeText}</p>
         </div>

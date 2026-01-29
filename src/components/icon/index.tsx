@@ -19,6 +19,7 @@ interface IconConfig {
 export interface IconProps {
   name:
     | "arrow-right"
+    | "arrow-up-right"
     | "atom"
     | "badge-check"
     | "bar-line-chart"
@@ -75,6 +76,17 @@ const icons: Record<IconProps["name"], IconConfig> = {
         d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
       />
     ),
+  },
+  "arrow-up-right": {
+    path: (
+      <path
+        d="M5.83398 14.1673L14.1673 5.83398M14.1673 5.83398H5.83398M14.1673 5.83398V14.1673"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    ),
+    viewBox: "0 0 20 20",
+    strokeWidth: 1.66667,
   },
   atom: {
     path: (

@@ -1,4 +1,4 @@
-import { Icon } from "../icon";
+import { Icon, IconProps } from "../icon";
 import { SectionLabel } from "../section-label";
 import Image from "next/image";
 
@@ -39,6 +39,13 @@ const DATA = [
 
 
 interface TrustAndAccuracyProps {
+  topCard?: {
+    title: string;
+    description: string;
+    icon: IconProps['name'];
+    iconColor: string;
+    bg: string;
+  }[];
 	bottomCard: {
     image: string;
     width: number;
@@ -49,7 +56,7 @@ interface TrustAndAccuracyProps {
   }[]
 }
 
-export function TrustAndAccuracy({ bottomCard }: TrustAndAccuracyProps) {
+export function TrustAndAccuracy({ bottomCard, topCard = DATA }: TrustAndAccuracyProps) {
 	return (
     <section
       id="trust-and-accuracy"
@@ -68,7 +75,7 @@ export function TrustAndAccuracy({ bottomCard }: TrustAndAccuracyProps) {
 
       <div className="mb-11.5 flex flex-col justify-center items-center gap-16 self-stretch max-w-container mx-auto bg-white rounded-xl border border-black/8 shadow-[0_6px_20.6px_0_rgba(0,0,0,0.04)] p-8">
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 self-stretch w-full">
-          {DATA.map((item, index) => (
+          {topCard.map((item, index) => (
             <li
               key={index}
               className={`flex flex-col px-5 py-3 rounded-xl border border-black/8 items-start ${item.bg}`}

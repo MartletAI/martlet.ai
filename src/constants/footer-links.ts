@@ -14,7 +14,7 @@ export const FOOTER_LINKS = {
       { label: "Contact Us", href: "/contact" },
     ],
   },
-  COPY_RIGHT: "© 2025 Martlet Inc. All rights reserved.",
+  COPY_RIGHT: "© 2026 Martlet Inc. All rights reserved.",
   LEGAL: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Services", href: "/terms-of-services" },

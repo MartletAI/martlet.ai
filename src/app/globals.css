@@ -358,6 +358,23 @@ body {
   letter-spacing: 1.75px;
 }
 
+/* Privacy Policy */
+.gradient-privacy-policy-hero {
+  background: 
+    url('/assets/hero/privacy-policy.png') no-repeat,
+    linear-gradient(180deg, #E7EEFF 0%, #FFF 100%);;
+  background-position: center top 101px, center;
+  background-size: 1447px auto, cover;
+}
+
+.gradient-privacy-policy-text-primary {
+background: linear-gradient(90deg, #004E98 0%, #00CFF4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.75px;
+}
+
 .gradient-industry-partners {
   background: linear-gradient(180deg, rgba(247, 251, 255, 0.50) -18.06%, #E9F8FF 100%);
 }

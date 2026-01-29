@@ -3,7 +3,7 @@ import { Hero as SharedHero } from "@/components/hero";
 export function Hero() {
   return (
     <SharedHero
-      badgeText="Prospective Engine"
+      badgeText="RADV Engine"
       headerTextClass="text-[64px]"
       headerText1="Run RADV at Scale"
       headerText1Class="gradient-radv-text-primary"

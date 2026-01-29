@@ -1,32 +1,39 @@
-import { Button } from "../ui/button";
-import { Companies } from "./companies";
-import { HeroText } from "./hero-text";
+import { Icon } from "../icon";
+import { cn } from "@/lib/utils";
+import { SmartLink } from "../cta/smart-link";
 
-export function Hero() {
+interface HeroProps {
+  badgeText: string;
+  headerTextClass?: string;
+  headerText1: string;
+  headerText1Class?: string;
+  headerText2: string;
+  headerText2Class?: string;
+  description: string;
+  buttonLabel: string;
+  buttonHref?: string;
+  className?: string; 
+}
+
+export function Hero({ badgeText, headerText1, headerText2, description, buttonLabel, className, headerText1Class, headerText2Class, headerTextClass, buttonHref = "/contact" }: HeroProps) {
   return (
-    <section aria-labelledby="hero-title">
-      <div className="flex flex-col align-start justify-between gap-8 xl:gap-16 xl:flex-row  xl:items-center">
-        <div className="flex flex-col p-0 m-0 xl:gap-6">
-          <HeroText />
-          <p className="font-semibold text-xl mt-4 whitespace-nowrap md:text-2xl">
-            On-premise, Secure, Real-time <br />
-            HCC Coding & Risk Profiling
-          </p>
-          <div className="mt-6">
-            <Button className="w-fit" aria-label="Book a demo for Martlet AI">
-              Book a Demo
-            </Button>
-          </div>
+    <section className={cn("pt-[156px] pb-10 relative overflow-hidden", className)}>
+      <div className="container-main mx-auto flex flex-col justify-center relative z-10">
+        <div className="mx-auto flex w-[188px] h-[37px] px-4 py-1.5 justify-center items-center gap-1.5 rounded-full bg-white shadow-[0_2px_4px_0_rgba(0,0,0,0.10)] mb-11.5">
+          <Icon name="ellipse" className="fill-[#33C020] size-2" />
+          <p className="text-black font-medium text-[14px]">{badgeText}</p>
         </div>
-
-        <figure
-          className="w-full max-w-[928px] aspect-[928/520] bg-white rounded-[25px] shadow-[0px_25px_80px_0px_#0483FD1A]"
-          role="img"
-          aria-label="Illustration showcasing Martlet AI in action"
-        ></figure>
+        <h1 className={cn("text-center font-extrabold text-[56px] leading-[77px] tracking-[-0.02em] mx-auto", headerTextClass)}>
+          <span className={cn("block", headerText1Class, headerTextClass ? "mb-6": "mb-0")}>{headerText1}</span>
+          <span className={cn("block", headerText2Class)}>{headerText2}</span>
+        </h1>
+        <p className="my-8 text-center text-[25.75px] italic font-medium leading-8 text-foreground mx-auto max-w-[1030px]">{description}</p>
+        <SmartLink href={buttonHref} className="btn btn-primary w-[182px] h-12! bg-footer-bg! text-lg! text-white mx-auto flex items-center justify-center">
+          {buttonLabel}
+          <Icon name="play" className="ml-2 size-3 fill-[#CCE6FF]" />
+        </SmartLink>
       </div>
-
-      <Companies />
+      
     </section>
-  );
+  )
 }

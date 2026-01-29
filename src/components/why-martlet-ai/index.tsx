@@ -1,75 +1,38 @@
-import { Icon } from "../icon";
-import { SectionWithHeading } from "../section";
-import { SectionTitle } from "../section-title";
-import { Feature } from "./feature";
-import { whyMartletAI } from "@/constants/why-martlet-ai";
+import { FeatureCard } from "./cards";
+import { FeatureCardProps } from "./types";
 
-export function WhyMartletAI() {
+interface WhyMartletAIProps {
+  features: FeatureCardProps[];
+  sectionGAP: number;
+  title?: string;
+  subtitle?: string;
+}
+
+export function WhyMartletAI({ features, sectionGAP, title, subtitle }: WhyMartletAIProps) {
   return (
-    <SectionWithHeading
-      aria-labelledby="why-martlet-ai"
-      className="flex flex-col xl:flex-row gap-8 xl:gap-0"
+    <section 
+      aria-labelledby="why-martlet-heading"
+      className="gradient-why-martlet py-10 flex flex-col items-center justify-center w-full mx-auto"
     >
-      <div className="xl:w-[33%] mb-4 lg:mb-8">
-        <SectionTitle
-          className="mb-8 md:mb-4 text-start whitespace-nowrap md:mt-[-16px]"
-          id={"why-martlet-ai"}
-        >
-          Why Martlet AI
-        </SectionTitle>
-        <p className="whitespace-nowrap">
-          Smarter risk adjustment. Built <br /> for real-world healthcare
+      <header className="text-center max-w-[768px]" style={{ paddingBottom: sectionGAP }}>
+        <h2 id="why-martlet-heading" className="section-heading">
+          {title || "Why Martlet AI?"}
+        </h2>
+        <p className="text-xl text-text-tertiary-600 leading-7 font-normal pt-5">
+          {subtitle || "Proven technology that delivers measurable results at enterprise scale"}
         </p>
-      </div>
-      <div className="flex flex-wrap gap-8 lg:gap-16 xl:w-[66%]">
-        {/* Real Time EHR Suggestions */}
-        <Feature
-          icon={
-            <Icon
-              src={whyMartletAI.RealTimeEHRSuggestions.icon}
-              alt={whyMartletAI.RealTimeEHRSuggestions.alt}
-            />
-          }
-          title={whyMartletAI.RealTimeEHRSuggestions.title}
-          description={whyMartletAI.RealTimeEHRSuggestions.description}
-        />
+      </header>
 
-        {/* NLP Based HCC Coding */}
-        <Feature
-          icon={
-            <Icon
-              src={whyMartletAI.NLPBasedHCCCoding.icon}
-              alt={whyMartletAI.NLPBasedHCCCoding.alt}
-            />
-          }
-          title={whyMartletAI.NLPBasedHCCCoding.title}
-          description={whyMartletAI.NLPBasedHCCCoding.description}
-        />
-
-        {/* On Premise & HIPPA Compliant */}
-        <Feature
-          icon={
-            <Icon
-              src={whyMartletAI.OnPremiseAndHIPPACompliant.icon}
-              alt={whyMartletAI.OnPremiseAndHIPPACompliant.alt}
-            />
-          }
-          title={whyMartletAI.OnPremiseAndHIPPACompliant.title}
-          description={whyMartletAI.OnPremiseAndHIPPACompliant.description}
-        />
-
-        {/* Audit Ready & Raf Optimized */}
-        <Feature
-          icon={
-            <Icon
-              src={whyMartletAI.AuditReadyAndRafOptimized.icon}
-              alt={whyMartletAI.AuditReadyAndRafOptimized.alt}
-            />
-          }
-          title={whyMartletAI.AuditReadyAndRafOptimized.title}
-          description={whyMartletAI.AuditReadyAndRafOptimized.description}
-        />
-      </div>
-    </SectionWithHeading>
+			<div className="flex items-center justify-between mx-auto gap-3">
+				{features.map((feature, index) => (
+					<FeatureCard 
+						key={index}
+						title={feature.title}
+						description={feature.description}
+						icon={feature.icon}
+					/>
+				))}
+			</div>
+    </section>
   );
 }

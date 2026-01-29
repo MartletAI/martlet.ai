@@ -1,11 +1,18 @@
-import "./globals.css";
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-import { Header } from "@/components/header";
+import "./globals.css";
+import { Navbar, Footer } from "@/components";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Martlet AI",
+  title: "Martlet AI | Smarter Risk Adjustment",
   description:
-    "Smarter Rist Adjustment with Martlet AI, On-premise, Secure, Real-time, HCC Coding & Risk Profiling",
+    "On-premise, Secure, Real-time HCC Coding & Risk Profiling. Streamline prospective, retrospective, and RADV workflows with AI-powered precision.",
 };
 
 export default function RootLayout({
@@ -14,15 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="absolute overflow-x-hidden w-full">
-      <link
-        rel="preload"
-        as="image"
-        href="backgrounds/hero-section-parrot.avif"
-      />
-      <body className={`antialiased`}>
-        <Header />
+    <html lang="en">
+      <body className={`${inter.variable} antialiased font-sans`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

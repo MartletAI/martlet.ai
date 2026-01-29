@@ -17,13 +17,13 @@ export function SmartLink({ href, children, ...props }: SmartLinkProps) {
     if (pathname === href) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      sessionStorage.setItem("navigationSource", pathname);
     }
   };
 
-  const hrefWithSource =  pathname === href ? href : `${href}?from=${encodeURI(pathname)}`;
-
   return (
-    <Link href={hrefWithSource} onClick={handleClick} {...props}>
+    <Link href={href} onClick={handleClick} {...props}>
       {children}
     </Link>
   );

@@ -18,7 +18,7 @@ async function submitToHubSpot(_prevState: FormState, formData: FormData): Promi
     { name: 'email', value: formData.get('email')?.toString() ?? '' },
     { name: 'firstname', value: formData.get('firstname')?.toString() ?? '' },
     { name: 'lastname', value: formData.get('lastname')?.toString() ?? '' },
-    { name: 'message', value: `${formData.get('message')?.toString() ?? ''}\n\nSubmission URL: ${window.location.search?.split('from=').pop()}` },
+    { name: 'message', value: `${formData.get('message')?.toString() ?? ''}\n\nSubmission URL: ${sessionStorage.getItem('navigationSource') ?? ''}` },
   ];
 
 

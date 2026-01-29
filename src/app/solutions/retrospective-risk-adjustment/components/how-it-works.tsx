@@ -51,8 +51,8 @@ export function HowItWorks() {
   return (
     <HowItWorksComponent
       steps={steps}
-      heading="One Simple Flow for Prospective Coding"
-      subheading="Plan the visit → document with confidence → close gaps before they hit retrospective"
+      heading="Retrospective Coding Workflow"
+      subheading="Ingest charts → validate MEAT-backed diagnoses with evidence → recapture missed HCCs and resolve issues"
     />
   );
 }

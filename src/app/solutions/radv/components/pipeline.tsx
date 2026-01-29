@@ -81,11 +81,11 @@ export function Pipeline() {
               <Icon name={pipeline.icon} className="absolute size-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary" />
               {index === 1 ? (
                 <svg xmlns="http://www.w3.org/2000/svg" width="271" height="81" viewBox="0 0 271 81" fill="none" className="absolute -top-7">
-                  <path d="M0.707031 72.2176C33.9229 20.9389 96.6712 -7.607 159.419 2.85105C206.6 11.1083 246.379 39.4595 269.947 79.4211" stroke="#A7A9AC" stroke-width="1.4157" stroke-miterlimit="10" stroke-linecap="round" stroke-dasharray="12.55 12.55"/>
+                  <path d="M0.707031 72.2176C33.9229 20.9389 96.6712 -7.607 159.419 2.85105C206.6 11.1083 246.379 39.4595 269.947 79.4211" stroke="#A7A9AC" strokeWidth="1.4157" strokeMiterlimit="10" strokeLinecap="round" strokeDasharray="12.55 12.55"/>
                 </svg>
               ) : index === 2 ? (
                 <svg xmlns="http://www.w3.org/2000/svg" width="299" height="306" viewBox="0 0 299 306" fill="none" className="absolute -top-3 -right-6">
-                  <path d="M202.091 0.708984C258.273 25.0848 297.57 81.0505 297.57 146.196C297.57 233.741 226.6 304.711 139.055 304.711C79.6318 304.711 27.8454 272.013 0.707031 223.629" stroke="#A7A9AC" stroke-width="1.4157" stroke-miterlimit="10" stroke-linecap="round" stroke-dasharray="12.19 12.19"/>
+                  <path d="M202.091 0.708984C258.273 25.0848 297.57 81.0505 297.57 146.196C297.57 233.741 226.6 304.711 139.055 304.711C79.6318 304.711 27.8454 272.013 0.707031 223.629" stroke="#A7A9AC" strokeWidth="1.4157" strokeMiterlimit="10" strokeLinecap="round" strokeDasharray="12.19 12.19"/>
                 </svg>
               ) : null}
               <h3 className="text-center mt-10 text-xl font-semibold">{pipeline.title}</h3>

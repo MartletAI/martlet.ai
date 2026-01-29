@@ -1,6 +1,6 @@
 import { Icon } from "../icon";
-import { Button } from "../button";
 import { cn } from "@/lib/utils";
+import { SmartLink } from "../cta/smart-link";
 
 interface HeroProps {
   badgeText: string;
@@ -28,10 +28,10 @@ export function Hero({ badgeText, headerText1, headerText2, description, buttonL
           <span className={cn("block", headerText2Class)}>{headerText2}</span>
         </h1>
         <p className="my-8 text-center text-[25.75px] italic font-medium leading-8 text-foreground mx-auto max-w-[1030px]">{description}</p>
-        <Button as="a" href={buttonHref} className="w-[182px] h-12! bg-footer-bg! text-lg! text-white mx-auto">
+        <SmartLink href={buttonHref} className="btn btn-primary w-[182px] h-12! bg-footer-bg! text-lg! text-white mx-auto flex items-center justify-center">
           {buttonLabel}
           <Icon name="play" className="ml-2 size-3 fill-[#CCE6FF]" />
-        </Button>
+        </SmartLink>
       </div>
       
     </section>

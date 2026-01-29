@@ -9,16 +9,18 @@ type FormState = {
 } | null;
 
 const PORTAL_ID = '244290520';
-const FORM_ID = 'c6caec2d-656a-40a4-a9ae-2f6a061487bc';
+const FORM_ID = 'b8431294-553a-4dc9-b0de-a9514c5d568c';
 const SUBMISSION_ENDPOINT = `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_ID}`;
 
 async function submitToHubSpot(_prevState: FormState, formData: FormData): Promise<FormState> {
+
   const fields = [
     { name: 'email', value: formData.get('email')?.toString() ?? '' },
     { name: 'firstname', value: formData.get('firstname')?.toString() ?? '' },
     { name: 'lastname', value: formData.get('lastname')?.toString() ?? '' },
-    { name: 'message', value: formData.get('message')?.toString() ?? '' },
+    { name: 'message', value: `${formData.get('message')?.toString() ?? ''}\n\nSubmission URL: ${window.location.search?.split('from=').pop()}` },
   ];
+
 
   try {
     const response = await fetch(SUBMISSION_ENDPOINT, {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FOOTER_LINKS } from "@/constants/footer-links";
 import { Icon } from "@/components/icon";
+import { SmartLink } from "@/components";
 
 export function FooterNav() {
   return (
@@ -29,9 +30,15 @@ export function FooterNav() {
         <ul className="flex flex-col gap-3">
           {FOOTER_LINKS.RESOURCES.links.map((resource) => (
             <li key={resource.label}>
-              <Link href={resource.href} className="leading-6 font-semibold text-base text-white hover:text-white/80 transition-colors">
-                {resource.label}
-              </Link>
+              {resource.href === '/contact' ? (
+                <SmartLink href={resource.href} className="leading-6 font-semibold text-base text-white hover:text-white/80 transition-colors">
+                  {resource.label}
+                </SmartLink>
+              ) : (
+                <Link href={resource.href} className="leading-6 font-semibold text-base text-white hover:text-white/80 transition-colors">
+                  {resource.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

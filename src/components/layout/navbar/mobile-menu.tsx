@@ -1,5 +1,5 @@
-import { Button } from "@/components/button";
 import { NavLinks } from "./nav-links";
+import { SmartLink } from "@/components";
 
 interface MobileMenuProps {
   id: string;
@@ -25,9 +25,9 @@ export function MobileMenu({ id, isOpen }: MobileMenuProps) {
         inactiveLinkClassName="text-foreground hover:text-primary"
       />
       <div className="mt-md">
-        <Button as="a" href="/contact" variant="primary" className="w-full justify-center">
+        <SmartLink href="/contact" className="btn btn-primary w-full justify-center">
           Contact us
-        </Button>
+        </SmartLink>
       </div>
     </nav>
   );

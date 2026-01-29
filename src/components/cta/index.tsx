@@ -45,7 +45,6 @@ export function CTA({ title, subtitle, description, ctaText, ctaLink, background
           </p>
 
           {/* Buttons */}
-          {/* Buttons */}
           <SmartLink
             href={ctaLink}
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-border-light bg-white px-6 py-3 text-base font-semibold text-footer-bg shadow-sm transition-all hover:bg-blue-50"

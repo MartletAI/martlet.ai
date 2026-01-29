@@ -20,8 +20,10 @@ export function SmartLink({ href, children, ...props }: SmartLinkProps) {
     }
   };
 
+  const hrefWithSource =  pathname === href ? href : `${href}?from=${encodeURI(pathname)}`;
+
   return (
-    <Link href={href} onClick={handleClick} {...props}>
+    <Link href={hrefWithSource} onClick={handleClick} {...props}>
       {children}
     </Link>
   );

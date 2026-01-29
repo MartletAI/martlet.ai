@@ -21,7 +21,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
   return (
     <article className="pb-10 pt-[146px]">
-       <div className="container-main mx-auto  prose prose-lg dark:prose-invert max-w-none">
+       <div className="container-main mx-auto prose prose-lg max-w-none">
           <ReactMarkdown>{post.content}</ReactMarkdown>
        </div>
     </article>

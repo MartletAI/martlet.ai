@@ -11,7 +11,7 @@ export async function Contents() {
   return(
     <section className="pb-10 pt-[156px]">
       <div className="container-main">
-        <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-h1:text-4xl prose-h2:text-2xl prose-h2:mt-10">
+        <div className="prose prose-lg max-w-none prose-headings:font-bold prose-h1:text-4xl prose-h2:text-2xl prose-h2:mt-10">
           <Markdown components={{
             a: ({node, ...props}) => {
               const isMailto = props.href?.startsWith('mailto:')

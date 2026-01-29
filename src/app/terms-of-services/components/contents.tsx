@@ -5,7 +5,7 @@ import Markdown from 'react-markdown'
 import { SmartLink } from '@/components/cta/smart-link'
 
 export async function Contents() {
-  const filePath = path.join(process.cwd(), 'src/app/privacy-policy/components/privacy-policy.md')
+  const filePath = path.join(process.cwd(), 'src/app/terms-of-services/components/terms-of-service.md')
   const content = await fs.promises.readFile(filePath, 'utf8')
 
   return(

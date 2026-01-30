@@ -13,7 +13,7 @@ export function MobileMenuToggle({ isOpen, onToggle, menuId }: MobileMenuToggleP
   return (
     <button
       type="button"
-      className="md:hidden p-2 cursor-pointer"
+      className="lg:hidden p-2 cursor-pointer"
       onClick={onToggle}
       aria-expanded={isOpen}
       aria-controls={menuId}

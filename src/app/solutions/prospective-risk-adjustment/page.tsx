@@ -7,6 +7,13 @@ import { WhatTeamsCare } from "./components/what-teams-care";
 import { DesignedForTrust } from "./components/designed-for-trust";
 import { CTA } from "./components/cta";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Prospective Risk Adjustment Solution | Martlet AI",
+  description: "Optimize healthcare outcomes with Martlet AI's prospective risk adjustment solutions, improving accuracy in patient risk assessments.",
+};
+
 export default function Page() {
 	return (
 		<main>

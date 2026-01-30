@@ -2,7 +2,25 @@ import { getBlogPostBySlug, getBlogPosts } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 
+import { Metadata } from "next";
+
 type Params = Promise<{ slug: string }>;
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Blog Post Not Found | Martlet AI",
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.description || post.excerpt,
+  };
+}
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();

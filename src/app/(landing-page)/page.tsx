@@ -10,6 +10,13 @@ import { CTA } from "./components/cta";
  * Home - Landing page for Martlet AI
  * Displays the hero section with decorative background and products overview
  */
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Martlet AI | Smarter Risk Adjustment",
+  description: "On-premise, Secure, Real-time HCC Coding & Risk Profiling. Streamline prospective, retrospective, and RADV workflows with AI-powered precision.",
+};
+
 export default function Home() {
   return (
     <main>

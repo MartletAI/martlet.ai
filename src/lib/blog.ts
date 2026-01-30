@@ -9,6 +9,7 @@ interface BlogPost {
   tag: string;
   thumbnail?: string;
   excerpt?: string;
+  description?: string;
   content: string;
 }
 
@@ -59,6 +60,7 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
     let thumbnail = '';
     let authors: string[] = [];
     let tag = '';
+    let description = '';
 
     // First pass: Extract metadata
     for (let i = 0; i < lines.length; i++) {
@@ -70,6 +72,8 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
           date = line.replace('**Date:**', '').trim();
         } else if (line.startsWith('**Thumbnail:**')) {
           thumbnail = line.replace('**Thumbnail:**', '').trim();
+        } else if (line.startsWith('**Description:**')) {
+          description = line.replace('**Description:**', '').trim();
         } else if (line.startsWith('**Tag:**')) {
           tag = line.replace('**Tag:**', '').trim();
         } else if (line.startsWith('**Authors:**')) {
@@ -94,7 +98,7 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
         if (inMetadata) {
-             if (line.startsWith('# ') || line.startsWith('**Date:**') || line.startsWith('**Thumbnail:**') || line.startsWith('**Tag:**') || line.startsWith('**Authors:**') || (line.startsWith('*') && (lines[i-1]?.trim().startsWith('**Authors:**') || lines[i-1]?.trim().startsWith('*')))) {
+             if (line.startsWith('# ') || line.startsWith('**Date:**') || line.startsWith('**Thumbnail:**') || line.startsWith('**Description:**') || line.startsWith('**Tag:**') || line.startsWith('**Authors:**') || (line.startsWith('*') && (lines[i-1]?.trim().startsWith('**Authors:**') || lines[i-1]?.trim().startsWith('*')))) {
                  // Still in metadata
                  continue;
              }
@@ -121,6 +125,7 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
       authors,
       tag,
       thumbnail: thumbnail || undefined,
+      description: description || undefined,
       excerpt: excerpt || undefined,
       content: bodyText,
     };

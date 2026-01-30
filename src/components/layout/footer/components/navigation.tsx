@@ -5,7 +5,7 @@ import { SmartLink } from "@/components";
 
 export function FooterNav() {
   return (
-    <>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full">
       {/* Products */}
       <nav aria-labelledby="footer-products">
         <h2 id="footer-products" className="text-[14px] font-semibold text-white/80 leading-6 pb-4">
@@ -81,6 +81,6 @@ export function FooterNav() {
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   );
 }

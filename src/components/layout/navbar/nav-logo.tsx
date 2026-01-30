@@ -21,7 +21,7 @@ export function NavLogo({
 }: NavLogoProps) {
   return (
     <Link href={href} aria-label="Martlet AI Home">
-      <Image src={src} alt={alt} width={width} height={height} />
+      <Image src={src} alt={alt} width={width} height={height} className="w-[120px] md:w-[163px] h-auto" />
     </Link>
   );
 }

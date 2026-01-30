@@ -7,9 +7,9 @@ export function FooterBottom() {
 
   return (
     <section className="py-12 border-t border-indicator-prospective">
-      <div className="max-w-container mx-auto flex justify-between items-center sm:flex-row flex-col gap-6 sm:gap-0">
+      <div className="container-main mx-auto flex justify-between items-center lg:flex-row flex-col-reverse gap-6 lg:gap-0 px-4 md:px-0 lg:px-0">
         {/* Copyright */}
-        <p className="text-white text-base leading-6 font-normal max-w-[426px] w-full text-center sm:text-left">
+        <p className="text-white text-base leading-6 font-normal max-w-fit w-full text-center">
             {FOOTER_LINKS.COPY_RIGHT}
         </p>
         
@@ -17,7 +17,7 @@ export function FooterBottom() {
             {/* Legal */}
             <nav aria-labelledby="footer-legal">
               <h2 id="footer-legal" className="sr-only">Legal Links</h2>
-              <ul className="flex gap-5">
+              <ul className="flex flex-col sm:flex-row gap-5 items-center">
                   {FOOTER_LINKS.LEGAL.map((legal) => (
                   <li key={legal.label}>
                       <Link href={legal.href} className="text-white text-base leading-6 font-normal hover:text-white/80 transition-colors">

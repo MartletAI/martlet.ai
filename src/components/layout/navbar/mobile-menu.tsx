@@ -15,7 +15,7 @@ export function MobileMenu({ id, isOpen }: MobileMenuProps) {
   return (
     <nav
       id={id}
-      className="md:hidden absolute top-full left-0 right-0 mt-sm bg-navbar rounded-xl p-lg border-t border-border"
+      className="lg:hidden absolute top-full left-0 right-0 mt-2 bg-navbar rounded-xl p-lg border-t border-border shadow-lg"
       aria-label="Mobile navigation"
     >
       <NavLinks

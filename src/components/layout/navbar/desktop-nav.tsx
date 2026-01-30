@@ -8,7 +8,7 @@ import { SmartLink } from "@/components";
 export function DesktopNav() {
   return (
     <>
-      <nav className="hidden md:flex items-center" aria-label="Main navigation">
+      <nav className="hidden lg:flex items-center" aria-label="Main navigation">
         <NavLinks
           className="flex items-center gap-6.5"
         />

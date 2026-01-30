@@ -77,4 +77,4 @@ The following categories of AI applications are classified as unacceptable and a
 
 ### 4. Enforcement and Review
 Any AI system identified as violating this Acceptable Use Policy will be immediately subject to a mandatory stop. The system must undergo a risk reassessment by the AI Governance Office. If the use is determined to fall under an unacceptable category, it must be terminated, and any deployment reversed.
-Please submit any questions, feedback, or concerns to our team at [legal@martlet.ai](mailto:legal@martlet.ai).
+Please submit any questions, feedback, or concerns to our team at [privacy@martlet.ai](mailto:privacy@martlet.ai).

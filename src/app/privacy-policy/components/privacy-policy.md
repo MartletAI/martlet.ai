@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Last updated: 3 March 2025
+Last updated: March 3, 2025
 
 Martlet AI, Inc. (“Martlet AI”) receives, collects, stores and manages user personal data according to the following Privacy Policy, with the goal of incorporating the “Privacy by Design” approach. This means that we think of privacy implications before building a new feature, we don’t ask for information we don’t need, and we protect the information we have. We take pride in treating our users’ privacy the way we would like to be treated ourselves. By using [https://martlet.ai](https://martlet.ai) (the “Website”), or any of Martlet AI products and services (the “Services”), you agree to the terms of this Privacy Policy.
 

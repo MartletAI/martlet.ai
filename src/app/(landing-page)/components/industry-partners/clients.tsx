@@ -10,21 +10,21 @@ import { SliderPagination } from "@/components/SliderPagination";
 
 const CLIENTS = {
   johnSnowLabs: {
-    logo: "/clients/john-snow-labs.svg",
+    logo: "/assets/industry-partners/john-snow-labs.svg",
     id: "johnSnowLabs",
     description:
       "John Snow Labs uses Martlet AI's engine to power it's own suite of medical coding solutions",
     component: JohnSnowLabs,
   },
   wvuMedicine: {
-    logo: "/clients/wvu-medicine.svg",
+    logo: "/assets/industry-partners/wvu-medicine.svg",
     id: "wvuMedicine",
     description:
       "WVU Medicine uses Martlet Al's prospective engine to run longitudinal (vertical) chart analysis and deliver point-of-care suggestions - strengthening documentation, improving care, and capturing appropriate value.",
     component: WVUMedicine,
   },
   arkosHealth: {
-    logo: "/clients/arkos-health.svg",
+    logo: "/assets/industry-partners/arkos-health.svg",
     id: "arkosHealth",
     description:
       "Arkos uses Martlet across the full risk cycle - Retrospective, Prospective, and RADV - to drive measurable financial and operational impact.",

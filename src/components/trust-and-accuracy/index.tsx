@@ -1,6 +1,6 @@
 import { Icon, IconProps } from "../icon";
 import { SectionLabel } from "../section-label";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 const DATA = [
   {
@@ -96,25 +96,20 @@ export function TrustAndAccuracy({ bottomCard, topCard = DATA }: TrustAndAccurac
 				{bottomCard.map((item, index) => (
           <div key={index} className="relative overflow-hidden rounded-xl bg-accent-purple px-9 py-5 text-white flex items-center min-h-[159px]">
             <Image 
-              src="/assets/trust-bg.png" 
+              src="/assets/section-background/trust-and-accuracy.png" 
               alt="" 
               fill 
               className="object-cover opacity-6 mix-blend-overlay pointer-events-none" 
               priority
             />
-            <div className="relative z-10 flex gap-6 items-center">
-              <div 
-                className="shrink-0 flex items-center justify-center"
-                style={{ width: item.width }}
-              >
-                <Image 
-                  src={item.image}
-                  width={item.width}
-                  height={item.height} 
-                  alt={item.alt} 
-                  className="object-contain" 
-                />
-              </div>
+            <div className="flex gap-6 items-center">
+              <img 
+                src={item.image}
+                alt={item.alt} 
+                height={item.height}
+                width={item.width}
+                className="object-contain" 
+              />
               <div>
                 <h3 className="text-[20px] font-bold leading-[28px]">
                   {item.title}

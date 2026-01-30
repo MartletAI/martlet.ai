@@ -78,7 +78,7 @@ export function DesignedForTrust() {
           {/* Illustration */}
           <figure className="flex-1">
             <Image
-              src="/assets/design-for-trust-illustrator.png"
+              src="/assets/illustrations/design-for-trust.jpg"
               alt=""
               width={603}
               height={472}

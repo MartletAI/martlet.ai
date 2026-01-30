@@ -1,5 +1,5 @@
 import Image from "next/image";
-import jslClient from "@/../public/assets/jsl-client.svg";
+import jslClient from "@/../public/assets/industry-partners/jsl-client.svg";
 
 export function JohnSnowLabs() {
   return (

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import ARKOS_1 from "@/../public/assets/arkos-1.png"
-import ARKOS_2 from "@/../public/assets/arkos-2.png"
-import ARKOS_3 from "@/../public/assets/arkos-3.jpg"
+import ARKOS_1 from "@/../public/assets/industry-partners/arkos-1.png"
+import ARKOS_2 from "@/../public/assets/industry-partners/arkos-2.png"
+import ARKOS_3 from "@/../public/assets/industry-partners/arkos-3.jpg"
 
 
 export function ArkosHealth() {

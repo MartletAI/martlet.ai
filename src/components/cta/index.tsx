@@ -19,7 +19,7 @@ export function CTA({ title, subtitle, description, ctaText, ctaLink, background
         {/* Background Container */}
         <div className="absolute bg-footer-bg z-0 rounded-[16px]">
           <Image
-            src="/assets/cta-bg.svg"
+            src="/assets/section-background/cta.svg"
             alt="CTA Background"
             width={1240}
             height={310}

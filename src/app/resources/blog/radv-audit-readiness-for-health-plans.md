@@ -1,7 +1,8 @@
-# RADV Audit Readiness for Health Plans: Reducing Clawback Risk and Strengthening Compliance with AI-Driven Workflows
+# RADV Audit Readiness for Health Plans | Martlet AI
 
 **Date:** 12.15.2025  
 **Thumbnail:** /assets/blog/radv-audit-readiness-for-health-plans.png  
+**Description:** Strengthen RADV audit readiness with Martlet AI's AI-driven workflows, reducing financial risks and improving documentation accuracy for health plans.  
 **Tag:** Product
 **Authors:**
 *   Ritwik Jain

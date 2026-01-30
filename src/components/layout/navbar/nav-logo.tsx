@@ -14,7 +14,7 @@ interface NavLogoProps {
  */
 export function NavLogo({
   href = "/",
-  src = "/logo.png",
+  src = "/assets/logo/martlet-ai.png",
   alt = "Martlet AI Logo",
   width = 163,
   height = 39.2,

@@ -5,7 +5,7 @@ const TRUST_AND_ACCURACY_CONTENT = {
   TITLE: "Built for Trust and Accuracy",
   SUBTITLE:
     "Martlet AI is designed for environments where compliance, precisions and transparency are non-negotiable",
-  IMAGE: "/assets/trust-and-accuracy.svg",
+  IMAGE: "/assets/illustrations/trust-and-accuracy.svg",
   TRUST_FACTORS: [
     {
       title: "Hippa-Compiance On-Premise Deployment",

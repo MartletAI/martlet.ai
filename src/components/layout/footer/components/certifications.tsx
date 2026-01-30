@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Icon } from "@/components/icon";
-import FOOTER_CERTIFICATIONS from "@/../public/assets/footer-certifications.svg";
+import FOOTER_CERTIFICATIONS from "@/../public/assets/logo/hipaa-compliant.svg";
 
 export function FooterCertifications() {
   return (

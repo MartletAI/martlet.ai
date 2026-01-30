@@ -5,7 +5,7 @@ export function TrustAndAccuracy() {
     <SharedTrustAndAccuracy bottomCard={
       [
         {
-          image: "/assets/scale.png",
+          image: "/assets/trust-and-accuracy/scale.png",
           width: 86,
           height: 81,
           alt: "",
@@ -13,7 +13,7 @@ export function TrustAndAccuracy() {
           description: "Designed for high-volume retrospective workloads, process millions of records with consistent output quality.",
         },
         {
-          image: "/assets/secure.png",
+          image: "/assets/trust-and-accuracy/secure.png",
           width: 92,
           height: 60,
           alt: "",

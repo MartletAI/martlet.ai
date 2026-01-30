@@ -30,7 +30,7 @@ export function WhatTeamsCare() {
       {/* Background Image */}
       <div className="max-w-[1440px] m-auto absolute inset-0 z-0">
         <Image
-          src="/assets/why-we-care-bg.png"
+          src="/assets/section-background/why-we-care.png"
           alt=""
           width={1440}
           height={800}

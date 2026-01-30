@@ -57,7 +57,7 @@ export function FooterNav() {
           </li>
           <li>
             <SmartLink href="/contact" className="leading-6 font-semibold text-base text-white hover:text-white/80 transition-colors">
-              info@martlet.ai
+              support@martlet.ai
             </SmartLink>
           </li>
           <li>

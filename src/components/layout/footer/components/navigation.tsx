@@ -56,9 +56,9 @@ export function FooterNav() {
             </Link>
           </li>
           <li>
-            <SmartLink href="/contact" className="leading-6 font-semibold text-base text-white hover:text-white/80 transition-colors">
+            <Link href="mailto:support@martlet.ai" className="leading-6 font-semibold text-base text-white hover:text-white/80 transition-colors">
               support@martlet.ai
-            </SmartLink>
+            </Link>
           </li>
           <li>
             <Link
@@ -76,7 +76,7 @@ export function FooterNav() {
                 className="text-white text-base leading-6 font-normal hover:text-white/80 transition-colors"
                 aria-label={`Visit our LinkedIn page`}
             >
-            <Icon name="linkedin" className="w-6 h-6" aria-hidden={true} />
+              <Icon name="linkedin" className="w-6 h-6" aria-hidden={true} />
             </Link>
           </li>
         </ul>

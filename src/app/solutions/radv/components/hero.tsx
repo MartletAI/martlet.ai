@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <SharedHero
       badgeText="RADV Engine"
-      headerTextClass="text-[64px]"
+      headerTextClass="text-4xl md:text-[64px]"
       headerText1="Run RADV at Scale"
       headerText1Class="gradient-radv-text-primary"
       headerText2="Ensure full Compliance"

@@ -1,6 +1,4 @@
 import { TrustAndAccuracy as SharedTrustAndAccuracy } from "@/components/trust-and-accuracy";
-import lightning from "@/../public/assets/lightning.png"
-import integration from "@/../public/assets/integration.png"
 
 export function TrustAndAccuracy() {
   return (

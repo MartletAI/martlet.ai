@@ -31,7 +31,6 @@ export function WhyMartletAI() {
   return (
     <WhyMartletAIBase
       features={WHY_MARTLET_AI_CONTENT.FEATURES}
-      sectionGAP={46}
       title={WHY_MARTLET_AI_CONTENT.TITLE}
       subtitle={WHY_MARTLET_AI_CONTENT.SUBTITLE}
     />

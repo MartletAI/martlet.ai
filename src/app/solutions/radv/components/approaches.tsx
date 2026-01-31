@@ -36,7 +36,7 @@ export function Approaches() {
 					<SectionLabel className="text-indicator-prospective mb-3">Approaches</SectionLabel>
 					<h2
 						id="designed-for-trust-heading"
-						className="font-semibold text-[36px] leading-[44px] tracking-[-0.72px] text-center text-foreground mb-5"
+						className="section-heading text-center mb-5"
 					>
 						Proactive & Reactive RADV
 					</h2>
@@ -49,27 +49,27 @@ export function Approaches() {
           {approaches.map((approach => (
             <article
               key={approach.title}
-              className="step-card w-full max-w-[604px] bg-white py-3 px-4 rounded-[44px] shadow-card border border-border-light flex"
+              className="step-card w-full max-w-[604px] bg-white py-3 px-4 rounded-[24px] md:rounded-[44px] shadow-card border border-border-light flex"
             >
-              <div className="flex bg-white flex-col items-center gap-[17px] px-6 py-6 rounded-[40px] border-10 border-border-light h-full">
-                <div className="bg-[#E9EFFF] w-full rounded-[1000px] py-1.5 px-4 h-[45px] flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-[#2563EB]"></div>
-                  <span className="text-black text-base font-semibold leading-normal">
+              <div className="flex bg-white flex-col items-center gap-[17px] p-4 md:p-6 rounded-[20px] md:rounded-[40px] border-[6px] md:border-10 border-border-light h-full w-full">
+                <div className="bg-[#E9EFFF] w-full rounded-[1000px] py-1.5 px-4 min-h-[45px] h-auto flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#2563EB] shrink-0"></div>
+                  <span className="text-black text-sm md:text-base font-semibold leading-normal">
                     {approach.title} <span className="text-[#818181]">{approach.grayTitle}</span>
                   </span>
                 </div>
 
-                <span className="font-normal text-base text-[#252B37] leading-6">
+                <span className="font-normal text-sm md:text-base text-[#252B37] leading-6">
                   {approach.description}
                 </span>
 
                 <div className="flex flex-col gap-6 mr-auto">
                   {approach.points.map((point) => (
                     <div className="flex gap-3" key={point}>
-                      <div className="w-6 h-6 bg-[#f48220] rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-[#f48220] rounded-full flex items-center justify-center shrink-0">
                         <Icon name="checked" className="text-white size-3" />
                       </div>
-                      <span className="font-normal text-base text-[#252b37]">
+                      <span className="font-normal text-sm md:text-base text-[#252b37]">
                         {point}
                       </span>
                     </div>

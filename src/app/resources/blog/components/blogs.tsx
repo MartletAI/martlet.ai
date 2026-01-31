@@ -6,8 +6,8 @@ import { Icon } from "@/components";
 export function Blogs() {
   const posts = getBlogPosts();
   return (
-    <section className="py-[46px] container mx-auto px-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section className="py-10 border-t border-border container-main mx-auto">
+      <div className="grid grid-cols-1 justify-self-center md:grid-cols-2 gap-8">
         {posts.map((post) => (
           <div key={post.slug} className="bg-white flex flex-col max-w-[590px]">
             {post.thumbnail && (

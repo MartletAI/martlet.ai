@@ -1,5 +1,6 @@
 import { Icon } from "@/components";
 import { SectionLabel } from "@/components/section-label";
+import { cn } from "@/lib/utils";
 
 const pipelines = [
   {
@@ -21,7 +22,7 @@ const pipelines = [
 
 function Svg2() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="821" height="337" viewBox="0 0 821 337" fill="none" className="absolute -top-10 left-34">
+    <svg xmlns="http://www.w3.org/2000/svg" width="821" height="337" viewBox="0 0 821 337" fill="none" className="absolute top-0 left-0">
       <path d="M479.634 336.924C391.652 336.924 319.335 266.052 317.22 178.408H317.03V174.462C317.03 89.2334 247.692 19.8932 162.462 19.8932C77.2318 19.8932 7.89287 89.2334 7.89287 174.462C7.89287 259.692 77.2318 329.031 162.462 329.031H165.093V336.924H162.462C72.8802 336.924 0 264.045 0 174.462C0 84.8805 72.8802 12.0003 162.462 12.0003C250.443 12.0003 322.761 82.8718 324.876 170.516H325.065V174.462C325.065 259.692 394.404 329.031 479.634 329.031C564.864 329.031 634.203 259.692 634.203 174.462V170.516H634.391C636.505 82.8718 708.823 12.0003 796.805 12.0003H799.436V19.8932H796.805C711.575 19.8932 642.237 89.2334 642.237 174.462V178.408H642.047C639.934 266.052 567.616 336.924 479.634 336.924Z" fill="url(#paint0_linear_1902_8684)"/>
       <path d="M799.436 32.069V0L820.629 16.094L799.436 32.069Z" fill="url(#paint1_linear_1902_8684)"/>
       <defs>
@@ -60,23 +61,23 @@ export function Pipeline() {
   return (
     <section
       aria-labelledby="approaches-heading-2"
-      className="gradient-approaches-2 pt-10 pb-30"
+      className="gradient-approaches-2 py-10"
     >
-      <div className="container-main flex flex-col gap-[46px]">
+      <div className="container-main flex flex-col">
         {/* Header Section */}
         <header className="flex flex-col items-center mb-11.5">
           <SectionLabel className="text-indicator-prospective mb-3">Approaches</SectionLabel>
           <h2
             id="designed-for-trust-heading"
-            className="font-semibold text-[36px] leading-[44px] tracking-[-0.72px] text-center text-foreground mb-5"
+            className="section-heading text-center mb-5"
           >
             A simple RADV pipeline
           </h2>
         </header>
-        <div className="relative flex items-center gap-[50px] justify-center">
+        <div className="relative flex items-center gap-[50px] w-full min-[1000px]:w-fit max-w-[1250px] mx-auto overflow-x-auto overflow-y-hidden pt-10 no-scrollbar">
           <Svg2 />
           {pipelines.map((pipeline, index) => (
-            <div key={index} className="relative w-[266px] h-[266px] mb-10">
+            <div key={index} className={cn("relative w-[266px] h-[266px] mb-10 shrink-0", index === 0 && "ml-8")}>
               <Svg />
               <Icon name={pipeline.icon} className="absolute size-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary" />
               {index === 1 ? (
@@ -92,7 +93,6 @@ export function Pipeline() {
               <p className="text-center text-base font-normal">{pipeline.description}</p>
             </div>
           ))}
-          
         </div>
 
       </div>

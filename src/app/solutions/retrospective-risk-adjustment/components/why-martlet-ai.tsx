@@ -24,6 +24,6 @@ export function WhyMartletAI() {
         },
         
       ]}
-    sectionGAP={64} />
+    />
 	)
 }

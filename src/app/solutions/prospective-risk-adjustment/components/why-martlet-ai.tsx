@@ -22,6 +22,6 @@ const features: FeatureCardProps[] = [
 
 export function WhyMartletAI() {
 	return (
-		<WhyMartletAIBase features={features} sectionGAP={64} />
+		<WhyMartletAIBase features={features} />
 	)
 }

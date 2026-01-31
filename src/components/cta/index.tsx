@@ -14,7 +14,7 @@ export interface CTAProps {
 
 export function CTA({ title, subtitle, description, ctaText, ctaLink, backgroundColor }: CTAProps) {
   return (
-    <section className={`py-6 md:py-10 ${backgroundColor} px-4 md:px-0`} aria-labelledby="cta-heading">
+    <section className={`py-10 ${backgroundColor} px-4 md:px-0`} aria-labelledby="cta-heading">
       <div className="relative py-8 md:py-13.5 flex flex-col items-center justify-center container-main mx-auto">
         {/* Background Container */}
         <div className="absolute inset-0 w-full h-full bg-footer-bg z-0 rounded-[16px] overflow-hidden">

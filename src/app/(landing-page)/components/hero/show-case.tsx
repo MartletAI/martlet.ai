@@ -14,13 +14,13 @@ const HERO_CONTENT = {
 export function ShowCase() {
   return (
     <section
-      className="pt-[156px] relative z-10 text-center"
+      className="pt-28 md:pt-[156px] relative z-10 text-center"
       aria-labelledby="hero-heading"
     >
       {/* Headline */}
       <h1
         id="hero-heading"
-        className="container-main gradient-landing-page-text-primary text-[56px] md:text-[64px] font-extrabold leading-tight animate-fade-in mb-lg -ml-4"
+        className="container-main gradient-landing-page-text-primary text-[36px] md:text-[64px] font-extrabold leading-tight animate-fade-in mb-lg -ml-4"
       >
         {HERO_CONTENT.TITLE}
         <br />

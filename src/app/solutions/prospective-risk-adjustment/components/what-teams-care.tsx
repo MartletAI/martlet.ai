@@ -42,11 +42,11 @@ export function WhatTeamsCare() {
 
       <div className="container-main flex flex-col gap-[46px] relative z-10">
         {/* Header Section */}
-        <header className="flex flex-col items-center gap-spacing-xl mb-11.5">
+        <header className="flex flex-col items-center gap-spacing-xl">
 					<SectionLabel className="text-outputs-accent mb-3">Outputs</SectionLabel>
 					<h2
 						id="outputs-heading"
-						className="font-semibold text-[36px] leading-[44px] tracking-[-0.72px] text-center text-foreground mb-[16px]"
+						className="section-heading text-center mb-4 px-8 md:px-0"
 					>
 						What care teams get in one view
 					</h2>
@@ -60,7 +60,7 @@ export function WhatTeamsCare() {
         {/* Cards Grid */}
         <ul
           role="list"
-          className="flex flex-col md:flex-row items-stretch justify-center gap-[22px]"
+          className="flex flex-col items-center md:flex-row justify-center gap-[22px]"
         >
           {CARDS.map((card) => (
             <li key={card.title} className="flex-1 max-w-[400px] h-[210px]">

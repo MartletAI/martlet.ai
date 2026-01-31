@@ -17,8 +17,8 @@ interface HeroProps {
 
 export function Hero({ badgeText, headerText1, headerText2, description, buttonLabel, className, headerText1Class, headerText2Class, headerTextClass, buttonHref = "/contact" }: HeroProps) {
   return (
-    <section className={cn("pt-28 pb-10 md:pt-[156px] md:pb-10 relative overflow-hidden", className)}>
-      <div className="container-main mx-auto flex flex-col justify-center relative z-10 px-4 md:px-0">
+    <section className={cn("pt-28 pb-10 md:pt-[156px] relative overflow-hidden", className)}>
+      <div className="container-main mx-auto flex flex-col justify-center relative z-10">
         <div className="mx-auto flex w-fit h-auto py-1 md:py-1.5 md:h-[37px] px-3 md:px-4 justify-center items-center gap-1.5 rounded-full bg-white shadow-[0_2px_4px_0_rgba(0,0,0,0.10)] mb-6 md:mb-11.5">
           <Icon name="ellipse" className="fill-[#33C020] size-1.5 md:size-2" />
           <p className="text-black font-medium text-xs md:text-[14px]">{badgeText}</p>

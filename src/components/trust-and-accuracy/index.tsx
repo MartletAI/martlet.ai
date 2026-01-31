@@ -62,18 +62,18 @@ export function TrustAndAccuracy({ bottomCard, topCard = DATA }: TrustAndAccurac
       id="trust-and-accuracy"
       className="bg-white py-10"
     >
-      <div className="flex flex-col items-center mb-11.5">
-      <SectionLabel className="text-indicator-prospective mb-3">Outcomes</SectionLabel>
-      <h2 className="section-heading pb-5">
-        Built for Trust and Accuracy
-      </h2>
-      <p className="font-normal text-xl leading-normal text-center text-text-tertiary-600">
-        Martlet AI is designed for environments where compliance, precision
-        and transparency are non-negotiable.
-      </p>
+      <div className="flex flex-col items-center mb-11.5 container-main">
+        <SectionLabel className="text-indicator-prospective mb-3">Outcomes</SectionLabel>
+        <h2 className="section-heading pb-5 text-center">
+          Built for Trust and Accuracy
+        </h2>
+        <p className="font-normal text-xl leading-normal text-center text-text-tertiary-600">
+          Martlet AI is designed for environments where compliance, precision
+          and transparency are non-negotiable.
+        </p>
       </div>
 
-      <div className="mb-11.5 flex flex-col justify-center items-center gap-16 self-stretch max-w-container mx-auto bg-white rounded-xl border border-black/8 shadow-[0_6px_20.6px_0_rgba(0,0,0,0.04)] p-8">
+      <div className="mb-11.5 flex flex-col justify-center items-center gap-16 self-stretch container-main mx-auto bg-white rounded-xl border border-black/8 shadow-[0_6px_20.6px_0_rgba(0,0,0,0.04)] p-4 md:p-8">
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 self-stretch w-full">
           {topCard.map((item, index) => (
             <li
@@ -92,9 +92,9 @@ export function TrustAndAccuracy({ bottomCard, topCard = DATA }: TrustAndAccurac
         </ul>
       </div>
 
-      <div className="max-w-container mx-auto grid grid-cols-1 md:grid-cols-2 gap-[26px] mb-11.5 px-4 lg:px-0">
+      <div className="container-main mx-auto grid grid-cols-1 md:grid-cols-2 gap-[26px]">
 				{bottomCard.map((item, index) => (
-          <div key={index} className="relative overflow-hidden rounded-xl bg-accent-purple px-9 py-5 text-white flex items-center min-h-[159px]">
+          <div key={index} className="relative overflow-hidden rounded-xl bg-accent-purple p-4 md:px-9 md:py-5 text-white flex items-center min-h-[159px]">
             <Image 
               src="/assets/section-background/trust-and-accuracy.png" 
               alt="" 
@@ -102,14 +102,16 @@ export function TrustAndAccuracy({ bottomCard, topCard = DATA }: TrustAndAccurac
               className="object-cover opacity-6 mix-blend-overlay pointer-events-none" 
               priority
             />
-            <div className="flex gap-6 items-center">
-              <img 
-                src={item.image}
-                alt={item.alt} 
-                height={item.height}
-                width={item.width}
-                className="object-contain" 
-              />
+            <div className="flex flex-col min-[550px]:flex-row md:flex-col lg:flex-row gap-4 lg:gap-6 items-center">
+              <div className={"w-[88px]"}>
+                <img 
+                  src={item.image}
+                  alt={item.alt} 
+                  height={item.height}
+                  width={item.width}
+                  className="object-contain" 
+                />
+              </div>
               <div>
                 <h3 className="text-[20px] font-bold leading-[28px]">
                   {item.title}

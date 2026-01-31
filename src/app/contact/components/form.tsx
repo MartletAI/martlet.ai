@@ -57,7 +57,7 @@ export function Form() {
   const [state, formAction] = useActionState(submitToHubSpot, null);
 
   return (
-    <form action={formAction} className="w-full max-w-[614px] mx-auto bg-white rounded-[12px] shadow-[0px_6px_20.6px_0px_rgba(0,0,0,0.05)] border border-[#E4E7EC] p-8 flex flex-col gap-[17px]">
+    <form action={formAction} className="w-full max-w-[614px] mx-auto bg-white rounded-[12px] shadow-[0px_6px_20.6px_0px_rgba(0,0,0,0.05)] border border-[#E4E7EC] p-4 md:p-8 flex flex-col gap-[17px]">
       <div className="flex flex-col sm:flex-row gap-[17px] w-full">
         <div className="flex flex-col gap-1.5 flex-1">
           <label htmlFor="first-name" className="text-sm font-medium  cursor-pointer">

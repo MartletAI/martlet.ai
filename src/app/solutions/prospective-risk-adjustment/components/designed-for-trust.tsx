@@ -42,11 +42,11 @@ export function DesignedForTrust() {
     >
       <div className="container-main flex flex-col gap-[46px]">
         {/* Header Section */}
-        <header className="flex flex-col items-center mb-11.5">
+        <header className="flex flex-col items-center">
 					<SectionLabel className="text-indicator-prospective mb-3">Designed for trust</SectionLabel>
 					<h2
 						id="designed-for-trust-heading"
-						className="font-semibold text-[36px] leading-[44px] tracking-[-0.72px] text-center text-foreground mb-5"
+						className="section-heading text-center mb-5"
 					>
 						High signal, low noise, so clinicians don&apos;t tune it out
 					</h2>
@@ -57,7 +57,7 @@ export function DesignedForTrust() {
         </header>
 
         {/* Content Section - Two Column Layout */}
-        <div className="flex flex-col lg:flex-row items-start gap-[109px]">
+        <div className="flex flex-col-reverse gap-[16px] md:gap-[32px] lg:flex-row items-start lg:gap-[109px]">
           {/* Features List */}
           <dl className="flex flex-col max-w-[526px]" role="list">
             {TRUST_FEATURES.map((feature) => (

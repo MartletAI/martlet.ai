@@ -54,7 +54,7 @@ export function Products() {
 
       {/* Cards Grid */}
       <ul
-        className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-3 list-none p-0 m-0 animate-stagger"
+        className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 list-none p-0 m-0 animate-stagger"
         role="list"
       >
         {WORKFLOW_CONTENT.ITEMS.map((workflow) => (

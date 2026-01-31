@@ -26,9 +26,9 @@ export function HowItWorks({
 }: HowItWorksProps) {
   return (
     <section id="how-it-works" className="gradient-why-martlet py-10">
-      <div className="flex flex-col items-center pb-12">
+      <div className="container-main flex flex-col items-center pb-12">
         <SectionLabel className="text-indicator-prospective mb-3">{label}</SectionLabel>
-        <h2 className="section-heading pb-5">{heading}</h2>
+        <h2 className="section-heading pb-5 text-center">{heading}</h2>
         <p className="font-normal text-xl text-center text-text-tertiary-600 max-w-content">
           {subheading}
         </p>

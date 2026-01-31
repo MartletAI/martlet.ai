@@ -3,18 +3,17 @@ import { FeatureCardProps } from "./types";
 
 interface WhyMartletAIProps {
   features: FeatureCardProps[];
-  sectionGAP: number;
   title?: string;
   subtitle?: string;
 }
 
-export function WhyMartletAI({ features, sectionGAP, title, subtitle }: WhyMartletAIProps) {
+export function WhyMartletAI({ features, title, subtitle }: WhyMartletAIProps) {
   return (
     <section 
       aria-labelledby="why-martlet-heading"
       className="gradient-why-martlet py-10 flex flex-col items-center justify-center w-full mx-auto"
     >
-      <header className="text-center max-w-[768px] container-main" style={{ paddingBottom: sectionGAP }}>
+      <header className="text-center max-w-[768px] container-main mb-11.5">
         <h2 id="why-martlet-heading" className="section-heading">
           {title || "Why Martlet AI?"}
         </h2>

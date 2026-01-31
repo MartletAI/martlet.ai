@@ -31,21 +31,21 @@ export function Outputs() {
           <SectionLabel className="text-indicator-prospective mb-3">Outputs</SectionLabel>
           <h2
             id="designed-for-trust-heading"
-            className="font-semibold text-[36px] leading-[44px] tracking-[-0.72px] text-center text-foreground"
+            className="section-heading text-center"
           >
             Built for auditors and operations
           </h2>
         </header>
         <div className="flex flex-col gap-5 xl:flex-row justify-between items-center">
           {features.map((feature, index) => (
-            <div key={index} className="flex flex-col items-start gap-[17px] w-[399.333px] h-[211px] min-w-[280px] p-[32px] rounded-[12px] bg-white border border-[rgba(0,0,0,0.08)] shadow-[0_6px_20.6px_0_rgba(0,0,0,0.08)]">
+            <div key={index} className="flex flex-col items-start gap-[17px] w-fit xl:w-[399px] min-h-[211px] h-auto p-6 md:p-[32px] rounded-[12px] bg-white border border-[rgba(0,0,0,0.08)] shadow-[0_6px_20.6px_0_rgba(0,0,0,0.08)]">
               <div className="w-12 h-12 flex justify-center items-center gap-2.5 bg-[#F3EEFF] p-3 rounded-[10px]">
                 <Icon name={feature.icon} className="text-[#682FE9] size-5" />
               </div>
               <div className="flex flex-col justify-center gap-[54px] self-stretch">
                 <div className="flex flex-col justify-center gap-1 self-stretch">
                   <span className="font-semibold text-[16px] leading-[28px] text-[#181d27]">{feature.title}</span>
-                  <span className="font-normal text-base text-[#252b37]">{feature.description}</span>
+                  <span className="font-normal text-base text-[#252b37] w-full max-w-[333px]">{feature.description}</span>
                 </div>
               </div>
             </div>

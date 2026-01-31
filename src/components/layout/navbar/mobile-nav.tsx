@@ -7,7 +7,7 @@ import { useMobileMenu } from "./use-mobile-menu";
 const MOBILE_MENU_ID = "mobile-menu";
 
 export function MobileNav() {
-  const { isOpen, toggle } = useMobileMenu();
+  const { isOpen, toggle, close } = useMobileMenu();
 
   return (
     <>
@@ -19,6 +19,7 @@ export function MobileNav() {
       <MobileMenu
         id={MOBILE_MENU_ID}
         isOpen={isOpen}
+        onClose={close}
       />
     </>
   );

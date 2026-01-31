@@ -27,11 +27,11 @@ export function ArkosHealth() {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-[18px]">
+    <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-[18px]">
       {METRICS.map((metric, index) => (
         <div 
           key={index}
-          className="flex flex-col items-center justify-between bg-white w-[390px] h-[373px] pt-[48px] pb-[71px] px-[12px] rounded-[30px] shadow-[0_6px_20px_0_rgba(0,0,0,0.08)]"
+          className="flex flex-col items-center justify-between bg-white w-full max-w-[390px] min-h-[373px] h-auto pt-[48px] pb-[71px] px-[12px] rounded-[30px] shadow-[0_6px_20px_0_rgba(0,0,0,0.08)] mx-auto"
         >
           <div className="w-full h-[180px] relative flex items-center justify-center">
             <Image

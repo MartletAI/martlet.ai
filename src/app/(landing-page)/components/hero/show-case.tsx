@@ -20,7 +20,7 @@ export function ShowCase() {
       {/* Headline */}
       <h1
         id="hero-heading"
-        className="gradient-landing-page-text-primary text-[64px] font-extrabold leading-tight animate-fade-in mb-lg -ml-4"
+        className="container-main gradient-landing-page-text-primary text-[56px] md:text-[64px] font-extrabold leading-tight animate-fade-in mb-lg -ml-4"
       >
         {HERO_CONTENT.TITLE}
         <br />

@@ -586,7 +586,7 @@ background: linear-gradient(90deg, #004E98 0%, #00CFF4 100%);
 
 
 .container-main {
-  width: calc(100% - 20px);
+  width: calc(100% - 40px);
   max-width: var(--spacing-container);
   margin-inline: auto;
 }

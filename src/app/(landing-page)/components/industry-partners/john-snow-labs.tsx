@@ -6,7 +6,7 @@ export function JohnSnowLabs() {
     <Image 
       src={jslClient} 
       alt="John Snow Labs workflow diagram" 
-      className="object-contain" 
+      className="object-contain w-full h-auto" 
     />
   );
 }

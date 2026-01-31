@@ -4,7 +4,7 @@ import { FeatureCardProps } from "./types";
 
 export function FeatureCard({ title, description, icon }: FeatureCardProps) {
   return (
-    <div className="flex flex-col items-center justify-center gap-[17px] p-8 bg-white border border-border-light w-full max-w-[410px] h-[210px] rounded-2xl shadow-sm text-center transition-shadow hover:shadow-md">
+    <div className="flex flex-col items-center justify-center gap-[17px] p-8 bg-white border border-border-light w-full max-w-[410px] min-h-[210px] h-auto rounded-2xl shadow-sm text-center transition-shadow hover:shadow-md">
       <div className="rounded-lg border-2 border-white/12 bg-indicator-prospective h-12 w-12 flex justify-center items-center">
         <Icon name={icon} className="text-white size-6" />
       </div>

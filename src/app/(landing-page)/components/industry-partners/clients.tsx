@@ -78,7 +78,7 @@ export function Clients() {
 
   return (
     <section
-      className="flex flex-col items-center justify-center gap-section"
+      className="flex flex-col items-center justify-center gap-section container-main"
       aria-labelledby="clients-heading"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -94,7 +94,7 @@ export function Clients() {
       <div
         role="tablist"
         aria-label="Select an industry partner"
-        className="flex items-center justify-center gap-md"
+        className="flex flex-wrap items-center justify-center gap-md w-full"
       >
         {clientIds.map((key) => {
           const client = CLIENTS[key];
@@ -137,7 +137,7 @@ export function Clients() {
         role="tabpanel"
         aria-labelledby={`tab-${currentClient.id}`}
         aria-live="polite"
-        className="flex flex-col items-center gap-[46px] h-[520px] w-full"
+        className="flex flex-col items-center gap-[46px] min-h-[520px] h-auto w-full"
       >
         {/* Client description */}
         <p className="text-center text-muted-foreground text-lg font-medium max-w-container w-full">

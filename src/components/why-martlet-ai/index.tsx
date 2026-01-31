@@ -14,7 +14,7 @@ export function WhyMartletAI({ features, sectionGAP, title, subtitle }: WhyMartl
       aria-labelledby="why-martlet-heading"
       className="gradient-why-martlet py-10 flex flex-col items-center justify-center w-full mx-auto"
     >
-      <header className="text-center max-w-[768px]" style={{ paddingBottom: sectionGAP }}>
+      <header className="text-center max-w-[768px] container-main" style={{ paddingBottom: sectionGAP }}>
         <h2 id="why-martlet-heading" className="section-heading">
           {title || "Why Martlet AI?"}
         </h2>
@@ -23,7 +23,7 @@ export function WhyMartletAI({ features, sectionGAP, title, subtitle }: WhyMartl
         </p>
       </header>
 
-			<div className="flex items-center justify-between mx-auto gap-3">
+			<div className="container-main grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-items-center mx-auto gap-3 w-full">
 				{features.map((feature, index) => (
 					<FeatureCard 
 						key={index}

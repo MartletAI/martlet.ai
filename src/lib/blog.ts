@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-interface BlogPost {
+export interface BlogPost {
   slug: string;
   title: string;
   date: string;
@@ -13,7 +13,7 @@ interface BlogPost {
   content: string;
 }
 
-const BLOG_DIR = path.join(process.cwd(), 'src/app/resources/blog');
+const BLOG_DIR = path.join(process.cwd(), 'src/app/resources/blog/posts');
 
 export function getBlogPosts(): BlogPost[] {
   // Ensure directory exists
@@ -76,20 +76,13 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
           description = line.replace('**Description:**', '').trim();
         } else if (line.startsWith('**Tag:**')) {
           tag = line.replace('**Tag:**', '').trim();
-        } else if (line.startsWith('**Authors:**')) {
-          // Next lines are authors until we hit an empty line or something else
-          let j = i + 1;
-          while (j < lines.length) {
-            const authorLine = lines[j].trim();
-            if (authorLine.startsWith('*')) {
-              authors.push(authorLine.substring(1).trim());
-              j++;
-            } else {
-              break;
-            }
-          }
+        } else if (line.startsWith('**Tag:**')) {
+          tag = line.replace('**Tag:**', '').trim();
         }
     }
+
+    // Static authors for all posts
+    authors = ['Ritwik Jain', 'Hasham Ul Haq'];
       
     // Second pass: Extract content body for excerpt
     const contentLines: string[] = [];

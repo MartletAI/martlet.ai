@@ -18,6 +18,7 @@ interface IconConfig {
  */
 export interface IconProps {
   name:
+    | "arrow-left"
     | "arrow-right"
     | "arrow-up-right"
     | "atom"
@@ -68,6 +69,16 @@ export interface IconProps {
  */
 const icons: Record<IconProps["name"], IconConfig> = {
   // A
+  "arrow-left": {
+    path: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19 12H5M5 12L12 19M5 12L12 5"
+      />
+    ),
+    strokeWidth: 2,
+  },
   "arrow-right": {
     path: (
       <path

@@ -17,7 +17,7 @@ export function Blogs() {
                   alt={post.title}
                   width={590}
                   height={300}
-                  className="object-cover mx-auto"
+                  className="object-cover mx-auto h-[300px] w-full"
                 />
                 <div className="absolute left-0 bottom-0 flex items-start justify-between p-5 border-t border-white/30 bg-[rgba(227,227,227,0.30)] backdrop-blur-md w-full">
                   <div className="flex flex-col items-start">

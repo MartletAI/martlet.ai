@@ -4,9 +4,8 @@
 **Thumbnail:** /assets/blog/radv-audit-readiness-for-health-plans.png  
 **Description:** Strengthen RADV audit readiness with Martlet AI's AI-driven workflows, reducing financial risks and improving documentation accuracy for health plans.  
 **Tag:** Product
-**Authors:**
-*   Ritwik Jain
-*   Hasham Ul Haq
+
+# RADV Audit Readiness for Health Plans: Reducing Clawback Risk and Strengthening Compliance with AI-Driven Workflows
 
 **How confident are you that a RADV sample would not pick up a few missing documents and then use those errors to estimate losses across your entire contract?**
 
@@ -22,20 +21,21 @@ Health plan leaders can manage coding and operations, but RADV exposure is harde
 
 ### Extrapolation Raises the Financial Stakes
 
-The core risk in today’s RADV audits is that a single documentation miss in the sample can shape CMS’s view of the entire contract. In its July 2025 guidance for payment year 2018 RADV audits, CMS states that extrapolation is expected to be standard practice for Medicare Advantage contract reviews. As a result, a limited number of unsupported diagnoses identified in the sample can drive a much larger contract-level overpayment estimate.
+The core risk in today’s RADV audits is that a single documentation miss in the sample can shape CMS’s view of the entire contract. In its [July 2025 guidance for payment year 2018 RADV audits](https://www.cms.gov/files/document/payment-year-2018-ma-radv-audit-methods-instructions.pdf), CMS states that extrapolation is expected to be standard practice for Medicare Advantage contract reviews. As a result, a limited number of unsupported diagnoses identified in the sample can drive a much larger contract-level overpayment estimate
 
 ### Audit Expansion Increases Operational Pressure
 
-CMS is also broadening its audit reach. It plans to review every eligible Medicare Advantage contract and is working with the Department of Health and Human Services Office of Inspector General to recover past overpayments. This raises the bar for documentation, which must be:
-*   Complete when the chart is pulled
-*   Consistent across systems
-*   Clear enough for auditors to verify quickly
+CMS is also broadening its audit reach. It plans to [review every eligible Medicare Advantage contract](https://www.cms.gov/newsroom/press-releases/cms-rolls-out-aggressive-strategy-enhance-and-accelerate-medicare-advantage-audits) and is working with the Department of Health and Human Services Office of Inspector General to recover past overpayments. This raises the bar for documentation, which must be:
+
+*   complete when the chart is pulled
+*   consistent across systems
+*   clear enough for auditors to verify quickly
 
 The faster audit cadence leaves plans with less time to gather charts, fix small documentation issues, or clarify the clinical story before those records are pulled into the RADV sample.
 
 ### Unsupported Diagnoses Heighten Sample Risk
 
-Recent findings from the Office of Inspector General highlight that many diagnoses appear only on health risk assessments or on chart reviews tied to those assessments. However, there is no sign of these conditions in the service records that auditors rely on.
+[Recent findings from the Office of Inspector General](https://oig.hhs.gov/reports/all/2024/medicare-advantage-questionable-use-of-health-risk-assessments-continues-to-drive-up-payments-to-plans-by-billions/) highlight that many diagnoses appear only on health risk assessments or on chart reviews tied to those assessments. However, there is no sign of these conditions in the service records that auditors rely on.
 
 The review found that unsupported diagnoses resulted in $7.5 billion in Medicare Advantage payments in 2023. Therefore, if a diagnosis does not appear in any follow-up visit, test, or treatment record, it raises questions about its accuracy. Moreover, it becomes harder for a plan to defend that condition if it appears in the RADV sample.
 
@@ -45,19 +45,17 @@ Organizations are exposed to clawback risks when everyday workflows make it hard
 
 ### Fragmented Records Make Evidence Hard to Locate
 
-A member’s history may sit across several EHR systems, scanned documents, and unstructured notes, much of it not searchable. Research shows that navigating multi-source records slows review and increases the chances that key information is missed. When evidence exists but cannot be surfaced quickly, a diagnosis that should be defensible can appear unsupported in the RADV sample.
+A member’s history may [sit across several EHR systems](https://pmc.ncbi.nlm.nih.gov/articles/PMC7731898/), scanned documents, and unstructured notes, much of it not searchable. [Research shows](https://pubmed.ncbi.nlm.nih.gov/39932774/) that navigating multi-source records slows review and increases the chances that key information is missed. When evidence exists but cannot be surfaced quickly, a diagnosis that should be defensible can appear unsupported in the RADV sample.
 
 ### Thin Documentation and Coding Drift Leave Evidence Incomplete
 
-OIG reviews continue to find diagnoses without full clinical support in the medical record, which has increased auditor attention to how clearly each condition is documented.
+OIG reviews [continue to find diagnoses without full clinical support](https://oig.hhs.gov/reports/all/2023/high-rates-of-prior-authorization-denials-by-some-plans-and-limited-state-oversight-raise-concerns-about-access-to-care-in-medicaid-managed-care/) in the medical record, which has increased auditor attention to how clearly each condition is documented.
 
 Diagnoses that lack clear assessment, monitoring or treatment often appear incomplete to reviewers and are more likely to be removed in RADV. These issues surface as HCCs that lack enough documentation to back the code, making them more likely to be removed during RADV.
 
 ### Intake Failures and Manual Bottlenecks Jeopardize Submission Validity
 
-CMS reviewer guidance allows records to be excluded when dates, signatures or credentials are missing or unclear. These intake issues can remove legitimate diagnoses before auditors consider the clinical context.
-
-Research shows that reviewing unstructured EHR data can take up to 30 minutes per case, and information overload limits what reviewers can reliably catch.
+CMS reviewer guidance allows records to be excluded when dates, signatures or credentials are missing or unclear. These intake issues can remove legitimate diagnoses before auditors consider the clinical context. [Research shows](https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2024.1475092/full) that reviewing unstructured EHR data can take up to 30 minutes per case, and information overload limits what reviewers can reliably catch.
 
 Experts who spend more time on manual steps have less time to assemble packets carefully, which increases the risk that required documents are missing. These risks put defensible diagnoses at risk during RADV review.
 
@@ -73,17 +71,15 @@ Martlet AI enables plans to pull structured EHR data, claims, PDFs and scanned c
 
 ### Validate HCCs Before They Reach CMS
 
-Within Martlet AI, each diagnosis is reviewed against configurable validation rules so teams can see early which conditions are well supported and which may fall short.
+Within Martlet AI, each diagnosis is reviewed against configurable validation rules so teams can see early which conditions are well supported and which may fall short. The system checks for MEAT-style documentation, coding accuracy, date alignment and provider details, then labels each HCC with a clear validation status and the specific reasons it may be weak. This gives leaders a scalable view of documentation strength before any record is sent to CMS.
 
-The system checks for MEAT-style documentation, coding accuracy, date alignment and provider details, then labels each HCC with a clear validation status and the specific reasons it may be weak. This gives leaders a scalable view of documentation strength before any record is sent to CMS.
-
-### Understand Potential RADV Error Patterns
+## Understand Potential RADV Error Patterns
 
 RADV-style sampling logic is applied to the plan’s member population and the associated validation results, so leaders can see how current documentation would behave under CMS sampling.
 
 The platform can generate projected error rates by HCC, contract or provider group and save those scenarios for comparison over time. Leaders can see how their documentation holds up under CMS sampling logic, especially as the V28 HCC model changes condition groupings and documentation expectations.
 
-### Generate CMS-Ready Audit Packet
+### Generate CMS-Ready Audit Packets
 
 Martlet AI assembles audit packets for selected members by pulling in the relevant clinical pages and attaching required intake elements such as dates of service, provider identifiers, credential details and coversheets.
 
@@ -110,7 +106,7 @@ A clear view of defensibility starts with knowing whether each submitted conditi
 
 RADV-style sampling reveals how documentation patterns behave under audit pressure and highlights where risk is gathering.
 
-*   **Change in modelled error rate:** Difference between baseline and current projected error rates by HCC, contract or provider group, based on Martlet’s sampling runs and validation flags. A downward trend suggests that remediation work is reducing the proportion of diagnoses that would be vulnerable in a RADV-style sample.
+**Change in modelled error rate:** Difference between baseline and current projected error rates by HCC, contract or provider group, based on Martlet’s sampling runs and validation flags. A downward trend suggests that remediation work is reducing the proportion of diagnoses that would be vulnerable in a RADV-style sample.
 
 ### Packet Quality and Intake Readiness
 
@@ -157,4 +153,4 @@ With Martlet in place, teams gain the ability to:
 
 The result is steadier control over exposure, more traceable evidence, and a workflow that supports more predictable revenue and a clearer compliance posture.
 
-If you want to explore how this works on your own contracts and data, you can book a demo with the Martlet AI team and walk through the evidence views, sampling outputs, and packet generation in detail.
+If you want to explore how this works on your own contracts and data, you can [book a demo](https://meetings.hubspot.com/ritwik-jain?uuid=0616cd42-5ffd-4a4f-8c09-a3ccfee6dab1) with the Martlet AI team and walk through the evidence views, sampling outputs, and packet generation in detail.

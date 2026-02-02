@@ -3,7 +3,7 @@
 import { JohnSnowLabs } from "./john-snow-labs";
 import { WVUMedicine } from "./wvu-medicine";
 import { ArkosHealth } from "./arkos-health";
-import { useCallback, useId, useState, useEffect } from "react";
+import { useCallback, useId, useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { SliderPagination } from "@/components/SliderPagination";
@@ -43,6 +43,7 @@ const clientIds = Object.keys(CLIENTS) as ClientId[];
 export function Clients() {
   const [selectedClient, setSelectedClient] = useState<ClientId>("johnSnowLabs");
   const [isPaused, setIsPaused] = useState(false);
+  const containerRef = useRef<HTMLElement>(null);
   const tabPanelId = useId();
   const currentIndex = clientIds.indexOf(selectedClient);
   const currentClient = CLIENTS[selectedClient];
@@ -55,17 +56,30 @@ export function Clients() {
   const handlePrev = useCallback(() => {
     const prevIndex = currentIndex === 0 ? clientIds.length - 1 : currentIndex - 1;
     setSelectedClient(clientIds[prevIndex]);
-  }, [currentIndex, clientIds]);
+  }, [currentIndex]);
 
   const handleNext = useCallback(() => {
     const nextIndex = currentIndex === clientIds.length - 1 ? 0 : currentIndex + 1;
     setSelectedClient(clientIds[nextIndex]);
-  }, [currentIndex, clientIds]);
+  }, [currentIndex]);
 
   const handleDotClick = useCallback((index: number) => {
     setSelectedClient(clientIds[index]);
-  }, [clientIds]);
+  }, []);
 
+  // Handle focus within the container
+  const handleFocusIn = useCallback(() => {
+    setIsPaused(true);
+  }, []);
+
+  const handleFocusOut = useCallback((e: React.FocusEvent) => {
+    // Only unpause if focus moves outside the container
+    if (containerRef.current && !containerRef.current.contains(e.relatedTarget as Node)) {
+      setIsPaused(false);
+    }
+  }, []);
+
+  // Auto-rotate effect
   useEffect(() => {
     if (isPaused) return;
 
@@ -78,12 +92,13 @@ export function Clients() {
 
   return (
     <section
+      ref={containerRef}
       className="flex flex-col items-center justify-center gap-section container-main"
       aria-labelledby="clients-heading"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      onFocus={() => setIsPaused(true)}
-      onBlur={() => setIsPaused(false)}
+      onFocusCapture={handleFocusIn}
+      onBlurCapture={handleFocusOut}
     >
       {/* Visually hidden heading for screen readers and SEO */}
       <h3 id="clients-heading" className="sr-only">
@@ -160,4 +175,5 @@ export function Clients() {
     </section>
   );
 }
+
  

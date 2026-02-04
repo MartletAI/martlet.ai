@@ -36,6 +36,17 @@ type ClientId = keyof typeof CLIENTS;
 
 const clientIds = Object.keys(CLIENTS) as ClientId[];
 
+const NON_CLICKABLE_CLIENTS = [
+  {
+    id: "lunarAnalytics",
+    logo: "/assets/industry-partners/lunar-analytics.png",
+  },
+  {
+    id: "pacificAi",
+    logo: "/assets/industry-partners/pacific-ai.svg",
+  },
+] as const;
+
 /**
  * Client selector component with accessible tab pattern.
  * Displays industry partner logos as selectable tabs with associated content panels.
@@ -144,6 +155,24 @@ export function Clients() {
             </button>
           );
         })}
+
+        {NON_CLICKABLE_CLIENTS.map((client) => (
+          <div
+            key={client.id}
+            className={cn(
+              "h-16 bg-white px-lg flex justify-center items-center gap-md",
+              "border border-border rounded-lg shadow-xs cursor-default"
+            )}
+          >
+            <Image
+              src={client.logo}
+              alt={`${client.id} logo`}
+              width={100}
+              height={60}
+              className="w-auto h-10 object-contain"
+            />
+          </div>
+        ))}
       </div>
 
       {/* Tab panel with dynamic content */}
@@ -175,5 +204,3 @@ export function Clients() {
     </section>
   );
 }
-
- 

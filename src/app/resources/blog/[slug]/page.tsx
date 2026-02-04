@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   }
 
   return {
-    title: post.title,
+    title: post.metaTitle || post.title,
     description: post.description || post.excerpt,
   };
 }

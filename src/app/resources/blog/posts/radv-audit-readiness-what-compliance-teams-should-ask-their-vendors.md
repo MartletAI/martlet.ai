@@ -3,6 +3,7 @@
 **Date:** 12.15.2025  
 **Thumbnail:** /assets/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors.png 
 **Description:** Ensure your HCC coding platform is audit-ready with Martlet AI's guide to RADV audit readiness. Learn key questions to ask vendors and improve compliance. 
+**MetaTitle:** Key Questions Compliance Teams Should Ask Their Vendors | Martlet AI
 **Tag:** Product
 
 # RADV Audit Readiness: What Compliance Teams Should Ask Their Vendors

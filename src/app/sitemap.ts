@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getBlogPosts } from '@/lib/blog'
+import { getAllAuthors } from '@/lib/authors'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://martlet.ai'
@@ -8,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts = posts.map((post) => ({
     url: `${baseUrl}/resources/blog/${post.slug}`,
     lastModified: new Date(post.date),
+  }))
+
+  const authors = getAllAuthors()
+  const authorPages = authors.map((author) => ({
+    url: `${baseUrl}/author/${author.slug}`,
+    lastModified: new Date(),
   }))
 
   const routes = [
@@ -25,5 +32,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }))
 
-  return [...routes, ...blogPosts]
+  return [...routes, ...blogPosts, ...authorPages]
 }

@@ -1,9 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 
 interface NavLogoProps {
   href?: string;
-  src?: string;
   alt?: string;
   width?: number;
   height?: number;
@@ -11,17 +9,28 @@ interface NavLogoProps {
 
 /**
  * NavLogo - Logo link for the navigation header.
+ * Uses <picture> for WebP with PNG fallback.
  */
 export function NavLogo({
   href = "/",
-  src = "/assets/logo/martlet-ai.png",
   alt = "Martlet AI Logo",
   width = 163,
-  height = 39.2,
+  height = 39,
 }: NavLogoProps) {
   return (
     <Link href={href} aria-label="Martlet AI Home">
-      <Image src={src} alt={alt} width={width} height={height} className="w-[120px] md:w-[163px] h-auto" />
+      <picture>
+        <source srcSet="/assets/logo/martlet-ai.webp" type="image/webp" />
+        <img
+          src="/assets/logo/martlet-ai.png"
+          alt={alt}
+          width={width}
+          height={height}
+          fetchPriority="high"
+          decoding="async"
+          className="w-[120px] md:w-[163px] h-auto"
+        />
+      </picture>
     </Link>
   );
 }

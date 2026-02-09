@@ -1,10 +1,10 @@
 
+import { preload } from "react-dom";
 import { Hero } from "./components/hero";
 import { IndustryPartners } from "./components/industry-partners";
 import { TrustAndAccuracy } from "./components/trust-and-accuracy";
 import { WhyMartletAI } from "./components/why-martlet-ai";
 import { CTA } from "./components/cta";
-
 
 /**
  * Home - Landing page for Martlet AI
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  // Preload hero background image for LCP — must be called during render to be hoisted into <head>
+  preload("/assets/hero/landing.png", { as: "image", fetchPriority: "high" });
+
   return (
     <main>
       {/* Hero Section */}

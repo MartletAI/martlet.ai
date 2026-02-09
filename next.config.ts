@@ -32,6 +32,11 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
+
+  // Inline CSS into the HTML to eliminate render-blocking stylesheet requests
+  experimental: {
+    inlineCss: true,
+  },
   
   // Add security headers to all routes
   async headers() {

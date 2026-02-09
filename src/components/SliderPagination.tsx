@@ -32,19 +32,24 @@ export function SliderPagination({
         />
       </button>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center">
         {Array.from({ length: totalItems }, (_, index) => (
           <button
             key={index}
             type="button"
             onClick={() => onDotClick(index)}
-            className={cn(
-              "size-2.5 rounded-full transition-colors cursor-pointer border-0",
-              index === currentIndex ? "bg-primary" : "bg-primary/34"
-            )}
+            className="size-6 flex items-center justify-center cursor-pointer border-0 bg-transparent"
             aria-label={getAriaLabel ? getAriaLabel(index) : `Go to slide ${index + 1}`}
             aria-current={index === currentIndex ? "true" : undefined}
-          />
+          >
+            <span
+              className={cn(
+                "size-2.5 rounded-full transition-colors",
+                index === currentIndex ? "bg-primary" : "bg-primary/34"
+              )}
+              aria-hidden="true"
+            />
+          </button>
         ))}
       </div>
 

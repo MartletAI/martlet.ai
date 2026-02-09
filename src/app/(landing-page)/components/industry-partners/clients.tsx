@@ -104,7 +104,7 @@ export function Clients() {
   return (
     <section
       ref={containerRef}
-      className="flex flex-col items-center justify-center gap-section container-main"
+      className="flex flex-col items-center justify-center gap-[46px] container-main"
       aria-labelledby="clients-heading"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -116,46 +116,50 @@ export function Clients() {
         Our Industry Partners
       </h3>
 
-      {/* Client selector tabs */}
-      <div
-        role="tablist"
-        aria-label="Select an industry partner"
-        className="flex flex-wrap items-center justify-center gap-md w-full"
-      >
-        {clientIds.map((key) => {
-          const client = CLIENTS[key];
-          const isSelected = selectedClient === key;
+      {/* Client selector tabs and partner logos */}
+      <div className="flex flex-wrap items-center justify-center gap-md w-full">
+        {/* Interactive tabs for selectable clients */}
+        <div
+          role="tablist"
+          aria-label="Select an industry partner"
+          className="contents"
+        >
+          {clientIds.map((key) => {
+            const client = CLIENTS[key];
+            const isSelected = selectedClient === key;
 
-          return (
-            <button
-              key={client.id}
-              type="button"
-              role="tab"
-              id={`tab-${client.id}`}
-              aria-selected={isSelected}
-              aria-controls={tabPanelId}
-              onClick={() => handleClientSelect(key)}
-              className={cn(
-                "h-16 bg-white px-lg flex justify-center items-center gap-md",
-                "border rounded-lg shadow-xs cursor-pointer",
-                "transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
-                isSelected
-                  ? "border-[3px] border-primary"
-                  : "border border-border hover:border-primary/50"
-              )}
-            >
-              <Image
-                src={client.logo}
-                alt={`${client.id} logo`}
-                width={100}
-                height={60}
-                className="w-auto h-10 object-contain"
-              />
-              <span className="sr-only">{client.id}</span>
-            </button>
-          );
-        })}
+            return (
+              <button
+                key={client.id}
+                type="button"
+                role="tab"
+                id={`tab-${client.id}`}
+                aria-selected={isSelected}
+                aria-controls={tabPanelId}
+                onClick={() => handleClientSelect(key)}
+                className={cn(
+                  "h-16 bg-white px-lg flex justify-center items-center gap-md",
+                  "border rounded-lg shadow-xs cursor-pointer",
+                  "transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
+                  isSelected
+                    ? "border-[3px] border-primary"
+                    : "border border-border hover:border-primary/50"
+                )}
+              >
+                <Image
+                  src={client.logo}
+                  alt={`${client.id} logo`}
+                  width={100}
+                  height={60}
+                  className="w-auto h-10 object-contain"
+                />
+                <span className="sr-only">{client.id}</span>
+              </button>
+            );
+          })}
+        </div>
 
+        {/* Non-interactive partner logos (outside tablist) */}
         {NON_CLICKABLE_CLIENTS.map((client) => (
           <div
             key={client.id}
@@ -166,7 +170,7 @@ export function Clients() {
           >
             <Image
               src={client.logo}
-              alt={`${client.id} logo`}
+              alt={`${client.id} partner logo`}
               width={100}
               height={60}
               className="w-auto h-10 object-contain"

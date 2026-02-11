@@ -50,7 +50,7 @@ export function HowItWorks() {
     <HowItWorksComponent
       steps={steps}
       heading="One Simple Flow for Prospective Coding"
-      subheading="Plan the visit → document with confidence → close gaps before they hit retrospective"
+      subheading="Plan the visit → document with confidence → close prospective risk adjustment gaps before they hit retrospective"
     />
   );
 }

@@ -29,7 +29,7 @@ export function HowItWorks({
       <div className="container-main flex flex-col items-center pb-12">
         <SectionLabel className="text-indicator-prospective mb-3">{label}</SectionLabel>
         <h2 className="section-heading pb-5 text-center">{heading}</h2>
-        <p className="font-normal text-xl text-center text-text-tertiary-600 max-w-content">
+        <p className="font-normal text-xl text-center text-text-tertiary-600">
           {subheading}
         </p>
       </div>

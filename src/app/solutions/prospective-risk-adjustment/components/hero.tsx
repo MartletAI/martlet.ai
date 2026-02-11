@@ -5,11 +5,11 @@ export function Hero () {
     <SharedHero
       className="gradient-prospective-hero"
       badgeText="Prospective Engine"
-      headerText1="Capture HCCs at Point of Care"
+      headerText1="Prospective Risk Adjustment"
       headerText1Class="gradient-prospective-text-primary"
       headerText2="without Slowing Clinicians"
       headerText2Class="gradient-prospective-text-secondary"
-      description="Pre-visit and in-visit recommendations that are evidence linked and MEAT-aware, so providers can act quickly, coding stays defensible, and plans improve accuracy."
+      description="Our prospective risk adjustment solution provides pre-visit and in-visit recommendations that are evidence linked and MEAT-aware, so providers can act quickly, coding stays defensible, and plans improve accuracy."
       buttonLabel="Book a Demo"
     />
   )

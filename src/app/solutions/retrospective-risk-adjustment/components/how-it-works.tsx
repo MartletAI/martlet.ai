@@ -103,7 +103,7 @@ export function HowItWorks() {
     <HowItWorksComponent
       steps={steps}
       heading="Retrospective Coding Workflow"
-      subheading="Ingest charts → validate MEAT-backed diagnoses with evidence → recapture missed HCCs and resolve issues"
+      subheading="Ingest charts → validate MEAT-backed diagnoses with evidence → optimize retrospective risk adjustment workflows → recapture missed HCCs and resolve issues"
     />
   );
 }

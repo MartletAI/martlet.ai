@@ -4,11 +4,11 @@ export function Hero() {
 	return (
 		<SharedHero 
 			badgeText="Retrospective Engine"
-			headerText1="Find Missed HCCs with Audit grade"
+			headerText1="Retrospective Risk Adjustment"
 			headerText1Class="gradient-retrospective-text-primary"
-			headerText2="Evidence at Scale"
+			headerText2="with Audit-Grade Evidence at Scale"
 			headerText2Class="gradient-retrospective-text-secondary"
-			description="Find undercoded HCCs while validating existing ones to maximize revenue and minimize audit risk."
+			description="Our retrospective risk adjustment engine finds undercoded HCCs while validating existing ones to maximize revenue and minimize audit risk."
 			buttonLabel="Book a Demo"
 			className="gradient-retrospective-hero"
 		/>

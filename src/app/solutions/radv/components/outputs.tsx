@@ -35,6 +35,9 @@ export function Outputs() {
           >
             Built for auditors and operations
           </h2>
+          <p className="text-xl leading-[30px] text-center text-text-tertiary-600 font-normal mt-3">
+            Streamline your RADV audits and daily operations with audit-grade evidence packets and reports.
+          </p>
         </header>
         <div className="flex flex-col gap-5 xl:flex-row justify-between items-center">
           {features.map((feature, index) => (

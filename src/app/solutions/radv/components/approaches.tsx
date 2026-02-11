@@ -38,10 +38,10 @@ export function Approaches() {
 						id="designed-for-trust-heading"
 						className="section-heading text-center mb-5"
 					>
-						Proactive & Reactive RADV
+						Proactive & Reactive RADV Audit
 					</h2>
           <p className="text-xl leading-[30px] text-center text-text-tertiary-600 font-normal">
-            Same tooling. Different posture.
+            Same tooling. Different RADV audit posture.
           </p>
         </header>
 

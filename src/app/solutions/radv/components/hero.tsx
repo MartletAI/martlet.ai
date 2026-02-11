@@ -5,11 +5,11 @@ export function Hero() {
     <SharedHero
       badgeText="RADV Engine"
       headerTextClass="text-4xl md:text-[64px]"
-      headerText1="Run RADV at Scale"
+      headerText1="Run RADV Audits at Scale"
       headerText1Class="gradient-radv-text-primary"
       headerText2="Ensure full Compliance"
       headerText2Class="gradient-radv-text-secondary"
-      description="Automate mock audits, find documentation gaps, and package audit-grade submissions with evidence and provenance. Built for high-volume operations and tight timelines."
+      description="Automate risk adjustment data validation, mock audits, find documentation gaps, and package audit-grade submissions with evidence and provenance. Built for high-volume operations and tight timelines."
       buttonLabel="Book a Demo"
       className="gradient-radv-hero"
     />

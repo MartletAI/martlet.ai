@@ -15,7 +15,7 @@ export function DesktopNav() {
       </nav>
 
       <div className="hidden lg:block">
-        <SmartLink href="/contact" className="btn btn-outline w-[165px] h-11 text-base! font-semibold! flex items-center justify-center p-0! -mt-0.25">
+        <SmartLink href="/contact" className="btn btn-outline w-[165px] h-11 text-base! font-semibold! flex items-center justify-center p-0! -mt-0.25 bg-[#1A41B5]! text-white!">
           Contact us
         </SmartLink>
       </div>

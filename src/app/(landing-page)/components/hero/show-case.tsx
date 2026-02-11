@@ -1,9 +1,10 @@
 import { SmartLink, Icon } from "@/components";
 
 const HERO_CONTENT = {
-  TITLE: "Smarter Risk Adjustment with",
+  TITLE: "Smarter Risk Adjustment",
+  TITLE_2: "Software with",
   TITLE_HIGHLIGHT: "Martlet AI",
-  TAGLINE: "On-premise, Secure, Real-time HCC Coding & Risk Profiling",
+  TAGLINE: "Secure, On-Premise Risk Adjustment Software for Real-Time HCC Risk Adjustment and HCC Coding",
   CTA: "Book a Demo",
 } as const;
 
@@ -24,8 +25,11 @@ export function ShowCase() {
       >
         {HERO_CONTENT.TITLE}
         <br />
-        <span className="gradient-landing-page-text-secondary ml-4">
-          {HERO_CONTENT.TITLE_HIGHLIGHT}
+        <span>
+          {HERO_CONTENT.TITLE_2}
+          <span className="gradient-landing-page-text-secondary ml-4">
+            {HERO_CONTENT.TITLE_HIGHLIGHT}
+          </span>
         </span>
       </h1>
 

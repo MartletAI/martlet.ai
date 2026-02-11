@@ -23,7 +23,7 @@ const features: FeatureCardProps[] = [
 const WHY_MARTLET_AI_CONTENT = {
   TITLE: "Why Martlet AI ?",
   SUBTITLE:
-    "Proven technology that delivers measurable results at enterprise scale",
+    "Proven risk adjustment software technology that delivers measurable results at enterprise scale",
   FEATURES: features,
 } as const;
 

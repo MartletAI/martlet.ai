@@ -4,7 +4,7 @@ import { Icon } from "@/components";
 const TRUST_AND_ACCURACY_CONTENT = {
   TITLE: "Built for Trust and Accuracy",
   SUBTITLE:
-    "Martlet AI is designed for environments where compliance, precisions and transparency are non-negotiable",
+    "Martlet AI is an advanced risk adjustment software platform providing secure HCC risk adjustment software for healthcare environments where precision and compliance are critical.",
   IMAGE: "/assets/illustrations/trust-and-accuracy.svg",
   TRUST_FACTORS: [
     {
@@ -56,7 +56,7 @@ export function TrustAndAccuracy() {
         <h2 id="trust-and-accuracy-heading" className="section-heading">
           {TRUST_AND_ACCURACY_CONTENT.TITLE}
         </h2>
-        <p className="text-lg text-muted m-0 pt-5 pb-11.5">
+        <p className="text-lg text-muted m-0 pt-5 pb-11.5 max-w-full xl:max-w-[800px] mx-auto">
           {TRUST_AND_ACCURACY_CONTENT.SUBTITLE}
         </p>
       </header>

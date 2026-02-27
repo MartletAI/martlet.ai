@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar, Footer } from "@/components";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,9 +18,6 @@ export const metadata: Metadata = {
   description:
     "On-premise, Secure, Real-time HCC Coding & Risk Profiling. Streamline prospective, retrospective, and RADV workflows with AI-powered precision.",
   metadataBase: new URL("https://martlet.ai"),
-  verification: {
-    google: "n8WcHtnC6lR88RHPjVxT05uRzJyB4PXPxTdmO5PxCu0",
-  },
   openGraph: {
     title: "Martlet AI | Smarter Risk Adjustment",
     description:
@@ -60,6 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-KX6DGR85" />
       <head>
         {/* Organization structured data for SEO */}
         <script
@@ -82,6 +82,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
       </body>
+      <GoogleAnalytics gaId="G-N2V2SB576N" />
     </html>
   );
 }

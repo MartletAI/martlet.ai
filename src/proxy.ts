@@ -6,9 +6,8 @@ import type { NextRequest } from 'next/server';
  * Redirects all www.martlet.ai requests to martlet.ai with a 301 permanent redirect.
  */
 export function proxy(request: NextRequest) {
-  // const hostname = request.headers.get('host') || '';
+  const hostname = request.headers.get('host') || '';
 
-  /* 
   // 301 redirect from www to non-www
   if (hostname.startsWith('www.')) {
     const nonWwwHost = hostname.replace(/^www\./, '');
@@ -16,7 +15,6 @@ export function proxy(request: NextRequest) {
     url.host = nonWwwHost;
     return NextResponse.redirect(url, 301);
   }
-  */
 
   return NextResponse.next();
 }

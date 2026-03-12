@@ -15,6 +15,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Risk Adjustment AI Software | Martlet AI",
   description: "Risk adjustment software and HCC risk adjustment solutions. On-premise, Secure, Real-time HCC Coding & Risk Profiling. Streamline prospective, retrospective, and RADV workflows with AI-powered precision.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function Home() {

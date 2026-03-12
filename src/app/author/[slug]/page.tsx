@@ -20,6 +20,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return {
     title: `${author.name} | Martlet AI`,
     description: author.bio.substring(0, 160),
+    alternates: {
+      canonical: `/author/${slug}`,
+    },
     openGraph: {
       title: `${author.name} - ${author.role}`,
       description: author.bio,

@@ -12,6 +12,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Prospective Risk Adjustment Solution | Martlet AI",
   description: "Optimize healthcare outcomes with Martlet AI's prospective risk adjustment and prospective coding solutions, improving accuracy in patient risk assessments.",
+  alternates: {
+    canonical: "/solutions/prospective-risk-adjustment",
+  },
 };
 
 export default function Page() {

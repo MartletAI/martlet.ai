@@ -9,6 +9,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "RADV Audits Solution for Compliance | Martlet AI",
   description: "Ensure precise risk score validation and compliance with Martlet AI's RADV audits solutions, enhancing audit accuracy and efficiency.",
+  alternates: {
+    canonical: "/solutions/radv",
+  },
 };
 
 export default function Page() {

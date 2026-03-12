@@ -19,6 +19,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return {
     title: post.metaTitle || post.title,
     description: post.description || post.excerpt,
+    alternates: {
+      canonical: `/resources/blog/${slug}`,
+    },
   };
 }
 

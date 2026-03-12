@@ -2,7 +2,7 @@ import { SmartLink, Icon } from "@/components";
 
 const HERO_CONTENT = {
   TITLE: "AI-Powered Risk Adjustment",
-  TITLE_2: "Software with",
+  TITLE_2: "with",
   TITLE_HIGHLIGHT: "Martlet AI",
   TAGLINE: "State-of-the-art Risk Adjustment Solution for Prospective, Retrospective, and RADV",
   CTA: "Book a Demo",

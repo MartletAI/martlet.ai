@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   description:
     "On-premise, Secure, Real-time HCC Coding & Risk Profiling. Streamline prospective, retrospective, and RADV workflows with AI-powered precision.",
   metadataBase: new URL("https://martlet.ai"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Martlet AI | Smarter Risk Adjustment",
     description:

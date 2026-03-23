@@ -1,6 +1,6 @@
 import { Icon, IconProps } from "../icon";
 import { SectionLabel } from "../section-label";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 const DATA = [
   {

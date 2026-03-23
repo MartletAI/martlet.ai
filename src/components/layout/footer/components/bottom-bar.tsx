@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Icon } from "@/components/icon";
 import { FOOTER_LINKS } from "@/constants/footer-links";
 
 export function FooterBottom() {

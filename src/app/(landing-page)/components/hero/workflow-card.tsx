@@ -1,6 +1,6 @@
 import { Icon } from "@/components";
 
-export type WorkflowType = "prospective" | "retrospective" | "radv";
+type WorkflowType = "prospective" | "retrospective" | "radv";
 
 interface WorkflowCardProps {
   type: WorkflowType;

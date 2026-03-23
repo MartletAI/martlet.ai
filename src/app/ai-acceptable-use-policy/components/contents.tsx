@@ -13,16 +13,18 @@ export async function Contents() {
       <div className="container-main">
         <div className="prose prose-lg max-w-none prose-headings:font-bold prose-h1:text-4xl prose-h2:text-2xl prose-h2:mt-10">
           <Markdown components={{
-            a: ({node, ...props}) => {
-              const isMailto = props.href?.startsWith('mailto:')
+            a: (props) => {
+              const { node, ...rest } = props;
+              void node;
+              const isMailto = rest.href?.startsWith('mailto:')
               if (isMailto) {
                 return (
                   <SmartLink href="/contact" className="text-primary hover:text-primary-hover font-medium underline transition-colors">
-                    {props.children}
+                    {rest.children}
                   </SmartLink>
                 )
               }
-              return <a {...props} className="text-primary hover:text-primary-hover font-medium underline transition-colors" />
+              return <a {...rest} className="text-primary hover:text-primary-hover font-medium underline transition-colors" />
             }
           }}>{content}</Markdown>
         </div>

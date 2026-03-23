@@ -4,11 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "@/constants/nav-links";
 
-export interface NavLink {
-  label: string;
-  href: string;
-}
-
 interface NavLinksProps {
   className?: string;
   linkClassName?: string;

@@ -1,7 +1,7 @@
 import { Icon } from "@/components/icon";
 import { cn } from "@/lib/utils";
 
-export interface SliderPaginationProps {
+interface SliderPaginationProps {
   totalItems: number;
   currentIndex: number;
   onPrev: () => void;
@@ -85,27 +85,6 @@ export function SliderDots({
           />
         </button>
       ))}
-    </div>
-  );
-}
-
-export function SliderPagination({
-  totalItems,
-  currentIndex,
-  onPrev,
-  onNext,
-  onDotClick,
-  getAriaLabel,
-}: SliderPaginationProps) {
-  return (
-    <div className="flex items-center justify-center gap-4">
-      <SliderArrows onPrev={onPrev} onNext={onNext} />
-      <SliderDots
-        totalItems={totalItems}
-        currentIndex={currentIndex}
-        onDotClick={onDotClick}
-        getAriaLabel={getAriaLabel}
-      />
     </div>
   );
 }

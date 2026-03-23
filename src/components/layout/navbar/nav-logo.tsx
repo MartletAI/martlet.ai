@@ -1,36 +1,41 @@
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
+
+const LOGO_SRC = "/assets/logo/martlet-ai.svg";
+/** SVG viewBox 254×220; lock height to match navbar */
+const LOGO_HEIGHT_PX = 27;
+const LOGO_WIDTH_PX = Math.round((254 / 220) * LOGO_HEIGHT_PX);
 
 interface NavLogoProps {
   href?: string;
-  alt?: string;
-  width?: number;
-  height?: number;
+  /** Merged onto the root link (e.g. for layout tweaks in the navbar). */
+  className?: string;
 }
 
 /**
- * NavLogo - Logo link for the navigation header.
- * Uses <picture> for WebP with PNG fallback.
+ * Navbar brand: home link with mark + wordmark.
+ * The graphic is decorative (visible “Martlet AI” text follows); `alt=""` avoids duplicate announcements with `aria-label`.
  */
-export function NavLogo({
-  href = "/",
-  alt = "Martlet AI Logo",
-  width = 163,
-  height = 39,
-}: NavLogoProps) {
+export function NavLogo({ href = "/", className }: NavLogoProps) {
   return (
-    <Link href={href} aria-label="Martlet AI Home">
-      <picture>
-        <source srcSet="/assets/logo/martlet-ai.webp" type="image/webp" />
-        <img
-          src="/assets/logo/martlet-ai.png"
-          alt={alt}
-          width={width}
-          height={height}
-          fetchPriority="high"
-          decoding="async"
-          className="w-[120px] md:w-[163px] h-auto"
-        />
-      </picture>
+    <Link
+      href={href}
+      aria-label="Martlet AI Home"
+      className={cn("flex shrink-0 items-center gap-2.5", className)}
+    >
+      <Image
+        src={LOGO_SRC}
+        alt=""
+        width={LOGO_WIDTH_PX}
+        height={LOGO_HEIGHT_PX}
+        priority
+        className="h-[27px] w-auto"
+      />
+      <span className="text-2xl font-normal text-[#0F317D]">
+        Martlet&nbsp;
+        <span className="text-[#2563EB]">AI</span>
+      </span>
     </Link>
   );
 }

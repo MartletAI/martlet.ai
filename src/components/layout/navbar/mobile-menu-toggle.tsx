@@ -9,11 +9,15 @@ interface MobileMenuToggleProps {
 /**
  * MobileMenuToggle - Hamburger/close button for mobile navigation.
  */
-export function MobileMenuToggle({ isOpen, onToggle, menuId }: MobileMenuToggleProps) {
+export function MobileMenuToggle({
+  isOpen,
+  onToggle,
+  menuId,
+}: MobileMenuToggleProps) {
   return (
     <button
       type="button"
-      className="lg:hidden p-2 cursor-pointer"
+      className="lg:hidden cursor-pointer"
       onClick={onToggle}
       aria-expanded={isOpen}
       aria-controls={menuId}

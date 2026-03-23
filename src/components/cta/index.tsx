@@ -3,7 +3,7 @@ import Image from "next/image";
 import { SectionLabel } from "../section-label";
 import { SmartLink } from "./smart-link";
 
-export interface CTAProps {
+interface CTAProps {
   title: string;
   subtitle: string;
   description: string;

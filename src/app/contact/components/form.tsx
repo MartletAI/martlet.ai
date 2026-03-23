@@ -34,7 +34,7 @@ async function submitToHubSpot(_prevState: FormState, formData: FormData): Promi
     }
 
     return { success: true, message: "Thanks for submitting the form. We will get back to you shortly." };
-  } catch (error) {
+  } catch {
     return { success: false, message: "Something went wrong. Please try again." };
   }
 }

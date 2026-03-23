@@ -48,14 +48,18 @@ export default async function BlogPostPage({ params }: { params: Params }) {
       <div className="container-main mx-auto prose prose-lg max-w-none">
         <ReactMarkdown
           components={{
-            a: ({ node, ...props }) => (
-              <a
-                {...props}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:text-primary/80 underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary"
-              />
-            ),
+            a: (props) => {
+              const { node, ...rest } = props;
+              void node;
+              return (
+                <a
+                  {...rest}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary"
+                />
+              );
+            },
           }}
         >
           {post.content}

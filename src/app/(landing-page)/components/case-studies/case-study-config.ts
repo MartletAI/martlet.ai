@@ -3,11 +3,11 @@ import { JohnSnowLabs } from "./john-snow-labs";
 import { WVUMedicine } from "./wvu-medicine";
 import { ArkosHealth } from "./arkos-health";
 
-export const CASE_STUDY_ASSET_BASE = "/assets/case-study" as const;
+const CASE_STUDY_ASSET_BASE = "/assets/case-study" as const;
 
-export type CaseStudyId = "johnSnowLabs" | "wvuMedicine" | "arkosHealth";
+type CaseStudyId = "johnSnowLabs" | "wvuMedicine" | "arkosHealth";
 
-export interface CaseStudyDefinition {
+interface CaseStudyDefinition {
   id: CaseStudyId;
   /** Human-readable name for accessibility and alt text */
   name: string;
@@ -42,7 +42,5 @@ export const CASE_STUDIES = [
     Content: ArkosHealth,
   },
 ] as const satisfies readonly CaseStudyDefinition[];
-
-export const DEFAULT_CASE_STUDY_ID: CaseStudyId = CASE_STUDIES[0].id;
 
 export const CASE_STUDY_COUNT = CASE_STUDIES.length;

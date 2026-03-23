@@ -1,4 +1,3 @@
-
 import { preload } from "react-dom";
 import { Hero } from "./components/hero";
 import { IndustryPartners } from "./components/industry-partners";
@@ -14,7 +13,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Risk Adjustment AI Software | Martlet AI",
-  description: "Risk adjustment software and HCC risk adjustment solutions. On-premise, Secure, Real-time HCC Coding & Risk Profiling. Streamline prospective, retrospective, and RADV workflows with AI-powered precision.",
+  description:
+    "Risk adjustment software and HCC risk adjustment solutions. On-premise, Secure, Real-time HCC Coding & Risk Profiling. Streamline prospective, retrospective, and RADV workflows with AI-powered precision.",
   alternates: {
     canonical: "/",
   },
@@ -28,20 +28,18 @@ export default function Home() {
     <main>
       {/* Hero Section */}
       <Hero />
-      
+
+      {/* Why Martlet AI Section */}
+      <WhyMartletAI />
+
       {/* Trust and Accuracy Section */}
       <TrustAndAccuracy />
 
       {/* Industry partners */}
       <IndustryPartners />
 
-      {/* Why Martlet AI Section */}
-      <WhyMartletAI />
-
       {/* CTA Section */}
       <CTA />
     </main>
   );
 }
-
-

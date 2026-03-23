@@ -1,15 +1,17 @@
+import type { Metadata } from "next";
 import { preload } from "react-dom";
+
+import { CaseStudies } from "./components/case-studies";
+import { CTA } from "./components/cta";
 import { Hero } from "./components/hero";
 import { IndustryPartners } from "./components/industry-partners";
 import { TrustAndAccuracy } from "./components/trust-and-accuracy";
 import { WhyMartletAI } from "./components/why-martlet-ai";
-import { CTA } from "./components/cta";
 
 /**
  * Home - Landing page for Martlet AI
  * Displays the hero section with decorative background and products overview
  */
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Risk Adjustment AI Software | Martlet AI",
@@ -28,6 +30,9 @@ export default function Home() {
     <main>
       {/* Hero Section */}
       <Hero />
+
+      {/* Case Studies Section */}
+      <CaseStudies />
 
       {/* Why Martlet AI Section */}
       <WhyMartletAI />

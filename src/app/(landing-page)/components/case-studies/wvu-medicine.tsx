@@ -1,7 +1,6 @@
 import { FeatureText } from "./feature-text";
 import { YouTubeFacade } from "./youtube-facade";
-
-import { FeatureTextProps } from "./types";
+import type { FeatureTextProps } from "./types";
 
 const FEATURES: FeatureTextProps[] = [
   {
@@ -39,5 +38,5 @@ export function WVUMedicine() {
         </div>
       </div>
     </div>
-  )
+  );
 }

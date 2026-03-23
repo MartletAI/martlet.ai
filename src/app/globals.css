@@ -131,6 +131,8 @@
   --transition-fast: 150ms ease;
   --transition-base: 200ms ease;
   --transition-slow: 300ms ease;
+  /* Case study / carousel panel entrance */
+  --transition-carousel: 480ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ========================================
@@ -495,6 +497,14 @@ body {
   );
 }
 
+.gradient-case-studies {
+  background: linear-gradient(
+    180deg,
+    #f5f1ff -18.06%,
+    rgba(247, 251, 255, 0.5) 100%
+  );
+}
+
 .gradient-why-martlet {
   background: linear-gradient(
     180deg,
@@ -693,6 +703,22 @@ body {
   animation: slide-up var(--transition-slow) ease-out;
 }
 
+/** Stronger entrance for case-study slides (more motion + longer ease) */
+@keyframes case-study-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1.75rem) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-case-study-enter {
+  animation: case-study-enter var(--transition-carousel) both;
+}
+
 /* Marquee (horizontal / vertical infinite scroll) */
 @keyframes marquee {
   from {
@@ -881,6 +907,7 @@ body {
   /* Disable specific animations */
   .animate-fade-in,
   .animate-slide-up,
+  .animate-case-study-enter,
   .animate-stagger > * {
     animation: none !important;
     opacity: 1 !important;

@@ -1,3 +1,4 @@
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { Hero } from "./components/hero";
 import { Approaches } from "./components/approaches";
 import { Pipeline } from "./components/pipeline";
@@ -17,6 +18,12 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "RADV", href: "/solutions/radv" },
+        ]}
+      />
       {/* Hero Section */}
       <Hero />
 

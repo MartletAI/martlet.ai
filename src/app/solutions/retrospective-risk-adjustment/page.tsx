@@ -1,3 +1,4 @@
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { TrustAndAccuracy } from "./components/trust-and-accuracy";
 import { Hero } from "./components/hero";
 import { WhyMartletAI } from "./components/why-martlet-ai";
@@ -17,6 +18,15 @@ export const metadata: Metadata = {
 export default function Page() {
 	return (
 		<main>
+			<BreadcrumbJsonLd
+				items={[
+					{ name: "Home", href: "/" },
+					{
+						name: "Retrospective Risk Adjustment",
+						href: "/solutions/retrospective-risk-adjustment",
+					},
+				]}
+			/>
 			{/* Hero Section */}
 			<Hero />
 

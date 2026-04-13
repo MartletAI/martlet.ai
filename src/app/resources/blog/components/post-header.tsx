@@ -3,27 +3,80 @@ import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@/components/icon";
 import { getAuthorByName } from "@/lib/authors";
+import { absoluteMartletUrl, safeJsonLdStringify, SITE_ORIGIN } from "@/lib/json-ld";
 
 interface PostHeaderProps {
   post: BlogPost;
+}
+
+/** Front matter uses MM.DD.YYYY (e.g. 02.03.2026) for schema.org date fields. */
+function datePublishedISO(dateStr: string): string {
+  const mdY = dateStr.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+  if (mdY) {
+    const [, month, day, year] = mdY;
+    return `${year}-${month}-${day}`;
+  }
+  const parsed = new Date(dateStr);
+  if (!Number.isNaN(parsed.getTime())) {
+    return parsed.toISOString().slice(0, 10);
+  }
+  return dateStr;
 }
 
 export function PostHeader({ post }: PostHeaderProps) {
   // Map author names to author objects
   const authors = post.authors?.map(name => getAuthorByName(name)).filter(Boolean) || [];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
+  const articleUrl = `${SITE_ORIGIN}/resources/blog/${post.slug}`;
+  const articleLd: Record<string, unknown> = {
+    "@type": "Article",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
     headline: post.title,
-    datePublished: new Date(post.date).toISOString(),
+    datePublished: datePublishedISO(post.date),
     author: authors.map((author) => ({
       "@type": "Person",
       name: author!.name,
-      url: `https://martlet.ai/author/${author!.slug}`,
+      url: `${SITE_ORIGIN}/author/${author!.slug}`,
     })),
-    description: post.description || post.excerpt,
-    image: post.thumbnail ? [post.thumbnail] : undefined,
+  };
+
+  if (post.description || post.excerpt) {
+    articleLd.description = post.description || post.excerpt;
+  }
+  if (post.thumbnail) {
+    articleLd.image = [absoluteMartletUrl(post.thumbnail)];
+  }
+
+  const breadcrumbLd = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_ORIGIN}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${SITE_ORIGIN}/resources/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: articleUrl,
+      },
+    ],
+  };
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [articleLd, breadcrumbLd],
   };
 
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
@@ -37,7 +90,7 @@ export function PostHeader({ post }: PostHeaderProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          __html: safeJsonLdStringify(jsonLd),
         }}
       />
       

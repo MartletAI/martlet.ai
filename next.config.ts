@@ -4,28 +4,28 @@ import type { NextConfig } from "next";
 const securityHeaders = [
   {
     // Prevent clickjacking attacks
-    key: 'X-Frame-Options',
-    value: 'DENY',
+    key: "X-Frame-Options",
+    value: "DENY",
   },
   {
     // Prevent MIME type sniffing
-    key: 'X-Content-Type-Options',
-    value: 'nosniff',
+    key: "X-Content-Type-Options",
+    value: "nosniff",
   },
   {
     // Control referrer information
-    key: 'Referrer-Policy',
-    value: 'strict-origin-when-cross-origin',
+    key: "Referrer-Policy",
+    value: "strict-origin-when-cross-origin",
   },
   {
     // Disable unnecessary browser features
-    key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=()',
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=()",
   },
   {
     // Legacy XSS protection for older browsers
-    key: 'X-XSS-Protection',
-    value: '1; mode=block',
+    key: "X-XSS-Protection",
+    value: "1; mode=block",
   },
 ];
 
@@ -37,13 +37,13 @@ const nextConfig: NextConfig = {
   experimental: {
     inlineCss: true,
   },
-  
+
   // Add security headers to all routes
   async headers() {
     return [
       {
         // Apply to all routes
-        source: '/:path*',
+        source: "/:path*",
         headers: securityHeaders,
       },
     ];
@@ -53,93 +53,149 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors',
-        destination: '/resources/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors',
+        source:
+          "/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors",
+        destination:
+          "/resources/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors",
         permanent: true,
       },
       {
-        source: '/resources/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors',
-        destination: '/resources/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors',
+        source:
+          "/resources/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors",
+        destination:
+          "/resources/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors",
         permanent: true,
       },
       {
-        source: '/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors',
-        destination: '/resources/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors',
+        source:
+          "/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors",
+        destination:
+          "/resources/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors",
         permanent: true,
       },
       {
-        source: '/how-healthcare-specific-language-models-are-transforming-hedis',
-        destination: '/resources/blog/how-healthcare-specific-language-models-are-transforming-hedis',
+        source:
+          "/how-healthcare-specific-language-models-are-transforming-hedis",
+        destination:
+          "/resources/blog/how-healthcare-specific-language-models-are-transforming-hedis",
         permanent: true,
       },
       {
-        source: '/resources/how-healthcare-specific-language-models-are-transforming-hedis',
-        destination: '/resources/blog/how-healthcare-specific-language-models-are-transforming-hedis',
+        source:
+          "/resources/how-healthcare-specific-language-models-are-transforming-hedis",
+        destination:
+          "/resources/blog/how-healthcare-specific-language-models-are-transforming-hedis",
         permanent: true,
       },
       {
-        source: '/blog/how-healthcare-specific-language-models-are-transforming-hedis',
-        destination: '/resources/blog/how-healthcare-specific-language-models-are-transforming-hedis',
+        source:
+          "/blog/how-healthcare-specific-language-models-are-transforming-hedis",
+        destination:
+          "/resources/blog/how-healthcare-specific-language-models-are-transforming-hedis",
         permanent: true,
       },
       {
-        source: '/radv-audit-readiness-for-health-plans',
-        destination: '/resources/blog/radv-audit-readiness-for-health-plans',
+        source: "/radv-audit-readiness-for-health-plans",
+        destination: "/resources/blog/radv-audit-readiness-for-health-plans",
         permanent: true,
       },
       {
-        source: '/resources/radv-audit-readiness-for-health-plans',
-        destination: '/resources/blog/radv-audit-readiness-for-health-plans',
+        source: "/resources/radv-audit-readiness-for-health-plans",
+        destination: "/resources/blog/radv-audit-readiness-for-health-plans",
         permanent: true,
       },
       {
-        source: '/blog/radv-audit-readiness-for-health-plans',
-        destination: '/resources/blog/radv-audit-readiness-for-health-plans',
+        source: "/blog/radv-audit-readiness-for-health-plans",
+        destination: "/resources/blog/radv-audit-readiness-for-health-plans",
         permanent: true,
       },
       {
-        source: '/solutions',
-        destination: '/solutions/radv',
+        source: "/solutions",
+        destination: "/solutions/radv",
         permanent: true,
       },
       {
-        source: '/radv',
-        destination: '/solutions/radv',
+        source: "/radv",
+        destination: "/solutions/radv",
         permanent: true,
       },
       {
-        source: '/prospective-risk-adjustment',
-        destination: '/solutions/prospective-risk-adjustment',
+        source: "/prospective-risk-adjustment",
+        destination: "/solutions/prospective-risk-adjustment",
         permanent: true,
       },
       {
-        source: '/retrospective-risk-adjustment',
-        destination: '/solutions/retrospective-risk-adjustment',
+        source: "/retrospective-risk-adjustment",
+        destination: "/solutions/retrospective-risk-adjustment",
         permanent: true,
       },
       {
-        source: '/blog',
-        destination: '/resources/blog',
+        source: "/blog",
+        destination: "/resources/blog",
         permanent: true,
       },
       {
-        source: '/resources',
-        destination: '/resources/blog',
+        source: "/resources",
+        destination: "/resources/blog",
         permanent: true,
       },
       {
-        source: '/author',
-        destination: '/resources/blog',
+        source: "/author",
+        destination: "/resources/blog",
         permanent: true,
       },
       {
-        source: '/hasham-ul-haq',
-        destination: '/author/hasham-ul-haq',
+        source: "/hasham-ul-haq",
+        destination: "/author/hasham-ul-haq",
         permanent: true,
       },
       {
-        source: '/ritwik-jain',
-        destination: '/author/ritwik-jain',
+        source: "/ritwik-jain",
+        destination: "/author/ritwik-jain",
+        permanent: true,
+      },
+      {
+        source: "/terms-of-service",
+        destination: "/terms-of-services",
+        permanent: true,
+      },
+      {
+        source: "/terms-of-service/",
+        destination: "/terms-of-services",
+        permanent: true,
+      },
+      {
+        source: "/contact-us",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source:
+          "/transforming-hcc-coding-with-healthcare\u2011specific-language-models",
+        destination:
+          "/resources/blog/how-healthcare-specific-language-models-are-transforming-hedis",
+        permanent: true,
+      },
+      {
+        source:
+          "/transforming-hcc-coding-with-healthcare-specific-language-models",
+        destination:
+          "/resources/blog/how-healthcare-specific-language-models-are-transforming-hedis",
+        permanent: true,
+      },
+      {
+        source: "/author/hasham",
+        destination: "/author/hasham-ul-haq",
+        permanent: true,
+      },
+      {
+        source: "/author/hasham/feed",
+        destination: "/author/hasham-ul-haq",
+        permanent: true,
+      },
+      {
+        source: "/blogs",
+        destination: "/resources/blog",
         permanent: true,
       },
     ];
@@ -147,4 +203,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "AI Acceptable Use Policy | Martlet AI",
-  description: "Read Martlet AI’s AI Acceptable Use Policy outlining rules for ethical, lawful, and responsible use of AI systems to protect users and align with compliance standards.",
+  description: "Martlet AI’s Acceptable Use Policy ensures ethical, legal AI deployment, protecting users and aligning with compliance standards for responsible AI use.",
   alternates: {
     canonical: "/ai-acceptable-use-policy",
   },

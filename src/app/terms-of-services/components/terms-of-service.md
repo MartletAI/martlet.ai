@@ -51,16 +51,17 @@ We may make changes to these Terms from time to time. When we do so, we will rev
 ## 5. Restrictions
 
 5.1 You must comply with all applicable laws when using our Services. Except as may be expressly permitted by applicable law, or as Martlet AI may authorize expressly in writing, you will not, and will not permit anyone else to:
-* (i) store, copy, modify, distribute, or resell any of the information; audio, visual, and audiovisual works, or other content made available on our Services (collectively, “Service Content”) or compile or collect any Service Content as part of a database or other work;
-* (ii) use any automated tool (e.g., robots, spiders) to access or use our Services or to store, copy, modify, distribute, or resell any Service Content;
-* (iii) rent, lease, or sublicense your access to our Services to another person;
-* (iv) circumvent or disable any rights management, usage rules, or other security features of our Services;
-* (v) use our Services in a manner that overburdens, or that threatens the integrity, performance, or availability of, our Services; or
-* (vi) remove, alter, or obscure any proprietary notices (including copyright and trademark notices) on any portion of our Services or any Service Content.
+
+- (i) store, copy, modify, distribute, or resell any of the information; audio, visual, and audiovisual works, or other content made available on our Services (collectively, “Service Content”) or compile or collect any Service Content as part of a database or other work;
+- (ii) use any automated tool (e.g., robots, spiders) to access or use our Services or to store, copy, modify, distribute, or resell any Service Content;
+- (iii) rent, lease, or sublicense your access to our Services to another person;
+- (iv) circumvent or disable any rights management, usage rules, or other security features of our Services;
+- (v) use our Services in a manner that overburdens, or that threatens the integrity, performance, or availability of, our Services; or
+- (vi) remove, alter, or obscure any proprietary notices (including copyright and trademark notices) on any portion of our Services or any Service Content.
 
 ## 6. Privacy Policy
 
-6.1 We may collect, store and receive personal and other information about you through our Services. Our collection and use of this information is governed by our Privacy Policy available at [https://martlet.ai/privacy-policy/](https://martlet.ai/privacy-policy/) which may be amended from time to time.
+6.1 We may collect, store and receive personal and other information about you through our Services. Our collection and use of this information is governed by our Privacy Policy available at [https://martlet.ai/privacy-policy](https://martlet.ai/privacy-policy) which may be amended from time to time.
 
 ## 7. Links and Third Party Content
 
@@ -69,18 +70,19 @@ We may make changes to these Terms from time to time. When we do so, we will rev
 7.2 We do not control Third Party Content and do not guarantee the accuracy, integrity or quality of such Third Party Content. We are not responsible for the performance of, we do not endorse, and we are not responsible or liable for, any Third Party Content or any information or materials advertised in any Third Party Content. By using our Services, you may be exposed to content that is offensive, indecent, or objectionable. We are not responsible or liable, directly or indirectly, for any damage or loss caused to you by your use of or reliance on any goods, services, or information available on or through any third party service or Third Party Content. It is your responsibility to evaluate the information, opinion, advice, or other content available on and through our Services.
 
 7.3 You will not use our Services to:
-* (i) upload, post, email, or otherwise transmit any submission that contains unlawful, harmful, threatening, abusive, harassing, tortious, defamatory, vulgar, obscene, libelous, invasive of another’s privacy, hateful, or racially, ethnically or otherwise objectionable;
-* (ii) harm us or third parties in any way;
-* (iii) impersonate any person or entity, or otherwise misrepresent your affiliation with a person or entity;
-* (iv) upload, post, email, or otherwise transmit any submission that you do not have a right to transmit under any law or under contractual or fiduciary relationships (such as inside information, proprietary and confidential information learned or disclosed as part of employment relationships or under nondisclosure agreements);
-* (v) upload, post, email or otherwise transmit any submission that infringes any patent, trademark (whether registered or pending), trade secret, copyright, or other right of any party;
-* (vi) upload, post, email, or otherwise transmit any unsolicited or unauthorized advertising, promotional materials, “junk mail,” “spam,” “chain letters,” “pyramid schemes,” or any other forms of solicitation;
-* (vii) upload, post, email, or otherwise transmit any material that contains software viruses or any other computer code, files, or programs designed to interrupt, destroy, or limit the functionality of any computer software or hardware or telecommunications equipment;
-* (viii) interfere with or disrupt the Services or servers or networks connected to the Services, or disobey any requirements, procedures, policies or regulations of networks connected to the Services;
-* (ix) intentionally or unintentionally violate any applicable local, state, national or international law or regulation;
-* (x) intentionally or unintentionally violate our intellectual property rights;
-* (xi) “stalk” or otherwise harass another; or
-* (xii) collect or store personal data about other users.
+
+- (i) upload, post, email, or otherwise transmit any submission that contains unlawful, harmful, threatening, abusive, harassing, tortious, defamatory, vulgar, obscene, libelous, invasive of another’s privacy, hateful, or racially, ethnically or otherwise objectionable;
+- (ii) harm us or third parties in any way;
+- (iii) impersonate any person or entity, or otherwise misrepresent your affiliation with a person or entity;
+- (iv) upload, post, email, or otherwise transmit any submission that you do not have a right to transmit under any law or under contractual or fiduciary relationships (such as inside information, proprietary and confidential information learned or disclosed as part of employment relationships or under nondisclosure agreements);
+- (v) upload, post, email or otherwise transmit any submission that infringes any patent, trademark (whether registered or pending), trade secret, copyright, or other right of any party;
+- (vi) upload, post, email, or otherwise transmit any unsolicited or unauthorized advertising, promotional materials, “junk mail,” “spam,” “chain letters,” “pyramid schemes,” or any other forms of solicitation;
+- (vii) upload, post, email, or otherwise transmit any material that contains software viruses or any other computer code, files, or programs designed to interrupt, destroy, or limit the functionality of any computer software or hardware or telecommunications equipment;
+- (viii) interfere with or disrupt the Services or servers or networks connected to the Services, or disobey any requirements, procedures, policies or regulations of networks connected to the Services;
+- (ix) intentionally or unintentionally violate any applicable local, state, national or international law or regulation;
+- (x) intentionally or unintentionally violate our intellectual property rights;
+- (xi) “stalk” or otherwise harass another; or
+- (xii) collect or store personal data about other users.
 
 ## 8. Use Policies
 

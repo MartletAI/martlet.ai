@@ -2,7 +2,7 @@
 
 **Date:** 02.03.2026  
 **Thumbnail:** /assets/blog/how-healthcare-specific-language-models-are-transforming-hedis.jpg  
-**Description:** Revolutionizing HEDIS and Stars performance with healthcare-specific NLP and LLMs.  
+**Description:** Enhance HEDIS and Stars performance with healthcare-specific NLP and LLMs that automate data extraction and improve quality reporting accuracy.  
 **MetaTitle:** How Healthcare-Specific Language Models Transform HEDIS & Stars | Martlet AI
 **Tag:** Product  
 

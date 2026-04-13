@@ -223,4 +223,8 @@ Martlet AI gives compliance teams the tools to make audit readiness part of dail
 *   Processes high volumes of records entirely within your infrastructure to protect patient information
 *   Delivers faster audit readiness, clearer accountability, and predictable costs
 
+## Why It Matters
+
+As RADV audits and HCC v28 models continue to reshape the healthcare compliance landscape, health plans must stay ahead of the curve. Martlet AI’s proactive approach ensures that compliance becomes a continuous, integrated part of daily operations, reducing the last-minute scramble to meet deadlines. By automating the documentation review process, preventing over-coding, and ensuring that every HCC is backed by verifiable, traceable evidence, it protects health plans from costly penalties and ensures audit readiness. Moreover, the ability to scale rapidly and manage vast amounts of unstructured data within the organization's infrastructure gives compliance teams the tools they need to maintain security, integrity, and efficiency throughout the audit cycle.
+
 To see how these capabilities would work with your own data, timelines, and security requirements, schedule a custom demo tailored to your audit plan.

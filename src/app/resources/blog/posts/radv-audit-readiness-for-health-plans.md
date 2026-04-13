@@ -74,6 +74,10 @@ Martlet AI enables plans to pull structured EHR data, claims, PDFs and scanned c
 
 Within Martlet AI, each diagnosis is reviewed against configurable validation rules so teams can see early which conditions are well supported and which may fall short. The system checks for MEAT-style documentation, coding accuracy, date alignment and provider details, then labels each HCC with a clear validation status and the specific reasons it may be weak. This gives leaders a scalable view of documentation strength before any record is sent to CMS.
 
+## Why It Matters
+
+Adopting AI-driven workflows like Martlet AI is crucial for health plans navigating the complexities of RADV audits. With increasing pressure from CMS and the Department of Health and Human Services to recover overpayments, ensuring complete, traceable, and defensible documentation is paramount. Martlet AI empowers health plans to proactively identify weaknesses, strengthen compliance, and optimize audit readiness throughout the year, reducing the risk of costly clawbacks. By providing real-time insights into potential audit issues, it transforms RADV preparation from a reactive process into a strategic, continuous effort, ultimately safeguarding both financial and regulatory stability.
+
 ## Understand Potential RADV Error Patterns
 
 RADV-style sampling logic is applied to the plan’s member population and the associated validation results, so leaders can see how current documentation would behave under CMS sampling.

@@ -5,8 +5,12 @@
 **Description:** Strengthen RADV audit readiness with Martlet AI's AI-driven workflows, reducing financial risks and improving documentation accuracy for health plans.  
 **MetaTitle:** RADV Audit Readiness for Health Plans | Martlet AI
 **Tag:** Product
+**DefinedTermName:** Clawback Risk
+**DefinedTermDescription:** The financial exposure a health plan faces when unsupported diagnoses identified in a RADV audit sample are extrapolated across the full Medicare Advantage contract, resulting in repayment of previously received funds.
 
 # RADV Audit Readiness for Health Plans: Reducing Clawback Risk and Strengthening Compliance with AI-Driven Workflows
+
+**Clawback Risk** — the financial exposure a health plan faces when unsupported diagnoses identified in a RADV audit sample are extrapolated across the full Medicare Advantage contract, resulting in repayment of previously received funds.
 
 **How confident are you that a RADV sample would not pick up a few missing documents and then use those errors to estimate losses across your entire contract?**
 

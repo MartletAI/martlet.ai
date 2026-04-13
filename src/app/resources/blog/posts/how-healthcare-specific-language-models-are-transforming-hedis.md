@@ -5,8 +5,12 @@
 **Description:** Enhance HEDIS and Stars performance with healthcare-specific NLP and LLMs that automate data extraction and improve quality reporting accuracy.  
 **MetaTitle:** How Healthcare-Specific Language Models Transform HEDIS & Stars | Martlet AI
 **Tag:** Product  
+**DefinedTermName:** Healthcare-Specific Language Models
+**DefinedTermDescription:** AI models trained exclusively on clinical and biomedical data that understand medical terminology, clinical context, and time-based logic to support HEDIS and Stars quality measurement.
 
 # How Healthcare-Specific Language Models Are Transforming HEDIS and Stars Performance
+
+**Healthcare-Specific Language Models** — AI models trained exclusively on clinical and biomedical data that accurately understand medical terminology, clinical context, and time-based logic, enabling reliable extraction and interpretation of unstructured healthcare data for use cases such as HEDIS and Stars quality measurement.
 
 Every year, health plans invest massive time and resources trying to close quality gaps before the reporting deadline. Teams chase medical records, manually abstract charts, and reach out to members multiple times to confirm screenings or lab values.
 

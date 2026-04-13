@@ -11,6 +11,8 @@ export interface BlogPost {
   excerpt?: string;
   description?: string;
   metaTitle?: string;
+  /** Optional schema.org DefinedTerm (from **DefinedTermName:** / **DefinedTermDescription:** in post metadata). */
+  definedTerm?: { name: string; description: string };
   content: string;
 }
 
@@ -63,6 +65,8 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
     let tag = '';
     let description = '';
     let metaTitle = '';
+    let definedTermName = '';
+    let definedTermDescription = '';
 
     // First pass: Extract metadata
     for (let i = 0; i < lines.length; i++) {
@@ -80,8 +84,10 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
           tag = line.replace('**Tag:**', '').trim();
         } else if (line.startsWith('**MetaTitle:**')) {
           metaTitle = line.replace('**MetaTitle:**', '').trim();
-        } else if (line.startsWith('**Tag:**')) {
-          tag = line.replace('**Tag:**', '').trim();
+        } else if (line.startsWith('**DefinedTermName:**')) {
+          definedTermName = line.replace('**DefinedTermName:**', '').trim();
+        } else if (line.startsWith('**DefinedTermDescription:**')) {
+          definedTermDescription = line.replace('**DefinedTermDescription:**', '').trim();
         }
     }
 
@@ -95,7 +101,7 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
         if (inMetadata) {
-             if (line.startsWith('# ') || line.startsWith('**Date:**') || line.startsWith('**Thumbnail:**') || line.startsWith('**Description:**') || line.startsWith('**MetaTitle:**') || line.startsWith('**Tag:**') || line.startsWith('**Authors:**') || (line.startsWith('*') && (lines[i-1]?.trim().startsWith('**Authors:**') || lines[i-1]?.trim().startsWith('*')))) {
+             if (line.startsWith('# ') || line.startsWith('**Date:**') || line.startsWith('**Thumbnail:**') || line.startsWith('**Description:**') || line.startsWith('**MetaTitle:**') || line.startsWith('**Tag:**') || line.startsWith('**DefinedTermName:**') || line.startsWith('**DefinedTermDescription:**') || line.startsWith('**Authors:**') || (line.startsWith('*') && (lines[i-1]?.trim().startsWith('**Authors:**') || lines[i-1]?.trim().startsWith('*')))) {
                  // Still in metadata
                  continue;
              }
@@ -115,6 +121,11 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
     // Fallback if parsing fails or fields are missing
     if (!title) title = slug.replace(/-/g, ' '); 
 
+    const definedTerm =
+      definedTermName && definedTermDescription
+        ? { name: definedTermName, description: definedTermDescription }
+        : undefined;
+
     return {
       slug,
       title,
@@ -124,6 +135,7 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
       thumbnail: thumbnail || undefined,
       description: description || undefined,
       metaTitle: metaTitle || undefined,
+      definedTerm,
       excerpt: excerpt || undefined,
       content: bodyText,
     };

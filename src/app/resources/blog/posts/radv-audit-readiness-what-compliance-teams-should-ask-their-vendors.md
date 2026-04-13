@@ -5,8 +5,12 @@
 **Description:** Ensure your HCC coding platform is audit-ready with Martlet AI's guide to RADV audit readiness. Learn key questions to ask vendors and improve compliance. 
 **MetaTitle:** Key Questions Compliance Teams Should Ask Their Vendors | Martlet AI
 **Tag:** Product
+**DefinedTermName:** Audit-Ready HCC Coding Platform
+**DefinedTermDescription:** A compliance-focused system that applies current CMS payment-year rules to risk-adjusted diagnoses, links each HCC to verifiable medical record evidence, maintains immutable audit trails, and enables health plans to defend RAF calculations under full-population RADV audits.
 
 # RADV Audit Readiness: What Compliance Teams Should Ask Their Vendors
+
+**Audit-Ready HCC Coding Platform** — a compliance-focused system that applies current CMS payment-year rules to risk-adjusted diagnoses, links each HCC to verifiable medical record evidence, maintains immutable audit trails, and enables health plans to defend RAF calculations under full-population RADV audits.
 
 **Would every risk-adjusted diagnosis in your pipeline hold up under a full-population [Risk Adjustment Data Validation (RADV) audit](https://www.cms.gov/data-research/monitoring-programs/medicare-risk-adjustment-data-validation-program)?**
 

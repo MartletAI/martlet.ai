@@ -74,9 +74,19 @@ export function PostHeader({ post }: PostHeaderProps) {
     ],
   };
 
+  const graph: Record<string, unknown>[] = [articleLd, breadcrumbLd];
+  if (post.definedTerm) {
+    graph.push({
+      "@type": "DefinedTerm",
+      "@id": `${articleUrl}#defined-term`,
+      name: post.definedTerm.name,
+      description: post.definedTerm.description,
+    });
+  }
+
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [articleLd, breadcrumbLd],
+    "@graph": graph,
   };
 
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {

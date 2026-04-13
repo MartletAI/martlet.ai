@@ -26,7 +26,7 @@ export function NavLogo({ href = "/", className }: NavLogoProps) {
     >
       <Image
         src={LOGO_SRC}
-        alt=""
+        alt="Martlet AI logo"
         width={LOGO_WIDTH_PX}
         height={LOGO_HEIGHT_PX}
         priority

@@ -31,7 +31,7 @@ export function WhatTeamsCare() {
       <div className="max-w-[1440px] m-auto absolute inset-0 z-0">
         <Image
           src="/assets/section-background/why-we-care.png"
-          alt=""
+          alt="Abstract gradient background with soft color transitions"
           width={1440}
           height={800}
           className="absolute right-0 top-0 opacity-5 w-full h-auto pointer-events-none"
@@ -43,18 +43,20 @@ export function WhatTeamsCare() {
       <div className="container-main flex flex-col gap-[46px] relative z-10">
         {/* Header Section */}
         <header className="flex flex-col items-center gap-spacing-xl">
-					<SectionLabel className="text-outputs-accent mb-3">Outputs</SectionLabel>
-					<h2
-						id="outputs-heading"
-						className="section-heading text-center mb-4 px-8 md:px-0"
-					>
-						What care teams get in one view
-					</h2>
+          <SectionLabel className="text-outputs-accent mb-3">
+            Outputs
+          </SectionLabel>
+          <h2
+            id="outputs-heading"
+            className="section-heading text-center mb-4 px-8 md:px-0"
+          >
+            What care teams get in one view
+          </h2>
 
-					<p className="text-xl leading-[30px] text-center text-text-tertiary-600 font-normal">
-						Everything needed to act without forcing people to dig through
-						charts.
-					</p>
+          <p className="text-xl leading-[30px] text-center text-text-tertiary-600 font-normal">
+            Everything needed to act without forcing people to dig through
+            charts.
+          </p>
         </header>
 
         {/* Cards Grid */}

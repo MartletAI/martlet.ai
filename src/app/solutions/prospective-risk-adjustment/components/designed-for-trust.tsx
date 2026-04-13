@@ -9,7 +9,7 @@ const TRUST_FEATURES = [
   {
     title: "MEAT-aware recommendations",
     description:
-      "Not just \"problem list only\"—our system ensures every recommendation is supported by documented Monitoring, Evaluation, Assessment, or Treatment evidence.",
+      'Not just "problem list only"—our system ensures every recommendation is supported by documented Monitoring, Evaluation, Assessment, or Treatment evidence.',
   },
   {
     title: "Evidence provenance",
@@ -43,13 +43,15 @@ export function DesignedForTrust() {
       <div className="container-main flex flex-col gap-[46px]">
         {/* Header Section */}
         <header className="flex flex-col items-center">
-					<SectionLabel className="text-indicator-prospective mb-3">Designed for trust</SectionLabel>
-					<h2
-						id="designed-for-trust-heading"
-						className="section-heading text-center mb-5"
-					>
-						High signal, low noise, so clinicians don&apos;t tune it out
-					</h2>
+          <SectionLabel className="text-indicator-prospective mb-3">
+            Designed for trust
+          </SectionLabel>
+          <h2
+            id="designed-for-trust-heading"
+            className="section-heading text-center mb-5"
+          >
+            High signal, low noise, so clinicians don&apos;t tune it out
+          </h2>
           <p className="text-xl leading-[30px] text-center text-text-tertiary-600 font-normal">
             Prospective success is adoption. Adoption requires precision,
             brevity, and defensibility.
@@ -61,10 +63,7 @@ export function DesignedForTrust() {
           {/* Features List */}
           <dl className="flex flex-col max-w-[526px]" role="list">
             {TRUST_FEATURES.map((feature) => (
-              <div
-                key={feature.title}
-                className={`flex flex-col gap-1 py-4`}
-              >
+              <div key={feature.title} className={`flex flex-col gap-1 py-4`}>
                 <dt className="font-semibold text-lg leading-7 text-foreground">
                   {feature.title}
                 </dt>
@@ -79,7 +78,7 @@ export function DesignedForTrust() {
           <figure className="flex-1">
             <Image
               src="/assets/illustrations/design-for-trust.jpg"
-              alt=""
+              alt="AI infrastructure illustration with secure data processing and system integration"
               width={603}
               height={472}
               className="w-full max-w-[603px] h-auto aspect-603/472 ml-auto"

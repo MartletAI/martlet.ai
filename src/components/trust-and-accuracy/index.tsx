@@ -37,33 +37,34 @@ const DATA = [
   },
 ];
 
-
 interface TrustAndAccuracyProps {
   topCard?: {
     title: string;
     description: string;
-    icon: IconProps['name'];
+    icon: IconProps["name"];
     iconColor: string;
     bg: string;
   }[];
-	bottomCard: {
+  bottomCard: {
     image: string;
     width: number;
     height: number;
     alt: string;
     title: string;
     description: string;
-  }[]
+  }[];
 }
 
-export function TrustAndAccuracy({ bottomCard, topCard = DATA }: TrustAndAccuracyProps) {
-	return (
-    <section
-      id="trust-and-accuracy"
-      className="bg-white py-10"
-    >
+export function TrustAndAccuracy({
+  bottomCard,
+  topCard = DATA,
+}: TrustAndAccuracyProps) {
+  return (
+    <section id="trust-and-accuracy" className="bg-white py-10">
       <div className="flex flex-col items-center mb-11.5 container-main">
-        <SectionLabel className="text-indicator-prospective mb-3">Outcomes</SectionLabel>
+        <SectionLabel className="text-indicator-prospective mb-3">
+          Outcomes
+        </SectionLabel>
         <h2 className="section-heading pb-5 text-center">
           Built for Trust and Accuracy
         </h2>
@@ -80,7 +81,10 @@ export function TrustAndAccuracy({ bottomCard, topCard = DATA }: TrustAndAccurac
               key={index}
               className={`flex flex-col px-5 py-3 rounded-xl border border-black/8 items-start ${item.bg}`}
             >
-              <Icon name={item.icon} className={`w-6 h-6 text-[${item.iconColor}]`} />
+              <Icon
+                name={item.icon}
+                className={`w-6 h-6 text-[${item.iconColor}]`}
+              />
               <h3 className="font-semibold text-base leading-7 text-foreground mt-3">
                 {item.title}
               </h3>
@@ -93,23 +97,26 @@ export function TrustAndAccuracy({ bottomCard, topCard = DATA }: TrustAndAccurac
       </div>
 
       <div className="container-main mx-auto grid grid-cols-1 md:grid-cols-2 gap-[26px]">
-				{bottomCard.map((item, index) => (
-          <div key={index} className="relative overflow-hidden rounded-xl bg-accent-purple p-4 md:px-9 md:py-5 text-white flex items-center min-h-[159px]">
-            <Image 
-              src="/assets/section-background/trust-and-accuracy.png" 
-              alt="" 
-              fill 
-              className="object-cover opacity-6 mix-blend-overlay pointer-events-none" 
+        {bottomCard.map((item, index) => (
+          <div
+            key={index}
+            className="relative overflow-hidden rounded-xl bg-accent-purple p-4 md:px-9 md:py-5 text-white flex items-center min-h-[159px]"
+          >
+            <Image
+              src="/assets/section-background/trust-and-accuracy.png"
+              alt="Abstract gradient background with lightning motif"
+              fill
+              className="object-cover opacity-6 mix-blend-overlay pointer-events-none"
               priority
             />
             <div className="flex flex-col min-[550px]:flex-row md:flex-col lg:flex-row gap-4 lg:gap-6 items-center">
               <div className={"w-[88px]"}>
-                <img 
+                <img
                   src={item.image}
-                  alt={item.alt} 
+                  alt={item.alt}
                   height={item.height}
                   width={item.width}
-                  className="object-contain" 
+                  className="object-contain"
                 />
               </div>
               <div>
@@ -123,7 +130,7 @@ export function TrustAndAccuracy({ bottomCard, topCard = DATA }: TrustAndAccurac
             </div>
           </div>
         ))}
-			</div>
+      </div>
     </section>
-	)
+  );
 }

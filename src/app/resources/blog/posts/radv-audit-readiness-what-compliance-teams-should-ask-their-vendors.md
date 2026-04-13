@@ -30,11 +30,11 @@ In a RADV audit, a diagnosis only counts if a valid medical record backs it. CMS
 *   Contains the provider’s credentials
 *   Is free from missing or incorrect dates, missing signatures, or other documentation errors
 
-CMS will not accept records from phone calls, portal messages, lab-only visits, or superbills. If a record fails these standards, the related HCC is removed from the member’s risk score, which lowers Risk Adjustment Factor (RAF) and risks reducing your payment.
+CMS will not accept records from phone calls, portal messages, lab-only visits, or superbills. If a record fails these standards, the related HCC is removed from the member’s risk score, which lowers Risk Adjustment Factor (RAF) and [risks reducing](https://www.martlet.ai/resources/blog/radv-audit-readiness-for-health-plans) your payment.
 
 ### Evidence must be clear, specific, and easy to retrieve
 
-Even if a record meets all the requirements above, it will not survive a RADV audit unless the diagnosis is documented unequivocally. CMS expects the supporting chart to show the exact statement containing:
+Even if a record meets all the requirements above, it will not survive a [RADV audit](https://www.martlet.ai/solutions/radv) unless the diagnosis is documented unequivocally. CMS expects the supporting chart to show the exact statement containing:
 
 *   The diagnosis
 *   The date of service
@@ -43,7 +43,7 @@ Even if a record meets all the requirements above, it will not survive a RADV au
 
 All of this must come from an acceptable face-to-face source in the correct year.
 
-If CMS allows an attestation, it must be on their own form and completed by the clinician who treated the patient. Any other attestation will be rejected. Moreover, you should be able to pull the complete packet for any audited HCC quickly to avoid missing CMS deadlines.
+If CMS allows an attestation, it must be on their own form and completed by the clinician who treated the patient. Any other attestation will be rejected. Moreover, you should be able to pull the complete packet for any audited HCC quickly to avoid missing CMS deadlines. Additionally, the platform should support [Retrospective Risk Adjustment](https://www.martlet.ai/solutions/retrospective-risk-adjustment) by ensuring accurate adjustments to past risk scores based on historical clinical data.
 
 ### Mapping must match the payment year’s model
 
@@ -120,7 +120,7 @@ All of this should be stored in a way that cannot be changed later and should be
 
 You should not be responsible for tracking every change in HCC version 28. The platform should automatically apply the correct payment-year model, use the official CMS mappings for that year, and prevent submission of any code that no longer qualifies for payment.
 
-Each report should display the mapping version that was used, and the system should allow you to rerun past data using the rules that were in place for that specific year.
+Each report should display the mapping version that was used, and the system should allow you to rerun past data using the rules that were in place for that specific year. Additionally, the platform should support [Prospective Risk Adjustment](https://www.martlet.ai/solutions/prospective-risk-adjustment) by ensuring accurate future risk calculations.
 
 ### How are over-coding risks detected before submission?
 

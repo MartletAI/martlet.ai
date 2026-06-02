@@ -52,6 +52,14 @@ const MARQUEE_PARTNERS = [
     width: 152,
     height: 64,
   },
+  {
+    id: "saince",
+    href: "https://saince.com/",
+    logo: "/assets/industry-partners/saince.svg",
+    alt: "Saince",
+    width: 107,
+    height: 64,
+  },
 ] as const;
 
 export function Clients() {
@@ -84,7 +92,7 @@ export function Clients() {
                 width={partner.width}
                 height={partner.height}
                 sizes={`${partner.width}px`}
-                className="h-auto w-auto max-w-none object-contain"
+                className="h-[63px] max-w-none object-contain"
               />
             </Link>
           ))}

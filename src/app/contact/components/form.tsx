@@ -1,7 +1,8 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { useFormStatus } from "react-dom";
+import { useRouter } from "next/navigation";
 
 type FormState = {
   success: boolean;
@@ -54,7 +55,14 @@ function SubmitButton() {
 }
 
 export function Form() {
+  const router = useRouter();
   const [state, formAction] = useActionState(submitToHubSpot, null);
+
+  useEffect(() => {
+    if (state?.success) {
+      router.push("/thank-you-contact-us");
+    }
+  }, [state, router]);
 
   return (
     <form action={formAction} className="w-full max-w-[614px] mx-auto bg-white rounded-[12px] shadow-[0px_6px_20.6px_0px_rgba(0,0,0,0.05)] border border-[#E4E7EC] p-4 md:p-8 flex flex-col gap-[17px]">
@@ -133,8 +141,8 @@ export function Form() {
 
       <SubmitButton />
 
-      {state && (
-        <div className={`mt-4 p-4 rounded-md ${state.success ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>
+      {state && !state.success && (
+        <div className="mt-4 p-4 rounded-md bg-red-50 text-red-700">
           {state.message}
         </div>
       )}

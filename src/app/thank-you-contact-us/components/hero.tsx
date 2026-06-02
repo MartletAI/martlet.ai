@@ -45,7 +45,7 @@ export function Hero() {
               Back to Home
             </SmartLink>
             <SmartLink
-              href="/solutions/prospective-risk-adjustment"
+              href="/solutions/retrospective-risk-adjustment"
               className="inline-flex items-center justify-center gap-2 h-[48px] px-[18px] py-[12px] bg-white text-[#2563EB] font-semibold text-base rounded-lg border border-[#D0D5DD] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] hover:bg-[#F9FAFB] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB] transition-colors"
             >
               Explore Solutions

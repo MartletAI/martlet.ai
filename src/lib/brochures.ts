@@ -19,27 +19,27 @@ export function getBrochureDownloadUrl(pdfFilename: string): string {
 
 export const BROCHURES: Brochure[] = [
   {
-    slug: "bring-retrospective",
-    title: "Bring Retrospective",
+    slug: "automate-retrospective-coding",
+    title: "Automate Retrospective Coding",
     description:
       "Learn how Martlet AI powers retrospective risk adjustment with audit-grade evidence at scale.",
     excerpt:
       "See how our retrospective engine finds undercoded HCCs while validating existing ones to maximize revenue and minimize audit risk.",
-    thumbnail: "/assets/brochures/bring-retrospective.jpg",
-    pdfPath: "/brochures/Bring Retrospective.pdf",
-    pdfFilename: "Bring Retrospective.pdf",
+    thumbnail: "/assets/brochures/automate-retrospective-coding.jpg",
+    pdfPath: "/brochures/Automate Retrospective Coding.pdf",
+    pdfFilename: "Automate Retrospective Coding.pdf",
     tag: "Retrospective",
   },
   {
-    slug: "close-more-hedis-gaps",
-    title: "Close More HEDIS Gaps",
+    slug: "automate-hedis-gap-closure",
+    title: "Automate HEDIS Gap Closure",
     description:
       "Discover how health plans close HEDIS gaps faster with Martlet AI's healthcare-specific language models.",
     excerpt:
       "Explore how AI-powered chart review and gap identification help quality teams improve measure performance and member outcomes.",
-    thumbnail: "/assets/brochures/close-more-hedis-gaps.jpg",
-    pdfPath: "/brochures/Close More HEDIS Gaps.pdf",
-    pdfFilename: "Close More HEDIS Gaps.pdf",
+    thumbnail: "/assets/brochures/automate-hedis-gap-closure.jpg",
+    pdfPath: "/brochures/Automate HEDIS Gap Closure.pdf",
+    pdfFilename: "Automate HEDIS Gap Closure.pdf",
     tag: "HEDIS",
   },
 ];

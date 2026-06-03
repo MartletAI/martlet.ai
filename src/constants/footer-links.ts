@@ -11,6 +11,7 @@ export const FOOTER_LINKS = {
     title: "Resources",
     links: [
       { label: "Blogs", href: "/resources/blog" },
+      { label: "Brochures", href: "/resources/brochures" },
       { label: "Contact Us", href: "/contact" },
     ],
   },

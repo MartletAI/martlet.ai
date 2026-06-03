@@ -46,6 +46,7 @@ export function MobileMenu({ id, isOpen, onClose }: MobileMenuProps) {
       aria-label="Mobile navigation"
     >
       <NavLinks
+        variant="mobile"
         className="flex flex-col gap-md"
         linkClassName="block py-sm text-base font-medium no-underline leading-normal transition-all duration-150"
         activeLinkClassName="text-primary"

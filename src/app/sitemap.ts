@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/solutions/radv',
     '/solutions/retrospective-risk-adjustment',
     '/resources/blog',
+    '/resources/brochures',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

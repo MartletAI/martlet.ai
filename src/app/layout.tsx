@@ -4,7 +4,6 @@ import "./globals.css";
 import { Navbar, Footer } from "@/components";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleTagManager } from "@next/third-parties/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
@@ -62,8 +61,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="GTM-KX6DGR85" />
       <head>
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-KX6DGR85');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
+
+
         {/* Organization structured data for SEO */}
         <script
           type="application/ld+json"
@@ -73,6 +80,18 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} antialiased font-sans`}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KX6DGR85"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
+
         {/* Skip link for keyboard navigation accessibility */}
         <a href="#main-content" className="skip-link">
           Skip to main content

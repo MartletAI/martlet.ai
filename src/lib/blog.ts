@@ -11,6 +11,8 @@ export interface BlogPost {
   excerpt?: string;
   description?: string;
   metaTitle?: string;
+  /** Optional canonical URL override (from **Canonical:** in post metadata); defaults to the post's own path. */
+  canonical?: string;
   /** Optional schema.org DefinedTerm (from **DefinedTermName:** / **DefinedTermDescription:** in post metadata). */
   definedTerm?: { name: string; description: string };
   content: string;
@@ -65,6 +67,7 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
     let tag = '';
     let description = '';
     let metaTitle = '';
+    let canonical = '';
     let definedTermName = '';
     let definedTermDescription = '';
 
@@ -84,6 +87,8 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
           tag = line.replace('**Tag:**', '').trim();
         } else if (line.startsWith('**MetaTitle:**')) {
           metaTitle = line.replace('**MetaTitle:**', '').trim();
+        } else if (line.startsWith('**Canonical:**')) {
+          canonical = line.replace('**Canonical:**', '').trim();
         } else if (line.startsWith('**DefinedTermName:**')) {
           definedTermName = line.replace('**DefinedTermName:**', '').trim();
         } else if (line.startsWith('**DefinedTermDescription:**')) {
@@ -101,7 +106,7 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
         if (inMetadata) {
-             if (line.startsWith('# ') || line.startsWith('**Date:**') || line.startsWith('**Thumbnail:**') || line.startsWith('**Description:**') || line.startsWith('**MetaTitle:**') || line.startsWith('**Tag:**') || line.startsWith('**DefinedTermName:**') || line.startsWith('**DefinedTermDescription:**') || line.startsWith('**Authors:**') || (line.startsWith('*') && (lines[i-1]?.trim().startsWith('**Authors:**') || lines[i-1]?.trim().startsWith('*')))) {
+             if (line.startsWith('# ') || line.startsWith('**Date:**') || line.startsWith('**Thumbnail:**') || line.startsWith('**Description:**') || line.startsWith('**MetaTitle:**') || line.startsWith('**Canonical:**') || line.startsWith('**Tag:**') || line.startsWith('**DefinedTermName:**') || line.startsWith('**DefinedTermDescription:**') || line.startsWith('**Authors:**') || (line.startsWith('*') && (lines[i-1]?.trim().startsWith('**Authors:**') || lines[i-1]?.trim().startsWith('*')))) {
                  // Still in metadata
                  continue;
              }
@@ -135,6 +140,7 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
       thumbnail: thumbnail || undefined,
       description: description || undefined,
       metaTitle: metaTitle || undefined,
+      canonical: canonical || undefined,
       definedTerm,
       excerpt: excerpt || undefined,
       content: bodyText,

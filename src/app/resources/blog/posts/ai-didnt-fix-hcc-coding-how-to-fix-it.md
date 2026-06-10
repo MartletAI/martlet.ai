@@ -4,6 +4,7 @@
 **Thumbnail:** /assets/blog/ai-didnt-fix-hcc-coding.jpg  
 **Description:** Discover why AI solutions have made HCC coding harder, not easier, and learn how purpose-built healthcare AI can restore accuracy, trust, and compliance.  
 **MetaTitle:** AI Made HCC Coding Harder—Here's How to Fix It | Martlet AI
+**Canonical:** https://www.healthcareittoday.com/2026/04/09/ai-didnt-fix-hcc-coding-it-made-it-harder-this-is-how-to-fix-it/
 **Tag:** Insights
 **DefinedTermName:** Hierarchical Condition Category (HCC) Coding
 **DefinedTermDescription:** A risk adjustment mechanism used in Medicare Advantage and value-based care where diagnoses are grouped into risk categories to predict future healthcare costs and determine reimbursement amounts.

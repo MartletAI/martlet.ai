@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title: post.metaTitle || post.title,
     description: post.description || post.excerpt,
     alternates: {
-      canonical: `/resources/blog/${slug}`,
+      canonical: post.canonical || `/resources/blog/${slug}`,
     },
   };
 }

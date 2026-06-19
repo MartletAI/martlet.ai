@@ -119,8 +119,10 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
     }
 
     const bodyText = contentLines.join('\n').trim();
-    // Strip markdown chars for excerpt roughly
-    const plainText = bodyText.replace(/[*#_\[\]]/g, '');
+    // Strip markdown image syntax, then markdown chars, for a clean excerpt
+    const plainText = bodyText
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+      .replace(/[*#_\[\]]/g, '');
     const excerpt = plainText.length > 150 ? plainText.substring(0, 150) + '...' : plainText;
 
     // Fallback if parsing fails or fields are missing

@@ -1,16 +1,16 @@
 # Hierarchical Condition Category (HCC) Coding | Martlet AI
 
 **Date:** 06.10.2026  
-**Thumbnail:** /assets/blog/hcc-coding-preview.jpg  
-**Description:** Understand HCC coding: how documented ICD-10 diagnoses map to risk-adjusted categories, drive RAF scores and value-based reimbursement, and why documentation quality matters.  
-**MetaTitle:** What Is HCC Coding? Risk Adjustment & RAF Explained | Martlet AI
+**Thumbnail:** /assets/blog/hcc-coding/cover.jpg  
+**Description:** Learn what HCC coding is, how it supports risk adjustment, and why accurate Hierarchical Condition Category coding is essential for value-based healthcare payment models.  
+**MetaTitle:** HCC Coding: Hierarchical Condition Categories Explained
 **Tag:** Insights
 **DefinedTermName:** Hierarchical Condition Category (HCC) Coding
 **DefinedTermDescription:** A risk adjustment methodology CMS uses to estimate patient disease burden and calibrate reimbursement in Medicare Advantage and value-based programs, mapping documented ICD-10 diagnoses to Condition Categories that combine with demographics to produce a Risk Adjustment Factor (RAF) score.
 
 # Hierarchical Condition Category (HCC) Coding
 
-![Hierarchical Condition Category (HCC) coding maps documented diagnoses to risk-adjusted categories](/assets/blog/hcc-coding.jpg)
+![Hierarchical Condition Category (HCC) coding maps documented diagnoses to risk-adjusted categories](/assets/blog/hcc-coding/hcc-coding-infographic.jpg)
 
 HCC coding is the risk adjustment methodology CMS uses to estimate patient disease burden and calibrate reimbursement in Medicare Advantage and other value-based programs. Documented diagnoses — expressed as ICD-10 codes — are mapped to Condition Categories associated with projected care costs. Those categories combine with demographic data to produce a Risk Adjustment Factor score that directly determines how much a payer receives to cover a given member.
 

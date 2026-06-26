@@ -1,16 +1,16 @@
 # Risk Adjustment Coding | Martlet AI
 
 **Date:** 06.17.2026  
-**Thumbnail:** /assets/blog/risk-adjustment-coding-preview.jpg  
-**Description:** Risk adjustment coding maps documented ICD-10-CM diagnoses to risk scores that set payment across Medicare Advantage, Medicaid, and ACA plans. Learn how RAF scores work, why documentation accuracy matters, and where compliance risk concentrates.  
-**MetaTitle:** What Is Risk Adjustment Coding? RAF & HCC Explained | Martlet AI
+**Thumbnail:** /assets/blog/risk-adjustment-coding/cover.png  
+**Description:** Learn how risk adjustment coding works, how RAF scores are calculated, and why accurate coding is critical for healthcare reimbursement.  
+**MetaTitle:** Risk Adjustment Coding | Martlet AI
 **Tag:** Insights
 **DefinedTermName:** Risk Adjustment Coding
 **DefinedTermDescription:** The process of translating documented ICD-10-CM diagnoses into risk scores that adjust the payments health plans and providers receive for covering a population, mapping qualifying diagnoses to Condition Categories that combine with demographic factors to produce a Risk Adjustment Factor (RAF) score.
 
 # Risk Adjustment Coding
 
-![Risk adjustment coding translates documented diagnoses into risk-adjusted payment](/assets/blog/risk-adjustment-coding.jpg)
+![Risk adjustment coding translates documented diagnoses into risk-adjusted payment](/assets/blog/risk-adjustment-coding/risk-adjustment-coding-infographic.jpg)
 
 Healthcare has never paid everyone the same rate. A patient managing diabetes, heart failure, and chronic kidney disease costs far more to cover than a 35-year-old with no chronic conditions. Risk adjustment coding is what translates that clinical reality into payment. It converts documented diagnosis data into risk scores that determine how much a health plan, provider, or insurer actually receives for covering a given population.
 

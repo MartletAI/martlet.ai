@@ -1,7 +1,7 @@
 # AI in Medical Coding and Billing | Martlet AI
 
 **Date:** 06.18.2026  
-**Thumbnail:** /assets/blog/ai-in-medical-coding-and-billing/cover.jpg  
+**Thumbnail:** /assets/blog/ai-in-medical-coding-and-billing/cover-v2.jpg  
 **Description:** Explore how artificial intelligence is transforming medical coding and billing, including automation, accuracy improvements, workflow impacts, and implementation challenges.  
 **MetaTitle:** AI in Medical Coding and Billing | Martlet AI
 **Tag:** Insights

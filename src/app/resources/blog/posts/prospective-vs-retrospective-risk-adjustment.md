@@ -1,0 +1,136 @@
+# Prospective vs Retrospective Risk Adjustment | Martlet AI
+
+**Date:** 06.30.2026  
+**Thumbnail:** /assets/blog/prospective-vs-retrospective-risk-adjustment/cover.jpg  
+**Description:** Learn the difference between prospective and retrospective risk adjustment, how each approach works, and how they affect RAF scores and healthcare reimbursement.  
+**MetaTitle:** Prospective vs Retrospective Risk Adjustment | Martlet AI
+**Tag:** Insights
+**DefinedTermName:** Prospective Risk Adjustment
+**DefinedTermDescription:** A risk adjustment approach that identifies and documents chronic conditions before or during clinical encounters — through pre-visit chart review, clinical documentation improvement, and member outreach — so that HCC-eligible diagnoses are captured at the point of care rather than recovered afterward.
+
+# Prospective vs Retrospective Risk Adjustment
+
+![Prospective vs Retrospective Risk Adjustment infographic](/assets/blog/prospective-vs-retrospective-risk-adjustment/prospective-vs-retrospective-risk-adjustment-infographic.jpg)
+
+Health plans and provider organizations do not have a single moment to get risk adjustment right. Patient conditions need to be documented, coded, and submitted accurately — and that process can break down at several points in the care cycle. Prospective and retrospective risk adjustment are the two primary strategies organizations use to catch those breakdowns, and they work at different points in time: one before or during the encounter, one after it.
+
+Prospective risk adjustment identifies and documents chronic conditions before or during clinical encounters, giving physicians a chance to address gaps in real time. Retrospective risk adjustment reviews completed records after the service period to catch diagnoses that were present but not properly coded. Most health plans use both, because neither approach alone captures everything.
+
+## What is risk adjustment in healthcare
+
+Risk adjustment is the mechanism that makes fixed or capitated payment models financially sustainable. When a health plan receives the same monthly premium for every member regardless of health status, sicker members cost more to care for than the payment covers. Risk adjustment corrects for that by calculating each member's expected cost relative to the average population and adjusting payment accordingly.
+
+The prospective vs retrospective risk adjustment question only matters in this context: both approaches exist to ensure that a patient's documented health complexity reflects their actual health complexity. If chronic conditions go undocumented or uncoded, the plan's risk scores understate the true care burden, and reimbursement falls short of what the population actually costs.
+
+Risk adjustment models like CMS-HCC — used in Medicare Advantage — translate ICD-10-CM diagnosis codes into Hierarchical Condition Category (HCC) flags, which combine with demographic factors to produce a RAF score. That score directly determines how much CMS pays the plan per member per month. Every gap in documentation or coding is a gap in payment.
+
+## What is prospective risk adjustment
+
+Prospective risk adjustment works before the clinical encounter happens, or at minimum in real time during it. The goal is to put relevant patient history in front of the physician before they walk into the room, so that chronic conditions get documented and addressed as part of routine care rather than discovered months later in a chart review.
+
+In practice, this involves pre-visit chart reviews that flag likely under-coded conditions based on claims history, prior HCC data, and pharmacy records. A patient with a claim history suggesting diabetes complications, for example, may not have had that condition documented in a current-year encounter yet. Prospective workflows surface that gap to the care team in advance.
+
+Prospective risk adjustment programs typically include pre-visit summaries delivered to the physician listing suspected chronic conditions that need to be addressed or ruled out, clinical documentation improvement (CDI) workflows that help physicians document conditions at the appropriate level of specificity, outreach programs to schedule members with high suspected risk gaps for annual wellness visits or chronic care management appointments, and real-time coding support during or immediately after the encounter.
+
+The clinical benefit is real and not incidental. Identifying a patient's underdocumented diabetic nephropathy before the visit means the physician knows to check on it — better for the patient and for the documentation record simultaneously.
+
+## What is retrospective risk adjustment
+
+Retrospective risk adjustment starts where prospective leaves off: after care has been delivered. Encounters are complete, claims have been submitted, and the record exists. The question retrospective review answers is whether everything that should have been coded actually was.
+
+Chart abstractors and certified risk adjustment coders review medical records from completed encounters to identify diagnoses that were documented in the clinical notes but either missed in the original coding, coded at insufficient specificity, or lost somewhere in the submission process. When they find them, those diagnoses get submitted as supplemental data to the risk adjustment data submission.
+
+Retrospective programs typically include medical record retrieval from provider offices, hospitals, and health systems; coding review against ICD-10-CM guidelines and HCC mapping tables; MEAT criteria validation to confirm each diagnosis meets the documented, evaluated, treated, or managed standard that CMS requires; and submission of chase-and-supplement records in the appropriate format before the annual data submission deadline.
+
+Retrospective review is also the primary mechanism for RADV audit preparation. When CMS selects records for audit, retrospective review is how plans verify that submitted codes are defensible before CMS evaluates them.
+
+## Key differences between prospective and retrospective risk adjustment
+
+The core distinction is timing, but timing has downstream effects on nearly every aspect of how the work gets done.
+
+| Factor | Prospective | Retrospective |
+| --- | --- | --- |
+| When it happens | Before or during the encounter | After the encounter is complete |
+| Primary goal | Prevent documentation gaps at the point of care | Identify and correct gaps after the fact |
+| Physician involvement | High — requires workflow integration | Low — handled by coders and abstractors |
+| Clinical benefit | Can influence care delivery | Documentation only, no care impact |
+| Coding accuracy | Higher specificity when CDI is effective | Depends on what the original notes support |
+| Turnaround | Real-time or near-real-time | Weeks to months after service |
+| RADV defensibility | Strong if documentation is thorough | Strong if MEAT criteria are met |
+| Cost per gap found | Generally higher | Generally lower |
+
+Prospective and retrospective programs also differ in how they affect the physician relationship. Prospective programs require physician buy-in and workflow changes. Retrospective programs make no demands on the physician after the fact, but they also cannot fix documentation that was never there.
+
+## Benefits of prospective risk adjustment
+
+The case for investing in prospective programs goes beyond RAF accuracy, though that is the primary financial driver.
+
+Earlier clinical intervention is the most meaningful secondary benefit. A prospective workflow that flags a patient's suspected stage 3 chronic kidney disease before the annual visit creates an opportunity to monitor kidney function, adjust medications, and potentially slow progression. That is a care quality outcome, not just a coding one.
+
+Higher documentation specificity follows from effective CDI integration. Physicians who receive pre-visit summaries with specific condition guidance tend to document at a more useful level of specificity than those working from memory. "Diabetes mellitus type 2 with diabetic chronic kidney disease, stage 3" codes differently than "diabetes mellitus type 2," and the difference has material HCC impact.
+
+Reduced retrospective workload is a direct downstream effect. Every gap closed prospectively is a gap that does not need retrospective review. Plans that run effective prospective programs typically see lower volume in their retrospective chase programs.
+
+A stronger RADV audit position is the fourth benefit. Diagnoses documented thoroughly in a current-year encounter note are easier to defend in a CMS audit than diagnoses recovered through retrospective chart abstraction. The record speaks for itself.
+
+## Benefits of retrospective risk adjustment
+
+Prospective programs, even well-run ones, do not capture everything. Retrospective review fills the gaps that prospective workflows missed.
+
+Broad reach across the member population is the primary structural advantage. Prospective outreach depends on getting the right members to scheduled visits. Not every member comes in. Retrospective review can work through the entire population's records regardless of whether outreach was successful.
+
+Lower barrier to implementation makes retrospective programs faster to deploy and easier to scale. They do not require physician workflow changes or real-time EHR integration — they operate on records that already exist.
+
+Catching coding errors at the point of service is the third benefit. Even when a condition is documented correctly, it sometimes gets coded incorrectly or not at all during the original encounter. Retrospective review catches those errors before the final submission deadline.
+
+Supplemental data submission is the direct output. CMS accepts supplemental data submissions from health plans after the original claims run. Retrospective review is the primary mechanism for generating those submissions — finding legitimate diagnoses in completed records and getting them into the risk adjustment data file.
+
+## Why many organizations use both approaches
+
+Neither approach eliminates the need for the other. Prospective programs reduce retrospective volume but never get it to zero. Retrospective programs catch what prospective missed but cannot improve care delivery after the fact.
+
+The practical case for running both is straightforward: they address different failure modes. Prospective programs fail when members do not show up for visits, when physicians do not act on pre-visit summaries, or when documentation improvement efforts do not change specificity at the note level. Retrospective programs fail when the original documentation is too sparse to support the diagnosis, when submission timelines are missed, or when coding review does not go deep enough into specialty records.
+
+Plans that run both tend to allocate prospective resources toward their highest-risk, highest-gap members and retrospective resources toward broader population sweeps and RADV audit preparation. The two programs inform each other: retrospective findings from one year point to the documentation patterns that prospective CDI should target in the next.
+
+## The role of technology and AI in risk adjustment
+
+Running either program at scale requires technology. Manual chart review across hundreds of thousands of member-years is not viable, and the accuracy requirements are too high for unassisted coding.
+
+Clinical NLP models trained on physician notes and clinical documentation can identify HCC-eligible diagnoses and MEAT-criterion evidence at a fraction of the time manual review requires. In prospective programs, NLP surfaces suspected conditions from prior records before the visit. In retrospective programs, it prioritizes the charts most likely to contain under-coded conditions.
+
+Predictive gap identification uses models trained on claims and pharmacy data to predict which members are most likely to have conditions present but undocumented. Prospective outreach programs use this to direct scheduling and pre-visit preparation toward the members where the gap is largest.
+
+Coding validation cross-checks proposed ICD-10-CM codes against documentation before submission, catching specificity gaps and unsupported codes before they become audit risk.
+
+The meaningful distinction among AI platforms is whether the underlying models are healthcare-specific from the ground up — trained on the language of physician notes, problem lists, and care plans — or general-purpose models applied to clinical text as a secondary use case. Those two architectures behave very differently on the core task of linking clinical text to HCC conditions and validating MEAT evidence. Independent, peer-reviewed benchmarking is the right standard to hold any platform to.
+
+## Prospective and retrospective risk adjustment work best as a coordinated cycle
+
+Prospective and retrospective risk adjustment are not competing strategies — they are complementary ones. Prospective programs improve documentation quality at the point of care and open clinical intervention opportunities that retrospective review cannot provide. Retrospective programs catch what prospective workflows missed and provide a systematic way to align final submissions with the full documented health complexity of the population.
+
+Health plans that treat these as separate programs to be optimized independently tend to get less from both. The better approach is a coordinated cycle where retrospective findings feed prospective improvement, and prospective success reduces retrospective burden. That is how accurate RAF scores get built at population scale.
+
+If you are evaluating how Martlet AI supports both prospective and retrospective risk adjustment workflows inside your environment, [see how the platform works](/solutions/prospective-risk-adjustment) or [schedule a working session with the team](https://meetings.hubspot.com/ritwik-jain?uuid=0616cd42-5ffd-4a4f-8c09-a3ccfee6dab1).
+
+## FAQ
+
+### What is prospective risk adjustment?
+
+Prospective risk adjustment is the process of identifying and documenting chronic conditions before or during clinical encounters. It typically involves pre-visit chart reviews, clinical documentation improvement workflows, and member outreach to ensure that HCC-eligible diagnoses are captured at the point of care rather than recovered after the fact.
+
+### What is retrospective risk adjustment?
+
+Retrospective risk adjustment reviews completed medical records after care has been delivered to identify diagnoses that were documented in clinical notes but missed in the original coding. Those diagnoses are submitted to CMS as supplemental data to ensure the plan's risk adjustment submission reflects the full documented health complexity of its members.
+
+### Which approach is better for healthcare organizations?
+
+Neither approach is sufficient on its own. Prospective programs improve documentation quality in real time but depend on physician participation and member visit rates. Retrospective programs provide broader population coverage but cannot improve documentation that was never written. Most health plans run both, using prospective programs for high-risk member outreach and retrospective programs for population-wide gap capture.
+
+### How do prospective and retrospective strategies affect RAF scores?
+
+Both strategies work to ensure that HCC-eligible diagnoses appear in the annual risk adjustment data submission. Prospective programs capture conditions in current-year encounter notes, which are the strongest form of documentation for RAF purposes. Retrospective programs recover conditions from completed records and submit them as supplemental data. Both raise RAF scores when they find legitimate underdocumented conditions.
+
+### Can healthcare organizations use both approaches together?
+
+Yes, and most do. The two programs address different failure modes in the documentation and coding process, and findings from retrospective review routinely inform what prospective programs target in subsequent years. A coordinated strategy that runs both programs and uses each to improve the other tends to produce more accurate RAF scores than either approach in isolation.

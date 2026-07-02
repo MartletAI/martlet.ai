@@ -1,7 +1,7 @@
 # AI Risk Adjustment in Healthcare | Martlet AI
 
 **Date:** 06.23.2026  
-**Thumbnail:** /assets/blog/ai-risk-adjustment-in-healthcare/cover.jpg  
+**Thumbnail:** /assets/blog/ai-risk-adjustment-in-healthcare/cover-v2.jpg  
 **Description:** Learn how artificial intelligence is transforming risk adjustment in healthcare, including clinical documentation, coding accuracy, and prediction of patient risk scores.  
 **MetaTitle:** AI Risk Adjustment in Healthcare | Martlet AI
 **Tag:** Insights

@@ -30,9 +30,9 @@ The process starts with a physician encounter. A patient comes in, the physician
 
 HCC risk adjustment coding adds one requirement that standard outpatient coding does not have: annual recapture. A chronic condition must appear in a qualifying face-to-face encounter during the current model year to generate an HCC flag for that year. It does not carry forward automatically from the year before. A patient who has been managing type 2 diabetes with CKD for a decade still needs that diagnosis documented in a current-year encounter for it to count in this year's payment calculation.
 
-This is where Prospective Risk Adjustment programs come in. Pre-visit chart reviews surface the chronic conditions a patient is known to have so the physician can address them during the encounter — documenting, evaluating, treating, or managing each one before it ends. Conditions captured this way go into the risk adjustment submission with strong documentation backing.
+This is where [Prospective Risk Adjustment](https://www.martlet.ai/solutions/prospective-risk-adjustment) programs come in. Pre-visit chart reviews surface the chronic conditions a patient is known to have so the physician can address them during the encounter — documenting, evaluating, treating, or managing each one before it ends. Conditions captured this way go into the risk adjustment submission with strong documentation backing.
 
-Retrospective Risk Adjustment handles what prospective programs miss. After encounters are complete, coders review medical records to find documented diagnoses that did not make it into the original submission. Those get submitted as supplemental data before the annual deadline. Both programs exist because neither one catches everything on its own.
+[Retrospective Risk Adjustment](https://www.martlet.ai/solutions/retrospective-risk-adjustment) handles what prospective programs miss. After encounters are complete, coders review medical records to find documented diagnoses that did not make it into the original submission. Those get submitted as supplemental data before the annual deadline. Both programs exist because neither one catches everything on its own.
 
 ## The role of RAF scores in risk adjustment
 
@@ -46,7 +46,7 @@ A RAF score of 1.0 represents the average Medicare beneficiary. A score of 1.5 m
 
 HCC analytics consistently show that coding gaps are common and expensive. When a patient's chronic conditions are not captured, the RAF score understates their complexity, the plan receives less than it costs to care for that person, and the financial shortfall comes out of margins or care programs.
 
-The compliance risk runs in the opposite direction as well. RADV audits — CMS's Risk Adjustment Data Validation program — check whether submitted HCC diagnoses are backed by medical record documentation. A code submitted without adequate documentation support does not just fail the audit. Under the post-2023 RADV methodology, error rates get extrapolated across the full plan population, which can turn a documentation problem in a sample of records into a plan-wide recoupment demand.
+The compliance risk runs in the opposite direction as well. [RADV audits](https://www.martlet.ai/solutions/radv) — CMS's Risk Adjustment Data Validation program — check whether submitted HCC diagnoses are backed by medical record documentation. A code submitted without adequate documentation support does not just fail the audit. Under the post-2023 RADV methodology, error rates get extrapolated across the full plan population, which can turn a documentation problem in a sample of records into a plan-wide recoupment demand.
 
 Getting HCC coding right means two things simultaneously: capturing every legitimate diagnosis that is documented, and making sure every submitted code can be defended if CMS asks for the record. Those goals reinforce each other when documentation is thorough and coding is accurate.
 

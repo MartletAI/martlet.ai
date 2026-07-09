@@ -30,7 +30,7 @@ The headline benefit is throughput. A human coder reviews one chart at a time. A
 
 AI for medical coding also addresses the consistency problem. Human coders vary in experience and specialization. An outpatient coder who understands orthopedic encounters well may struggle with the nuance of oncology documentation. AI models trained across specialties apply consistent logic regardless of encounter type.
 
-For risk adjustment programs specifically, AI surfaces coding opportunities that manual workflows routinely miss. In Prospective Risk Adjustment, NLP-driven pre-visit chart review identifies chronic conditions documented in prior records that have not been captured in current-year encounters, giving physicians the chance to address them before the visit ends. In Retrospective Risk Adjustment, AI can process far more completed records than a manual chart review team, recovering legitimate diagnoses that did not make it through the original coding workflow.
+For risk adjustment programs specifically, AI surfaces coding opportunities that manual workflows routinely miss. In [Prospective Risk Adjustment](https://www.martlet.ai/solutions/prospective-risk-adjustment), NLP-driven pre-visit chart review identifies chronic conditions documented in prior records that have not been captured in current-year encounters, giving physicians the chance to address them before the visit ends. In [Retrospective Risk Adjustment](https://www.martlet.ai/solutions/retrospective-risk-adjustment), AI can process far more completed records than a manual chart review team, recovering legitimate diagnoses that did not make it through the original coding workflow.
 
 Accuracy improvements are real but conditional. AI models perform well on encounter types they have seen in training data. On unusual cases, rare diagnoses, or encounters with atypical documentation, model confidence drops and human review becomes more important, not less.
 
@@ -46,9 +46,9 @@ Denial prediction is a third area where machine learning has practical value. Mo
 
 Large health systems with high outpatient volumes have used AI coding tools to reduce average coding turnaround time from days to hours on routine encounter types, freeing coders to focus on complex inpatient cases where human judgment adds the most value.
 
-Medicare Advantage plans have deployed NLP platforms to run retrospective chart review across member populations at a scale that manual review could not achieve within submission deadlines. The practical result is more complete HCC coding going into the annual risk adjustment data submission.
+Medicare Advantage plans have deployed NLP platforms to run retrospective chart review across member populations at a scale that manual review could not achieve within submission deadlines. The practical result is more complete [HCC coding](https://www.martlet.ai/resources/blog/hcc-coding) going into the annual risk adjustment data submission.
 
-RADV audit preparation is a concrete application worth noting. When CMS selects records for audit, AI platforms can process sampled records quickly, surfacing the supporting documentation for each submitted HCC diagnosis and flagging cases where the documentation may not hold up under scrutiny. That gives compliance teams a realistic picture of audit exposure before CMS finishes its own review.
+[RADV audit](https://www.martlet.ai/solutions/radv) preparation is a concrete application worth noting. When CMS selects records for audit, AI platforms can process sampled records quickly, surfacing the supporting documentation for each submitted HCC diagnosis and flagging cases where the documentation may not hold up under scrutiny. That gives compliance teams a realistic picture of audit exposure before CMS finishes its own review.
 
 Revenue cycle teams at regional hospitals have used denial prediction models to identify the billing patterns that generate the most denials with their highest-volume payers, then corrected those patterns at the source — in documentation templates and coder training — rather than treating each denial individually.
 
@@ -102,7 +102,7 @@ AI is doing real work in coding and billing today — not in pilots, not in pres
 
 What it has not done is make implementation easy or make governance optional. The organizations getting the most value treat AI as infrastructure that requires maintenance, oversight, and honest measurement. The ones that bought a tool expecting it to run itself tend to find out what they missed when the audit results come back.
 
-If you are evaluating how Martlet AI applies clinical NLP and HCC automation to risk adjustment coding programs inside your environment, [see how the platform works](/solutions/retrospective-risk-adjustment) or [schedule a working session with the team](https://meetings.hubspot.com/ritwik-jain?uuid=0616cd42-5ffd-4a4f-8c09-a3ccfee6dab1).
+If you are evaluating how Martlet AI applies clinical NLP and HCC automation to [risk adjustment coding](https://www.martlet.ai/resources/blog/risk-adjustment-coding) programs inside your environment, [see how the platform works](/solutions/retrospective-risk-adjustment) or [schedule a working session with the team](https://meetings.hubspot.com/ritwik-jain?uuid=0616cd42-5ffd-4a4f-8c09-a3ccfee6dab1).
 
 ## FAQ
 

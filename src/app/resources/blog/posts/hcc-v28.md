@@ -46,7 +46,7 @@ Revised interaction terms. The bonus weights that apply when a member has specif
 
 Documentation specificity requirements tightened. When fewer codes qualify, the codes that do qualify need better documentation support. A physician note sufficient to support an HCC submission under v24 may not support the equivalent code under v28 if that code now requires greater clinical specificity.
 
-Prospective Risk Adjustment gap lists built on v24 logic need to be rebuilt. Pre-visit alerts that flag v24-eligible conditions may now flag diagnoses that generate no HCC flag under v28, while missing conditions that do qualify. Retrospective Risk Adjustment chart review workflows face the same alignment problem for supplemental data submissions.
+[Prospective Risk Adjustment](https://www.martlet.ai/solutions/prospective-risk-adjustment) gap lists built on v24 logic need to be rebuilt. Pre-visit alerts that flag v24-eligible conditions may now flag diagnoses that generate no HCC flag under v28, while missing conditions that do qualify. [Retrospective Risk Adjustment](https://www.martlet.ai/solutions/retrospective-risk-adjustment) chart review workflows face the same alignment problem for supplemental data submissions.
 
 ## Differences between HCC v24 and HCC v28
 
@@ -61,7 +61,7 @@ Prospective Risk Adjustment gap lists built on v24 logic need to be rebuilt. Pre
 
 The phase-in numbers have real budget implications. 2024 payments were a blend: 33% v28, 67% v24. In 2025 that flipped. From the 2026 payment year onward, v24 does not factor in at all.
 
-On the audit side, RADV reviews will run under v28 mappings as full implementation lands. A diagnosis that survived a v24 audit is not automatically safe under v28 if it no longer maps to an HCC category. It does not create retroactive liability for what has already been paid, but it drops out of future submissions entirely.
+On the audit side, [RADV reviews](https://www.martlet.ai/solutions/radv) will run under v28 mappings as full implementation lands. A diagnosis that survived a v24 audit is not automatically safe under v28 if it no longer maps to an HCC category. It does not create retroactive liability for what has already been paid, but it drops out of future submissions entirely.
 
 ## How HCC v28 affects RAF scores
 

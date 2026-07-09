@@ -26,17 +26,17 @@ Health plan leaders can manage coding and operations, but RADV exposure is harde
 
 ### Extrapolation Raises the Financial Stakes
 
-The core risk in today’s RADV audits is that a single documentation miss in the sample can shape CMS’s view of the entire contract. In its [July 2025 guidance for payment year 2018 RADV audits](https://www.cms.gov/files/document/payment-year-2018-ma-radv-audit-methods-instructions.pdf), CMS states that extrapolation is expected to be standard practice for Medicare Advantage contract reviews. As a result, a limited number of unsupported diagnoses identified in the sample can drive a much larger contract-level overpayment estimate
+The core risk in today’s [RADV audits](https://www.martlet.ai/solutions/radv) is that a single documentation miss in the sample can shape CMS’s view of the entire contract. In its [July 2025 guidance for payment year 2018 RADV audits](https://www.cms.gov/files/document/payment-year-2018-ma-radv-audit-methods-instructions.pdf), CMS states that extrapolation is expected to be standard practice for Medicare Advantage contract reviews. As a result, a limited number of unsupported diagnoses identified in the sample can drive a much larger contract-level overpayment estimate
 
 ### Audit Expansion Increases Operational Pressure
 
-CMS is also broadening its audit reach. It plans to [review every eligible Medicare Advantage contract](https://www.cms.gov/newsroom/press-releases/cms-rolls-out-aggressive-strategy-enhance-and-accelerate-medicare-advantage-audits) and is working with the Department of Health and Human Services Office of Inspector General to recover past overpayments. This raises the bar for documentation, which must be:
+CMS is also broadening its audit reach. It plans to [review every eligible Medicare Advantage contract](https://www.cms.gov/newsroom/press-releases/cms-rolls-out-aggressive-strategy-enhance-and-accelerate-medicare-advantage-audits) and is working with the Department of Health and Human Services Office of Inspector General to recover past overpayments. [Prospective Risk Adjustment (PRA)](https://www.martlet.ai/solutions/prospective-risk-adjustment) models are becoming increasingly important as health plans need to anticipate and document conditions that will affect future risk scores, adding another layer of complexity to audit preparation. This raises the bar for documentation, which must be:
 
 *   complete when the chart is pulled
 *   consistent across systems
 *   clear enough for auditors to verify quickly
 
-The faster audit cadence leaves plans with less time to gather charts, fix small documentation issues, or clarify the clinical story before those records are pulled into the RADV sample.
+The faster audit cadence leaves plans with less time to gather charts, fix small documentation issues, or clarify the clinical story before those records are pulled into the RADV sample. [Retrospective Risk Adjustment (RRA)](https://www.martlet.ai/solutions/retrospective-risk-adjustment) analysis is critical for evaluating the accuracy of historical diagnoses and ensuring that any discrepancies in past documentation are identified and corrected before an audit occurs.
 
 ### Unsupported Diagnoses Heighten Sample Risk
 
@@ -62,7 +62,7 @@ Diagnoses that lack clear assessment, monitoring or treatment often appear incom
 
 CMS reviewer guidance allows records to be excluded when dates, signatures or credentials are missing or unclear. These intake issues can remove legitimate diagnoses before auditors consider the clinical context. [Research shows](https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2024.1475092/full) that reviewing unstructured EHR data can take up to 30 minutes per case, and information overload limits what reviewers can reliably catch.
 
-Experts who spend more time on manual steps have less time to assemble packets carefully, which increases the risk that required documents are missing. These risks put defensible diagnoses at risk during RADV review.
+Experts who spend more time on manual steps have less time to assemble packets carefully, which increases the risk that required documents are missing. These risks put defensible diagnoses at risk during RADV review. AI-assisted coding workflows are one way plans are addressing this bottleneck — see [AI in Medical Coding and Billing](https://www.martlet.ai/resources/blog/ai-in-medical-coding-and-billing) for how that works in practice.
 
 ## How Martlet AI Transforms RADV Workflows Into Defensible Evidence
 

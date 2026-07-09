@@ -32,7 +32,7 @@ The foundation of every payment is the county-level benchmark. CMS calculates be
 
 Medicare rate calculations then factor in what each plan submitted as its bid — an estimate of what it costs to provide the standard Medicare benefit package to an average beneficiary in its service area. The relationship between the bid and the benchmark determines whether the plan receives a rebate.
 
-Prospective Risk Adjustment programs affect this calculation by ensuring that members' documented health complexity is captured before the data submission deadline. Better documentation going into the risk adjustment calculation produces more accurate payments coming out of it. Retrospective Risk Adjustment programs catch what prospective workflows missed, recovering legitimate diagnoses from completed records to include in the final submission.
+[Prospective Risk Adjustment](https://www.martlet.ai/solutions/prospective-risk-adjustment) programs affect this calculation by ensuring that members' documented health complexity is captured before the data submission deadline. Better documentation going into the risk adjustment calculation produces more accurate payments coming out of it. [Retrospective Risk Adjustment](https://www.martlet.ai/solutions/retrospective-risk-adjustment) programs catch what prospective workflows missed, recovering legitimate diagnoses from completed records to include in the final submission.
 
 ## The role of risk adjustment in Medicare Advantage payments
 
@@ -59,7 +59,7 @@ Medicare Advantage reimbursement for a specific member works as follows: take th
 
 Across a plan with tens of thousands of members, the aggregate RAF score drives total revenue. A plan with 50,000 members and an average RAF of 1.2 receives 20% more per month than the same plan with an average RAF of 1.0 at any given benchmark level. At a $900 benchmark, that gap is $180 per member per month — or $108 million annually.
 
-RADV audits are how CMS verifies that RAF scores are legitimate. When CMS selects records for audit, it checks whether submitted HCC diagnoses are supported by medical record documentation. Plans with unsupported codes face recoupment of the associated payments. Since 2023, CMS has applied extrapolated error rates across plan populations rather than limiting recoupment to sampled records, which significantly raised the financial stakes of documentation accuracy.
+[RADV audits](https://www.martlet.ai/solutions/radv) are how CMS verifies that RAF scores are legitimate. When CMS selects records for audit, it checks whether submitted HCC diagnoses are supported by medical record documentation. Plans with unsupported codes face recoupment of the associated payments. Since 2023, CMS has applied extrapolated error rates across plan populations rather than limiting recoupment to sampled records, which significantly raised the financial stakes of documentation accuracy.
 
 ## Benchmarks, bids, and rebates in Medicare Advantage
 

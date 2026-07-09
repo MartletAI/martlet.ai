@@ -14,7 +14,7 @@
 
 Health plans and provider organizations do not have a single moment to get risk adjustment right. Patient conditions need to be documented, coded, and submitted accurately — and that process can break down at several points in the care cycle. Prospective and retrospective risk adjustment are the two primary strategies organizations use to catch those breakdowns, and they work at different points in time: one before or during the encounter, one after it.
 
-Prospective risk adjustment identifies and documents chronic conditions before or during clinical encounters, giving physicians a chance to address gaps in real time. Retrospective risk adjustment reviews completed records after the service period to catch diagnoses that were present but not properly coded. Most health plans use both, because neither approach alone captures everything.
+[Prospective risk adjustment](https://www.martlet.ai/solutions/prospective-risk-adjustment) identifies and documents chronic conditions before or during clinical encounters, giving physicians a chance to address gaps in real time. [Retrospective risk adjustment](https://www.martlet.ai/solutions/retrospective-risk-adjustment) reviews completed records after the service period to catch diagnoses that were present but not properly coded. Most health plans use both, because neither approach alone captures everything.
 
 ## What is risk adjustment in healthcare
 
@@ -42,7 +42,7 @@ Chart abstractors and certified risk adjustment coders review medical records fr
 
 Retrospective programs typically include medical record retrieval from provider offices, hospitals, and health systems; coding review against ICD-10-CM guidelines and HCC mapping tables; MEAT criteria validation to confirm each diagnosis meets the documented, evaluated, treated, or managed standard that CMS requires; and submission of chase-and-supplement records in the appropriate format before the annual data submission deadline.
 
-Retrospective review is also the primary mechanism for RADV audit preparation. When CMS selects records for audit, retrospective review is how plans verify that submitted codes are defensible before CMS evaluates them.
+Retrospective review is also the primary mechanism for [RADV audit preparation](https://www.martlet.ai/solutions/radv). When CMS selects records for audit, retrospective review is how plans verify that submitted codes are defensible before CMS evaluates them.
 
 ## Key differences between prospective and retrospective risk adjustment
 

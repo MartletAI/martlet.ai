@@ -48,7 +48,7 @@ Healthcare requires understanding nuances such as:
 *   “BP 128/78 on 3/14/25” → compliant with the year’s measure
 *   “Colonoscopy 06/2019 – normal” → valid within 10-year lookback
 
-Generic models don’t handle these semantics, nor do they run securely within HIPAA-compliant, on-premise environments where payers must process PHI.
+Generic models don’t handle these semantics, nor do they run securely within HIPAA-compliant, on-premise environments where payers must process PHI. Additionally, these models can be leveraged for [Prospective Risk Adjustment](https://www.martlet.ai/solutions/prospective-risk-adjustment), identifying clinical data that can influence future risk assessments and adjustments to payment structures.
 
 ## How Healthcare-Specific NLP and LLMs Solve the Problem
 
@@ -61,14 +61,14 @@ Here’s how the process works:
     *   a. “Mammogram 08/05/2024, BI-RADS 1” → screening complete
     *   b. “No evidence of diabetic retinopathy, 12/15/2024” → compliant eye exam
     *   c. “Medication reconciliation done 9/18/2025” → post-discharge compliance
-3.  Apply measure logic and lookback windows Each finding is automatically mapped to the right HEDIS/Stars measure with date logic applied — for example, 10 years for colonoscopy, 2 years for mammogram, or 30 days for post-discharge medication reconciliation.
+3.  Apply measure logic and lookback windows Each finding is automatically mapped to the right HEDIS/Stars measure with date logic applied — for example, 10 years for colonoscopy, 2 years for mammogram, or 30 days for post-discharge medication reconciliation. These models also support [Retrospective Risk Adjustment](https://www.martlet.ai/solutions/retrospective-risk-adjustment) by analyzing historical clinical data to adjust past risk scores and ensure accurate reimbursement calculations.
 4.  Generate structured ‘quality signals’ The output includes:
     *   a. Measure status: Open / Closed / Needs follow-up
     *   b. Evidence: Source, date, and context
     *   c. Confidence score: For audit and validation
     *   d. Recommended action: Member outreach or PCP follow-up
 
-These signals can then feed directly into payer dashboards, Stars platforms, or HEDIS abstraction systems.
+These signals can then feed directly into payer dashboards, Stars platforms, or HEDIS abstraction systems. Additionally, these models can assist in the [RADV Audit](https://www.martlet.ai/solutions/radv) process by providing accurate, auditable evidence of care that can be easily validated for risk adjustment compliance.
 
 ## Why It Matters
 

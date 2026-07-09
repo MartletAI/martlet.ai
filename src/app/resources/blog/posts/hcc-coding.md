@@ -96,7 +96,7 @@ Situations like this are why organizations increasingly rely on analytics and HC
 
 Large provider and payer organizations are processing volumes of clinical documentation that make manual review alone operationally unworkable. A skilled coder reviewing charts for HCC gap closure processes roughly 15 to 25 member records per day, depending on encounter complexity. At tens of thousands of members — each averaging five or six chronic conditions — a complete annual retrospective pass runs into hundreds of coder-days before accounting for prospective coding and active RADV activity.
 
-AI and NLP platforms address that throughput problem. Modern HCC software can analyze physician notes, extract diagnosis candidates, validate whether MEAT criteria are met for each condition, and surface documentation gaps — at a pace and scale that manual workflows cannot match.
+AI and NLP platforms address that throughput problem. Modern HCC software can analyze physician notes, extract diagnosis candidates, validate whether MEAT criteria are met for each condition, and surface documentation gaps — at a pace and scale that manual workflows cannot match. For a deeper look at how these tools function in practice, see [AI in Medical Coding and Billing](https://www.martlet.ai/resources/blog/ai-in-medical-coding-and-billing).
 
 The meaningful distinction among AI platforms is not AI versus no AI. It is whether the underlying models are healthcare-specific from the ground up, trained on the language of physician notes, problem lists, lab interpretations, and care plans — or general-purpose models applied to clinical text as a secondary use case. Those two architectures behave very differently on the core task of linking clinical text to HCC conditions and validating documentation adequacy. Independent, peer-reviewed benchmarking is the right bar to hold any platform to.
 
@@ -118,7 +118,7 @@ If you are evaluating how Martlet AI automates prospective, retrospective, and R
 
 ### What is HCC software?
 
-HCC software refers to platforms that support risk adjustment coding, documentation review, analytics, and compliance monitoring for Medicare Advantage and other risk-based programs. Purpose-built platforms include NLP and AI capabilities to identify coding gaps and validate documentation at scale — capabilities that general-purpose analytics tools are not designed to provide.
+HCC software refers to platforms that support [risk adjustment coding](https://www.martlet.ai/resources/blog/risk-adjustment-coding), documentation review, analytics, and compliance monitoring for Medicare Advantage and other risk-based programs. Purpose-built platforms include NLP and AI capabilities to identify coding gaps and validate documentation at scale — capabilities that general-purpose analytics tools are not designed to provide.
 
 ### What are the three types of HCC coding?
 

@@ -22,7 +22,7 @@ Risk adjustment is the payment correction mechanism that keeps capitated healthc
 
 Artificial intelligence risk adjustment operates on both sides of this process: finding the diagnoses that should be in the record and making sure the codes assigned to them are accurate and specific enough to generate the right HCC flags.
 
-Prospective Risk Adjustment is where AI has the most direct clinical impact, surfacing suspected conditions before the patient visit so physicians can address them in the encounter rather than chasing documentation afterward. Retrospective Risk Adjustment is where AI handles volume, processing completed records at a scale no manual team can match within the submission window.
+[Prospective Risk Adjustment](https://www.martlet.ai/solutions/prospective-risk-adjustment) is where AI has the most direct clinical impact, surfacing suspected conditions before the patient visit so physicians can address them in the encounter rather than chasing documentation afterward. [Retrospective Risk Adjustment](https://www.martlet.ai/solutions/retrospective-risk-adjustment) is where AI handles volume, processing completed records at a scale no manual team can match within the submission window.
 
 ## How AI enhances clinical documentation
 
@@ -34,7 +34,7 @@ CDI programs that used to rely on retrospective query workflows are increasingly
 
 ## AI-driven coding accuracy and HCC support
 
-AI HCC coding tools take the NLP output and map it to ICD-10-CM code suggestions, ranked by confidence. A coder reviewing a suggestion sees both the proposed code and the documentation that supports it. They accept, reject, or modify. The human stays in the loop on every submission.
+[AI HCC coding](https://www.martlet.ai/resources/blog/hcc-coding) tools take the NLP output and map it to ICD-10-CM code suggestions, ranked by confidence. A coder reviewing a suggestion sees both the proposed code and the documentation that supports it. They accept, reject, or modify. The human stays in the loop on every submission.
 
 Where this matters most is coding specificity. Under CMS-HCC V28, the codes that qualify for HCC mapping require more specific documentation than many prior-year submissions needed. A diabetes code at insufficient specificity may map to a lower-weight HCC or miss the category entirely. AI tools that surface the most specific defensible code — with the documentation context to support it — catch those specificity gaps before the submission goes out.
 
@@ -46,7 +46,7 @@ The predictive layer sits on top of the documentation and coding work. Machine l
 
 This is where AI moves from reactive to proactive in risk adjustment. Instead of reviewing completed records to find what was missed, plans can identify likely gaps before the encounter and address them through clinical workflow rather than coding workflow.
 
-RADV audit preparation also benefits from predictive modeling. A model that scores each record in a CMS audit sample by the strength of its documentation support helps compliance teams triage their response, focusing manual review time on the records most likely to have issues rather than treating all sampled records equally.
+[RADV audit](https://www.martlet.ai/solutions/radv) preparation also benefits from predictive modeling. A model that scores each record in a CMS audit sample by the strength of its documentation support helps compliance teams triage their response, focusing manual review time on the records most likely to have issues rather than treating all sampled records equally.
 
 ## Use cases of AI in risk adjustment
 
@@ -58,7 +58,7 @@ Prospective gap identification uses predictive models to prioritize outreach. A 
 
 Real-time coding assistance integrates AI suggestions directly into the coder's workflow, showing proposed ICD-10-CM codes alongside the clinical documentation that supports them as the coder works through a queue. The feedback is immediate, which allows coders to ask physician queries while records are still fresh.
 
-Denial prevention tools cross-reference outgoing claims against payer-specific rules before submission. In risk adjustment, this catches codes that are likely to be flagged in a RADV audit before they become part of the submitted data.
+Denial prevention tools cross-reference outgoing claims against payer-specific rules before submission. In risk adjustment, this catches codes that are likely to be flagged in a RADV audit before they become part of the submitted data. For a closer look at how AI handles claim scrubbing, charge capture, and denial prediction on the billing side, see [AI in Medical Coding and Billing](https://www.martlet.ai/resources/blog/ai-in-medical-coding-and-billing).
 
 ## Benefits of AI in risk adjustment programs
 

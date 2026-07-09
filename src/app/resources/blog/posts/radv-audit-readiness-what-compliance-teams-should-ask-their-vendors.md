@@ -98,7 +98,7 @@ When each format is processed in a separate system, reviewers have to switch too
 
 ### Generic LLMs miss payment-year logic and MEAT proof
 
-Defensible coding depends on using the correct payment-year HCC model and meeting documentation sufficiency standards such as MEAT (monitor, evaluate, assess, treat). Generic large language models (LLMs) are not designed to apply v28 mappings, keep versioned crosswalks, or produce a traceable rationale linked to the exact chart passage. Without these safeguards, their suggestions may appear correct but will not stand up to an audit.
+Defensible coding depends on using the correct payment-year HCC model and meeting documentation sufficiency standards such as MEAT (monitor, evaluate, assess, treat). Generic large language models (LLMs) are not designed to apply v28 mappings, keep versioned crosswalks, or produce a traceable rationale linked to the exact chart passage. Without these safeguards, their suggestions may appear correct but will not stand up to an audit. See [AI in Medical Coding and Billing](https://www.martlet.ai/resources/blog/ai-in-medical-coding-and-billing) for how purpose-built AI differs from general-purpose models on this exact task.
 
 ### Off-network tools stall in legal and security review
 
@@ -106,7 +106,7 @@ Processing PHI with external services requires a Business Associate Agreement (B
 
 ## Critical questions to vet an audit-ready HCC coding platform
 
-With the risks and technical constraints, the next step is due diligence. One approach is to invest in an HCC coding platform specialized to overcome the bottlenecks mentioned above. However, selecting the right platforms requires asking the relevant questions that help separate the platform’s marketing claims from capabilities you can defend in an RADV audit. The following questions can be used as a guideline.
+With the risks and technical constraints, the next step is due diligence. One approach is to invest in an [HCC coding platform](https://www.martlet.ai/resources/blog/hcc-coding) specialized to overcome the bottlenecks mentioned above. However, selecting the right platforms requires asking the relevant questions that help separate the platform’s marketing claims from capabilities you can defend in an RADV audit. The following questions can be used as a guideline.
 
 ### Can every HCC suggestion be traced to the exact sentence, provider name, and date in the patient record?
 

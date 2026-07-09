@@ -114,7 +114,7 @@ Over-coding carries the opposite risk. Coding diagnoses that are not documented 
 
 CMS audits Medicare Advantage plans specifically to verify that submitted diagnoses are backed by medical record documentation. The primary program is Risk Adjustment Data Validation — [RADV Audits](/solutions/radv).
 
-RADV works by sampling a set of HCC-coded diagnoses and reviewing the underlying medical records. For each condition, reviewers look for a dated encounter note from a qualified provider showing that the diagnosis was evaluated and managed. If the documentation does not support the code, the diagnosis is removed and the payment is adjusted. Depending on how extrapolation methodology is applied, findings can extend beyond the sampled records to the broader population.
+RADV works by sampling a set of [HCC-coded](https://www.martlet.ai/resources/blog/hcc-coding) diagnoses and reviewing the underlying medical records. For each condition, reviewers look for a dated encounter note from a qualified provider showing that the diagnosis was evaluated and managed. If the documentation does not support the code, the diagnosis is removed and the payment is adjusted. Depending on how extrapolation methodology is applied, findings can extend beyond the sampled records to the broader population.
 
 State Medicaid programs run similar validation processes, and commercial risk adjustment is subject to HHS audits as well.
 
@@ -130,7 +130,7 @@ Compliance is not only about avoiding over-coding. Plans that consistently under
 
 ## The role of technology and AI in risk adjustment coding
 
-Manual chart review does not scale. A mid-size Medicare Advantage plan may have hundreds of thousands of members and years of encounter data. Reviewing that volume by hand means missed diagnoses, inconsistent application of coding guidelines, and lag time that makes prospective interventions difficult.
+Manual chart review does not scale. A mid-size Medicare Advantage plan may have hundreds of thousands of members and years of encounter data. Reviewing that volume by hand means missed diagnoses, inconsistent application of coding guidelines, and lag time that makes prospective interventions difficult. For a deeper look at how these tools function in practice, see [AI in Medical Coding and Billing](https://www.martlet.ai/resources/blog/ai-in-medical-coding-and-billing).
 
 Natural language processing reads clinical notes the way a trained coder would, identifying diagnoses mentioned in free text that never made it into a structured code. A physician who documents "poorly controlled type 2 diabetes with early diabetic nephropathy" in a progress note but codes only E11.9 has created a specificity gap. NLP finds it.
 

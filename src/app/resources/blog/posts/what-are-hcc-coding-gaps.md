@@ -1,7 +1,7 @@
 # What Are HCC Coding Gaps | Martlet AI
 
 **Date:** 07.14.2026  
-**Thumbnail:** /assets/blog/hcc-coding-gaps/cover.jpg  
+**Thumbnail:** /assets/blog/what-are-hcc-coding-gaps/cover.jpg  
 **Description:** Learn what HCC coding gaps are, why they occur in risk adjustment programs, and how they affect RAF scores and healthcare reimbursement.  
 **MetaTitle:** What Are HCC Coding Gaps | Martlet AI
 **Tag:** Insights
@@ -10,7 +10,7 @@
 
 # What Are HCC Coding Gaps
 
-![What Are HCC Coding Gaps: causes, impact, and solutions](/assets/blog/hcc-coding-gaps/hcc-coding-gaps-infographic.jpg)
+![What Are HCC Coding Gaps: causes, impact, and solutions](/assets/blog/what-are-hcc-coding-gaps/hcc-coding-gaps-infographic.jpg)
 
 HCC coding gaps occur when a patient's chronic conditions are present in their clinical history but do not make it into the risk adjustment data submission. The gap can happen at several points: a physician documents a condition but the coder misses it, a diagnosis is coded at insufficient specificity to map to any HCC, or a condition is simply never addressed during the current-year encounter. Whatever the cause, the result is the same — the patient's risk score understates their actual health complexity, and reimbursement falls short.
 

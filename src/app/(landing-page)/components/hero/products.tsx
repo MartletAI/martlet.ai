@@ -1,39 +1,39 @@
-import { SectionLabel } from "@/components/section-label";
+import { Reveal } from "@/components/reveal";
 import { WorkflowCard } from "./workflow-card";
 
 const WORKFLOW_CONTENT = {
-  LABEL: "Products",
-  TITLE: "Three Workflows",
+  LABEL: "One platform",
+  TITLE: "Three workflows. One engine. One audit trail.",
   ITEMS: [
     {
-      type: "prospective",
-      label: "Prospective",
-      subtitle: "point of care",
-      title: "Clinicians-friendly gap capture",
+      type: "radv",
+      label: "RADV",
+      subtitle: "audit readiness, year-round",
+      title: "Regulatory-grade RADV",
       description:
-        "Pre-visit and in-visit suggestions that are concise, actionable, and evidence-linked.",
-      href: "/solutions/prospective-risk-adjustment",
-      linkText: "View Prospective",
+        "Mock audits with RADV-style sampling and extrapolation exposure modeling. See which HCCs survive before CMS does — evidence packets in one click.",
+      href: "/solutions/radv",
+      linkText: "View RADV",
     },
     {
       type: "retrospective",
       label: "Retrospective",
       subtitle: "high volume",
-      title: "High-precision chart review",
+      title: "95% of cases closed automatically",
       description:
-        "Find undercoded HCCs and validate existing codes with MEAT-aware evidence.",
+        "Prioritized chase lists, undercoded HCC capture, MEAT validation, and 837-ready submission deltas. Reviewers work exceptions, not stacks of PDFs.",
       href: "/solutions/retrospective-risk-adjustment",
       linkText: "View Retrospective",
     },
     {
-      type: "radv",
-      label: "RADV",
-      subtitle: "readiness at scale",
-      title: "Mock audits + defensible packets",
+      type: "prospective",
+      label: "Prospective",
+      subtitle: "point of care",
+      title: "Suggestions clinicians act on",
       description:
-        "Run proactive mock tests or execute reactive audits under deadline, without chaos.",
-      href: "/solutions/radv",
-      linkText: "View RADV",
+        "Suspected conditions from structured and unstructured data, delivered pre-visit and in-visit as concise, evidence-linked suggestions in your EHR.",
+      href: "/solutions/prospective-risk-adjustment",
+      linkText: "View Prospective",
     },
   ],
 } as const;
@@ -41,28 +41,38 @@ const WORKFLOW_CONTENT = {
 export function Products() {
   return (
     <section
-      className="container-main pt-[46px] pb-[40px] relative z-10"
+      className="apple-section-gray py-20 md:py-24 relative z-10"
       aria-labelledby="products-heading"
     >
-      {/* Section Header */}
-      <header className="text-center mb-[30px]">
-        <SectionLabel className="text-indicator-prospective mb-md">{WORKFLOW_CONTENT.LABEL}</SectionLabel>
-        <h2 id="products-heading" className="section-heading tracking-tight">
-          {WORKFLOW_CONTENT.TITLE}
-        </h2>
-      </header>
+      <div className="container-main">
+        {/* Section Header */}
+        <Reveal as="header" className="text-center mb-12">
+          <p className="mb-5">
+            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
+              {WORKFLOW_CONTENT.LABEL}
+            </span>
+          </p>
+          <h2
+            id="products-heading"
+            className="apple-display text-[32px] md:text-[48px]"
+          >
+            {WORKFLOW_CONTENT.TITLE}
+          </h2>
+        </Reveal>
 
-      {/* Cards Grid */}
-      <ul
-        className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 list-none p-0 m-0 animate-stagger"
-        role="list"
-      >
-        {WORKFLOW_CONTENT.ITEMS.map((workflow) => (
-          <li key={workflow.type} className="contents">
-            <WorkflowCard {...workflow} />
-          </li>
-        ))}
-      </ul>
+        {/* Cards Grid */}
+        <Reveal
+          as="ul"
+          stagger
+          className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 list-none p-0 m-0"
+        >
+          {WORKFLOW_CONTENT.ITEMS.map((workflow) => (
+            <li key={workflow.type} className="h-full">
+              <WorkflowCard {...workflow} />
+            </li>
+          ))}
+        </Reveal>
+      </div>
     </section>
   );
 }

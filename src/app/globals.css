@@ -840,6 +840,203 @@ body {
 }
 
 /* ========================================
+   Apple-theme homepage utilities
+   ======================================== */
+
+/* Hero: silver sheen — brushed metallic base with color glows on top */
+.apple-hero {
+  background:
+    radial-gradient(
+      55% 45% at 50% 0%,
+      rgba(1, 101, 220, 0.10) 0%,
+      rgba(255, 255, 255, 0) 60%
+    ),
+    radial-gradient(
+      42% 36% at 88% 10%,
+      rgba(124, 58, 237, 0.09) 0%,
+      rgba(255, 255, 255, 0) 65%
+    ),
+    radial-gradient(
+      42% 36% at 8% 16%,
+      rgba(13, 148, 136, 0.07) 0%,
+      rgba(255, 255, 255, 0) 65%
+    ),
+    linear-gradient(
+      165deg,
+      #fbfcfe 0%,
+      #eef1f6 32%,
+      #f6f8fb 55%,
+      #e9edf4 82%,
+      #f3f5f9 100%
+    );
+}
+
+/* Dark metallic gradient for the hero's lead line — polished steel */
+.text-gradient-steel {
+  background: linear-gradient(175deg, #0a0a12 30%, #3d4657 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient primary button — landing-page CTAs */
+.btn-gradient {
+  background: linear-gradient(100deg, #0165dc 0%, #00a2ff 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 20px -6px rgba(1, 101, 220, 0.5);
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base),
+    filter var(--transition-base);
+}
+
+.btn-gradient:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 10px 28px -6px rgba(1, 101, 220, 0.55);
+  transform: translateY(-1px);
+}
+
+/* Section eyebrow rendered as a tinted chip */
+.eyebrow-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* Gradient display text — the accent line of a headline or a big stat */
+.text-gradient-blue {
+  background: linear-gradient(100deg, #0165dc 5%, #00a2ff 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Evidence section: white fading into a cool blue wash */
+.gradient-evidence {
+  background: linear-gradient(180deg, #ffffff 0%, #f2f6fd 100%);
+}
+
+/* Alternating quiet-gray section, à la #f5f5f7 */
+.apple-section-gray {
+  background-color: #f5f5f7;
+}
+
+/* Dark band for the RADV "why now" section — deep navy with a blue glow */
+.apple-section-dark {
+  background:
+    radial-gradient(
+      55% 90% at 85% 10%,
+      rgba(37, 99, 235, 0.22) 0%,
+      rgba(15, 23, 42, 0) 60%
+    ),
+    radial-gradient(
+      45% 70% at 8% 95%,
+      rgba(245, 166, 35, 0.08) 0%,
+      rgba(15, 23, 42, 0) 55%
+    ),
+    linear-gradient(180deg, #0b1120 0%, #0e162b 100%);
+  color: #f5f5f7;
+}
+
+.apple-section-dark .apple-caption {
+  color: #a1a1a6;
+}
+
+.apple-section-dark .apple-body {
+  color: #c7c7cc;
+}
+
+/* Large display headline — Apple-crisp: near-black, heavy, tight */
+.apple-display {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  color: #0a0a12;
+}
+
+/* Section body / subhead text — dark enough to read as crisp */
+.apple-body {
+  color: #3c3c43;
+}
+
+/* Big stat numerals — color set per-use so accent hues apply */
+.apple-stat {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.apple-caption {
+  color: #494952;
+}
+
+/* Scroll reveal: transition-based so the global reduced-motion rule disables it */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-stagger.reveal-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.reveal-visible > *:nth-child(2) {
+  transition-delay: 90ms;
+}
+.reveal-stagger.reveal-visible > *:nth-child(3) {
+  transition-delay: 180ms;
+}
+.reveal-stagger.reveal-visible > *:nth-child(4) {
+  transition-delay: 270ms;
+}
+.reveal-stagger.reveal-visible > *:nth-child(5) {
+  transition-delay: 360ms;
+}
+.reveal-stagger.reveal-visible > *:nth-child(6) {
+  transition-delay: 450ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Evidence-mock: monospace details read as exact, auditable */
+.evidence-mono {
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas,
+    monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ========================================
    Accessibility Utilities
    ======================================== */
 

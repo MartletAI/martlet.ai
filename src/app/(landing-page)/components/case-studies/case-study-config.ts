@@ -22,7 +22,7 @@ export const CASE_STUDIES = [
     name: "John Snow Labs",
     logoSrc: `${CASE_STUDY_ASSET_BASE}/john-snow-labs.svg`,
     description:
-      "John Snow Labs uses Martlet AI's engine to power its own suite of medical coding solutions",
+      "When the company behind the medical language models used by 500+ healthcare organizations needed an HCC coding engine, it built — and now uses — Martlet AI in its own medical coding products.",
     Content: JohnSnowLabs,
   },
   {
@@ -30,7 +30,7 @@ export const CASE_STUDIES = [
     name: "WVU Medicine",
     logoSrc: `${CASE_STUDY_ASSET_BASE}/wvu-medicine.svg`,
     description:
-      "WVU Medicine uses Martlet AI's prospective engine to run longitudinal (vertical) chart analysis and deliver point-of-care suggestions — strengthening documentation, improving care, and capturing appropriate value.",
+      "WVU Medicine, a 25-hospital academic health system, surfaced previously missed HCCs with automated longitudinal chart analysis and point-of-care suggestions inside Epic workflows — presented publicly at the NLP Summit.",
     Content: WVUMedicine,
   },
   {
@@ -38,7 +38,7 @@ export const CASE_STUDIES = [
     name: "Arkos Health",
     logoSrc: `${CASE_STUDY_ASSET_BASE}/arkos-health.svg`,
     description:
-      "Arkos uses Martlet across the full risk cycle — Retrospective, Prospective, and RADV — to drive measurable financial and operational impact.",
+      "Arkos Health runs Martlet AI across the full risk cycle: retrospective recapture, prospective capture at point of care, and mock RADV testing with automated evidence packets.",
     Content: ArkosHealth,
   },
 ] as const satisfies readonly CaseStudyDefinition[];

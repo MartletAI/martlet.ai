@@ -1,55 +1,68 @@
-import "./components/styles.css"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
-import { Hero } from "./components/hero";
-import { WhyMartletAI } from "./components/why-martlet-ai";
-import { TrustAndAccuracy } from "./components/trust-and-accuracy";
-import { HowItWorks } from "./components/how-it-works";
-import { WhatTeamsCare } from "./components/what-teams-care";
-import { DesignedForTrust } from "./components/designed-for-trust";
+
+import { Bridge } from "./components/bridge";
+import { Burden } from "./components/burden";
 import { CTA } from "./components/cta";
+import { Hero } from "./components/hero";
+import { Metrics } from "./components/metrics";
+import { ProFaq } from "./components/pro-faq";
+import { Segments } from "./components/segments";
+import { Suspecting } from "./components/suspecting";
+import { Workflow } from "./components/workflow";
+import { Wvu } from "./components/wvu";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Prospective Risk Adjustment Solution | Martlet AI",
-  description: "Optimize healthcare outcomes with Martlet AI's prospective risk adjustment and prospective coding solutions, improving accuracy in patient risk assessments.",
+  title: "Prospective Risk Adjustment Software — Point-of-Care HCC Capture | Martlet AI",
+  description:
+    "Suspected conditions from labs, meds, notes, and claims — delivered as evidence-linked, MEAT-aware suggestions inside your EHR. Published suspecting methodology, configurable thresholds, zero PHI egress.",
   alternates: {
     canonical: "/solutions/prospective-risk-adjustment",
   },
 };
 
 export default function Page() {
-	return (
-		<main>
-			<BreadcrumbJsonLd
-				items={[
-					{ name: "Home", href: "/" },
-					{
-						name: "Prospective Risk Adjustment",
-						href: "/solutions/prospective-risk-adjustment",
-					},
-				]}
-			/>
-			{/* Hero Section */}
-			<Hero />
+  return (
+    <main>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          {
+            name: "Prospective Risk Adjustment",
+            href: "/solutions/prospective-risk-adjustment",
+          },
+        ]}
+      />
+      {/* Hero + our numbers */}
+      <Hero />
 
-			{/* Why Martlet AI Section */}
-			<WhyMartletAI  />
+      {/* The clinician-burden problem + AAFP evidence */}
+      <Burden />
 
-			{/* Trust and Accuracy Section */}
-			<TrustAndAccuracy />
+      {/* The suspecting methodology, published */}
+      <Suspecting />
 
-			{/* How it works Section */}
-			<HowItWorks />
+      {/* Pre/in/post-visit workflow + suspect card demo */}
+      <Workflow />
 
-			{/* What Teams Care About Section */}
-			<WhatTeamsCare />
+      {/* The adoption metrics buyers should demand */}
+      <Metrics />
 
-			{/* Designed for Trust Section */}
-			<DesignedForTrust />
+      {/* MA plans vs ACOs */}
+      <Segments />
 
-			{/* CTA Section */}
-			<CTA />
-		</main>
-	);
+      {/* WVU Medicine in production */}
+      <Wvu />
+
+      {/* Bridge to retrospective */}
+      <Bridge />
+
+      {/* FAQ + schema */}
+      <ProFaq />
+
+      {/* CTA */}
+      <CTA />
+    </main>
+  );
 }

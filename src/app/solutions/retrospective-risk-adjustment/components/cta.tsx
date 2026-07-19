@@ -1,13 +1,14 @@
-import { CTA as SharedCTA } from "@/components/cta"
+import { CTA as SharedCTA } from "@/components/cta";
+
 export function CTA() {
   return (
     <SharedCTA
-      title="Make Retrospective review a high-precision pipeline"
-      subtitle="Get Started"
-      ctaText="Request a Demo"
+      title="Bring 500 charts. We'll close them while you watch."
+      subtitle="Working session"
+      description="Chase prioritization, verification at 99% precision, exceptions queued, and submission deltas out — run on your charts, inside your environment."
+      ctaText="See it on your charts"
       ctaLink="/contact"
-      description="Join forward-thinking healthcare teams using Martlet AI for smarter coding and better outcomes."
-      backgroundColor="gradient-why-martlet"
+      backgroundColor="bg-white"
     />
-  )
+  );
 }

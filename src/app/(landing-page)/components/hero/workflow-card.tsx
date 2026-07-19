@@ -2,6 +2,31 @@ import { Icon } from "@/components";
 
 type WorkflowType = "prospective" | "retrospective" | "radv";
 
+/** Per-workflow accent: label color, dot, tinted card wash, link color */
+const ACCENTS: Record<
+  WorkflowType,
+  { label: string; dot: string; card: string; link: string }
+> = {
+  radv: {
+    label: "text-[#7c3aed]",
+    dot: "bg-[#7c3aed]",
+    card: "bg-gradient-to-b from-white to-[#f7f4ff] border-[#7c3aed]/15",
+    link: "text-[#7c3aed]",
+  },
+  retrospective: {
+    label: "text-[#0165dc]",
+    dot: "bg-[#0165dc]",
+    card: "bg-gradient-to-b from-white to-[#eff6ff] border-[#0165dc]/15",
+    link: "text-[#0165dc]",
+  },
+  prospective: {
+    label: "text-[#0d9488]",
+    dot: "bg-[#0d9488]",
+    card: "bg-gradient-to-b from-white to-[#effcf9] border-[#0d9488]/15",
+    link: "text-[#0d9488]",
+  },
+};
+
 interface WorkflowCardProps {
   type: WorkflowType;
   label: string;
@@ -13,6 +38,7 @@ interface WorkflowCardProps {
 }
 
 export function WorkflowCard({
+  type,
   label,
   subtitle,
   title,
@@ -20,55 +46,47 @@ export function WorkflowCard({
   href,
   linkText,
 }: WorkflowCardProps) {
+  const accent = ACCENTS[type];
+
   return (
     <article
-      className="flex items-center justify-center p-1.5 bg-surface border border-black/8 rounded-[3rem] shadow-[0_3px_20.6px_0_rgba(0,0,0,0.1)] min-h-[270px] h-full transition-shadow duration-200 hover:shadow-[0_6px_28px_0_rgba(0,0,0,0.12)]"
+      className={`flex flex-col rounded-[28px] p-7 md:p-8 h-full border shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow duration-200 hover:shadow-[0_12px_32px_rgba(10,10,18,0.10)] ${accent.card}`}
       aria-labelledby={`card-title-${label}`}
     >
-      <div className="bg-border-light rounded-[3rem] p-2 h-full">
-        <div className="flex flex-col gap-md p-2 bg-surface border-[0.625rem] border-transparent rounded-[2.75rem] w-full min-w-[280px] h-full justify-start">
-          {/* Pill Label */}
-          <div
-            className="flex items-center gap-3 px-4 py-1.5 bg-[#e9efff] rounded-full h-11.25 w-full"
-            role="presentation"
-          >
-            <span
-              className="w-2 h-2 shrink-0 rounded-full bg-primary"
-              aria-hidden="true"
-            />
-            <span className="text-base text-foreground leading-none">
-              <strong className="font-semibold">{label}</strong>
-              <span className="font-normal text-[#505867]"> - {subtitle}</span>
-            </span>
-          </div>
+      {/* Category label */}
+      <p
+        className={`flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] ${accent.label} mb-1`}
+      >
+        <span
+          className={`w-1.5 h-1.5 rounded-full ${accent.dot}`}
+          aria-hidden
+        />
+        {label}
+      </p>
+      <p className="text-sm text-[#6e6e73] font-medium mb-5">{subtitle}</p>
 
-          {/* Content Container */}
-          <div className="flex flex-col justify-center w-full">
-            {/* Title */}
-            <h3
-              id={`card-title-${label}`}
-              className="text-lg font-semibold text-foreground leading-snug mb-sm"
-            >
-              {title}
-            </h3>
+      {/* Title */}
+      <h3
+        id={`card-title-${label}`}
+        className="text-[22px] font-bold tracking-tight text-[#0a0a12] leading-snug mb-3"
+      >
+        {title}
+      </h3>
 
-            {/* Description */}
-            <p className="text-base font-normal text-muted leading-relaxed">
-              {description}
-            </p>
-          </div>
+      {/* Description */}
+      <p className="text-base apple-body leading-relaxed m-0 mb-6">
+        {description}
+      </p>
 
-          {/* Link with descriptive text for screen readers */}
-          <a
-            href={href}
-            className="inline-flex items-center gap-sm text-primary font-medium text-base no-underline transition-[gap] duration-150 mt-auto hover:gap-md focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 focus-visible:rounded-sm"
-            aria-describedby={`card-title-${label}`}
-          >
-            {linkText}
-            <Icon name="arrow-right" className="w-4 h-4" aria-hidden />
-          </a>
-        </div>
-      </div>
+      {/* Link with descriptive text for screen readers */}
+      <a
+        href={href}
+        className={`inline-flex items-center gap-sm ${accent.link} font-semibold text-base no-underline transition-[gap] duration-150 mt-auto hover:gap-md focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 focus-visible:rounded-sm`}
+        aria-describedby={`card-title-${label}`}
+      >
+        {linkText}
+        <Icon name="arrow-right" className="w-4 h-4" aria-hidden />
+      </a>
     </article>
   );
 }

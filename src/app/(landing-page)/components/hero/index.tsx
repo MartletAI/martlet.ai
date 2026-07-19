@@ -1,18 +1,16 @@
-import { Products } from "./products";
+import { ProofBar } from "../proof-bar";
 import { ShowCase } from "./show-case";
 
 export function Hero() {
   return (
-    <div className="gradient-landing-page-hero">
-      {/* Decorative background - purely visual, hidden from screen readers */}
+    <div className="apple-hero">
       <div className="max-w-[1440px] m-auto relative z-10">
-        
-        {/* Primary hero content - headline, tagline, and CTA */}
+        {/* Primary hero content - headline, tagline, and CTAs */}
         <ShowCase />
 
-        {/* Products overview section - Three Workflows */}
-        <Products />
+        {/* Proof bar - the numbers behind the claims */}
+        <ProofBar />
       </div>
     </div>
-  )
+  );
 }

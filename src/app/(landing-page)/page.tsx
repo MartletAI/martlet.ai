@@ -1,49 +1,66 @@
 import type { Metadata } from "next";
-import { preload } from "react-dom";
 
+import { Capabilities } from "./components/capabilities";
 import { CaseStudies } from "./components/case-studies";
 import { CTA } from "./components/cta";
+import { EvidenceShowcase } from "./components/evidence";
+import { FAQ } from "./components/faq";
 import { Hero } from "./components/hero";
+import { Products } from "./components/hero/products";
 import { IndustryPartners } from "./components/industry-partners";
+import { RadvNow } from "./components/radv-now";
 import { TrustAndAccuracy } from "./components/trust-and-accuracy";
 import { WhyMartletAI } from "./components/why-martlet-ai";
 
 /**
  * Home - Landing page for Martlet AI
- * Displays the hero section with decorative background and products overview
+ * Evidence-led: hero + proof bar, RADV urgency, evidence linkage,
+ * workflows, differentiators, customer proof, compliance, CTA.
  */
 
 export const metadata: Metadata = {
-  title: "Risk Adjustment AI Software | Martlet AI",
+  title: "Risk Adjustment AI Software — HCC Coding & RADV | Martlet AI",
   description:
-    "Risk adjustment software and HCC risk adjustment solutions. On-premise, Secure, Real-time HCC Coding & Risk Profiling. Streamline prospective, retrospective, and RADV workflows with AI-powered precision.",
+    "HCC coding software that closes 95% of retrospective cases automatically: chase list prioritization, MEAT validation, mock RADV audits, and 837/EDPS submission-ready outputs — run inside your environment.",
   alternates: {
     canonical: "/",
   },
 };
 
 export default function Home() {
-  // Preload hero background image for LCP — must be called during render to be hoisted into <head>
-  preload("/assets/hero/landing.png", { as: "image", fetchPriority: "high" });
-
   return (
     <main>
-      {/* Hero Section */}
+      {/* Hero + proof bar */}
       <Hero />
 
-      {/* Case Studies Section */}
-      <CaseStudies />
+      {/* The star: regulatory-grade HCC coding, shown live */}
+      <EvidenceShowcase />
 
-      {/* Why Martlet AI Section */}
+      {/* Why now: CMS RADV expansion */}
+      <RadvNow />
+
+      {/* Three workflows */}
+      <Products />
+
+      {/* Full platform capabilities */}
+      <Capabilities />
+
+      {/* Three differentiators */}
       <WhyMartletAI />
 
-      {/* Trust and Accuracy Section */}
+      {/* Customer proof */}
+      <CaseStudies />
+
+      {/* Compliance pillars */}
       <TrustAndAccuracy />
 
-      {/* Industry partners */}
+      {/* Partners strip */}
       <IndustryPartners />
 
-      {/* CTA Section */}
+      {/* FAQ + FAQPage schema */}
+      <FAQ />
+
+      {/* CTA */}
       <CTA />
     </main>
   );

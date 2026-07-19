@@ -13,17 +13,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Martlet AI | Smarter Risk Adjustment",
+  title: "Martlet AI — Regulatory-Grade AI for Risk Adjustment",
   description:
-    "On-premise, Secure, Real-time HCC Coding & Risk Profiling. Streamline prospective, retrospective, and RADV workflows with AI-powered precision.",
+    "Take HCC coding in-house. Martlet AI automates retrospective, RADV, and prospective workflows with healthcare-specific medical language models — run inside your environment, with audit-defensible evidence on every code.",
   metadataBase: new URL("https://martlet.ai"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Martlet AI | Smarter Risk Adjustment",
+    title: "Martlet AI — Regulatory-Grade AI for Risk Adjustment",
     description:
-      "On-premise, Secure, Real-time HCC Coding & Risk Profiling. Streamline prospective, retrospective, and RADV workflows with AI-powered precision.",
+      "Take HCC coding in-house. Martlet AI automates retrospective, RADV, and prospective workflows with healthcare-specific medical language models — run inside your environment, with audit-defensible evidence on every code.",
     url: "https://martlet.ai",
     siteName: "Martlet AI",
     locale: "en_US",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Martlet AI | Smarter Risk Adjustment",
+    title: "Martlet AI — Regulatory-Grade AI for Risk Adjustment",
     description:
-      "On-premise, Secure, Real-time HCC Coding & Risk Profiling. Streamline prospective, retrospective, and RADV workflows with AI-powered precision.",
+      "Take HCC coding in-house. Martlet AI automates retrospective, RADV, and prospective workflows with healthcare-specific medical language models — run inside your environment, with audit-defensible evidence on every code.",
   },
 };
 
@@ -45,7 +45,7 @@ const organizationJsonLd = {
   url: "https://martlet.ai",
   logo: "https://martlet.ai/assets/logo/martlet-ai.png",
   description:
-    "On-premise, Secure, Real-time HCC Coding & Risk Profiling for healthcare risk adjustment.",
+    "Regulatory-grade AI for risk adjustment. Martlet AI automates HCC coding — retrospective, RADV, and prospective — inside the customer's environment with audit-defensible evidence on every code.",
   sameAs: ["https://www.linkedin.com/company/johnsnowlabs/"],
   contactPoint: {
     "@type": "ContactPoint",

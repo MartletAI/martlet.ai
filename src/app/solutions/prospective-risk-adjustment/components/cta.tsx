@@ -1,15 +1,14 @@
-
 import { CTA as SharedCTA } from "@/components/cta";
 
 export function CTA() {
   return (
     <SharedCTA
-      title="Make prospective coding a clinician-friendly pipeline"
-      subtitle="Get Started"
-      description="Improve capture and accuracy at point of care - while keeping outputs defensible and easy to validate."
-      ctaText="Request a Demo"
+      title="Bring one clinic's panel. We'll prep next week's visits."
+      subtitle="Working session"
+      description="Suspects with provenance, pre-visit summaries, and the adoption metrics that matter — run on your panel, inside your environment."
+      ctaText="See it on your panel"
       ctaLink="/contact"
-      backgroundColor="gradient-why-martlet"
+      backgroundColor="bg-white"
     />
   );
 }

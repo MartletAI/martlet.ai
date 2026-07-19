@@ -1,138 +1,100 @@
-import Image from "next/image";
-import { TrustFactor } from "./trust-factor";
 import { Icon } from "@/components";
-const TRUST_AND_ACCURACY_CONTENT = {
-  TITLE: "Built for Trust and Accuracy",
+import type { IconProps } from "@/components/icon";
+import { Reveal } from "@/components/reveal";
+
+interface TrustPillar {
+  title: string;
+  description: string;
+  icon: IconProps["name"];
+  /** Tinted icon chip */
+  chip: string;
+}
+
+const TRUST_CONTENT = {
+  LABEL: "Compliance",
+  TITLE: "Built for the review that happens three years later.",
   SUBTITLE:
-    "Martlet AI is an advanced risk adjustment software platform providing secure HCC risk adjustment software for healthcare environments where precision and compliance are critical.",
-  IMAGE: "/assets/illustrations/trust-and-accuracy.svg",
-  TRUST_FACTORS: [
+    "RADV auditors read every output long after submission. Martlet AI is engineered so each one holds up.",
+  PILLARS: [
     {
-      title: "Hippa-Compiance On-Premise Deployment",
+      title: "HIPAA-aligned, in-environment deployment",
+      description:
+        "On-premises, private cloud, or air-gapped. PHI never leaves your network, and your existing security controls stay in effect.",
       icon: "badge-check",
-      backgroundColor: "bg-[#D7FFDB]",
-      color: "text-[#147707]",
-      border: "border border-[#27A738]",
-      reverse: false,
-      width: "w-full max-w-[320px]",
+      chip: "bg-[#e7f4ec] text-[#067647]",
     },
     {
-      title: "Trusted by providers, Payers and the Full revenue cycle Ecosystem",
-      icon: "atom",
-      backgroundColor: "bg-[#DAF8FF]",
-      color: "text-[#1096D0]",
-      border: "#0098DA",
-      reverse: false,
-      width: "w-full max-w-[320px]",
+      title: "Governed AI, not a black box",
+      description:
+        "Every model versioned, every release tested before it touches production charts, every decision explainable — AI your compliance team can sign off on.",
+      icon: "shield-check",
+      chip: "bg-[#e9f1fe] text-[#0165dc]",
     },
     {
-      title: "NLP & reasoning Engine Trained on real data",
-      icon: "layers",
-      backgroundColor: "bg-[#FFF5DB]",
-      color: "text-[#D06B18]",
-      border: "#FF7D43",
-      reverse: true,
-      width: "w-full max-w-[240px]",
+      title: "An answer for every auditor",
+      description:
+        "Every code, every change, every reviewer action — recorded. When CMS asks why a diagnosis was submitted, the answer is one click away.",
+      icon: "file-checked",
+      chip: "bg-[#f0eafe] text-[#7c3aed]",
     },
     {
-      title: "Peer-Reviewed Accuracy Benchmark",
+      title: "Peer-reviewed accuracy",
+      description:
+        "30+ published papers behind the underlying medical language models. Benchmarks you can read, not adjectives.",
       icon: "chart-bar",
-      backgroundColor: "bg-[#EBD8FF]",
-      color: "text-[#6C25CF]",
-      border: "#7F149A",
-      reverse: true,
-      width: "w-full max-w-[240px]",
+      chip: "bg-[#fdf3e0] text-[#b45309]",
     },
-  ],
+  ] satisfies TrustPillar[],
 } as const;
 
 export function TrustAndAccuracy() {
   return (
     <section
       aria-labelledby="trust-and-accuracy-heading"
-      className="gradient-hero py-10 flex flex-col items-center justify-center mx-auto"
+      className="apple-section-gray py-20 md:py-24"
     >
-      <header className="container-main text-center max-w-[600px]">
-        <h2 id="trust-and-accuracy-heading" className="section-heading">
-          {TRUST_AND_ACCURACY_CONTENT.TITLE}
-        </h2>
-        <p className="text-lg text-muted m-0 pt-5 pb-11.5 max-w-full xl:max-w-[800px] mx-auto">
-          {TRUST_AND_ACCURACY_CONTENT.SUBTITLE}
-        </p>
-      </header>
+      <div className="container-main">
+        <Reveal as="header" className="text-center max-w-[720px] mx-auto mb-12">
+          <p className="mb-5">
+            <span className="eyebrow-chip bg-[#0f1f3a]/8 text-[#0f1f3a]">
+              {TRUST_CONTENT.LABEL}
+            </span>
+          </p>
+          <h2
+            id="trust-and-accuracy-heading"
+            className="apple-display text-[32px] md:text-[48px] mb-5"
+          >
+            {TRUST_CONTENT.TITLE}
+          </h2>
+          <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
+            {TRUST_CONTENT.SUBTITLE}
+          </p>
+        </Reveal>
 
-      <div
-        className="container-main grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_auto_1fr] md:gap-y-12 items-center gap-8 w-full max-w-[1000px]"
-        role="img"
-        aria-label="Trust factors diagram showing four key pillars connected to Martlet AI"
-      >
-        {/* Left trust factors - Desktop: Left, Mobile: Bottom group 1 */}
-        <ul
-          className="flex flex-col gap-6 lg:gap-[150px] list-none p-0 m-0 order-2 lg:order-1 items-start md:items-center lg:items-end w-full"
-          aria-label="Trust factors group 1"
+        <Reveal
+          as="ul"
+          stagger
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 list-none p-0 m-0"
         >
-          <li className="w-full flex justify-start md:justify-center lg:justify-end">
-            <TrustFactor
-              {...TRUST_AND_ACCURACY_CONTENT.TRUST_FACTORS[0]}
-            />
-          </li>
-          <li className="w-full flex justify-start md:justify-center lg:justify-end">
-            <TrustFactor
-              {...TRUST_AND_ACCURACY_CONTENT.TRUST_FACTORS[1]}
-            />
-          </li>
-        </ul>
-
-        {/* Central diagram - Desktop: Center, Mobile: Top */}
-        <figure className="flex justify-center relative m-0 order-1 lg:order-2 md:col-span-2 lg:col-span-1">
-          {/* Decorative connector lines - Hidden on mobile */}
-          <Icon
-            name="connector-top-left"
-            className="hidden lg:block absolute top-26 -left-6 h-8 w-14"
-            aria-hidden={true}
-          />
-          <Icon
-            name="connector-bottom-left"
-            className="hidden lg:block absolute bottom-26 -left-6 h-8 w-14"
-            aria-hidden={true}
-          />
-
-          <Image
-            src={TRUST_AND_ACCURACY_CONTENT.IMAGE}
-            alt="Martlet AI central hub connecting HIPAA compliance, trusted ecosystem, NLP engine, and peer-reviewed accuracy"
-            width={400}
-            height={400}
-            className="relative z-10 w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px]"
-          />
-
-          <Icon
-            name="connector-top-right"
-            className="hidden lg:block absolute top-26 -right-6 h-8 w-14"
-            aria-hidden={true}
-          />
-          <Icon
-            name="connector-bottom-right"
-            className="hidden lg:block absolute bottom-26 -right-6 h-8 w-14"
-            aria-hidden={true}
-          />
-        </figure>
-
-        {/* Right trust factors - Desktop: Right, Mobile: Bottom group 2 */}
-        <ul
-          className="flex flex-col gap-6 lg:gap-[150px] list-none p-0 m-0 order-3 lg:order-3 items-start md:items-center lg:items-start w-full"
-          aria-label="Trust factors group 2"
-        >
-          <li className="w-full flex justify-start md:justify-center lg:justify-start">
-            <TrustFactor
-              {...TRUST_AND_ACCURACY_CONTENT.TRUST_FACTORS[2]}
-            />
-          </li>
-          <li className="w-full flex justify-start md:justify-center lg:justify-start">
-            <TrustFactor
-              {...TRUST_AND_ACCURACY_CONTENT.TRUST_FACTORS[3]}
-            />
-          </li>
-        </ul>
+          {TRUST_CONTENT.PILLARS.map((pillar) => (
+            <li
+              key={pillar.title}
+              className="rounded-3xl bg-white border border-border p-7 h-full"
+            >
+              <div
+                className={`inline-flex items-center justify-center size-11 rounded-xl mb-5 ${pillar.chip}`}
+              >
+                <Icon name={pillar.icon} className="w-5.5 h-5.5" aria-hidden />
+              </div>
+              <h3 className="text-lg font-bold tracking-tight text-[#0a0a12] leading-snug mb-2.5">
+                {pillar.title}
+              </h3>
+              <p className="text-[15px] apple-body leading-relaxed m-0">
+                {pillar.description}
+              </p>
+            </li>
+          ))}
+        </Reveal>
       </div>
     </section>
   );

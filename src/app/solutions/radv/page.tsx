@@ -1,15 +1,22 @@
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
-import { Hero } from "./components/hero";
-import { Approaches } from "./components/approaches";
-import { Pipeline } from "./components/pipeline";
-import { Outputs } from "./components/outputs";
+
+import { AuditSteps } from "./components/audit-steps";
+import { Bridge } from "./components/bridge";
+import { CoderChecks } from "./components/coder-checks";
 import { CTA } from "./components/cta";
+import { Exposure } from "./components/exposure";
+import { Failures } from "./components/failures";
+import { Hero } from "./components/hero";
+import { Postures } from "./components/postures";
+import { RadvFaq } from "./components/radv-faq";
+import { WhatChanged } from "./components/timeline";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "RADV Audits Solution for Compliance | Martlet AI",
-  description: "Ensure precise risk score validation and compliance with Martlet AI's RADV audits solutions, enhancing audit accuracy and efficiency.",
+  title: "RADV Audit Software — Mock Audits, Evidence Packets, 2026 Schedule | Martlet AI",
+  description:
+    "CMS now audits all ~550 MA contracts annually. Run mock RADV audits on CMS's methodology, assemble CMS-ready evidence packets, and track the 2026 audit schedule — PY2020 records due August 28, 2026.",
   alternates: {
     canonical: "/solutions/radv",
   },
@@ -24,20 +31,35 @@ export default function Page() {
           { name: "RADV", href: "/solutions/radv" },
         ]}
       />
-      {/* Hero Section */}
+      {/* Hero + audit-environment stats */}
       <Hero />
 
-      {/* Approaches Section */}
-      <Approaches />
+      {/* The 2023→2026 timeline + CMS's published audit schedule */}
+      <WhatChanged />
 
-      {/* Pipeline Section */}
-      <Pipeline />
+      {/* The audit lifecycle, step by step, with Martlet's role */}
+      <AuditSteps />
 
-      {/* Outputs Section */}
-      <Outputs />
+      {/* What CMS coders check + the packet assembling live */}
+      <CoderChecks />
 
-      {/* CTA Section */}
+      {/* The OIG failure record */}
+      <Failures />
+
+      {/* The extrapolation math, honestly stated */}
+      <Exposure />
+
+      {/* Proactive vs reactive */}
+      <Postures />
+
+      {/* Bridge to retrospective */}
+      <Bridge />
+
+      {/* FAQ + FAQPage schema */}
+      <RadvFaq />
+
+      {/* CTA */}
       <CTA />
     </main>
-  )
+  );
 }

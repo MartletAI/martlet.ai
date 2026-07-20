@@ -7,9 +7,14 @@ import { DesktopNav } from "./desktop-nav";
 import { MobileNav } from "./mobile-nav";
 import { useScrolled } from "./use-scrolled";
 
+/** Shared motion signature so the header and its children glide in sync. */
+export const NAV_TRANSITION = "transition-all duration-[480ms] ease-[cubic-bezier(0.22,1,0.36,1)]";
+
 /**
- * Navbar - a floating pill at rest; pins flush to the viewport top, thins
- * out, and turns into a translucent blurred bar once the page scrolls.
+ * Navbar - a floating rounded pill, always the same width. On scroll it
+ * glides toward the top, thins, and turns translucent/blurred — nothing
+ * about its footprint changes, so the motion reads as a smooth glide rather
+ * than a snap.
  */
 export function Navbar() {
   const scrolled = useScrolled();
@@ -17,10 +22,11 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed left-0 right-0 z-50 flex items-center justify-between transition-all duration-300 ease-out",
+        "fixed container-main mx-auto left-0 right-0 z-50 flex items-center justify-between rounded-2xl border px-4 md:px-xl",
+        NAV_TRANSITION,
         scrolled
-          ? "top-0 h-14 md:h-16 px-4 md:px-8 bg-white/75 backdrop-blur-xl border-b border-black/5 shadow-[0_1px_16px_rgba(10,10,18,0.05)] rounded-none"
-          : "container-main mx-auto top-4 md:top-6 h-16 md:h-[86px] px-4 md:px-xl bg-navbar rounded-2xl shadow-none"
+          ? "top-2 h-14 md:h-16 bg-white/75 backdrop-blur-xl border-black/5 shadow-[0_8px_24px_rgba(10,10,18,0.06)]"
+          : "top-4 md:top-6 h-16 md:h-[86px] bg-navbar border-transparent shadow-none"
       )}
     >
       <NavLogo compact={scrolled} />

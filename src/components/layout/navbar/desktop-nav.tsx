@@ -22,7 +22,7 @@ export function DesktopNav({ compact = false }: DesktopNavProps) {
         <SmartLink
           href="/contact"
           className={cn(
-            "btn btn-gradient font-semibold! flex items-center justify-center p-0! transition-all duration-300",
+            "btn btn-gradient font-semibold! flex items-center justify-center p-0! transition-all duration-[480ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
             compact ? "w-[132px] h-9 text-sm!" : "w-[165px] h-11 text-base! -mt-0.25"
           )}
         >

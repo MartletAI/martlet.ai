@@ -33,13 +33,13 @@ export function NavLogo({ href = "/", className, compact = false }: NavLogoProps
         height={LOGO_HEIGHT_PX}
         priority
         className={cn(
-          "w-auto transition-all duration-300",
+          "w-auto transition-all duration-[480ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
           compact ? "h-[21px]" : "h-[27px]"
         )}
       />
       <span
         className={cn(
-          "font-normal text-[#0F317D] transition-all duration-300",
+          "font-normal text-[#0F317D] transition-all duration-[480ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
           compact ? "text-xl" : "text-2xl"
         )}
       >

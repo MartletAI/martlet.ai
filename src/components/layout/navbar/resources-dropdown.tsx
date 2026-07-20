@@ -34,7 +34,7 @@ export function ResourcesDropdown({ onLinkClick, compact = false }: ResourcesDro
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const pillBase = "inline-flex cursor-pointer items-center gap-1.5 rounded-full whitespace-nowrap transition-all duration-200";
+  const pillBase = "inline-flex cursor-pointer items-center gap-1.5 rounded-full whitespace-nowrap transition-all duration-[480ms] ease-[cubic-bezier(0.22,1,0.36,1)]";
   const pillSize = compact ? "text-sm font-medium px-3.5 py-1.5" : "text-base font-medium px-4 py-2.5";
   const pillActive = "text-primary bg-primary/8 font-semibold";
   const pillInactive = "text-[#1d1d1f]/75 hover:text-primary hover:bg-primary/5";

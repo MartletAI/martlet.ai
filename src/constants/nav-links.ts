@@ -1,8 +1,8 @@
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Prospective", href: "/solutions/prospective-risk-adjustment" },
-  { label: "Retrospective", href: "/solutions/retrospective-risk-adjustment" },
   { label: "RADV", href: "/solutions/radv" },
+  { label: "Retrospective", href: "/solutions/retrospective-risk-adjustment" },
+  { label: "Prospective", href: "/solutions/prospective-risk-adjustment" },
   { label: "RADV Hub", href: "/resources/radv-hub" },
 ];
 

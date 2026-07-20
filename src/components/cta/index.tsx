@@ -1,6 +1,3 @@
-
-import Image from "next/image";
-import { SectionLabel } from "../section-label";
 import { SmartLink } from "./smart-link";
 
 interface CTAProps {
@@ -12,41 +9,41 @@ interface CTAProps {
   backgroundColor: string;
 }
 
+/**
+ * CTA - shared closing panel. The outer section takes the page's own
+ * background (via `backgroundColor`); the inner card reuses the
+ * apple-section-dark glow treatment so every dark panel on the site
+ * reads as one system.
+ */
 export function CTA({ title, subtitle, description, ctaText, ctaLink, backgroundColor }: CTAProps) {
   return (
-    <section className={`py-10 ${backgroundColor} px-4 md:px-0`} aria-labelledby="cta-heading">
-      <div className="relative py-8 md:py-13.5 flex flex-col items-center justify-center container-main mx-auto">
-        {/* Background Container */}
-        <div className="absolute inset-0 w-full h-full bg-footer-bg z-0 rounded-[16px] overflow-hidden">
-          <Image
-            src="/assets/section-background/cta.svg"
-            alt="CTA Background"
-            fill
-            className="object-cover opacity-40 mix-blend-soft-light rounded-[16px]"
-            priority
-          />
-        </div>
-
-
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-0">
-          {/* Subtitle */}
-          <SectionLabel className="mb-2 text-white">{subtitle}</SectionLabel>
+    <section className={`py-16 md:py-20 ${backgroundColor} px-4 md:px-0`} aria-labelledby="cta-heading">
+      <div className="container-main mx-auto">
+        <div className="apple-section-dark relative overflow-hidden rounded-[32px] px-6 py-14 md:px-16 md:py-20 flex flex-col items-center text-center">
+          {/* Eyebrow */}
+          <p className="mb-6">
+            <span className="eyebrow-chip bg-white/10 text-[#9dc2ff]">
+              {subtitle}
+            </span>
+          </p>
 
           {/* Title */}
-          <h2 id="cta-heading" className="mb-2 text-center text-2xl md:text-4xl font-semibold leading-tight md:leading-[44px] tracking-[-0.72px] text-white">
+          <h2
+            id="cta-heading"
+            className="apple-display text-white! text-[28px] md:text-[44px] mb-5 max-w-[720px]"
+          >
             {title}
           </h2>
 
           {/* Description */}
-          <p className="mb-6 md:mb-10 text-center text-base md:text-xl font-normal leading-relaxed text-outputs-icon-border max-w-[90%] md:max-w-none">
+          <p className="apple-body text-base md:text-xl leading-relaxed max-w-[640px] mb-9">
             {description}
           </p>
 
-          {/* Buttons */}
+          {/* CTA button */}
           <SmartLink
             href={ctaLink}
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-border-light bg-white px-4 py-2.5 md:px-6 md:py-3 text-sm md:text-base font-semibold text-footer-bg shadow-sm transition-all hover:bg-blue-50"
+            className="btn btn-lg bg-white text-[#101014] hover:bg-[#e8e8ed] h-[52px]! py-3! px-7! text-lg! font-semibold!"
           >
             {ctaText}
           </SmartLink>

@@ -57,8 +57,8 @@
   /* Colors - Hero background */
   --color-hero-bg-stroke: #0066c7;
 
-  /* Colors - Footer */
-  --color-footer-bg: #0f1f3a;
+  /* Colors - Footer (plain fallback; the footer itself uses .apple-footer's silver gradient) */
+  --color-footer-bg: #f5f5f7;
 
   /* Colors - Accent Purple */
   --color-accent-purple: #6841cc;
@@ -926,6 +926,11 @@ body {
 /* Alternating quiet-gray section, à la #f5f5f7 */
 .apple-section-gray {
   background-color: #f5f5f7;
+}
+
+/* Footer: quiet, elegant silver — echoes the hero's brushed-silver open */
+.apple-footer {
+  background: linear-gradient(180deg, #f8f9fb 0%, #eef1f5 55%, #e7eaef 100%);
 }
 
 /* Dark band for the RADV "why now" section — deep navy with a blue glow */

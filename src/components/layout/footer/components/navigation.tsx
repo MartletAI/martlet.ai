@@ -3,8 +3,8 @@ import { FOOTER_LINKS } from "@/constants/footer-links";
 import { Icon } from "@/components/icon";
 import { SmartLink } from "@/components";
 
-const HEADING_CLASS = "text-[13px] font-semibold uppercase tracking-[0.1em] text-white/50 leading-6 pb-4";
-const LINK_CLASS = "leading-6 font-medium text-base text-white/90 hover:text-white transition-colors";
+const HEADING_CLASS = "text-[13px] font-semibold uppercase tracking-[0.1em] text-[#6e6e73] leading-6 pb-4";
+const LINK_CLASS = "leading-6 font-medium text-base text-[#1d1d1f]/80 hover:text-[#0165dc] transition-colors";
 
 export function FooterNav() {
   return (
@@ -76,7 +76,7 @@ export function FooterNav() {
           <li>
             <Link
                 href="https://www.linkedin.com/company/martlet-ai/posts/?feedView=all"
-                className="text-white/90 hover:text-white transition-colors"
+                className="text-[#1d1d1f]/70 hover:text-[#0165dc] transition-colors"
                 aria-label={`Visit our LinkedIn page`}
             >
               <Icon name="linkedin" className="w-6 h-6" aria-hidden={true} />

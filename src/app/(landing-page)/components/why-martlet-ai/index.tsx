@@ -29,8 +29,8 @@ const DIFFERENTIATORS: Differentiator[] = [
     eyebrow: "Run in-house",
     title: "Your environment. Your data. Your audit trail.",
     body: "Deploy on-premises, in your private cloud, or air-gapped. No external API in the data path, no PHI egress, and no services contract paid on success commission — you keep the coding, the knowledge, and the controls.",
-    linkText: "Ask about deployment",
-    href: "/contact",
+    linkText: "How deployment works",
+    href: "/trust",
   },
   {
     card: "bg-gradient-to-b from-[#f2fbf7] to-[#e6f7ef]",

@@ -1,6 +1,7 @@
 import { Icon } from "@/components";
 import type { IconProps } from "@/components/icon";
 import { Reveal } from "@/components/reveal";
+import { SmartLink } from "@/components/cta/smart-link";
 
 interface TrustPillar {
   title: string;
@@ -74,7 +75,7 @@ export function TrustAndAccuracy() {
         <Reveal
           as="ul"
           stagger
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 list-none p-0 m-0"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 list-none p-0 m-0 mb-10"
         >
           {TRUST_CONTENT.PILLARS.map((pillar) => (
             <li
@@ -94,6 +95,13 @@ export function TrustAndAccuracy() {
               </p>
             </li>
           ))}
+        </Reveal>
+
+        <Reveal className="text-center">
+          <SmartLink href="/trust" className="link-arrow text-base!">
+            The full security and deployment story
+            <Icon name="arrow-right" className="w-4 h-4" aria-hidden />
+          </SmartLink>
         </Reveal>
       </div>
     </section>

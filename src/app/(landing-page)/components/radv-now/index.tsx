@@ -59,13 +59,20 @@ export function RadvNow() {
           ))}
         </Reveal>
 
-        <Reveal>
+        <Reveal className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
           <SmartLink
             href={RADV_CONTENT.CTA_HREF}
             className="btn btn-lg bg-white text-[#101014] hover:bg-[#e8e8ed] h-[52px]! py-3! px-7! text-lg! font-semibold!"
           >
             {RADV_CONTENT.CTA}
             <Icon name="arrow-right" className="h-4 w-4" aria-hidden />
+          </SmartLink>
+          <SmartLink
+            href="/resources/radv-hub"
+            className="inline-flex items-center gap-2 text-[#9dc2ff] font-semibold text-base no-underline hover:text-white transition-colors"
+          >
+            Track the audit schedule on the RADV Hub
+            <Icon name="arrow-right" className="w-4 h-4" aria-hidden />
           </SmartLink>
         </Reveal>
       </div>

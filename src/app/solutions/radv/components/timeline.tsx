@@ -162,7 +162,15 @@ export function WhatChanged() {
           <p className="text-sm apple-caption mt-4 mb-0 text-center">
             PY2018 findings are expected from mid-2026; PY2019 findings begin in
             2026. The order is deliberately non-sequential — CMS&rsquo;s
-            data-processing schedule dictates it.
+            data-processing schedule dictates it. We maintain this schedule,
+            every live deadline, and the litigation status on the{" "}
+            <a
+              href="/resources/radv-hub"
+              className="text-[#0165dc] underline decoration-[#0165dc]/30 decoration-1 underline-offset-2 hover:decoration-[#0165dc]"
+            >
+              RADV Hub
+            </a>
+            .
           </p>
         </Reveal>
       </div>

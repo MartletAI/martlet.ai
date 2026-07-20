@@ -5,6 +5,7 @@ export const NAV_LINKS = [
 ];
 
 export const RESOURCES_LINKS = [
+  { label: "RADV Hub", href: "/resources/radv-hub" },
   { label: "Blogs", href: "/resources/blog" },
   { label: "Brochures", href: "/resources/brochures" },
 ];

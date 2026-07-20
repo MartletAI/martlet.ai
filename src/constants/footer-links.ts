@@ -10,6 +10,7 @@ export const FOOTER_LINKS = {
   RESOURCES: {
     title: "Resources",
     links: [
+      { label: "RADV Hub", href: "/resources/radv-hub" },
       { label: "Blogs", href: "/resources/blog" },
       { label: "Brochures", href: "/resources/brochures" },
       { label: "Contact Us", href: "/contact" },

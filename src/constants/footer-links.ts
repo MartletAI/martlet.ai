@@ -13,6 +13,8 @@ export const FOOTER_LINKS = {
       { label: "RADV Hub", href: "/resources/radv-hub" },
       { label: "Blogs", href: "/resources/blog" },
       { label: "Brochures", href: "/resources/brochures" },
+      { label: "About Us", href: "/about" },
+      { label: "Trust & Security", href: "/trust" },
       { label: "Contact Us", href: "/contact" },
     ],
   },

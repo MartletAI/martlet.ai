@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes = [
     '',
+    '/about',
+    '/trust',
     '/contact',
     '/ai-acceptable-use-policy',
     '/privacy-policy',

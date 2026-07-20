@@ -10,12 +10,12 @@ export function DesktopNav() {
     <>
       <nav className="hidden lg:flex items-center" aria-label="Main navigation">
         <NavLinks
-          className="flex items-center gap-6.5"
+          className="flex items-center gap-5"
         />
       </nav>
 
       <div className="hidden lg:block">
-        <SmartLink href="/contact" className="btn btn-outline w-[165px] h-11 text-base! font-semibold! flex items-center justify-center p-0! -mt-0.25 bg-[#1A41B5]! text-white!">
+        <SmartLink href="/contact" className="btn btn-gradient w-[165px] h-11 text-base! font-semibold! flex items-center justify-center p-0! -mt-0.25">
           Contact us
         </SmartLink>
       </div>

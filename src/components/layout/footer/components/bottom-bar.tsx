@@ -5,10 +5,10 @@ export function FooterBottom() {
 
 
   return (
-    <section className="py-12 border-t border-indicator-prospective">
+    <section className="py-12 border-t border-white/15">
       <div className="container-main mx-auto flex justify-between items-center lg:flex-row flex-col-reverse gap-6 lg:gap-0 px-4 md:px-0 lg:px-0">
         {/* Copyright */}
-        <p className="text-white text-base leading-6 font-normal max-w-fit w-full text-center">
+        <p className="text-white/70 text-base leading-6 font-normal max-w-fit w-full text-center">
             {FOOTER_LINKS.COPY_RIGHT}
         </p>
         
@@ -19,7 +19,7 @@ export function FooterBottom() {
               <ul className="flex flex-col sm:flex-row gap-5 items-center">
                   {FOOTER_LINKS.LEGAL.map((legal) => (
                   <li key={legal.label}>
-                      <Link href={legal.href} className="text-white text-base leading-6 font-normal hover:text-white/80 transition-colors">
+                      <Link href={legal.href} className="text-white/70 text-base leading-6 font-normal hover:text-white transition-colors">
                       {legal.label}
                       </Link>
                   </li>

@@ -56,7 +56,7 @@ export function MobileMenu({ id, isOpen, onClose }: MobileMenuProps) {
       <div className="mt-md">
         <SmartLink
           href="/contact"
-          className="btn btn-primary w-full justify-center"
+          className="btn btn-gradient w-full justify-center"
           onClick={onClose}
         >
           Contact us

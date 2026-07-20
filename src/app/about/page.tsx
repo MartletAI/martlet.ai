@@ -1,7 +1,6 @@
 import { CTA as SharedCTA } from "@/components/cta";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
-import { Leadership } from "./components/leadership";
 import { Principles } from "./components/principles";
 import { Story } from "./components/story";
 
@@ -59,9 +58,6 @@ export default function Page() {
 
       {/* Operating principles */}
       <Principles />
-
-      {/* Co-founders */}
-      <Leadership />
 
       {/* CTA */}
       <SharedCTA

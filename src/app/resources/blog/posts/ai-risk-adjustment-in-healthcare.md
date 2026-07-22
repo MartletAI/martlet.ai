@@ -8,7 +8,7 @@
 **DefinedTermName:** AI Risk Adjustment
 **DefinedTermDescription:** The use of natural language processing and machine learning to read clinical documentation at scale, surface HCC-eligible diagnoses, suggest accurate ICD-10-CM codes, and predict RAF score gaps before submission — operating under the same documentation and compliance requirements as manual risk adjustment.
 
-# AI Risk Adjustment
+# What AI actually does to risk adjustment accuracy — and where it still falls short
 
 ![AI Risk Adjustment infographic](/assets/blog/ai-risk-adjustment-in-healthcare/ai-risk-adjustment-infographic.jpg)
 

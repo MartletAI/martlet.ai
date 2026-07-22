@@ -9,10 +9,10 @@ const HERO = {
   CTA_PRIMARY: "See it on your charts",
   CTA_SECONDARY: "How the pipeline works",
   STATS: [
-    { value: "95%", caption: "of cases closed automatically, end-to-end", accent: "text-[#0165dc]" },
-    { value: "99%", caption: "precision on every code the model automates", accent: "text-[#0090e8]" },
-    { value: "95%", caption: "reduction in chart review time", accent: "text-[#7c3aed]" },
-    { value: "Add + delete", caption: "two-way coding — capture and compliance in one pass", accent: "text-[#0d9488]" },
+    { value: "95%", caption: "of cases closed automatically, end-to-end", accent: "text-[#0165dc]", compact: false },
+    { value: "99%", caption: "precision on every code the model automates", accent: "text-[#0090e8]", compact: false },
+    { value: "95%", caption: "reduction in chart review time", accent: "text-[#7c3aed]", compact: false },
+    { value: "Verify · Add · Delete", caption: "confirm, capture, and clean up — in one pass", accent: "text-[#0d9488]", compact: true },
   ],
 } as const;
 
@@ -63,7 +63,13 @@ export function Hero() {
           <ul className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 list-none p-0 m-0 border-t border-[#d2d2d7] pt-10 animate-stagger">
             {HERO.STATS.map((stat) => (
               <li key={stat.caption} className="text-center lg:text-left">
-                <div className={`apple-stat whitespace-nowrap text-[30px] md:text-[36px] mb-2.5 ${stat.accent}`}>
+                <div
+                  className={`apple-stat leading-tight mb-2.5 ${stat.accent} ${
+                    stat.compact
+                      ? "text-[19px] md:text-[24px]"
+                      : "whitespace-nowrap text-[30px] md:text-[36px]"
+                  }`}
+                >
                   {stat.value}
                 </div>
                 <p className="text-[15px] font-medium apple-caption leading-snug m-0 text-balance">

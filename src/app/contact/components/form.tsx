@@ -3,6 +3,7 @@
 import { useActionState, useEffect } from "react";
 import { useFormStatus } from "react-dom";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type FormState = {
   success: boolean;
@@ -47,7 +48,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="w-full h-[48px] px-[18px] py-[12px] bg-[#2563EB] text-white font-semibold text-base rounded-lg border-2 border-white/12 shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] hover:bg-[#1d4ed8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      className="btn btn-gradient w-full h-[48px]! text-base! font-semibold! disabled:opacity-50 disabled:cursor-not-allowed"
     >
       {pending ? "Sending..." : "Get in touch"}
     </button>
@@ -65,11 +66,11 @@ export function Form() {
   }, [state, router]);
 
   return (
-    <form action={formAction} className="w-full max-w-[614px] mx-auto bg-white rounded-[12px] shadow-[0px_6px_20.6px_0px_rgba(0,0,0,0.05)] border border-[#E4E7EC] p-4 md:p-8 flex flex-col gap-[17px]">
+    <form action={formAction} className="w-full max-w-[614px] mx-auto bg-white rounded-[24px] shadow-[0_6px_24px_rgba(10,10,18,0.06)] border border-border p-5 md:p-9 flex flex-col gap-[17px]">
       <div className="flex flex-col sm:flex-row gap-[17px] w-full">
         <div className="flex flex-col gap-1.5 flex-1">
-          <label htmlFor="first-name" className="text-sm font-medium  cursor-pointer">
-            First name <span className="text-[#6941C6]">*</span>
+          <label htmlFor="first-name" className="text-sm font-medium cursor-pointer">
+            First name <span className="text-primary">*</span>
           </label>
           <input
             id="first-name"
@@ -78,12 +79,12 @@ export function Form() {
             required
             autoComplete="given-name"
             placeholder="First name"
-            className="w-full h-[44px] px-[14px] py-[10px] bg-white border border-[#D0D5DD] rounded-lg shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] text-base text-foreground placeholder-[#667085] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB]"
+            className="w-full h-[44px] px-[14px] py-[10px] bg-white border border-border rounded-xl shadow-[0_1px_2px_rgba(10,10,18,0.04)] text-base text-foreground placeholder-[#8a8a8f] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
           />
         </div>
         <div className="flex flex-col gap-1.5 flex-1">
           <label htmlFor="last-name" className="text-sm font-medium  cursor-pointer">
-            Last name <span className="text-[#6941C6]">*</span>
+            Last name <span className="text-primary">*</span>
           </label>
           <input
             id="last-name"
@@ -92,14 +93,14 @@ export function Form() {
             required
             autoComplete="family-name"
             placeholder="Last name"
-            className="w-full h-[44px] px-[14px] py-[10px] bg-white border border-[#D0D5DD] rounded-lg shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] text-base text-foreground placeholder-[#667085] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB]"
+            className="w-full h-[44px] px-[14px] py-[10px] bg-white border border-border rounded-xl shadow-[0_1px_2px_rgba(10,10,18,0.04)] text-base text-foreground placeholder-[#8a8a8f] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
           />
         </div>
       </div>
 
       <div className="flex flex-col gap-1.5 w-full">
         <label htmlFor="email" className="text-sm font-medium cursor-pointer">
-          Email <span className="text-[#6941C6]">*</span>
+          Email <span className="text-primary">*</span>
         </label>
         <input
           id="email"
@@ -108,7 +109,7 @@ export function Form() {
           required
           autoComplete="email"
           placeholder="you@company.com"
-          className="w-full h-[44px] px-[14px] py-[10px] bg-white border border-[#D0D5DD] rounded-lg shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] text-base text-foreground placeholder-[#667085] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB]"
+          className="w-full h-[44px] px-[14px] py-[10px] bg-white border border-border rounded-xl shadow-[0_1px_2px_rgba(10,10,18,0.04)] text-base text-foreground placeholder-[#8a8a8f] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
         />
       </div>
 
@@ -120,7 +121,7 @@ export function Form() {
           id="message"
           name="message"
           placeholder="Leave us a message..."
-          className="w-full h-[160px] px-[14px] py-[10px] bg-white border border-[#D0D5DD] rounded-lg shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] text-base text-foreground placeholder-[#667085] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB] resize-y"
+          className="w-full h-[160px] px-[14px] py-[10px] bg-white border border-border rounded-xl shadow-[0_1px_2px_rgba(10,10,18,0.04)] text-base text-foreground placeholder-[#8a8a8f] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary resize-y"
         />
       </div>
 
@@ -131,11 +132,11 @@ export function Form() {
             name="privacy-policy"
             type="checkbox"
             required
-            className="w-4 h-4 text-[#2563EB] border-gray-300 rounded focus:ring-[#2563EB]"
+            className="w-4 h-4 text-primary border-border rounded focus:ring-primary/30"
           />
         </div>
-        <label htmlFor="privacy-policy" className="text-sm text-[#475467] font-normal cursor-pointer select-none">
-          You agree to our friendly <a href="#" className="underline decoration-[#475467] underline-offset-2">privacy policy</a>.
+        <label htmlFor="privacy-policy" className="text-sm text-muted font-normal cursor-pointer select-none">
+          You agree to our <Link href="/privacy-policy" className="underline decoration-muted underline-offset-2 hover:text-primary">privacy policy</Link>.
         </label>
       </div>
 

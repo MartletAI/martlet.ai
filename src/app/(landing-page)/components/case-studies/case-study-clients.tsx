@@ -131,12 +131,12 @@ export function CaseStudyClients() {
               aria-controls={tabPanelId}
               onClick={() => selectByIndex(index)}
               className={cn(
-                "h-16 bg-white px-lg flex justify-center items-center gap-md",
-                "border rounded-lg shadow-xs cursor-pointer",
+                "h-16 px-lg flex justify-center items-center gap-md",
+                "border rounded-2xl cursor-pointer",
                 "transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
                 isSelected
-                  ? "border-[3px] border-primary"
-                  : "border border-border hover:border-primary/50",
+                  ? "border-primary bg-primary/8 shadow-xs"
+                  : "border-border bg-white hover:border-primary/50",
               )}
             >
               <Image
@@ -170,14 +170,14 @@ export function CaseStudyClients() {
           {description}
         </p>
 
-        <div className="relative w-full min-h-[420px] rounded-2xl border border-white/10 bg-[#0F317D] mb-8 md:mb-11">
+        <div className="relative w-full min-h-[420px] rounded-[28px] border border-border bg-[#fbfbfd] mb-8 md:mb-11">
           <SliderArrows
             onPrev={goPrev}
             onNext={goNext}
-            className="absolute inset-y-0 left-0 right-0 z-10 flex items-center justify-between pointer-events-none"
-            prevButtonClassName="pointer-events-auto border-white/25 bg-[#0F317D]/80 shadow-md backdrop-blur-sm hover:bg-[#0F317D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80"
-            nextButtonClassName="pointer-events-auto border-white/25 bg-[#0F317D]/80 shadow-md backdrop-blur-sm hover:bg-[#0F317D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80"
-            iconClassName="size-4 text-white transition-all group-hover:stroke-[2.5]"
+            className="absolute inset-y-0 left-0 right-0 z-10 flex items-center justify-between pointer-events-none px-4"
+            prevButtonClassName="pointer-events-auto border-border bg-white shadow-sm hover:border-primary/50 hover:bg-[#f5f5f7] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            nextButtonClassName="pointer-events-auto border-border bg-white shadow-sm hover:border-primary/50 hover:bg-[#f5f5f7] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            iconClassName="size-4 text-[#1d1d1f] transition-all group-hover:stroke-[2.5] group-hover:text-primary"
           />
           <div
             key={currentId}

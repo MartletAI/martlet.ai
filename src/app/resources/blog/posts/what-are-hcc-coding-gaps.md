@@ -8,7 +8,7 @@
 **DefinedTermName:** HCC Coding Gap
 **DefinedTermDescription:** A chronic condition that is clinically present in a patient's health history but missing or incomplete in their risk adjustment data submission, causing RAF scores to underrepresent the patient's actual health complexity due to documentation habits, annual recapture failures, or coding specificity issues.
 
-# What Are HCC Coding Gaps
+# HCC coding gaps: how to find them before CMS does
 
 ![What Are HCC Coding Gaps: causes, impact, and solutions](/assets/blog/what-are-hcc-coding-gaps/hcc-coding-gaps-infographic.jpg)
 

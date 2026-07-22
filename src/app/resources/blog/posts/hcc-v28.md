@@ -8,7 +8,7 @@
 **DefinedTermName:** HCC v28
 **DefinedTermDescription:** The updated CMS Hierarchical Condition Categories risk adjustment model for Medicare Advantage, which expands payment categories from 86 to 115, is built on native ICD-10-CM data with a higher predictive threshold for qualifying codes, and recalibrates coefficient weights on contemporary spending — fully implemented from the 2026 payment year.
 
-# HCC v28
+# CMS HCC v28: the model changes and what they mean for your Medicare Advantage revenue
 
 ![HCC v28 infographic](/assets/blog/hcc-v28/hcc-v28-infographic.jpg)
 

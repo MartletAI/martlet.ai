@@ -8,7 +8,7 @@
 **DefinedTermName:** Hierarchical Condition Category (HCC) Coding
 **DefinedTermDescription:** A risk adjustment methodology CMS uses to estimate patient disease burden and calibrate reimbursement in Medicare Advantage and value-based programs, mapping documented ICD-10 diagnoses to Condition Categories that combine with demographics to produce a Risk Adjustment Factor (RAF) score.
 
-# Hierarchical Condition Category (HCC) Coding
+# What is HCC coding and why does it determine your Medicare Advantage revenue?
 
 ![Hierarchical Condition Category (HCC) coding maps documented diagnoses to risk-adjusted categories](/assets/blog/hcc-coding/hcc-coding-infographic.jpg)
 

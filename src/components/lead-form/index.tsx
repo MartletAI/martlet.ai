@@ -93,11 +93,11 @@ export function LeadForm({
   return (
     <form
       action={formAction}
-      className={`w-full flex flex-col gap-[14px] ${className ?? ""}`}
+      className={`w-full flex flex-col gap-[14px] text-foreground ${className ?? ""}`}
     >
       <div className="flex flex-col sm:flex-row gap-[14px] w-full">
         <div className="flex flex-col gap-1.5 flex-1">
-          <label htmlFor="first-name" className="text-sm font-medium cursor-pointer">
+          <label htmlFor="first-name" className="text-sm font-medium text-foreground cursor-pointer">
             First name <span className="text-primary">*</span>
           </label>
           <input
@@ -111,7 +111,7 @@ export function LeadForm({
           />
         </div>
         <div className="flex flex-col gap-1.5 flex-1">
-          <label htmlFor="last-name" className="text-sm font-medium cursor-pointer">
+          <label htmlFor="last-name" className="text-sm font-medium text-foreground cursor-pointer">
             Last name <span className="text-primary">*</span>
           </label>
           <input
@@ -127,7 +127,7 @@ export function LeadForm({
       </div>
 
       <div className="flex flex-col gap-1.5 w-full">
-        <label htmlFor="email" className="text-sm font-medium cursor-pointer">
+        <label htmlFor="email" className="text-sm font-medium text-foreground cursor-pointer">
           Work email <span className="text-primary">*</span>
         </label>
         <input
@@ -142,7 +142,7 @@ export function LeadForm({
       </div>
 
       <div className="flex flex-col gap-1.5 w-full">
-        <label htmlFor="message" className="text-sm font-medium cursor-pointer">
+        <label htmlFor="message" className="text-sm font-medium text-foreground cursor-pointer">
           Message <span className="text-muted-light font-normal">(optional)</span>
         </label>
         <textarea

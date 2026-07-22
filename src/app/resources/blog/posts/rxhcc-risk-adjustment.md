@@ -8,7 +8,7 @@
 **DefinedTermName:** RxHCC (Prescription Drug Hierarchical Condition Categories)
 **DefinedTermDescription:** The risk adjustment model CMS uses for Medicare Part D that maps ICD-10-CM diagnosis codes to condition categories predicting prescription drug spending, combining them with demographic factors to produce a risk score used to adjust payments to prescription drug plans.
 
-# RxHCC Risk Adjustment Model in Medicare Part D
+# RxHCC explained: how Medicare Part D risk adjustment affects your drug plan revenue
 
 ![Key aspects of RxHCC risk adjustment: purpose, how it works, data source, hierarchy system, and 2025-2026 updates](/assets/blog/rxhcc-risk-adjustment/rxhcc-risk-adjustment-infographic.jpg)
 

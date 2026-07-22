@@ -70,7 +70,7 @@ export function Architecture() {
           </div>
           <div className="text-center mt-4">
             <span className="evidence-mono text-sm text-[#b42318] font-semibold">
-              ⃠ nothing crosses the boundary — no vendor cloud, no external AI API, no PHI egress
+              ⃠ nothing crosses the boundary — no vendor cloud, no external AI API, no PHI leaving your network
             </span>
           </div>
         </Reveal>

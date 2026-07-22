@@ -16,7 +16,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Prospective Risk Adjustment Software — Point-of-Care HCC Capture | Martlet AI",
   description:
-    "Suspected conditions from labs, meds, notes, and claims — delivered as evidence-linked, MEAT-aware suggestions inside your EHR. Published suspecting methodology, configurable thresholds, zero PHI egress.",
+    "Suspected conditions from labs, meds, notes, and claims — delivered as evidence-linked, MEAT-aware suggestions inside your EHR. Published suspecting methodology, configurable thresholds, and PHI that never leaves your network.",
   alternates: {
     canonical: "/solutions/prospective-risk-adjustment",
   },

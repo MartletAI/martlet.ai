@@ -34,7 +34,7 @@ const PROOF_STATS: ProofStat[] = [
   },
   {
     value: "Zero",
-    caption: "PHI egress — on-prem, VPC, or air-gapped",
+    caption: "PHI leaves your network — on-prem, VPC, or air-gapped",
     accent: "text-[#067647]",
   },
 ];

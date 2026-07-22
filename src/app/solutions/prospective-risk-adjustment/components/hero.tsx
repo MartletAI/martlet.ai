@@ -12,7 +12,7 @@ const HERO = {
     { value: "100,000+", caption: "lives served by our platform", accent: "text-[#0d9488]" },
     { value: "10", caption: "health systems and payers in production", accent: "text-[#d97706]" },
     { value: "99%", caption: "precision on every code the engine automates", accent: "text-[#0090e8]" },
-    { value: "Zero", caption: "PHI egress — on-prem, VPC, or air-gapped", accent: "text-[#067647]" },
+    { value: "Zero", caption: "PHI leaves your network — on-prem, VPC, or air-gapped", accent: "text-[#067647]" },
   ],
 } as const;
 

@@ -31,7 +31,7 @@ const PILLARS = [
     card: "bg-gradient-to-b from-[#f2fbf7] to-[#e6f7ef]",
     title: "Yours, and only yours",
     points: [
-      "No PHI egress and no subprocessors in the data path — there is no one downstream to vet",
+      "No PHI leaves your network, and no subprocessors sit in the data path — there is no one downstream to vet",
       "Your data trains nothing outside your environment",
       "Underlying models are built on public clinical text and proprietary annotated datasets developed by John Snow Labs",
       "Licensed as software: no per-token fees, no per-chart fees, no success commission",

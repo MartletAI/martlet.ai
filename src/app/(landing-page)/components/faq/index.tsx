@@ -19,7 +19,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Does PHI ever leave our network?",
     answer:
-      "No. Martlet AI deploys on-premises, in your private cloud (AWS, Azure, or GCP), or fully air-gapped. There are no external AI API calls in the data path and no PHI egress — your existing security controls, SIEM, and IAM stay in effect.",
+      "No. Martlet AI deploys on-premises, in your private cloud (AWS, Azure, or GCP), or fully air-gapped. There are no external AI API calls in the data path, and PHI never leaves your network — your existing security controls, SIEM, and IAM stay in effect.",
   },
   {
     question: "Can Martlet AI produce 837 / EDPS submission files?",

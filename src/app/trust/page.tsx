@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Trust & Security — In-Environment Deployment, Zero PHI Egress | Martlet AI",
   description:
-    "Martlet AI runs on-premises, in your private cloud, or air-gapped: no vendor cloud, no external AI API calls, no PHI egress. Pacific AI certified governance, versioned models, and a complete audit trail.",
+    "Martlet AI runs on-premises, in your private cloud, or air-gapped: no vendor cloud, no external AI API calls, and PHI that never leaves your network. Pacific AI certified governance, versioned models, and a complete audit trail.",
   alternates: {
     canonical: "/trust",
   },

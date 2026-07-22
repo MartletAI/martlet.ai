@@ -3,7 +3,7 @@ const HERO = {
   TITLE_1: "Your data never",
   TITLE_2: "meets our servers.",
   TAGLINE:
-    "Martlet AI deploys inside your environment — on-premises, in your private cloud, or air-gapped. There is no vendor cloud in the data path, no external AI API call, and no PHI egress. Your existing security controls stay in effect, because nothing ever leaves them.",
+    "Martlet AI deploys inside your environment — on-premises, in your private cloud, or air-gapped. There is no vendor cloud in the data path, no external AI API call, and PHI never leaves your network. Your existing security controls stay in effect, because nothing ever leaves them.",
   STATS: [
     { value: "Zero", caption: "PHI leaves your network — by architecture, not policy", accent: "text-[#067647]" },
     { value: "0", caption: "external AI API calls in the data path", accent: "text-[#0165dc]" },

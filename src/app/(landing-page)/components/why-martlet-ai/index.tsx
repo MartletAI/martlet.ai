@@ -28,7 +28,7 @@ const DIFFERENTIATORS: Differentiator[] = [
     accent: "text-[#7c3aed]",
     eyebrow: "Run in-house",
     title: "Your environment. Your data. Your audit trail.",
-    body: "Deploy on-premises, in your private cloud, or air-gapped. No external API in the data path, no PHI egress, and no services contract paid on success commission — you keep the coding, the knowledge, and the controls.",
+    body: "Deploy on-premises, in your private cloud, or air-gapped. No external API in the data path, PHI that never leaves your network, and no services contract paid on success commission — you keep the coding, the knowledge, and the controls.",
     linkText: "How deployment works",
     href: "/trust",
   },

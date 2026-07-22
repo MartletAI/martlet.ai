@@ -8,7 +8,7 @@
 **DefinedTermName:** AI Medical Coding
 **DefinedTermDescription:** The use of natural language processing and machine learning to read clinical documentation and suggest or assign ICD-10-CM and CPT codes, while routing complex or low-confidence cases to human coders for review.
 
-# AI in Medical Coding and Billing
+# AI in medical coding: what actually works for health plans and what to ignore
 
 ![AI in Medical Coding and Billing infographic](/assets/blog/ai-in-medical-coding-and-billing/ai-medical-coding-infographic.jpg)
 

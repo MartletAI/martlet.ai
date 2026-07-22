@@ -20,9 +20,8 @@ export function Hero() {
 
           <p className="text-lg md:text-[21px] apple-body font-normal leading-relaxed animate-fade-in animation-delay-100 mb-10 max-w-[680px]">
             Tell us which workflow you&rsquo;re evaluating — retrospective,
-            RADV, or prospective — and we&rsquo;ll run a 30-minute working
-            session on your own data. We typically reply within one business
-            day.
+            RADV, or prospective — and we&rsquo;ll run a working session on
+            your own data. We typically reply within one business day.
           </p>
 
           <div className="animate-fade-in animation-delay-200 w-full max-w-[560px] bg-white rounded-[24px] shadow-[0_6px_24px_rgba(10,10,18,0.06)] border border-border p-5 md:p-9">

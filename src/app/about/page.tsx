@@ -63,7 +63,7 @@ export default function Page() {
       <SharedCTA
         title="See what regulatory-grade looks like on your charts."
         subtitle="Talk to us"
-        description="A 30-minute working session: your charts, our engine, inside your environment — and every claim on this site shown live."
+        description="A working session: bring your charts, watch the engine run inside your environment, and see every claim on this site demonstrated live."
         submitLabel="Schedule a walkthrough"
         backgroundColor="bg-white"
       />

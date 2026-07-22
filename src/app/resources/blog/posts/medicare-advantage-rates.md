@@ -8,7 +8,7 @@
 **DefinedTermName:** Medicare Advantage Rates
 **DefinedTermDescription:** The monthly per-member payments CMS makes to private health plans administering Medicare Advantage coverage, calculated from county benchmarks, plan bids, and risk adjustment (RAF) scores derived from HCC coding.
 
-# Medicare Advantage Rates
+# Medicare Advantage rate changes in 2026: what risk adjustment leaders need to do now
 
 ![Medicare Advantage Rates infographic](/assets/blog/medicare-advantage-rates/medicare-advantage-rates-infographic.jpg)
 

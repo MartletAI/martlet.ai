@@ -8,7 +8,7 @@
 **DefinedTermName:** Risk Adjustment Coding
 **DefinedTermDescription:** The process of translating documented ICD-10-CM diagnoses into risk scores that adjust the payments health plans and providers receive for covering a population, mapping qualifying diagnoses to Condition Categories that combine with demographic factors to produce a Risk Adjustment Factor (RAF) score.
 
-# Risk Adjustment Coding
+# Why risk adjustment coding mistakes cost Medicare Advantage plans millions
 
 ![Risk adjustment coding translates documented diagnoses into risk-adjusted payment](/assets/blog/risk-adjustment-coding/risk-adjustment-coding-infographic.jpg)
 

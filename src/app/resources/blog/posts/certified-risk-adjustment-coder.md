@@ -8,7 +8,7 @@
 **DefinedTermName:** Certified Risk Adjustment Coder (CRC)
 **DefinedTermDescription:** A credentialed professional, certified by the AAPC, who reviews clinical documentation and assigns ICD-10-CM diagnosis codes to support accurate reimbursement in Medicare Advantage, Medicaid, and ACA marketplace risk adjustment programs.
 
-# Certified Risk Adjustment Coder
+# Certified Risk Adjustment Coder (CRC): what they do and whether your plan needs one
 
 ![Certified Risk Adjustment Coder (CRC): what they do and how certification works](/assets/blog/certified-risk-adjustment-coder/certified-risk-adjustment-coder-infographic.jpg)
 

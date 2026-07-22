@@ -76,7 +76,7 @@ export function FooterNav() {
           <li>
             <Link
                 href="https://www.linkedin.com/company/martlet-ai/posts/?feedView=all"
-                className="text-[#1d1d1f]/70 hover:text-[#0165dc] transition-colors"
+                className="inline-flex opacity-80 hover:opacity-100 transition-opacity"
                 aria-label={`Visit our LinkedIn page`}
             >
               <Icon name="linkedin" className="w-6 h-6" aria-hidden={true} />

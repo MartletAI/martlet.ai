@@ -6,8 +6,7 @@ export function CTA() {
       title="Bring 500 charts. We'll close them while you watch."
       subtitle="Working session"
       description="Chase prioritization, verification at 99% precision, exceptions queued, and submission deltas out — run on your charts, inside your environment."
-      ctaText="See it on your charts"
-      ctaLink="/contact"
+      submitLabel="See it on your charts"
       backgroundColor="bg-white"
     />
   );

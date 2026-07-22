@@ -64,8 +64,7 @@ export default function Page() {
         title="See what regulatory-grade looks like on your charts."
         subtitle="Talk to us"
         description="A 30-minute working session: your charts, our engine, inside your environment — and every claim on this site shown live."
-        ctaText="Schedule a walkthrough"
-        ctaLink="/contact"
+        submitLabel="Schedule a walkthrough"
         backgroundColor="bg-white"
       />
     </main>

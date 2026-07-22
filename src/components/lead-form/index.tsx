@@ -10,29 +10,34 @@ type FormState = {
   message: string;
 } | null;
 
-const PORTAL_ID = '244290520';
-const FORM_ID = 'b8431294-553a-4dc9-b0de-a9514c5d568c';
+const PORTAL_ID = "244290520";
+const FORM_ID = "b8431294-553a-4dc9-b0de-a9514c5d568c";
 const SUBMISSION_ENDPOINT = `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_ID}`;
 
 async function submitToHubSpot(_prevState: FormState, formData: FormData): Promise<FormState> {
+  const sourcePage = typeof window !== "undefined" ? window.location.pathname : "";
+  const clickSource =
+    typeof window !== "undefined" ? sessionStorage.getItem("navigationSource") : null;
 
   const fields = [
-    { name: 'email', value: formData.get('email')?.toString() ?? '' },
-    { name: 'firstname', value: formData.get('firstname')?.toString() ?? '' },
-    { name: 'lastname', value: formData.get('lastname')?.toString() ?? '' },
-    { name: 'message', value: `${formData.get('message')?.toString() ?? ''}\n\nSubmission URL: ${sessionStorage.getItem('navigationSource') ?? ''}` },
+    { name: "email", value: formData.get("email")?.toString() ?? "" },
+    { name: "firstname", value: formData.get("firstname")?.toString() ?? "" },
+    { name: "lastname", value: formData.get("lastname")?.toString() ?? "" },
+    {
+      name: "message",
+      value: `${formData.get("message")?.toString() ?? ""}\n\nSubmitted from: ${sourcePage}${clickSource ? ` (via ${clickSource})` : ""}`,
+    },
   ];
-
 
   try {
     const response = await fetch(SUBMISSION_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ fields }),
     });
 
     if (!response.ok) {
-       return { success: false, message: "Something went wrong. Please try again." };
+      return { success: false, message: "Something went wrong. Please try again." };
     }
 
     return { success: true, message: "Thanks for submitting the form. We will get back to you shortly." };
@@ -41,7 +46,7 @@ async function submitToHubSpot(_prevState: FormState, formData: FormData): Promi
   }
 }
 
-function SubmitButton() {
+function SubmitButton({ label = "Get in touch" }: { label?: string }) {
   const { pending } = useFormStatus();
 
   return (
@@ -50,12 +55,32 @@ function SubmitButton() {
       disabled={pending}
       className="btn btn-gradient w-full h-[48px]! text-base! font-semibold! disabled:opacity-50 disabled:cursor-not-allowed"
     >
-      {pending ? "Sending..." : "Get in touch"}
+      {pending ? "Sending..." : label}
     </button>
   );
 }
 
-export function Form() {
+const INPUT_CLASS =
+  "w-full h-[44px] px-[14px] py-[10px] bg-white border border-border rounded-xl shadow-[0_1px_2px_rgba(10,10,18,0.04)] text-base text-foreground placeholder-[#8a8a8f] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary";
+
+interface LeadFormProps {
+  /** Submit button label — customize per placement (e.g. "Run a mock RADV"). */
+  submitLabel?: string;
+  /** Placeholder for the optional message field. */
+  messagePlaceholder?: string;
+  className?: string;
+}
+
+/**
+ * LeadForm - the site's one HubSpot-connected contact form, built to be
+ * embedded directly in any page's closing CTA (not just /contact). On
+ * success it redirects to /thank-you-contact-us, same as before.
+ */
+export function LeadForm({
+  submitLabel = "Get in touch",
+  messagePlaceholder = "Tell us which workflow you're evaluating...",
+  className,
+}: LeadFormProps) {
   const router = useRouter();
   const [state, formAction] = useActionState(submitToHubSpot, null);
 
@@ -66,8 +91,11 @@ export function Form() {
   }, [state, router]);
 
   return (
-    <form action={formAction} className="w-full max-w-[614px] mx-auto bg-white rounded-[24px] shadow-[0_6px_24px_rgba(10,10,18,0.06)] border border-border p-5 md:p-9 flex flex-col gap-[17px]">
-      <div className="flex flex-col sm:flex-row gap-[17px] w-full">
+    <form
+      action={formAction}
+      className={`w-full flex flex-col gap-[14px] ${className ?? ""}`}
+    >
+      <div className="flex flex-col sm:flex-row gap-[14px] w-full">
         <div className="flex flex-col gap-1.5 flex-1">
           <label htmlFor="first-name" className="text-sm font-medium cursor-pointer">
             First name <span className="text-primary">*</span>
@@ -79,11 +107,11 @@ export function Form() {
             required
             autoComplete="given-name"
             placeholder="First name"
-            className="w-full h-[44px] px-[14px] py-[10px] bg-white border border-border rounded-xl shadow-[0_1px_2px_rgba(10,10,18,0.04)] text-base text-foreground placeholder-[#8a8a8f] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+            className={INPUT_CLASS}
           />
         </div>
         <div className="flex flex-col gap-1.5 flex-1">
-          <label htmlFor="last-name" className="text-sm font-medium  cursor-pointer">
+          <label htmlFor="last-name" className="text-sm font-medium cursor-pointer">
             Last name <span className="text-primary">*</span>
           </label>
           <input
@@ -93,14 +121,14 @@ export function Form() {
             required
             autoComplete="family-name"
             placeholder="Last name"
-            className="w-full h-[44px] px-[14px] py-[10px] bg-white border border-border rounded-xl shadow-[0_1px_2px_rgba(10,10,18,0.04)] text-base text-foreground placeholder-[#8a8a8f] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+            className={INPUT_CLASS}
           />
         </div>
       </div>
 
       <div className="flex flex-col gap-1.5 w-full">
         <label htmlFor="email" className="text-sm font-medium cursor-pointer">
-          Email <span className="text-primary">*</span>
+          Work email <span className="text-primary">*</span>
         </label>
         <input
           id="email"
@@ -109,19 +137,19 @@ export function Form() {
           required
           autoComplete="email"
           placeholder="you@company.com"
-          className="w-full h-[44px] px-[14px] py-[10px] bg-white border border-border rounded-xl shadow-[0_1px_2px_rgba(10,10,18,0.04)] text-base text-foreground placeholder-[#8a8a8f] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+          className={INPUT_CLASS}
         />
       </div>
 
       <div className="flex flex-col gap-1.5 w-full">
         <label htmlFor="message" className="text-sm font-medium cursor-pointer">
-          Message
+          Message <span className="text-muted-light font-normal">(optional)</span>
         </label>
         <textarea
           id="message"
           name="message"
-          placeholder="Leave us a message..."
-          className="w-full h-[160px] px-[14px] py-[10px] bg-white border border-border rounded-xl shadow-[0_1px_2px_rgba(10,10,18,0.04)] text-base text-foreground placeholder-[#8a8a8f] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary resize-y"
+          placeholder={messagePlaceholder}
+          className={`${INPUT_CLASS} h-[88px] resize-y`}
         />
       </div>
 
@@ -136,17 +164,21 @@ export function Form() {
           />
         </div>
         <label htmlFor="privacy-policy" className="text-sm text-muted font-normal cursor-pointer select-none">
-          You agree to our <Link href="/privacy-policy" className="underline decoration-muted underline-offset-2 hover:text-primary">privacy policy</Link>.
+          You agree to our{" "}
+          <Link href="/privacy-policy" className="underline decoration-muted underline-offset-2 hover:text-primary">
+            privacy policy
+          </Link>
+          .
         </label>
       </div>
 
-      <SubmitButton />
+      <SubmitButton label={submitLabel} />
 
       {state && !state.success && (
-        <div className="mt-4 p-4 rounded-md bg-red-50 text-red-700">
+        <div className="p-3 rounded-lg bg-red-50 text-red-700 text-sm">
           {state.message}
         </div>
       )}
     </form>
-  )
+  );
 }

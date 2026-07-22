@@ -48,8 +48,7 @@ export default function Page() {
         title="Selected, or expecting to be?"
         subtitle="Working session"
         description="Bring one contract. We'll run a mock RADV on it — sampled per CMS's methodology, with evidence packets and an exposure estimate — inside your environment."
-        ctaText="Run a mock RADV"
-        ctaLink="/contact"
+        submitLabel="Run a mock RADV"
         backgroundColor="bg-white"
       />
     </main>

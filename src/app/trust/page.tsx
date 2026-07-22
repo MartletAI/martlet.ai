@@ -43,8 +43,7 @@ export default function Page() {
         title="Send this page to your security team."
         subtitle="Compliance packet"
         description="Then bring us their questions. We'll walk your reviewers through deployment, controls, and AI governance — and leave them a compliance packet they can file."
-        ctaText="Request the compliance packet"
-        ctaLink="/contact"
+        submitLabel="Request the compliance packet"
         backgroundColor="bg-white"
       />
     </main>

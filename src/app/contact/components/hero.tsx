@@ -1,4 +1,4 @@
-import { Form } from "./form"
+import { LeadForm } from "@/components/lead-form";
 
 export function Hero() {
   return(
@@ -25,8 +25,8 @@ export function Hero() {
             day.
           </p>
 
-          <div className="animate-fade-in animation-delay-200 w-full">
-            <Form />
+          <div className="animate-fade-in animation-delay-200 w-full max-w-[560px] bg-white rounded-[24px] shadow-[0_6px_24px_rgba(10,10,18,0.06)] border border-border p-5 md:p-9">
+            <LeadForm submitLabel="Get in touch" />
           </div>
         </div>
       </section>

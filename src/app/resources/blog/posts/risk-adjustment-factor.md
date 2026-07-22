@@ -8,7 +8,7 @@
 **DefinedTermName:** Risk Adjustment Factor (RAF)
 **DefinedTermDescription:** A numeric score that estimates a patient's expected healthcare costs relative to the average beneficiary in a program, calculated from demographic factors (age and sex) and ICD-10-CM diagnoses mapped to Hierarchical Condition Categories, where a score of 1.0 represents the average Medicare beneficiary.
 
-# Risk Adjustment Factor
+# What your RAF score actually reveals about your risk adjustment program
 
 ![Risk Adjustment Factor (RAF) infographic](/assets/blog/risk-adjustment-factor/risk-adjustment-factor-infographic.jpg)
 

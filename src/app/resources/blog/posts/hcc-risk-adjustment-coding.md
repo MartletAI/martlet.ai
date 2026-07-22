@@ -8,7 +8,7 @@
 **DefinedTermName:** HCC Risk Adjustment Coding
 **DefinedTermDescription:** The process of assigning ICD-10-CM diagnosis codes to patient encounters and mapping them to Hierarchical Condition Categories that contribute to a member's RAF score, which in Medicare Advantage determines the monthly per-member payment CMS makes to health plans.
 
-# HCC Risk Adjustment Coding
+# HCC risk adjustment coding: the documentation mistakes that trigger RADV audits
 
 ![HCC Risk Adjustment Coding infographic](/assets/blog/hcc-risk-adjustment-coding/hcc-risk-adjustment-coding-infographic.jpg)
 

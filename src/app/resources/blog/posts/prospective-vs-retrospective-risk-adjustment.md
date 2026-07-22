@@ -8,7 +8,7 @@
 **DefinedTermName:** Prospective Risk Adjustment
 **DefinedTermDescription:** A risk adjustment approach that identifies and documents chronic conditions before or during clinical encounters — through pre-visit chart review, clinical documentation improvement, and member outreach — so that HCC-eligible diagnoses are captured at the point of care rather than recovered afterward.
 
-# Prospective vs Retrospective Risk Adjustment
+# Prospective vs. retrospective risk adjustment: which approach closes more coding gaps?
 
 ![Prospective vs Retrospective Risk Adjustment infographic](/assets/blog/prospective-vs-retrospective-risk-adjustment/prospective-vs-retrospective-risk-adjustment-infographic.jpg)
 

@@ -41,6 +41,9 @@ async function submitToHubSpot(
   }
 }
 
+const INPUT_CLASS =
+  "w-full h-[44px] px-[14px] py-[10px] bg-white border border-border rounded-xl shadow-[0_1px_2px_rgba(10,10,18,0.04)] text-base text-foreground placeholder-[#8a8a8f] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary";
+
 function SubmitButton() {
   const { pending } = useFormStatus();
 
@@ -48,9 +51,9 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="w-full h-[48px] px-[18px] py-[12px] bg-[#2563EB] text-white font-semibold text-base rounded-lg border-2 border-white/12 shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] hover:bg-[#1d4ed8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      className="btn btn-gradient w-full h-[48px]! text-base! font-semibold! disabled:opacity-50 disabled:cursor-not-allowed"
     >
-      {pending ? "Submitting..." : "Download Brochure"}
+      {pending ? "Submitting..." : "Download brochure"}
     </button>
   );
 }
@@ -76,8 +79,8 @@ export function BrochureDownloadForm({ brochure, onSuccess }: BrochureDownloadFo
       <input type="hidden" name="pdf_filename" value={brochure.pdfFilename} />
 
       <div className="flex flex-col gap-1.5 w-full">
-        <label htmlFor="brochure-name" className="text-sm font-medium cursor-pointer">
-          Name <span className="text-[#6941C6]">*</span>
+        <label htmlFor="brochure-name" className="text-sm font-medium text-foreground cursor-pointer">
+          Name <span className="text-primary">*</span>
         </label>
         <input
           id="brochure-name"
@@ -86,13 +89,13 @@ export function BrochureDownloadForm({ brochure, onSuccess }: BrochureDownloadFo
           required
           autoComplete="name"
           placeholder="Your name"
-          className="w-full h-[44px] px-[14px] py-[10px] bg-white border border-[#D0D5DD] rounded-lg shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] text-base text-foreground placeholder-[#667085] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB]"
+          className={INPUT_CLASS}
         />
       </div>
 
       <div className="flex flex-col gap-1.5 w-full">
-        <label htmlFor="brochure-email" className="text-sm font-medium cursor-pointer">
-          Email <span className="text-[#6941C6]">*</span>
+        <label htmlFor="brochure-email" className="text-sm font-medium text-foreground cursor-pointer">
+          Email <span className="text-primary">*</span>
         </label>
         <input
           id="brochure-email"
@@ -101,18 +104,18 @@ export function BrochureDownloadForm({ brochure, onSuccess }: BrochureDownloadFo
           required
           autoComplete="email"
           placeholder="you@company.com"
-          className="w-full h-[44px] px-[14px] py-[10px] bg-white border border-[#D0D5DD] rounded-lg shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] text-base text-foreground placeholder-[#667085] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:border-[#2563EB]"
+          className={INPUT_CLASS}
         />
       </div>
 
       <SubmitButton />
 
       {state && !state.success && (
-        <div className="p-4 rounded-md bg-red-50 text-red-700 text-sm">{state.message}</div>
+        <div className="p-3 rounded-lg bg-red-50 text-red-700 text-sm">{state.message}</div>
       )}
 
       {state?.success && (
-        <div className="p-4 rounded-md bg-green-50 text-green-700 text-sm">{state.message}</div>
+        <div className="p-3 rounded-lg bg-green-50 text-green-700 text-sm">{state.message}</div>
       )}
     </form>
   );

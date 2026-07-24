@@ -47,22 +47,22 @@ export function BrochureDownloadModal({ brochure, open, onClose }: BrochureDownl
     >
       <div
         role="document"
-        className="relative w-full max-w-[480px] rounded-[12px] border border-[#E4E7EC] bg-white p-6 md:p-8 shadow-[0px_6px_20.6px_0px_rgba(0,0,0,0.05)]"
+        className="relative w-full max-w-[480px] rounded-2xl border border-border bg-white p-6 md:p-8 shadow-[0_6px_20px_rgba(10,10,18,0.08)]"
         onClick={(event) => event.stopPropagation()}
       >
         <button
           type="button"
           onClick={onClose}
           aria-label="Close download form"
-          className="absolute right-4 top-4 text-[#667085] hover:text-foreground transition-colors text-2xl leading-none"
+          className="absolute right-4 top-4 text-muted hover:text-foreground transition-colors text-2xl leading-none"
         >
           ×
         </button>
 
         <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-1 pr-8">
-          Download Brochure
+          Download brochure
         </h2>
-        <p className="text-sm text-[#475467] mb-6">{brochure.title}</p>
+        <p className="text-sm apple-caption mb-6">{brochure.title}</p>
 
         <BrochureDownloadForm brochure={brochure} onSuccess={onClose} />
       </div>

@@ -844,13 +844,21 @@ body {
 /* Whatever image an author places in the MDX body — first line, mid-
    article, or none at all — renders with the same polish the removed
    auto-injected hero had. Presentation only; placement stays entirely
-   up to the post's own content. */
+   up to the post's own content. Explicit margin here because
+   Typography's own :where(img) rule sets margin-top: 1.71em directly
+   on the element — overriding the paragraph it's wrapped in doesn't
+   touch that, since remark wraps a standalone image as <p><img></p>. */
 .post-prose img {
   display: block;
   width: 100%;
   height: auto;
+  margin: 2rem 0;
   border-radius: 24px;
   border: 1px solid var(--color-border);
+}
+
+.post-prose > *:first-child img {
+  margin-top: 0;
 }
 
 .post-prose strong {

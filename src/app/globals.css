@@ -217,274 +217,17 @@ body {
   box-shadow: var(--shadow-card);
 }
 
-.shadow-card-hover {
-  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.12);
-}
-
 .shadow-xs {
   box-shadow: 0 1px 2px 0 rgba(10, 13, 18, 0.05);
 }
 
 /* Gradients */
-
-/* Landing Page */
-.gradient-landing-page-hero {
-  background:
-    url("/assets/hero/landing.png") no-repeat,
-    linear-gradient(180deg, #e7eeff 3.85%, #fff 50%, #e7eeff 100%);
-  background-position:
-    center top 110px,
-    center;
-  background-size:
-    1440px auto,
-    cover;
-}
-
-.gradient-landing-page-text-primary {
-  background: linear-gradient(
-    201deg,
-    #0163bc 5.06%,
-    #051c68 61.04%,
-    #010127 95.44%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1.75px;
-}
-.gradient-landing-page-text-secondary {
-  background: linear-gradient(
-    201deg,
-    #f354f9 4.56%,
-    #5491fc 61.04%,
-    #1224ff 95.44%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1.75px;
-}
-
-/* Prospective Risk Adjustment */
-.gradient-prospective-hero {
-  background:
-    url("/assets/hero/prospective.png") no-repeat,
-    linear-gradient(180deg, #e7eeff 0%, #fff 57.21%);
-  background-position:
-    center top 106px,
-    center;
-  background-size:
-    1440px auto,
-    cover;
-}
-.gradient-prospective-text-primary {
-  background: linear-gradient(
-    201deg,
-    #f354f9 4.56%,
-    #5491fc 61.04%,
-    #1224ff 95.44%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1.75px;
-}
-.gradient-prospective-text-secondary {
-  background: linear-gradient(
-    201deg,
-    #0163bc 5.06%,
-    #051c68 61.04%,
-    #010127 95.44%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1.75px;
-}
-
-/* Retrospective Risk Adjustment */
-.gradient-retrospective-hero {
-  background:
-    url("/assets/hero/retrospective.png") no-repeat,
-    linear-gradient(180deg, #e7eeff 0%, #fff 57.21%);
-  background-position:
-    center top 108px,
-    center;
-  background-size:
-    1440px auto,
-    cover;
-}
-.gradient-retrospective-text-primary {
-  background: linear-gradient(
-    159deg,
-    #0058e0 4.56%,
-    #009ef2 61.04%,
-    #00fcf1 95.44%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1.75px;
-}
-.gradient-retrospective-text-secondary {
-  background: linear-gradient(
-    201deg,
-    #0163bc 5.06%,
-    #051c68 61.04%,
-    #010127 95.44%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1.75px;
-}
-
-/* RADV */
-.gradient-radv-hero {
-  background:
-    url("/assets/hero/radv.png") no-repeat,
-    #fff;
-  background-position:
-    center top 109px,
-    center;
-  background-size:
-    1440px auto,
-    cover;
-}
-.gradient-radv-text-primary {
-  background: linear-gradient(
-    201deg,
-    #f354f9 4.56%,
-    #5491fc 61.04%,
-    #1224ff 95.44%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1.75px;
-}
-.gradient-radv-text-secondary {
-  background: linear-gradient(
-    201deg,
-    #fc794d 4.56%,
-    #dd08f8 61.04%,
-    #7a03ff 95.44%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1.75px;
-}
-
-.radv-pipeline-injest {
-  color: #0859fd;
-  text-align: center;
-  font-size: var(--text-xl);
-  font-style: normal;
-  font-weight: var(--font-semibold);
-  line-height: 28px;
-}
-
-.radv-pipeline-validate {
-  color: #7347dc;
-  text-align: center;
-  font-size: var(--text-xl);
-  font-style: normal;
-  font-weight: var(--font-semibold);
-  line-height: 28px;
-}
-
-.radv-pipeline-package {
-  color: #cf43c4;
-  text-align: center;
-  font-size: var(--text-xl);
-  font-style: normal;
-  font-weight: var(--font-semibold);
-  line-height: 28px;
-}
-
-/* Privacy Policy */
-.gradient-privacy-policy-hero {
-  background:
-    url("/assets/hero/privacy-policy.png") no-repeat,
-    linear-gradient(180deg, #e7eeff 0%, #fff 100%);
-  background-position:
-    center top 101px,
-    center;
-  background-size:
-    1447px auto,
-    cover;
-}
-
-.gradient-privacy-policy-text-primary {
-  background: linear-gradient(90deg, #004e98 0%, #00cff4 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1.75px;
-}
-
-.gradient-industry-partners {
-  background: linear-gradient(
-    180deg,
-    #eff8ff -18.06%,
-    rgba(247, 251, 255, 0.5) 100%
-  );
-}
-
-.gradient-case-studies {
-  background: linear-gradient(
-    180deg,
-    #f5f1ff -18.06%,
-    rgba(247, 251, 255, 0.5) 100%
-  );
-}
-
 .gradient-why-martlet {
   background: linear-gradient(
     180deg,
     #e9f8ff -18.06%,
     rgba(247, 251, 255, 0.5) 100%
   );
-}
-.gradient-approaches {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.5) -18.06%,
-    #fffaf6 100%
-  );
-}
-.gradient-approaches-2 {
-  background: linear-gradient(180deg, #fff 45%, #ececf3 100%);
-}
-
-.gradient-outputs {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.5) -18.06%,
-    #f5f1ff 100%
-  );
-}
-
-.icon-container-blue {
-  background: white;
-  border: 1px solid #d0d5dd;
-  box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
-  border-radius: 10px;
-}
-
-.feature-icon-wrapper {
-  border-radius: 10px;
-  border: 1px solid #d0d5dd;
-  background: #fff;
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-}
-
-.feature-icon-inner {
-  border-radius: 8px;
-  border: 1px solid #2e90fa;
-  background: #1570ef;
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) inset;
 }
 
 /* Buttons */
@@ -580,13 +323,6 @@ body {
   color: var(--color-foreground);
 }
 
-.pill-indicator {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: var(--radius-full);
-  background-color: var(--color-primary);
-}
-
 /* Section Styles */
 .section-label {
   color: var(--color-indicator-prospective);
@@ -632,10 +368,6 @@ body {
 
 .animate-fade-in {
   animation: fade-in var(--transition-slow) ease-out;
-}
-
-.animate-slide-up {
-  animation: slide-up var(--transition-slow) ease-out;
 }
 
 /** Stronger entrance for case-study slides (more motion + longer ease) */
@@ -768,10 +500,6 @@ body {
 
 .animation-delay-200 {
   animation-delay: 200ms;
-}
-
-.animation-delay-300 {
-  animation-delay: 300ms;
 }
 
 /* ========================================
@@ -1043,7 +771,6 @@ body {
 
   /* Disable specific animations */
   .animate-fade-in,
-  .animate-slide-up,
   .animate-case-study-enter,
   .animate-stagger > * {
     animation: none !important;

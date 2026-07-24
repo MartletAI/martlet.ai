@@ -47,29 +47,29 @@ export function PostSidebar({ currentTag, allTags, latestPosts }: PostSidebarPro
           <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted mb-4">
             Latest posts
           </p>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-5">
             {latestPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/resources/blog/${post.slug}`}
-                className="group flex gap-3"
+                className="group flex gap-4"
               >
                 {post.thumbnail && (
-                  <div className="relative w-16 h-16 shrink-0 rounded-lg overflow-hidden border border-border">
+                  <div className="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden border border-border">
                     <Image
                       src={post.thumbnail}
                       alt={post.title}
                       fill
-                      sizes="64px"
+                      sizes="80px"
                       className="object-cover"
                     />
                   </div>
                 )}
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-[#0a0a12] leading-snug line-clamp-2 group-hover:text-[#0165dc] transition-colors">
+                <div className="min-w-0 flex flex-col justify-center">
+                  <p className="text-[15px] font-semibold text-[#0a0a12] leading-snug line-clamp-2 group-hover:text-[#0165dc] transition-colors">
                     {post.title}
                   </p>
-                  <p className="text-xs apple-caption mt-1">{formatPostDate(post.date)}</p>
+                  <p className="text-xs apple-caption mt-1.5">{formatPostDate(post.date)}</p>
                 </div>
               </Link>
             ))}

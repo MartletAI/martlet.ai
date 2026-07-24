@@ -1,4 +1,4 @@
-import { getBlogPostBySlug, getBlogPosts } from "@/lib/blog";
+import { getBlogPostBySlug, getBlogPosts, extractHeadings } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -49,6 +49,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   const allPosts = getBlogPosts();
   const allTags = Array.from(new Set(allPosts.map((p) => p.tag).filter(Boolean)));
   const latestPosts = allPosts.filter((p) => p.slug !== post.slug).slice(0, 4);
+  const headings = extractHeadings(post.content);
 
   return (
     <article className="pt-[132px] md:pt-[160px]">
@@ -69,7 +70,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
           />
         </div>
 
-        <PostSidebar currentTag={post.tag} allTags={allTags} latestPosts={latestPosts} />
+        <PostSidebar headings={headings} currentTag={post.tag} allTags={allTags} latestPosts={latestPosts} />
       </div>
 
       <SharedCTA

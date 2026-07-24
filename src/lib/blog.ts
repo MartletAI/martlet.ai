@@ -85,3 +85,37 @@ export function formatPostDate(iso: string): string {
   if (Number.isNaN(parsed.getTime())) return iso;
   return parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
+
+/**
+ * URL-safe anchor slug for a heading. Shared by extractHeadings() (which
+ * builds the table-of-contents list) and the MDX h2 override (which sets
+ * the matching id="..." on the actual rendered heading) — both must agree
+ * on the same algorithm or the "jump to section" links silently break.
+ */
+export function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+export interface Heading {
+  text: string;
+  slug: string;
+}
+
+/** Pulls every H2 (## ...) out of a post's raw MDX body, in order. */
+export function extractHeadings(content: string): Heading[] {
+  const headings: Heading[] = [];
+  for (const line of content.split('\n')) {
+    const match = line.match(/^##\s+(.+)$/);
+    if (match) {
+      const text = match[1].trim();
+      headings.push({ text, slug: slugify(text) });
+    }
+  }
+  return headings;
+}

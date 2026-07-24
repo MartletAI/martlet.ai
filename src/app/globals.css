@@ -202,6 +202,10 @@
    3. Base Styles
    ======================================== */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-background);
   color: var(--color-foreground);
@@ -796,6 +800,8 @@ body {
   padding: 0.5em 0.85em;
   border-radius: 12px;
   margin-top: 2.2em;
+  /* Clears the fixed nav when a table-of-contents link jumps here. */
+  scroll-margin-top: 120px;
 }
 .post-prose h2:nth-of-type(4n + 2) {
   color: #6d28d9;

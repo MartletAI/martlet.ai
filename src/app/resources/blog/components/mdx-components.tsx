@@ -1,10 +1,23 @@
-import type { ComponentProps } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import type { MDXRemoteProps } from "next-mdx-remote/rsc";
 
 import { SideBySide, StatRow, PullQuote, FactCallout, FaqAccordion } from "@/components/blog-mdx";
 import { SourceLink } from "@/components/source-link";
+import { slugify } from "@/lib/blog";
 
 type MDXComponents = NonNullable<MDXRemoteProps["components"]>;
+
+/** Flattens a heading's children back to plain text so we can slugify it. */
+function textContent(node: ReactNode): string {
+  if (typeof node === "string") return node;
+  if (typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(textContent).join("");
+  if (node && typeof node === "object" && "props" in node) {
+    const props = (node as { props?: { children?: ReactNode } }).props;
+    return textContent(props?.children);
+  }
+  return "";
+}
 
 /**
  * Components available inside every post's MDX body: markdown-element
@@ -19,6 +32,9 @@ export const mdxComponents: MDXComponents = {
   FactCallout,
   FaqAccordion,
   SourceLink,
+  h2: (props: ComponentProps<"h2">) => (
+    <h2 id={slugify(textContent(props.children))}>{props.children}</h2>
+  ),
   a: (props: ComponentProps<"a">) => (
     <a
       {...props}

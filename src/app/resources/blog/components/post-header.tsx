@@ -96,37 +96,40 @@ export function PostHeader({ post }: PostHeaderProps) {
   });
 
   return (
-    <div className="container-main mx-auto prose prose-lg max-w-none mb-12">
+    <div className="container-main mx-auto mb-10 md:mb-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: safeJsonLdStringify(jsonLd),
         }}
       />
-      
+
       {/* Back Link */}
-      <Link href="/resources/blog" className="link-arrow group inline-flex items-center text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-        <Icon 
-          name="arrow-left" 
-          className="w-5 h-5 group-hover:-translate-x-1 transition-transform" 
+      <Link
+        href="/resources/blog"
+        className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#0165dc] hover:gap-2.5 transition-all mb-8"
+      >
+        <Icon
+          name="arrow-left"
+          className="size-4 group-hover:-translate-x-0.5 transition-transform"
         />
         Back to blog
-      </Link> 
+      </Link>
 
       {/* Title */}
-      <h1 className="mb-6 text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
+      <h1 className="apple-display text-[32px] md:text-[48px] leading-[1.1] mb-6 max-w-[900px]">
         {post.title}
       </h1>
 
       {/* Metadata */}
-      <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-600 mb-10 not-prose border-b border-gray-200 pb-8">
-        <div className="flex items-center gap-4">
-          <div className="flex -space-x-4 rtl:space-x-reverse">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-2 mb-10 md:mb-12 border-b border-border pb-8">
+        <div className="flex items-center gap-3">
+          <div className="flex -space-x-3 rtl:space-x-reverse">
              {authors.map((author) => author && (
                <Link key={author.name} href={`/author/${author.slug}`}>
-                 <Image 
-                   className="w-10 h-10 border-2 border-white rounded-full transition-transform hover:scale-110" 
-                   src={author.image} 
+                 <Image
+                   className="w-10 h-10 border-2 border-white rounded-full transition-transform hover:scale-110"
+                   src={author.image}
                    alt={author.name}
                    width={40}
                    height={40}
@@ -134,10 +137,10 @@ export function PostHeader({ post }: PostHeaderProps) {
                </Link>
              ))}
           </div>
-          <span className="font-medium text-gray-900">
+          <span className="text-sm font-semibold text-[#0a0a12]">
             By {authors.map((author, index) => author && (
               <span key={author.name}>
-                <Link href={`/author/${author.slug}`} className="hover:text-primary hover:underline">
+                <Link href={`/author/${author.slug}`} className="hover:text-[#0165dc] hover:underline transition-colors">
                   {author.name}
                 </Link>
                 {index < authors.length - 1 ? ", " : ""}
@@ -145,9 +148,25 @@ export function PostHeader({ post }: PostHeaderProps) {
             ))}
           </span>
         </div>
-        <span className="hidden sm:inline text-gray-300 mx-2">•</span>
-        <time dateTime={post.date}>{formattedDate}</time>
+        <span className="hidden sm:inline text-[#d1d1d6] mx-2">•</span>
+        <time dateTime={post.date} className="text-sm apple-caption">
+          {formattedDate}
+        </time>
       </div>
+
+      {/* Hero image */}
+      {post.thumbnail && (
+        <div className="relative w-full aspect-16/9 rounded-3xl border border-border overflow-hidden">
+          <Image
+            src={post.thumbnail}
+            alt={post.title}
+            fill
+            sizes="(min-width: 1240px) 1160px, 100vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+      )}
     </div>
   );
 }

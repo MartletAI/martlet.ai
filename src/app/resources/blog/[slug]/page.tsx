@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { PostHeader } from "../components/post-header";
+import { CTA as SharedCTA } from "@/components/cta";
 import { Metadata } from "next";
 
 type Params = Promise<{ slug: string }>;
@@ -44,9 +45,9 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   }
 
   return (
-    <article className="pb-10 pt-[146px]">
+    <article className="pt-[132px] md:pt-[160px]">
       <PostHeader post={post} />
-      <div className="container-main mx-auto prose prose-lg max-w-none">
+      <div className="container-main mx-auto prose prose-lg max-w-none mb-16 md:mb-20">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
@@ -58,7 +59,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
                   {...rest}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80 underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary"
+                  className="text-[#0165dc] hover:text-[#0154b8] underline decoration-[#0165dc]/30 underline-offset-4 transition-colors hover:decoration-[#0165dc]"
                 />
               );
             },
@@ -66,7 +67,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
               const { node, ...rest } = props;
               void node;
               return (
-                <div className="not-prose my-8 overflow-x-auto rounded-lg border border-gray-200">
+                <div className="not-prose my-8 overflow-x-auto rounded-2xl border border-border">
                   <table
                     {...rest}
                     className="w-full border-collapse text-left text-base"
@@ -77,7 +78,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
             thead: (props) => {
               const { node, ...rest } = props;
               void node;
-              return <thead {...rest} className="bg-gray-50" />;
+              return <thead {...rest} className="bg-[#f5f5f7]" />;
             },
             th: (props) => {
               const { node, ...rest } = props;
@@ -85,7 +86,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
               return (
                 <th
                   {...rest}
-                  className="border-b border-r border-gray-200 px-5 py-3 font-semibold text-gray-900 last:border-r-0"
+                  className="border-b border-r border-border px-5 py-3 font-semibold text-[#0a0a12] last:border-r-0"
                 />
               );
             },
@@ -95,7 +96,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
               return (
                 <td
                   {...rest}
-                  className="border-b border-r border-gray-200 px-5 py-3 align-top text-gray-700 last:border-r-0"
+                  className="border-b border-r border-border px-5 py-3 align-top text-[#3c3c43] last:border-r-0"
                 />
               );
             },
@@ -109,6 +110,14 @@ export default async function BlogPostPage({ params }: { params: Params }) {
           {post.content}
         </ReactMarkdown>
       </div>
+
+      <SharedCTA
+        title="Bring your charts. We'll show you the evidence."
+        subtitle="Talk to us"
+        description="A working session: watch the engine run inside your environment, and see every regulatory claim on this site demonstrated on your own data."
+        submitLabel="Schedule a walkthrough"
+        backgroundColor="bg-white"
+      />
     </article>
   );
 }

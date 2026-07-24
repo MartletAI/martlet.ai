@@ -52,29 +52,6 @@ const nextConfig: NextConfig = {
   // 301 redirects for broken/legacy URLs
   async redirects() {
     return [
-      // Old flat blog-thumbnail paths, replaced by the per-slug asset
-      // folder convention (content/blog migration) — preserve Image
-      // Search indexing for these 4 posts' thumbnails.
-      {
-        source: "/assets/blog/ai-didnt-fix-hcc-coding.jpg",
-        destination: "/assets/blog/ai-didnt-fix-hcc-coding-how-to-fix-it/cover.jpg",
-        permanent: true,
-      },
-      {
-        source: "/assets/blog/how-healthcare-specific-language-models-are-transforming-hedis.jpg",
-        destination: "/assets/blog/how-healthcare-specific-language-models-are-transforming-hedis/cover.jpg",
-        permanent: true,
-      },
-      {
-        source: "/assets/blog/radv-audit-readiness-for-health-plans.png",
-        destination: "/assets/blog/radv-audit-readiness-for-health-plans/cover.png",
-        permanent: true,
-      },
-      {
-        source: "/assets/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors.png",
-        destination: "/assets/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors/cover.png",
-        permanent: true,
-      },
       {
         source:
           "/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors",

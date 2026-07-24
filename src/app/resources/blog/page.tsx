@@ -13,7 +13,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+interface PageProps {
+  searchParams: Promise<{ tag?: string }>;
+}
+
+export default async function Page({ searchParams }: PageProps) {
+  const { tag } = await searchParams;
+
   return (
     <main>
       <BreadcrumbJsonLd
@@ -24,7 +30,7 @@ export default function Page() {
       />
 
       {/* Post grid */}
-      <Blogs />
+      <Blogs activeTag={tag} />
 
       {/* CTA */}
       <SharedCTA

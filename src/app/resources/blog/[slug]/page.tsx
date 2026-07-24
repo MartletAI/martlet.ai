@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { PostHeader } from "../components/post-header";
+import { PostSidebar } from "../components/post-sidebar";
 import { mdxComponents } from "../components/mdx-components";
 import { CTA as SharedCTA } from "@/components/cta";
 import { Metadata } from "next";
@@ -45,22 +46,30 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     notFound();
   }
 
+  const allPosts = getBlogPosts();
+  const allTags = Array.from(new Set(allPosts.map((p) => p.tag).filter(Boolean)));
+  const latestPosts = allPosts.filter((p) => p.slug !== post.slug).slice(0, 4);
+
   return (
     <article className="pt-[132px] md:pt-[160px]">
       <PostHeader post={post} />
-      <div className="container-main mx-auto prose prose-lg max-w-none mb-16 md:mb-20">
-        <MDXRemote
-          source={post.content}
-          components={mdxComponents}
-          options={{
-            mdxOptions: { remarkPlugins: [remarkGfm] },
-            // Content is authored by us, not user-submitted — component props
-            // like stats={[...]} need JS expressions to work. Keep the
-            // dangerous-globals guard on regardless.
-            blockJS: false,
-            blockDangerousJS: true,
-          }}
-        />
+      <div className="container-main mx-auto mb-16 md:mb-20 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-10 lg:gap-16 items-start">
+        <div className="prose prose-lg max-w-none min-w-0">
+          <MDXRemote
+            source={post.content}
+            components={mdxComponents}
+            options={{
+              mdxOptions: { remarkPlugins: [remarkGfm] },
+              // Content is authored by us, not user-submitted — component props
+              // like stats={[...]} need JS expressions to work. Keep the
+              // dangerous-globals guard on regardless.
+              blockJS: false,
+              blockDangerousJS: true,
+            }}
+          />
+        </div>
+
+        <PostSidebar currentTag={post.tag} allTags={allTags} latestPosts={latestPosts} />
       </div>
 
       <SharedCTA

@@ -30,9 +30,99 @@ function Byline({ post }: { post: BlogPost }) {
   );
 }
 
-export function Blogs() {
-  const posts = getBlogPosts();
-  const [featured, ...rest] = posts;
+function PostCard({ post }: { post: BlogPost }) {
+  return (
+    <li className="rounded-2xl bg-white border border-border overflow-hidden flex flex-col h-full">
+      {post.thumbnail && (
+        <Link
+          href={`/resources/blog/${post.slug}`}
+          className="relative block w-full aspect-3/2 overflow-hidden"
+          aria-label={post.title}
+        >
+          <Image
+            src={post.thumbnail}
+            alt={post.title}
+            fill
+            sizes="(min-width: 1024px) 400px, (min-width: 640px) 45vw, 100vw"
+            className="object-cover"
+          />
+          {post.tag && (
+            <span className="absolute top-3 left-3 eyebrow-chip bg-white/90 text-[#0a0a12] backdrop-blur-sm text-[10px] py-1 px-2.5">
+              {post.tag}
+            </span>
+          )}
+        </Link>
+      )}
+
+      <div className="flex flex-col flex-1 p-6">
+        <p className="text-xs apple-caption mb-2">{formatPostDate(post.date)}</p>
+
+        <h3 className="text-base font-bold tracking-tight text-[#0a0a12] leading-snug mb-2 line-clamp-2">
+          <Link href={`/resources/blog/${post.slug}`} className="hover:text-[#0165dc] transition-colors">
+            {post.title}
+          </Link>
+        </h3>
+
+        <p className="text-sm apple-body leading-relaxed line-clamp-2 mb-4 grow">
+          {post.excerpt || "Click to read more..."}
+        </p>
+
+        <Link
+          href={`/resources/blog/${post.slug}`}
+          className="text-sm font-semibold text-[#0165dc] flex items-center gap-1.5 hover:gap-2 transition-all mt-auto"
+        >
+          Read post
+          <Icon name="arrow-up-right" className="size-3.5" />
+        </Link>
+      </div>
+    </li>
+  );
+}
+
+interface BlogsProps {
+  /** When set, shows only posts with this tag instead of the featured + grid layout. */
+  activeTag?: string;
+}
+
+export function Blogs({ activeTag }: BlogsProps) {
+  const allPosts = getBlogPosts();
+
+  if (activeTag) {
+    const posts = allPosts.filter((post) => post.tag === activeTag);
+
+    return (
+      <section className="apple-section-gray pt-[132px] md:pt-[160px] pb-16 md:pb-20" aria-labelledby="blog-heading">
+        <div className="container-main">
+          <h1 id="blog-heading" className="text-[26px] md:text-[32px] font-bold tracking-tight text-[#0a0a12] mb-3 text-center">
+            Blog
+          </h1>
+          <p className="text-center mb-8 md:mb-10">
+            <span className="text-sm apple-caption">Filtered by </span>
+            <span className="text-sm font-semibold text-[#0a0a12]">{activeTag}</span>
+            <Link href="/resources/blog" className="text-sm font-semibold text-[#0165dc] hover:underline ml-2">
+              Clear
+            </Link>
+          </p>
+
+          {posts.length > 0 ? (
+            <Reveal
+              as="ul"
+              stagger
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0"
+            >
+              {posts.map((post) => (
+                <PostCard key={post.slug} post={post} />
+              ))}
+            </Reveal>
+          ) : (
+            <p className="text-center apple-body">No posts tagged &ldquo;{activeTag}&rdquo; yet.</p>
+          )}
+        </div>
+      </section>
+    );
+  }
+
+  const [featured, ...rest] = allPosts;
 
   if (!featured) return null;
 
@@ -90,56 +180,7 @@ export function Blogs() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0"
           >
             {rest.map((post) => (
-              <li
-                key={post.slug}
-                className="rounded-2xl bg-white border border-border overflow-hidden flex flex-col h-full"
-              >
-                {post.thumbnail && (
-                  <Link
-                    href={`/resources/blog/${post.slug}`}
-                    className="relative block w-full aspect-3/2 overflow-hidden"
-                    aria-label={post.title}
-                  >
-                    <Image
-                      src={post.thumbnail}
-                      alt={post.title}
-                      fill
-                      sizes="(min-width: 1024px) 400px, (min-width: 640px) 45vw, 100vw"
-                      className="object-cover"
-                    />
-                    {post.tag && (
-                      <span className="absolute top-3 left-3 eyebrow-chip bg-white/90 text-[#0a0a12] backdrop-blur-sm text-[10px] py-1 px-2.5">
-                        {post.tag}
-                      </span>
-                    )}
-                  </Link>
-                )}
-
-                <div className="flex flex-col flex-1 p-6">
-                  <p className="text-xs apple-caption mb-2">{formatPostDate(post.date)}</p>
-
-                  <h3 className="text-base font-bold tracking-tight text-[#0a0a12] leading-snug mb-2 line-clamp-2">
-                    <Link
-                      href={`/resources/blog/${post.slug}`}
-                      className="hover:text-[#0165dc] transition-colors"
-                    >
-                      {post.title}
-                    </Link>
-                  </h3>
-
-                  <p className="text-sm apple-body leading-relaxed line-clamp-2 mb-4 grow">
-                    {post.excerpt || "Click to read more..."}
-                  </p>
-
-                  <Link
-                    href={`/resources/blog/${post.slug}`}
-                    className="text-sm font-semibold text-[#0165dc] flex items-center gap-1.5 hover:gap-2 transition-all mt-auto"
-                  >
-                    Read post
-                    <Icon name="arrow-up-right" className="size-3.5" />
-                  </Link>
-                </div>
-              </li>
+              <PostCard key={post.slug} post={post} />
             ))}
           </Reveal>
         )}

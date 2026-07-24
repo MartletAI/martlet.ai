@@ -20,7 +20,7 @@ export function PostSidebar({ currentTag, allTags, latestPosts }: PostSidebarPro
     <aside className="lg:sticky lg:top-[100px] flex flex-col gap-10">
       {allTags.length > 0 && (
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted mb-4">
+          <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#0a0a12] mb-4">
             Tags
           </p>
           <div className="flex flex-wrap gap-2">
@@ -44,7 +44,7 @@ export function PostSidebar({ currentTag, allTags, latestPosts }: PostSidebarPro
 
       {latestPosts.length > 0 && (
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted mb-4">
+          <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#0a0a12] mb-4">
             Latest posts
           </p>
           <div className="flex flex-col gap-5">

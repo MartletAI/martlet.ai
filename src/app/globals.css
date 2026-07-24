@@ -833,6 +833,18 @@ body {
   font-weight: 500;
 }
 
+/* Whatever image an author places in the MDX body — first line, mid-
+   article, or none at all — renders with the same polish the removed
+   auto-injected hero had. Presentation only; placement stays entirely
+   up to the post's own content. */
+.post-prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  border: 1px solid var(--color-border);
+}
+
 .post-prose strong {
   color: #0a0a12;
   font-weight: 700;

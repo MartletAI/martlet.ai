@@ -1,6 +1,5 @@
 import { getBlogPostBySlug, getBlogPosts, extractHeadings } from "@/lib/blog";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { PostHeader } from "../components/post-header";
@@ -57,19 +56,6 @@ export default async function BlogPostPage({ params }: { params: Params }) {
       <PostHeader post={post} />
       <div className="container-main mx-auto mb-16 md:mb-20 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-10 lg:gap-16 items-start">
         <div className="min-w-0 flex flex-col gap-8 md:gap-10">
-          {post.thumbnail && (
-            <div className="relative w-full aspect-16/9 rounded-3xl border border-border overflow-hidden">
-              <Image
-                src={post.thumbnail}
-                alt={post.title}
-                fill
-                sizes="(min-width: 1024px) 800px, 100vw"
-                className="object-cover"
-                priority
-              />
-            </div>
-          )}
-
           <div className="prose prose-lg post-prose max-w-none">
             <MDXRemote
               source={post.content}

@@ -23,7 +23,7 @@ export function FooterCertifications() {
           <span className="text-[#2563EB]">AI</span>
         </span>
       </div>
-      <p className="font-normal text-base text-[#4b4b52] leading-6 mb-6">
+      <p className="font-medium text-base text-[#4b4b52] leading-6 mb-6">
         Regulatory-grade AI for risk adjustment — retrospective, RADV, and
         prospective, run inside your environment.
       </p>

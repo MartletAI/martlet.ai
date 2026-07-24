@@ -143,7 +143,7 @@ export function LeadForm({
 
       <div className="flex flex-col gap-1.5 w-full">
         <label htmlFor="message" className="text-sm font-medium text-foreground cursor-pointer">
-          Message <span className="text-muted-light font-normal">(optional)</span>
+          Message <span className="text-muted-light font-medium">(optional)</span>
         </label>
         <textarea
           id="message"
@@ -163,7 +163,7 @@ export function LeadForm({
             className="w-4 h-4 text-primary border-border rounded focus:ring-primary/30"
           />
         </div>
-        <label htmlFor="privacy-policy" className="text-sm text-muted font-normal cursor-pointer select-none">
+        <label htmlFor="privacy-policy" className="text-sm text-muted font-medium cursor-pointer select-none">
           You agree to our{" "}
           <Link href="/privacy-policy" className="underline decoration-muted underline-offset-2 hover:text-primary">
             privacy policy

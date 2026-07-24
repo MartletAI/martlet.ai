@@ -18,7 +18,7 @@ export function Hero() {
             <span className="text-gradient-blue">reaching out.</span>
           </h1>
 
-          <p className="text-lg md:text-[21px] apple-body font-normal leading-relaxed animate-fade-in animation-delay-100 mb-10 max-w-[600px]">
+          <p className="text-lg md:text-[21px] apple-body font-medium leading-relaxed animate-fade-in animation-delay-100 mb-10 max-w-[600px]">
             We typically reply within one business day.
           </p>
 

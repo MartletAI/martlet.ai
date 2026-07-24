@@ -31,7 +31,7 @@ export function Hero({ brochure }: HeroProps) {
           <span className="text-gradient-steel">Thank you for downloading.</span>
         </h1>
 
-        <p className="container-main text-lg md:text-[21px] apple-body font-normal leading-relaxed animate-fade-in animation-delay-100 mb-10 md:mb-12 max-w-[600px]">
+        <p className="container-main text-lg md:text-[21px] apple-body font-medium leading-relaxed animate-fade-in animation-delay-100 mb-10 md:mb-12 max-w-[600px]">
           Your brochure download should begin automatically.
         </p>
 

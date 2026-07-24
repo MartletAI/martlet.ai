@@ -43,7 +43,7 @@ export default function Page() {
             <br />
             <span className="text-gradient-blue">for risk adjustment.</span>
           </h1>
-          <p className="container-main text-lg md:text-[21px] apple-body font-normal leading-relaxed animate-fade-in animation-delay-100 m-0 max-w-[780px]">
+          <p className="container-main text-lg md:text-[21px] apple-body font-medium leading-relaxed animate-fade-in animation-delay-100 m-0 max-w-[780px]">
             Martlet AI automates HCC coding and risk-adjustment workflows —
             retrospective, RADV, and prospective — for Medicare Advantage
             payers, ACOs, and risk-bearing providers, running entirely inside

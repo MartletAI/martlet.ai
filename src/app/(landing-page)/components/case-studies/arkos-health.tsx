@@ -47,7 +47,7 @@ export function ArkosHealth() {
             <h4 className="text-xl font-semibold text-black text-center">
               {metric.label}
             </h4>
-            <p className="text-base font-normal leading-6 text-foreground text-center">
+            <p className="text-base font-medium leading-6 text-foreground text-center">
               {metric.description}
             </p>
           </div>

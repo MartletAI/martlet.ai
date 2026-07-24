@@ -210,6 +210,11 @@ body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans);
+  /* Sitewide baseline: browser default (400) reads thin, especially in
+     Inter. 500 is the floor for anything meant to be read, not just
+     headings/emphasis. Explicit font-normal utilities override this
+     on purpose for the handful of actual logotype instances. */
+  font-weight: 500;
   line-height: var(--leading-normal);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -825,6 +830,7 @@ body {
 .post-prose p,
 .post-prose li {
   color: #3c3c43;
+  font-weight: 500;
 }
 
 .post-prose strong {

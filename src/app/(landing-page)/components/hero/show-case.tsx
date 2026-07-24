@@ -38,7 +38,7 @@ export function ShowCase() {
       </h1>
 
       {/* Tagline */}
-      <p className="container-main text-lg md:text-[21px] apple-body font-normal leading-relaxed animate-fade-in animation-delay-100 mb-9 max-w-[720px]">
+      <p className="container-main text-lg md:text-[21px] apple-body font-medium leading-relaxed animate-fade-in animation-delay-100 mb-9 max-w-[720px]">
         {HERO_CONTENT.TAGLINE}
       </p>
 

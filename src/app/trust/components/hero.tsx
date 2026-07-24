@@ -34,7 +34,7 @@ export function Hero() {
           <span className="text-gradient-blue">{HERO.TITLE_2}</span>
         </h1>
 
-        <p className="container-main text-lg md:text-[21px] apple-body font-normal leading-relaxed animate-fade-in animation-delay-100 mb-12 max-w-[780px]">
+        <p className="container-main text-lg md:text-[21px] apple-body font-medium leading-relaxed animate-fade-in animation-delay-100 mb-12 max-w-[780px]">
           {HERO.TAGLINE}
         </p>
 

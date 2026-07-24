@@ -131,7 +131,7 @@ export function PostHeader({ post }: PostHeaderProps) {
           </span>
         </div>
         <span className="hidden sm:inline text-[#d1d1d6] mx-2">•</span>
-        <time dateTime={post.date} className="text-sm apple-caption">
+        <time dateTime={post.date} className="text-sm apple-caption font-medium">
           {formattedDate}
         </time>
       </div>

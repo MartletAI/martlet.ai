@@ -24,7 +24,7 @@ export function HubHero() {
           <span className="text-gradient-steel">The CMS RADV Tracker.</span>
         </h1>
 
-        <p className="container-main text-lg md:text-[21px] apple-body font-normal leading-relaxed animate-fade-in animation-delay-100 mb-7 max-w-[760px]">
+        <p className="container-main text-lg md:text-[21px] apple-body font-medium leading-relaxed animate-fade-in animation-delay-100 mb-7 max-w-[760px]">
           Audit status by payment year, live submission windows, the
           rule-change log, and the litigation that decides extrapolation —
           every entry linked to its primary source. Bookmark it; we keep it

@@ -4,7 +4,7 @@ import { Icon } from "@/components/icon";
 import { SmartLink } from "@/components";
 
 const HEADING_CLASS = "text-[13px] font-semibold uppercase tracking-[0.1em] text-[#6e6e73] leading-6 pb-4";
-const LINK_CLASS = "leading-6 font-medium text-base text-[#1d1d1f]/80 hover:text-[#0165dc] transition-colors";
+const LINK_CLASS = "leading-6 font-medium text-base text-[#1d1d1f] hover:text-[#0165dc] transition-colors";
 
 export function FooterNav() {
   return (

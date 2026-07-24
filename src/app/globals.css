@@ -778,3 +778,47 @@ body {
     transform: none !important;
   }
 }
+
+/* ========================================
+   Blog post body: crisp typography instead of Tailwind Typography's
+   untouched defaults, plus a rotating accent color per H2 (same 4-hue
+   palette as the homepage Capabilities grid) so a long post reads as
+   designed sections, not one undifferentiated gray block.
+   ======================================== */
+.post-prose h2 {
+  color: #0a0a12;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  border-top: 3px solid #0165dc;
+  padding-top: 0.7em;
+}
+.post-prose h2:nth-of-type(4n + 2) {
+  border-top-color: #7c3aed;
+}
+.post-prose h2:nth-of-type(4n + 3) {
+  border-top-color: #0d9488;
+}
+.post-prose h2:nth-of-type(4n) {
+  border-top-color: #f5a623;
+}
+
+.post-prose h3 {
+  color: #0a0a12;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.post-prose p,
+.post-prose li {
+  color: #3c3c43;
+}
+
+.post-prose strong {
+  color: #0a0a12;
+  font-weight: 700;
+}
+
+.post-prose blockquote {
+  color: #0a0a12;
+  border-left-color: #0165dc;
+}

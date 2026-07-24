@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     <article className="pt-[132px] md:pt-[160px]">
       <PostHeader post={post} />
       <div className="container-main mx-auto mb-16 md:mb-20 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-10 lg:gap-16 items-start">
-        <div className="prose prose-lg max-w-none min-w-0">
+        <div className="prose prose-lg post-prose max-w-none min-w-0">
           <MDXRemote
             source={post.content}
             components={mdxComponents}

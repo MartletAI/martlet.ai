@@ -796,6 +796,14 @@ body {
    not one undifferentiated gray block. Background, not just a border
    — a tint is a stronger visual signal than a thin rule.
    ======================================== */
+
+/* Whatever opens the post — image, paragraph, or a heading with no
+   lead-in at all — starts flush, not pushed down by a margin meant
+   for spacing between sections further down the article. */
+.post-prose > *:first-child {
+  margin-top: 0;
+}
+
 .post-prose h2 {
   display: inline-block;
   color: #0154b8;

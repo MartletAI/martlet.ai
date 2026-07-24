@@ -79,7 +79,7 @@ export function PostSidebar({ headings, currentTag, allTags, latestPosts }: Post
   if (sections.length === 0) return null;
 
   return (
-    <aside className="lg:sticky lg:top-[100px] rounded-2xl bg-[#f5f5f7] p-6 flex flex-col gap-6">
+    <aside className="lg:sticky lg:top-[100px] lg:max-h-[calc(100vh-140px)] lg:overflow-y-auto rounded-2xl bg-[#f5f5f7] p-6 flex flex-col gap-6">
       {sections.map((section, index) => (
         <Fragment key={index}>
           {index > 0 && <div className="border-t border-border" />}

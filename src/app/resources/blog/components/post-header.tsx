@@ -135,20 +135,6 @@ export function PostHeader({ post }: PostHeaderProps) {
           {formattedDate}
         </time>
       </div>
-
-      {/* Hero image */}
-      {post.thumbnail && (
-        <div className="relative w-full aspect-16/9 rounded-3xl border border-border overflow-hidden">
-          <Image
-            src={post.thumbnail}
-            alt={post.title}
-            fill
-            sizes="(min-width: 1240px) 1160px, 100vw"
-            className="object-cover"
-            priority
-          />
-        </div>
-      )}
     </div>
   );
 }

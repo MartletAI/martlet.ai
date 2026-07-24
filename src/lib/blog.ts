@@ -97,7 +97,7 @@ function parseMarkdown(source: string, slug: string): BlogPost | null {
     }
 
     // Static authors for all posts
-    authors = ['Ritwik Jain', 'Hasham Ul Haq'];
+    authors = ['Hasham Ul Haq'];
       
     // Second pass: Extract content body for excerpt
     const contentLines: string[] = [];

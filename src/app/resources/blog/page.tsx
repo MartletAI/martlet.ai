@@ -1,4 +1,6 @@
-import { Hero } from "./components/hero";
+import { CTA as SharedCTA } from "@/components/cta";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+
 import { Blogs } from "./components/blogs";
 
 import type { Metadata } from "next";
@@ -12,13 +14,26 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return(
+  return (
     <main>
-      {/* Hero Section */}
-      <Hero />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/resources/blog" },
+        ]}
+      />
 
-      {/* Blogs Section */}
+      {/* Post grid */}
       <Blogs />
+
+      {/* CTA */}
+      <SharedCTA
+        title="Bring your charts. We'll show you the evidence."
+        subtitle="Talk to us"
+        description="A working session: watch the engine run inside your environment, and see every regulatory claim on this site demonstrated on your own data."
+        submitLabel="Schedule a walkthrough"
+        backgroundColor="bg-white"
+      />
     </main>
-  )
+  );
 }

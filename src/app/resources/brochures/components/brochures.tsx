@@ -5,6 +5,7 @@ import { useState } from "react";
 import { BROCHURES } from "@/lib/brochures";
 import { Icon } from "@/components";
 import { BrochureDownloadModal } from "@/components/brochure-download";
+import { Reveal } from "@/components/reveal";
 
 export function Brochures() {
   const [modalBrochureSlug, setModalBrochureSlug] = useState<string | null>(
@@ -15,52 +16,60 @@ export function Brochures() {
 
   return (
     <>
-      <section className="py-10 border-t border-border container-main mx-auto">
-        <div className="grid grid-cols-1 justify-self-center md:grid-cols-2 gap-8">
-          {BROCHURES.map((brochure) => (
-            <div
-              key={brochure.slug}
-              className="bg-white flex flex-col max-w-[590px]"
-            >
-              <div className="relative w-full mb-4">
-                <Image
-                  src={brochure.thumbnail}
-                  alt={brochure.title}
-                  width={590}
-                  height={300}
-                  className="object-cover mx-auto h-[300px] w-full"
-                />
-                <div className="absolute left-0 bottom-0 flex items-start justify-between p-5 border-t border-white/30 bg-[rgba(227,227,227,0.30)] backdrop-blur-md w-full">
-                  <div className="flex flex-col items-start gap-1">
-                    <span className="leading-5 font-semibold text-sm text-white">
-                      Martlet AI
-                    </span>
-                    <span className="leading-5 font-normal text-sm text-white">
-                      Brochure
-                    </span>
-                  </div>
-                  <span className="leading-5 font-semibold text-sm text-white">
+      <section className="apple-section-gray pt-[132px] md:pt-[160px] pb-16 md:pb-20" aria-labelledby="brochures-heading">
+        <div className="container-main">
+          <h1 id="brochures-heading" className="text-[26px] md:text-[32px] font-bold tracking-tight text-[#0a0a12] mb-8 md:mb-10 text-center">
+            Brochures
+          </h1>
+
+          <Reveal
+            as="ul"
+            stagger
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6 list-none p-0 m-0 max-w-[900px] mx-auto"
+          >
+            {BROCHURES.map((brochure) => (
+              <li
+                key={brochure.slug}
+                className="rounded-2xl bg-white border border-border overflow-hidden flex flex-col h-full"
+              >
+                <div className="relative w-full aspect-3/2 overflow-hidden">
+                  <Image
+                    src={brochure.thumbnail}
+                    alt={brochure.title}
+                    fill
+                    sizes="(min-width: 640px) 420px, 100vw"
+                    className="object-cover"
+                  />
+                  <span className="absolute top-3 left-3 eyebrow-chip bg-white/90 text-[#0a0a12] backdrop-blur-sm text-[10px] py-1 px-2.5">
                     {brochure.tag}
                   </span>
                 </div>
-              </div>
 
-              <h2 className="text-lg font-semibold leading-7">
-                {brochure.title}
-              </h2>
-              <p className="text-text-tertiary-600 text-base font-normal leading-6 line-clamp-3 mb-5 grow">
-                {brochure.excerpt}
-              </p>
-              <button
-                type="button"
-                onClick={() => setModalBrochureSlug(brochure.slug)}
-                className="text-base font-semibold leading-6 text-black flex items-center gap-2 hover:underline text-left"
-              >
-                Download Brochure
-                <Icon name="arrow-up-right" />
-              </button>
-            </div>
-          ))}
+                <div className="flex flex-col flex-1 p-6">
+                  <p className="text-xs apple-caption mb-2">
+                    Martlet AI · Brochure
+                  </p>
+
+                  <h2 className="text-base font-bold tracking-tight text-[#0a0a12] leading-snug mb-2">
+                    {brochure.title}
+                  </h2>
+
+                  <p className="text-sm apple-body leading-relaxed mb-4 grow">
+                    {brochure.excerpt}
+                  </p>
+
+                  <button
+                    type="button"
+                    onClick={() => setModalBrochureSlug(brochure.slug)}
+                    className="text-sm font-semibold text-[#0165dc] flex items-center gap-1.5 hover:gap-2 transition-all mt-auto text-left"
+                  >
+                    Download brochure
+                    <Icon name="arrow-up-right" className="size-3.5" />
+                  </button>
+                </div>
+              </li>
+            ))}
+          </Reveal>
         </div>
       </section>
 

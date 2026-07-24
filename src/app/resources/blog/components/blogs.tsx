@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getBlogPosts, type BlogPost } from "@/lib/blog";
+import { getBlogPosts, formatPostDate, type BlogPost } from "@/lib/blog";
 import { Icon } from "@/components";
 import { Reveal } from "@/components/reveal";
 
@@ -25,7 +25,7 @@ function Byline({ post }: { post: BlogPost }) {
         </span>
       ))}
       <span aria-hidden="true">·</span>
-      <span>{post.date}</span>
+      <span>{formatPostDate(post.date)}</span>
     </p>
   );
 }
@@ -116,7 +116,7 @@ export function Blogs() {
                 )}
 
                 <div className="flex flex-col flex-1 p-6">
-                  <p className="text-xs apple-caption mb-2">{post.date}</p>
+                  <p className="text-xs apple-caption mb-2">{formatPostDate(post.date)}</p>
 
                   <h3 className="text-base font-bold tracking-tight text-[#0a0a12] leading-snug mb-2 line-clamp-2">
                     <Link

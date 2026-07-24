@@ -1,4 +1,4 @@
-import { BlogPost } from "@/lib/blog";
+import { BlogPost, formatPostDate } from "@/lib/blog";
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@/components/icon";
@@ -7,20 +7,6 @@ import { absoluteMartletUrl, safeJsonLdStringify, SITE_ORIGIN } from "@/lib/json
 
 interface PostHeaderProps {
   post: BlogPost;
-}
-
-/** Front matter uses MM.DD.YYYY (e.g. 02.03.2026) for schema.org date fields. */
-function datePublishedISO(dateStr: string): string {
-  const mdY = dateStr.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
-  if (mdY) {
-    const [, month, day, year] = mdY;
-    return `${year}-${month}-${day}`;
-  }
-  const parsed = new Date(dateStr);
-  if (!Number.isNaN(parsed.getTime())) {
-    return parsed.toISOString().slice(0, 10);
-  }
-  return dateStr;
 }
 
 export function PostHeader({ post }: PostHeaderProps) {
@@ -35,7 +21,7 @@ export function PostHeader({ post }: PostHeaderProps) {
       "@id": articleUrl,
     },
     headline: post.title,
-    datePublished: datePublishedISO(post.date),
+    datePublished: post.date,
     author: authors.map((author) => ({
       "@type": "Person",
       name: author!.name,
@@ -89,11 +75,7 @@ export function PostHeader({ post }: PostHeaderProps) {
     "@graph": graph,
   };
 
-  const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const formattedDate = formatPostDate(post.date);
 
   return (
     <div className="container-main mx-auto mb-10 md:mb-12">

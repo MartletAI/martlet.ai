@@ -17,7 +17,7 @@ interface PostSidebarProps {
  */
 export function PostSidebar({ currentTag, allTags, latestPosts }: PostSidebarProps) {
   return (
-    <aside className="lg:sticky lg:top-[100px] flex flex-col gap-10">
+    <aside className="lg:sticky lg:top-[100px] rounded-2xl bg-[#f5f5f7] p-6 flex flex-col gap-6">
       {allTags.length > 0 && (
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#0a0a12] mb-4">
@@ -32,7 +32,7 @@ export function PostSidebar({ currentTag, allTags, latestPosts }: PostSidebarPro
                   "inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors",
                   tag === currentTag
                     ? "bg-[#0165dc] text-white"
-                    : "bg-[#f5f5f7] text-[#3c3c43] hover:bg-[#e9e9ec]"
+                    : "bg-white text-[#3c3c43] hover:bg-[#e9e9ec]"
                 )}
               >
                 {tag}
@@ -40,6 +40,10 @@ export function PostSidebar({ currentTag, allTags, latestPosts }: PostSidebarPro
             ))}
           </div>
         </div>
+      )}
+
+      {allTags.length > 0 && latestPosts.length > 0 && (
+        <div className="border-t border-border" />
       )}
 
       {latestPosts.length > 0 && (

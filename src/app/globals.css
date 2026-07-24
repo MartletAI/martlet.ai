@@ -781,25 +781,33 @@ body {
 
 /* ========================================
    Blog post body: crisp typography instead of Tailwind Typography's
-   untouched defaults, plus a rotating accent color per H2 (same 4-hue
-   palette as the homepage Capabilities grid) so a long post reads as
-   designed sections, not one undifferentiated gray block.
+   untouched defaults, plus a rotating colored badge per H2 (same
+   bg-tint/text-color pairs already proven as eyebrow-chip labels
+   elsewhere on the site) so a long post reads as designed sections,
+   not one undifferentiated gray block. Background, not just a border
+   — a tint is a stronger visual signal than a thin rule.
    ======================================== */
 .post-prose h2 {
-  color: #0a0a12;
+  display: inline-block;
+  color: #0154b8;
+  background: rgba(1, 101, 220, 0.1);
   font-weight: 700;
   letter-spacing: -0.02em;
-  border-top: 3px solid #0165dc;
-  padding-top: 0.7em;
+  padding: 0.5em 0.85em;
+  border-radius: 12px;
+  margin-top: 2.2em;
 }
 .post-prose h2:nth-of-type(4n + 2) {
-  border-top-color: #7c3aed;
+  color: #6d28d9;
+  background: rgba(124, 58, 237, 0.1);
 }
 .post-prose h2:nth-of-type(4n + 3) {
-  border-top-color: #0d9488;
+  color: #0f766e;
+  background: rgba(13, 148, 136, 0.1);
 }
 .post-prose h2:nth-of-type(4n) {
-  border-top-color: #f5a623;
+  color: #b45309;
+  background: rgba(217, 119, 6, 0.1);
 }
 
 .post-prose h3 {

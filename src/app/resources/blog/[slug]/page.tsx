@@ -47,7 +47,6 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   }
 
   const allPosts = getBlogPosts();
-  const allTags = Array.from(new Set(allPosts.map((p) => p.tag).filter(Boolean)));
   const latestPosts = allPosts.filter((p) => p.slug !== post.slug).slice(0, 4);
   const headings = extractHeadings(post.content);
 
@@ -72,7 +71,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
           </div>
         </div>
 
-        <PostSidebar headings={headings} currentTag={post.tag} allTags={allTags} latestPosts={latestPosts} />
+        <PostSidebar headings={headings} tag={post.tag} latestPosts={latestPosts} />
       </div>
 
       <SharedCTA

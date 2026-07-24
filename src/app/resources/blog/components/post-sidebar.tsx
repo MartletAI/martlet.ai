@@ -3,45 +3,33 @@ import Link from "next/link";
 import Image from "next/image";
 import type { BlogPost, Heading } from "@/lib/blog";
 import { formatPostDate } from "@/lib/blog";
-import { cn } from "@/lib/utils";
 import { TableOfContents } from "./table-of-contents";
 
 interface PostSidebarProps {
   headings: Heading[];
-  currentTag?: string;
-  allTags: string[];
+  tag?: string;
   latestPosts: BlogPost[];
 }
 
 /**
- * PostSidebar - page outline, tags (filters back to the listing), and a
- * handful of recent posts, so a reader has somewhere to go — within the
- * page and beyond it — instead of just hitting the CTA.
+ * PostSidebar - page outline, this post's tag (links back to the filtered
+ * listing), and a handful of recent posts, so a reader has somewhere to go
+ * — within the page and beyond it — instead of just hitting the CTA.
  */
-export function PostSidebar({ headings, currentTag, allTags, latestPosts }: PostSidebarProps) {
+export function PostSidebar({ headings, tag, latestPosts }: PostSidebarProps) {
   const sections = [
     headings.length > 0 ? <TableOfContents headings={headings} /> : null,
-    allTags.length > 0 ? (
+    tag ? (
       <div>
         <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#0a0a12] mb-4">
-          Tags
+          Tag
         </p>
-        <div className="flex flex-wrap gap-2">
-          {allTags.map((tag) => (
-            <Link
-              key={tag}
-              href={`/resources/blog?tag=${encodeURIComponent(tag)}`}
-              className={cn(
-                "inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors",
-                tag === currentTag
-                  ? "bg-[#0165dc] text-white"
-                  : "bg-white text-[#3c3c43] hover:bg-[#e9e9ec]"
-              )}
-            >
-              {tag}
-            </Link>
-          ))}
-        </div>
+        <Link
+          href={`/resources/blog?tag=${encodeURIComponent(tag)}`}
+          className="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-semibold bg-[#0165dc] text-white hover:bg-[#0154b8] transition-colors"
+        >
+          {tag}
+        </Link>
       </div>
     ) : null,
     latestPosts.length > 0 ? (

@@ -5,6 +5,15 @@ import { Icon } from "@/components";
 import { Reveal } from "@/components/reveal";
 import { TagFilter } from "./tag-filter";
 
+/**
+ * Every thumbnail crop — card grid, mobile-featured, desktop-featured, and
+ * the sidebar's "Latest posts" list — shares this one aspect ratio, so a
+ * post's photo produces the same crop wherever it lands as newer posts push
+ * it around the page. Close to the images' native ~1.9:1, and matches the
+ * standard 1.91:1 OG/social preview ratio.
+ */
+const THUMBNAIL_RATIO = "aspect-[1.91/1]";
+
 function authorSlug(name: string): string {
   if (name === "Hasham Ul Haq") return "hasham-ul-haq";
   if (name === "Ritwik Jain") return "ritwik-jain";
@@ -37,7 +46,7 @@ function PostCard({ post }: { post: BlogPost }) {
       {post.thumbnail && (
         <Link
           href={`/resources/blog/${post.slug}`}
-          className="relative block w-full aspect-3/2 overflow-hidden"
+          className={`relative block w-full ${THUMBNAIL_RATIO} overflow-hidden`}
           aria-label={post.title}
         >
           <Image
@@ -46,6 +55,7 @@ function PostCard({ post }: { post: BlogPost }) {
             fill
             sizes="(min-width: 1024px) 400px, (min-width: 640px) 45vw, 100vw"
             className="object-cover"
+            style={{ objectPosition: post.thumbnailFocus || "center" }}
           />
           {post.tag && (
             <span className="absolute top-3 left-3 eyebrow-chip bg-white/90 text-[#0a0a12] backdrop-blur-sm text-[10px] py-1 px-2.5">
@@ -138,13 +148,14 @@ export function Blogs({ activeTag }: BlogsProps) {
             className="group grid grid-cols-1 md:grid-cols-2 rounded-3xl bg-white border border-border overflow-hidden"
           >
             {featured.thumbnail && (
-              <div className="relative w-full aspect-16/9 md:aspect-auto overflow-hidden">
+              <div className={`relative w-full self-start ${THUMBNAIL_RATIO} overflow-hidden`}>
                 <Image
                   src={featured.thumbnail}
                   alt={featured.title}
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover"
+                  style={{ objectPosition: featured.thumbnailFocus || "center" }}
                   priority
                 />
                 {featured.tag && (

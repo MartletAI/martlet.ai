@@ -60,6 +60,7 @@ export function PostSidebar({ headings, currentTag, allTags, latestPosts }: Post
                     fill
                     sizes="80px"
                     className="object-cover"
+                    style={{ objectPosition: post.thumbnailFocus || "center" }}
                   />
                 </div>
               )}

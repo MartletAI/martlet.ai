@@ -10,6 +10,8 @@ export interface BlogPost {
   authors: string[];
   tag: string;
   thumbnail?: string;
+  /** Optional CSS object-position (e.g. "top", "30% 70%") for the thumbnail's crop point. Defaults to "center". */
+  thumbnailFocus?: string;
   excerpt?: string;
   description?: string;
   metaTitle?: string;
@@ -66,6 +68,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
       authors: Array.isArray(data.authors) && data.authors.length > 0 ? data.authors : ['Hasham Ul Haq'],
       tag: data.tag || '',
       thumbnail: data.thumbnail || undefined,
+      thumbnailFocus: data.thumbnailFocus || undefined,
       description: data.description || undefined,
       metaTitle: data.metaTitle || undefined,
       canonical: data.canonical || undefined,

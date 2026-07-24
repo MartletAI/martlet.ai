@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type ElementType, type ReactNode } from "react";
+import { useCallback, useRef, type ElementType, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -15,6 +15,11 @@ interface RevealProps {
 /**
  * Reveal - fades content up on first scroll into view.
  * Transition-based so the global prefers-reduced-motion rules disable it.
+ *
+ * Uses a ref callback (not a mount-only effect) so the observer re-attaches
+ * whenever the underlying host node actually changes — e.g. when a soft
+ * client-side navigation swaps this instance's rendered tag (div <-> ul),
+ * which React can do without remounting the Reveal component itself.
  */
 export function Reveal({
   children,
@@ -22,10 +27,12 @@ export function Reveal({
   stagger = false,
   as: Tag = "div",
 }: RevealProps) {
-  const ref = useRef<HTMLElement | null>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
-  useEffect(() => {
-    const node = ref.current;
+  const setNode = useCallback((node: HTMLElement | null) => {
+    observerRef.current?.disconnect();
+    observerRef.current = null;
+
     if (!node) return;
 
     const observer = new IntersectionObserver(
@@ -41,12 +48,12 @@ export function Reveal({
     );
 
     observer.observe(node);
-    return () => observer.disconnect();
+    observerRef.current = observer;
   }, []);
 
   return (
     <Tag
-      ref={ref}
+      ref={setNode}
       className={cn(stagger ? "reveal-stagger" : "reveal", className)}
     >
       {children}

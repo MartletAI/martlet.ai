@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getBlogPosts, formatPostDate, type BlogPost } from "@/lib/blog";
 import { Icon } from "@/components";
 import { Reveal } from "@/components/reveal";
+import { TagFilter } from "./tag-filter";
 
 function authorSlug(name: string): string {
   if (name === "Hasham Ul Haq") return "hasham-ul-haq";
@@ -93,16 +94,11 @@ export function Blogs({ activeTag }: BlogsProps) {
     return (
       <section className="apple-section-gray pt-[132px] md:pt-[160px] pb-16 md:pb-20" aria-labelledby="blog-heading">
         <div className="container-main">
-          <h1 id="blog-heading" className="text-[26px] md:text-[32px] font-bold tracking-tight text-[#0a0a12] mb-3 text-center">
+          <h1 id="blog-heading" className="text-[26px] md:text-[32px] font-bold tracking-tight text-[#0a0a12] mb-6 text-center">
             Blog
           </h1>
-          <p className="text-center mb-8 md:mb-10">
-            <span className="text-sm apple-caption">Filtered by </span>
-            <span className="text-sm font-semibold text-[#0a0a12]">{activeTag}</span>
-            <Link href="/resources/blog" className="text-sm font-semibold text-[#0165dc] hover:underline ml-2">
-              Clear
-            </Link>
-          </p>
+
+          <TagFilter posts={allPosts} activeTag={activeTag} />
 
           {posts.length > 0 ? (
             <Reveal
@@ -129,9 +125,11 @@ export function Blogs({ activeTag }: BlogsProps) {
   return (
     <section className="apple-section-gray pt-[132px] md:pt-[160px] pb-16 md:pb-20" aria-labelledby="blog-heading">
       <div className="container-main">
-        <h1 id="blog-heading" className="text-[26px] md:text-[32px] font-bold tracking-tight text-[#0a0a12] mb-8 md:mb-10 text-center">
+        <h1 id="blog-heading" className="text-[26px] md:text-[32px] font-bold tracking-tight text-[#0a0a12] mb-6 text-center">
           Blog
         </h1>
+
+        <TagFilter posts={allPosts} />
 
         {/* Latest post, featured */}
         <Reveal className="mb-10 md:mb-12">

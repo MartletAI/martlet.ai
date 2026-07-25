@@ -40,9 +40,6 @@ export function Brochures() {
                     sizes="(min-width: 640px) 420px, 100vw"
                     className="object-cover"
                   />
-                  <span className="absolute top-3 left-3 eyebrow-chip bg-white/90 text-[#0a0a12] backdrop-blur-sm text-[10px] py-1 px-2.5">
-                    {brochure.tag}
-                  </span>
                 </div>
 
                 <div className="flex flex-col flex-1 p-6">

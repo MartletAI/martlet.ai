@@ -6,13 +6,14 @@ import { Reveal } from "@/components/reveal";
 import { TagFilter } from "./tag-filter";
 
 /**
- * Every thumbnail crop — card grid, mobile-featured, desktop-featured, and
- * the sidebar's "Latest posts" list — shares this one aspect ratio, so a
- * post's photo produces the same crop wherever it lands as newer posts push
- * it around the page. Close to the images' native ~1.9:1, and matches the
- * standard 1.91:1 OG/social preview ratio.
+ * Card grid and mobile/desktop-featured thumbnails all share this one 16:9
+ * ratio (the site's single thumbnail standard, also used by brochure
+ * cards), so a post's photo produces the same crop wherever it lands as
+ * newer posts push it around the page. The sidebar's small "Latest posts"
+ * list is a deliberately different 1:1 square (a list icon, not a banner)
+ * and isn't part of this.
  */
-const THUMBNAIL_RATIO = "aspect-[1.91/1]";
+const THUMBNAIL_RATIO = "aspect-video";
 
 function authorSlug(name: string): string {
   if (name === "Hasham Ul Haq") return "hasham-ul-haq";

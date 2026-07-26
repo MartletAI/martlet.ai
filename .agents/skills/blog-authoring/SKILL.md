@@ -34,13 +34,13 @@ Source of truth: `src/lib/blog.ts` (`BlogPost` interface + `getBlogPostBySlug`).
 
 ## Thumbnail image — READ THIS BEFORE PICKING A PHOTO
 
-`thumbnail` is used in **three** automated places, all sharing **one fixed crop ratio of 1.91:1** (landscape, close to a standard 1200×630 OG image):
+`thumbnail` is used in **three** automated places, all sharing **one fixed crop ratio of 16:9** — the site's single thumbnail standard (also used by brochure cards):
 - Blog listing grid card
 - Featured/latest post banner (both mobile and desktop)
 
-It is rendered with `object-fit: cover`, so the image is never stretched or squeezed — but it **will be cropped** to fit 1.91:1. To avoid fighting the crop:
+It is rendered with `object-fit: cover`, so the image is never stretched or squeezed — but it **will be cropped** to fit 16:9. To avoid fighting the crop:
 
-- **Best source image ratio: ~1.9:1 to 2:1** (e.g. 1600×838, 1200×630). Close to native → minimal cropping.
+- **Best source image ratio: 16:9** (e.g. 1920×1080, 1600×900). Exact match → zero cropping.
 - Avoid tall/portrait images or square screenshots as thumbnails — they'll get aggressively cropped on the sides.
 - If the image's important content isn't centered (a diagram with labels near an edge, a person off to one side), set `thumbnailFocus` to shift the crop's focal point instead of re-cropping the source file:
   ```yaml
@@ -49,7 +49,7 @@ It is rendered with `object-fit: cover`, so the image is never stretched or sque
   ```
   Default (unset) is `center`.
 
-**Separately**, the sidebar's "Latest posts" list uses the *same* image but crops it to a small **1:1 square** (80×80) — a deliberately different, smaller format, not part of the 1.91:1 set. `thumbnailFocus` applies there too, same value, same purpose.
+**Separately**, the sidebar's "Latest posts" list uses the *same* image but crops it to a small **1:1 square** (80×80) — a deliberately different, smaller format, not part of the 16:9 set. `thumbnailFocus` applies there too, same value, same purpose.
 
 If `thumbnail` is omitted, the post just has no image in the grid/featured slot — that's valid, not an error.
 

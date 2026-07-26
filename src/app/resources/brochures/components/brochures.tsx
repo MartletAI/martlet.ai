@@ -25,19 +25,19 @@ export function Brochures() {
           <Reveal
             as="ul"
             stagger
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6 list-none p-0 m-0 max-w-[900px] mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6 list-none p-0 m-0"
           >
             {BROCHURES.map((brochure) => (
               <li
                 key={brochure.slug}
                 className="rounded-2xl bg-white border border-border overflow-hidden flex flex-col h-full"
               >
-                <div className="relative w-full aspect-3/2 overflow-hidden">
+                <div className="relative w-full aspect-video overflow-hidden">
                   <Image
                     src={brochure.thumbnail}
                     alt={brochure.title}
                     fill
-                    sizes="(min-width: 640px) 420px, 100vw"
+                    sizes="(min-width: 640px) 50vw, 100vw"
                     className="object-cover"
                   />
                 </div>

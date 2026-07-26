@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getBrochureByFilename } from "@/lib/brochures";
+import { verifyDownloadToken } from "@/lib/download-token";
 import { Hero } from "./components/hero";
+import { Expired } from "./components/expired";
 
 interface PageProps {
-  searchParams: Promise<{ Filename?: string }>;
+  searchParams: Promise<{ Filename?: string; token?: string; expires?: string }>;
 }
 
 export async function generateMetadata({
@@ -26,7 +28,7 @@ export async function generateMetadata({
 }
 
 export default async function Page({ searchParams }: PageProps) {
-  const { Filename } = await searchParams;
+  const { Filename, token, expires } = await searchParams;
 
   if (!Filename) {
     notFound();
@@ -38,9 +40,11 @@ export default async function Page({ searchParams }: PageProps) {
     notFound();
   }
 
+  const isValid = !!token && !!expires && verifyDownloadToken(Filename, expires, token);
+
   return (
     <main>
-      <Hero brochure={brochure} />
+      {isValid ? <Hero brochure={brochure} /> : <Expired />}
     </main>
   );
 }

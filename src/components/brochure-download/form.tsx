@@ -1,45 +1,9 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
+import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
-import { useRouter } from "next/navigation";
-import { getBrochureDownloadUrl, type Brochure } from "@/lib/brochures";
-
-type FormState = {
-  success: boolean;
-  message: string;
-} | null;
-
-const PORTAL_ID = "244290520";
-const FORM_ID = "193dd0a1-0320-4c29-8246-1933d5202c43";
-const SUBMISSION_ENDPOINT = `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_ID}`;
-
-async function submitToHubSpot(
-  _prevState: FormState,
-  formData: FormData,
-): Promise<FormState> {
-  const fields = [
-    { name: "firstname", value: formData.get("name")?.toString() ?? "" },
-    { name: "email", value: formData.get("email")?.toString() ?? "" },
-    { name: "pdf_filename", value: formData.get("pdf_filename")?.toString() ?? "" },
-  ];
-
-  try {
-    const response = await fetch(SUBMISSION_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ fields }),
-    });
-
-    if (!response.ok) {
-      return { success: false, message: "Something went wrong. Please try again." };
-    }
-
-    return { success: true, message: "Your download is starting." };
-  } catch {
-    return { success: false, message: "Something went wrong. Please try again." };
-  }
-}
+import type { Brochure } from "@/lib/brochures";
+import { submitBrochureDownload, type BrochureDownloadState } from "./actions";
 
 const INPUT_CLASS =
   "w-full h-[44px] px-[14px] py-[10px] bg-white border border-border rounded-xl shadow-[0_1px_2px_rgba(10,10,18,0.04)] text-base text-foreground placeholder-[#8a8a8f] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary";
@@ -53,26 +17,32 @@ function SubmitButton() {
       disabled={pending}
       className="btn btn-gradient w-full h-[48px]! text-base! font-semibold! disabled:opacity-50 disabled:cursor-not-allowed"
     >
-      {pending ? "Submitting..." : "Download brochure"}
+      {pending ? "Submitting..." : "Email me the download link"}
     </button>
   );
 }
 
 interface BrochureDownloadFormProps {
   brochure: Brochure;
-  onSuccess?: () => void;
 }
 
-export function BrochureDownloadForm({ brochure, onSuccess }: BrochureDownloadFormProps) {
-  const router = useRouter();
-  const [state, formAction] = useActionState(submitToHubSpot, null);
+/**
+ * BrochureDownloadForm - collects name + work email, then hands off to a
+ * server action that gates on email domain and emails a signed, expiring
+ * download link via HubSpot. No download happens directly from this form —
+ * the whole point is that it never touches the file at all.
+ */
+export function BrochureDownloadForm({ brochure }: BrochureDownloadFormProps) {
+  const [state, formAction] = useActionState<BrochureDownloadState, FormData>(
+    submitBrochureDownload,
+    null,
+  );
 
-  useEffect(() => {
-    if (!state?.success) return;
-
-    onSuccess?.();
-    router.push(getBrochureDownloadUrl(brochure.pdfFilename));
-  }, [state, brochure, onSuccess, router]);
+  if (state?.success) {
+    return (
+      <div className="p-4 rounded-lg bg-green-50 text-green-700 text-sm">{state.message}</div>
+    );
+  }
 
   return (
     <form action={formAction} className="flex flex-col gap-[17px]">
@@ -95,7 +65,7 @@ export function BrochureDownloadForm({ brochure, onSuccess }: BrochureDownloadFo
 
       <div className="flex flex-col gap-1.5 w-full">
         <label htmlFor="brochure-email" className="text-sm font-medium text-foreground cursor-pointer">
-          Email <span className="text-primary">*</span>
+          Work email <span className="text-primary">*</span>
         </label>
         <input
           id="brochure-email"
@@ -112,10 +82,6 @@ export function BrochureDownloadForm({ brochure, onSuccess }: BrochureDownloadFo
 
       {state && !state.success && (
         <div className="p-3 rounded-lg bg-red-50 text-red-700 text-sm">{state.message}</div>
-      )}
-
-      {state?.success && (
-        <div className="p-3 rounded-lg bg-green-50 text-green-700 text-sm">{state.message}</div>
       )}
     </form>
   );

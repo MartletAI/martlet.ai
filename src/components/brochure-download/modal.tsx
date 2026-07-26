@@ -64,7 +64,7 @@ export function BrochureDownloadModal({ brochure, open, onClose }: BrochureDownl
         </h2>
         <p className="text-sm apple-caption mb-6">{brochure.title}</p>
 
-        <BrochureDownloadForm brochure={brochure} onSuccess={onClose} />
+        <BrochureDownloadForm brochure={brochure} />
       </div>
     </dialog>
   );

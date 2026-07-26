@@ -50,8 +50,8 @@ export const BROCHURES: Brochure[] = [
     excerpt:
       "Explore how AI-powered chart review and gap identification help quality teams improve measure performance and member outcomes.",
     thumbnail: "/assets/brochures/automate-hedis-gap-closure.jpg",
-    pdfPath: "/brochures/Automate HEDIS Gap Closure.pdf",
-    pdfFilename: "Automate HEDIS Gap Closure.pdf",
+    pdfPath: "/brochures/Martlet AI Automate HEDIS Gap Closure.pdf",
+    pdfFilename: "Martlet AI Automate HEDIS Gap Closure.pdf",
     tag: "HEDIS",
   },
 ];

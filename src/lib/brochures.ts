@@ -38,8 +38,8 @@ export const BROCHURES: Brochure[] = [
     excerpt:
       "See how our retrospective engine finds undercoded HCCs while validating existing ones to maximize revenue and minimize audit risk.",
     thumbnail: "/assets/brochures/automate-retrospective-coding.jpg",
-    pdfPath: "/brochures/Automate Retrospective Coding.pdf",
-    pdfFilename: "Automate Retrospective Coding.pdf",
+    pdfPath: "/brochures/Martlet AI Automate Retrospective Coding.pdf",
+    pdfFilename: "Martlet AI Automate Retrospective Coding.pdf",
     tag: "Retrospective",
   },
   {

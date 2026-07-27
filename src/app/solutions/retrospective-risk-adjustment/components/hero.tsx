@@ -1,11 +1,10 @@
 import { SmartLink, Icon } from "@/components";
 
 const HERO = {
-  EYEBROW: "Retrospective — high volume",
   TITLE_1: "Millions of charts in.",
   TITLE_2: "Audit-grade codes out.",
   TAGLINE:
-    "Martlet AI runs retrospective review end-to-end: chase lists ranked by RAF impact, every HCC validated against the checks CMS applies at audit, 95% of cases closed automatically at 99% precision — and add/delete deltas formatted for your 837/EDPS pipeline.",
+    "Martlet AI runs retrospective review end-to-end: chase lists ranked by RAF impact, every HCC validated against the checks CMS applies at audit, 95% of cases closed automatically at 99% precision — and adds and deletes exported in the format your submission pipeline expects.",
   CTA_PRIMARY: "See it on your charts",
   CTA_SECONDARY: "How the pipeline works",
   STATS: [
@@ -23,12 +22,6 @@ export function Hero() {
         className="max-w-[1440px] m-auto pt-32 md:pt-[168px] pb-4 relative z-10 text-center"
         aria-labelledby="retro-hero-heading"
       >
-        <p className="animate-fade-in mb-6">
-          <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-            {HERO.EYEBROW}
-          </span>
-        </p>
-
         <h1
           id="retro-hero-heading"
           className="container-main apple-display text-[38px] md:text-[64px] animate-fade-in mb-6 max-w-[1000px]"

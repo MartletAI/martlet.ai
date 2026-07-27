@@ -16,7 +16,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Retrospective Risk Adjustment Software — 95% Automated HCC Coding | Martlet AI",
   description:
-    "Retrospective HCC coding closed end-to-end: chase list prioritization, MEAT validation at 99% precision, v24/v28 dual mapping, and add/delete deltas for your 837/EDPS pipeline — inside your environment.",
+    "Retrospective HCC coding closed end-to-end: chase list prioritization, MEAT validation at 99% precision, v24/v28 dual mapping, and adds and deletes in the format your submission pipeline expects — inside your environment.",
   alternates: {
     canonical: "/solutions/retrospective-risk-adjustment",
   },
@@ -37,10 +37,7 @@ export default function Page() {
       {/* Hero + our numbers */}
       <Hero />
 
-      {/* The manual math */}
-      <Problem />
-
-      {/* Animated pipeline: chase list → 837 */}
+      {/* Animated pipeline: chase list → submission file */}
       <Pipeline />
 
       {/* Two-way coding + submission calendar */}
@@ -52,7 +49,10 @@ export default function Page() {
       {/* The rules, enforced + live verification demo */}
       <Rules />
 
-      {/* TCO comparison */}
+      {/* Economics, as one block: what the work costs today, then the three
+          ways it can be bought. Placed after the demo so the comparison comes
+          from a source the reader has already seen do the work. */}
+      <Problem />
       <Economics />
 
       {/* Bridge to RADV */}

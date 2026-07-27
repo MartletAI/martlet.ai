@@ -29,7 +29,7 @@ const STAGES = [
   },
   {
     title: "Submit",
-    detail: "Adds + deletes as submission-ready deltas for your 837/EDPS pipeline",
+    detail: "Adds and deletes exported in the format your submission pipeline expects",
     accent: "#067647",
   },
 ] as const;
@@ -38,8 +38,8 @@ const STEP_MS = 900;
 const HOLD_MS = 3000;
 
 /**
- * Pipeline - the retrospective flow, chase list to 837, stages lighting up in
- * sequence. Respects prefers-reduced-motion.
+ * Pipeline - the retrospective flow, chase list to submission file, stages
+ * lighting up in sequence. Respects prefers-reduced-motion.
  */
 export function Pipeline() {
   const total = STAGES.length;
@@ -93,13 +93,8 @@ export function Pipeline() {
     >
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-14">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-              The pipeline
-            </span>
-          </p>
           <h2 id="pipeline-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            From chase list to 837, in one system.
+            One pipeline, from chase list to submission file.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
             No hand-offs between vendors, spreadsheets, and submission teams —

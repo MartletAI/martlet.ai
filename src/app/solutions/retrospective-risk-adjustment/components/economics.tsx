@@ -1,33 +1,41 @@
 import { Reveal } from "@/components/reveal";
 
+/** Each model described on its own terms. The comparison is the point; the
+ *  characterisations stay factual rather than pointed. */
 const ROWS = [
+  {
+    dimension: "Where it fits best",
+    services: "No internal coding team, and no plan to build one",
+    assisted: "A coding team you want to make faster at its current size",
+    martlet: "Population-scale volume, with the standard and the audit trail kept in-house",
+  },
   {
     dimension: "Pricing",
     services: "Per chart, or a percentage of captured RAF",
-    assisted: "Seat licenses — plus the coders to sit in them",
+    assisted: "Per-seat licensing, scaled to the number of reviewers",
     martlet: "Annual license. No per-chart fees, no success commission",
   },
   {
     dimension: "Who does the work",
-    services: "The vendor's coders, at the vendor's pace",
-    assisted: "Your coders, reviewing every AI suggestion",
+    services: "The vendor's coding team, on the vendor's schedule",
+    assisted: "Your coders, reviewing each suggestion the tool makes",
     martlet: "The engine closes 95%; your reviewers work the 5%",
   },
   {
-    dimension: "Incentive",
-    services: "Paid on volume or captured RAF — envelope-pushing pays",
-    assisted: "Neutral, but productivity-bound",
-    martlet: "Flat license — no incentive to over-submit",
+    dimension: "What the cost tracks",
+    services: "Charts worked, or RAF captured",
+    assisted: "The number of reviewer seats you staff",
+    martlet: "A flat annual fee, independent of volume or captured RAF",
   },
   {
     dimension: "Institutional knowledge",
-    services: "Lives in the vendor's tooling; leaves when they do",
+    services: "Held in the vendor's tooling and process",
     assisted: "Split between tool and team",
     martlet: "Stays in-house — your data, your rules, your audit trail",
   },
   {
     dimension: "Audit posture",
-    services: "You carry the audit risk for their coding, for 10 years",
+    services: "You carry the audit risk for coding done elsewhere",
     assisted: "Depends on each reviewer's judgment",
     martlet: "Evidence packet exists the day the code is submitted",
   },
@@ -39,20 +47,17 @@ const ROWS = [
  */
 export function Economics() {
   return (
-    <section className="apple-section-gray py-20 md:py-24" aria-labelledby="economics-heading">
+    <section className="apple-section-gray pt-14 pb-20 md:pb-24" aria-labelledby="economics-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#d97706]/10 text-[#b45309]">
-              The economics
-            </span>
-          </p>
           <h2 id="economics-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            License the engine. Keep the margin.
+            Three ways to run retrospective coding, and where the cost sits in
+            each.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
-            Three ways to run retrospective coding, and where the money and the
-            risk actually sit.
+            The same work can be bought three different ways. What changes is
+            who does it, what you are billed for, and who carries the audit risk
+            once it is done.
           </p>
         </Reveal>
 

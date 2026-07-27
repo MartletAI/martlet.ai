@@ -1,35 +1,48 @@
 import { Reveal } from "@/components/reveal";
 
+/** Operational questions in the buyer's own voice. This audience runs risk
+ *  adjustment for a living — definitional questions belong in the blog, not
+ *  on the page where they are deciding. */
 const FAQ_ITEMS = [
   {
-    question: "What is retrospective risk adjustment?",
+    question: "How do you decide which charts to work?",
     answer:
-      "Retrospective risk adjustment is the review of medical records after care is delivered to ensure the diagnoses submitted for payment are complete and supported. It finds HCCs that were documented but never coded, and validates the codes already submitted against CMS documentation requirements — capturing missed revenue and removing unsupported codes before an audit finds them.",
+      "Charts are ranked by expected RAF impact and by how strong the documentation behind them looks, so the work starts where the return is. The weighting is yours to set — by line of business, provider group, condition, or a rule your own program already uses — and you can also run the full population rather than a list, which is what most customers do once the throughput is there.",
   },
   {
-    question: "How does Martlet AI close 95% of cases automatically?",
+    question: "How do we know the codes it closes automatically are right?",
     answer:
-      "Martlet AI's healthcare-specific medical language models validate each HCC against MEAT criteria and CMS requirements with a calibrated confidence score, operating at 99% precision on the codes it automates. High-confidence cases — 95% of the total — close end-to-end. The rest route to reviewer queues with page-level evidence attached, which is why review time drops by 95%.",
+      "Every automated code carries the sentence that supports it, the source page, the encounter and date of service, and the provider and signature status — so any decision can be opened and checked rather than taken on trust. You set the confidence threshold at which a code closes without review, and you can route any share of automatic closures into QA sampling. Confirmation and deletion rates are tracked by coder and reviewer, so drift shows up in your reporting rather than in an audit.",
+  },
+  {
+    question: "What happens to the cases it doesn't close?",
+    answer:
+      "They arrive in your reviewers' queues as exceptions, ranked so the highest-value and weakest-evidence ones surface first, with the chart already open to the page in question. A coder confirms a finding instead of going to look for it. Second-level review, QA sampling and sign-off run in the same system, and every action is recorded against the person who took it.",
+  },
+  {
+    question: "Does it remove codes as well as add them?",
+    answer:
+      "Yes, and the same validation pass produces both. Codes that are supported but were never submitted come back as adds, ranked by impact with the evidence attached. Codes already submitted that the record does not support come back as deletes, each with the reason it failed. Most retrospective programs only look for what is missing, which leaves the second half of the exposure untouched.",
   },
   {
     question: "Does Martlet AI replace our coding team?",
     answer:
-      "No — it changes what the team does. Instead of reading 40–50 charts a day each, your coders review the roughly 5% of cases the engine routes for judgment, run QA sampling, and own the standards the engine enforces. The same team covers many times the volume, and institutional knowledge stays in-house instead of at a vendor.",
+      "No. It changes what the team spends its day on. Instead of reading 40 to 50 charts each, your coders work the roughly 5% of cases routed for judgment, run second-level review and QA sampling, and own the standards the platform applies. The same team covers many times the volume, and the institutional knowledge stays in-house rather than at a vendor.",
   },
   {
-    question: "When are risk adjustment submission deadlines?",
+    question: "What does it ingest, and what comes back out?",
     answer:
-      "CMS runs three submission sweeps per payment year: an initial sweep around the first Friday of September before the payment year, a mid-year sweep around the first Friday of March, and a final sweep around January 31 of the following year. All submissions flow as 837 encounter data (RAPS retired with PY2022). After the final deadline, CMS accepts only payment-reducing deletes under 42 CFR 422.310(g).",
+      "In: clinical notes and PDFs, including scanned documents read with OCR, along with FHIR and HL7 feeds, CCDs, claims extracts and your prior coding, normalized and de-duplicated at ingestion. Out: adds and deletes in the format your submission pipeline expects, the evidence behind each code, and reporting on confirmation and deletion rates by coder, vendor and provider group.",
   },
   {
-    question: "How does the v28 model change our RAF?",
+    question: "Where does it run, and does PHI leave our network?",
     answer:
-      "PY2026 is the first year paid 100% on CMS-HCC v28. The model has 115 HCC categories but maps fewer ICD-10 codes (7,770, down from 9,797), constrains diabetes coefficients, and drops codes like unspecified PVD entirely. CMS estimates a −3.12% average risk-score impact, with plan-level results ranging from roughly −20% to +10% depending on condition mix. Martlet AI maps every diagnosis under both v24 and v28 with payment-year discipline.",
+      "It runs inside your own environment — on-premises, in your private cloud, or air-gapped. No charts are shipped out, no outsourced coders touch them, and no PHI leaves your network. Updates ship as versioned releases your team applies on its own schedule, and every decision is recorded with the evidence and the model version behind it.",
   },
   {
-    question: "What data does Martlet AI ingest?",
+    question: "What happens when CMS guidance changes?",
     answer:
-      "Clinical notes and PDFs (including scanned documents via OCR), FHIR R4 and HL7 feeds, CCDs, and claims extracts. Charts are normalized and de-duplicated at ingestion, and the platform is built for millions of records per run — deployed on-premises, in your private cloud, or air-gapped, so PHI never leaves your network.",
+      "We update the checks to match, so validation follows the rules currently in force rather than the ones that applied when the platform was installed. Because each code is scored against the model and the guidance that apply to the year being coded, a run covering several payment years is never pushed through a single set of rules.",
   },
 ] as const;
 
@@ -56,11 +69,6 @@ export function RetroFaq() {
       />
       <div className="container-main max-w-[880px]!">
         <Reveal as="header" className="text-center mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-              FAQ
-            </span>
-          </p>
           <h2 id="retro-faq-heading" className="apple-display text-[32px] md:text-[48px]">
             What operators ask about retrospective coding.
           </h2>

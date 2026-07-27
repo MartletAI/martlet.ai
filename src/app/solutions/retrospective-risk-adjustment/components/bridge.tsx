@@ -16,11 +16,10 @@ export function Bridge() {
             <span className="text-gradient-blue">The audit is already answered.</span>
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed mb-9">
-            Every chart closed here is verified against the checklist CMS
-            coders apply at RADV — so when your contract is selected, the
-            evidence packets already exist. CMS now audits all ~550 eligible MA
-            contracts every year. Being ready is no longer optional; with
-            Martlet AI it&rsquo;s automatic.
+            Every chart closed here is verified against the same checks a RADV
+            audit applies. If your contract is selected, the evidence packets
+            already exist — nothing has to be reconstructed from records that
+            are years old, by people who may no longer be there to ask.
           </p>
           <SmartLink
             href="/solutions/radv"

@@ -8,28 +8,18 @@ const STATS = [
   { value: "−20% to +10%", caption: "plan-level spread — your mix decides your number" },
 ];
 
-const PHASE_IN = [
-  { py: "PY2024", blend: "67% v24 / 33% v28" },
-  { py: "PY2025", blend: "33% v24 / 67% v28" },
-  { py: "PY2026", blend: "100% v28" },
-];
-
 /**
- * V28 - the model transition in real numbers, and how payment-year
- * discipline handles it.
+ * V28 - what the model change did, in sourced numbers, and how mapping a
+ * payment year at a time handles it. Deliberately carries no payment-year
+ * schedule: the phase-in dates are the part that goes stale.
  */
 export function V28() {
   return (
-    <section className="gradient-evidence py-20 md:py-24" aria-labelledby="v28-heading">
+    <section className="apple-section-blue py-20 md:py-24" aria-labelledby="v28-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[800px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#7c3aed]/10 text-[#6d28d9]">
-              The v28 transition
-            </span>
-          </p>
           <h2 id="v28-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            PY2026 is 100% v28. Your mappings decide your revenue.
+            The v28 model maps fewer codes, and the impact is not evenly spread.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
             The v28 model added HCC categories but removed{" "}
@@ -56,21 +46,14 @@ export function V28() {
           ))}
         </Reveal>
 
-        <Reveal className="max-w-[780px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            {PHASE_IN.map((row) => (
-              <div key={row.py} className="rounded-2xl bg-white border border-border p-5 text-center">
-                <div className="evidence-mono font-bold text-[#0a0a12] mb-1">{row.py}</div>
-                <div className="text-sm apple-body">{row.blend}</div>
-              </div>
-            ))}
-          </div>
-          <p className="text-base apple-body leading-relaxed m-0 text-center">
-            Martlet AI maps every diagnosis under <strong>both v24 and v28</strong>{" "}
-            with payment-year discipline: each code is validated against the
-            model that applies to the payment year in question, and codes that
-            no longer map are blocked at submission — not discovered at
-            reconciliation.
+        <Reveal className="max-w-[820px] mx-auto">
+          <p className="text-base md:text-lg apple-body leading-relaxed m-0 text-center">
+            Martlet AI maps every diagnosis under{" "}
+            <strong>both v24 and v28</strong>, a payment year at a time: each
+            code is validated against the model that applies to the year being
+            coded, and codes that no longer map under the model in force are
+            surfaced before you submit rather than at reconciliation. A run
+            covering several years is never pushed through a single model.
           </p>
         </Reveal>
       </div>

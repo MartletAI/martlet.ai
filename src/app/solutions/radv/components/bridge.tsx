@@ -10,7 +10,7 @@ export function Bridge() {
     <section className="bg-white py-20 md:py-28" aria-labelledby="bridge-heading">
       <div className="container-main text-center max-w-[820px] mx-auto">
         <Reveal>
-          <h2 id="bridge-heading" className="apple-display text-[32px] md:text-[44px] mb-6">
+          <h2 id="bridge-heading" className="apple-display text-[30px] md:text-[40px] mb-6">
             The same checks, one step earlier.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed mb-9">

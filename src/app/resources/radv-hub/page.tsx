@@ -3,6 +3,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 import { ChangeLog } from "./components/change-log";
 import { Exposure } from "./components/exposure";
+import { HubFaq } from "./components/hub-faq";
 import { HubHero } from "./components/hub-hero";
 import { OigFindings } from "./components/oig-findings";
 import { PyStatus } from "./components/py-status";
@@ -47,6 +48,9 @@ export default function Page() {
 
       {/* Submission rules + coder checklist */}
       <QuickReference />
+
+      {/* Regulatory questions + FAQPage schema */}
+      <HubFaq />
 
       {/* Primary sources + hub changelog + disclaimer */}
       <SourceLibrary />

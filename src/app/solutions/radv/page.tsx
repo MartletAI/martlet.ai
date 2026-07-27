@@ -8,7 +8,7 @@ import { Hero } from "./components/hero";
 import { Postures } from "./components/postures";
 import { RadvFaq } from "./components/radv-faq";
 import { ReviewLevels } from "./components/review-levels";
-import { WhatChanged } from "./components/timeline";
+import { Specifics } from "./components/specifics";
 import { WhatYouGet } from "./components/what-you-get";
 
 import type { Metadata } from "next";
@@ -16,7 +16,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "RADV Audit Software — Validate Submitted Codes, Build CMS-Ready Packets | Martlet AI",
   description:
-    "CMS now audits every eligible MA contract, every year. Martlet AI verifies your submitted codes against the record at 99% precision, links page-level evidence, and builds CMS-ready packets — inside your environment.",
+    "Verify every submitted HCC against the record at 99% precision, close 95% automatically, and build CMS-ready evidence packets — on codes submitted years ago, by anyone, inside your environment.",
   alternates: {
     canonical: "/solutions/radv",
   },
@@ -31,31 +31,31 @@ export default function Page() {
           { name: "RADV", href: "/solutions/radv" },
         ]}
       />
-      {/* Hero — our numbers, one line of CMS context */}
+      {/* Hero — our numbers */}
       <Hero />
 
       {/* The four concrete outcomes */}
       <WhatYouGet />
 
-      {/* The regulatory record, 2023–2026, primary-sourced */}
-      <WhatChanged />
-
-      {/* What CMS reads for, and the same checks run here first */}
+      {/* The six checks + packet demo */}
       <CoderChecks />
 
       {/* Human oversight: four levels */}
       <ReviewLevels />
 
-      {/* Proactive vs reactive, with the operational facts */}
+      {/* Proactive and reactive, both on the same engine */}
       <Postures />
 
-      {/* Why readiness is a standing capability */}
+      {/* Spec surface: inputs, sampling, config, outputs, reporting */}
+      <Specifics />
+
+      {/* What running it continuously gives you */}
       <Beyond />
 
       {/* Bridge to retrospective */}
       <Bridge />
 
-      {/* FAQ + schema */}
+      {/* Product FAQ + schema */}
       <RadvFaq />
 
       {/* CTA */}

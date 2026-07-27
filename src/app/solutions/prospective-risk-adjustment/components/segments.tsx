@@ -42,7 +42,7 @@ export function Segments() {
               <h3 className="text-xl md:text-2xl font-bold tracking-tight text-[#0a0a12] leading-snug mb-4">
                 {segment.title}
               </h3>
-              <p className="text-[15px] apple-body leading-relaxed m-0">{segment.detail}</p>
+              <p className="text-base apple-body leading-relaxed m-0">{segment.detail}</p>
             </li>
           ))}
         </Reveal>

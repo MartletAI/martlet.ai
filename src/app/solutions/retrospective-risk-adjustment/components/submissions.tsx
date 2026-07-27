@@ -15,7 +15,7 @@ export function Submissions() {
     <section className="bg-white py-20 md:py-24" aria-labelledby="submissions-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[780px] mx-auto mb-12">
-          <h2 id="submissions-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
+          <h2 id="submissions-heading" className="apple-display text-[30px] md:text-[40px] mb-5">
             Coding runs both ways: adds capture revenue, deletes remove risk.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
@@ -33,7 +33,7 @@ export function Submissions() {
             <h3 className="text-xl md:text-2xl font-bold tracking-tight text-[#0a0a12] leading-snug mb-4">
               Undercoded HCCs, recaptured with proof
             </h3>
-            <p className="text-[15px] apple-body leading-relaxed m-0">
+            <p className="text-base apple-body leading-relaxed m-0">
               Every recaptured code carries its chart sentence, the encounter,
               the provider and their credentials, the signature status and the
               clinical support behind it — so the revenue you capture this year
@@ -47,7 +47,7 @@ export function Submissions() {
             <h3 className="text-xl md:text-2xl font-bold tracking-tight text-[#0a0a12] leading-snug mb-4">
               Unsupported codes, removed before submission
             </h3>
-            <p className="text-[15px] apple-body leading-relaxed m-0">
+            <p className="text-base apple-body leading-relaxed m-0">
               Codes that fail validation flow out as submission deletes, each
               with the reason it failed attached. What can still be corrected
               once a submission window has closed is set by CMS and changes

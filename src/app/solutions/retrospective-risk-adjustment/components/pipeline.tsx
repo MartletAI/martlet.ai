@@ -93,7 +93,7 @@ export function Pipeline() {
     >
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-14">
-          <h2 id="pipeline-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
+          <h2 id="pipeline-heading" className="apple-display text-[30px] md:text-[40px] mb-5">
             One pipeline, from chase list to submission file.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
@@ -130,11 +130,11 @@ export function Pipeline() {
                           index + 1
                         )}
                       </span>
-                      <h3 className="text-base font-bold tracking-tight text-[#0a0a12] m-0">
+                      <h3 className="text-[17px] font-bold tracking-tight text-[#0a0a12] m-0">
                         {stage.title}
                       </h3>
                     </div>
-                    <p className="text-sm apple-body leading-relaxed m-0">{stage.detail}</p>
+                    <p className="text-[15px] apple-body leading-relaxed m-0">{stage.detail}</p>
                   </div>
                   {/* Connector arrow (desktop) */}
                   {index < STAGES.length - 1 && (

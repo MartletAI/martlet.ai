@@ -18,7 +18,7 @@ export function V28() {
     <section className="apple-section-blue py-20 md:py-24" aria-labelledby="v28-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[800px] mx-auto mb-12">
-          <h2 id="v28-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
+          <h2 id="v28-heading" className="apple-display text-[30px] md:text-[40px] mb-5">
             The v28 model maps fewer codes, and the impact is not evenly spread.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
@@ -36,6 +36,9 @@ export function V28() {
         <Reveal as="ul" stagger className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 list-none p-0 m-0 max-w-[1100px] mx-auto border-t border-[#d2d2d7] pt-10 mb-14">
           {STATS.map((stat) => (
             <li key={stat.caption} className="text-center lg:text-left">
+              {/* Held below the 30/36 used elsewhere: one value here is a
+                  range string ("−20% to +10%") that will not fit a quarter
+                  column at the standard size. */}
               <div className="apple-stat whitespace-nowrap text-[26px] md:text-[32px] mb-2.5 text-[#7c3aed]">
                 {stat.value}
               </div>

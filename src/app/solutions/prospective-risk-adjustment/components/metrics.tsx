@@ -1,5 +1,14 @@
 import { Reveal } from "@/components/reveal";
 
+/** Numerals carry the colour and the weight — they are the anchor for the
+ *  item, not a caption beside it. */
+const METRIC_COLORS = [
+  "text-[#0165dc]",
+  "text-[#7c3aed]",
+  "text-[#0d9488]",
+  "text-[#d97706]",
+] as const;
+
 const METRICS = [
   {
     metric: "Suggestion acceptance rate",
@@ -45,13 +54,15 @@ export function Metrics() {
         >
           {METRICS.map((item, index) => (
             <li key={item.metric} className="rounded-3xl bg-white border border-border p-6 md:p-7">
-              <div className="evidence-mono text-xs text-muted mb-3">
+              <div
+                className={`evidence-mono text-[22px] font-bold leading-none mb-3 ${METRIC_COLORS[index]}`}
+              >
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <h3 className="text-lg font-bold tracking-tight text-[#0a0a12] leading-snug mb-2">
+              <h3 className="text-[18px] font-bold tracking-tight text-[#0a0a12] leading-snug mb-2">
                 {item.metric}
               </h3>
-              <p className="text-[15px] apple-body leading-relaxed m-0">{item.why}</p>
+              <p className="text-base apple-body leading-relaxed m-0">{item.why}</p>
             </li>
           ))}
         </Reveal>

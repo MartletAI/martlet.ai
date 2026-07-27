@@ -50,7 +50,7 @@ export function Economics() {
     <section className="apple-section-gray pt-14 pb-20 md:pb-24" aria-labelledby="economics-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-12">
-          <h2 id="economics-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
+          <h2 id="economics-heading" className="apple-display text-[30px] md:text-[40px] mb-5">
             Three ways to run retrospective coding, and where the cost sits in
             each.
           </h2>

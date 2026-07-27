@@ -16,7 +16,7 @@ export function Problem() {
     <section className="apple-section-gray pt-20 md:pt-24 pb-14" aria-labelledby="problem-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[780px] mx-auto mb-12">
-          <h2 id="problem-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
+          <h2 id="problem-heading" className="apple-display text-[30px] md:text-[40px] mb-5">
             What manual chart review actually costs you.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
@@ -34,7 +34,7 @@ export function Problem() {
         <Reveal as="ul" stagger className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 list-none p-0 m-0 max-w-[1100px] mx-auto border-t border-[#d2d2d7] pt-10">
           {STATS.map((stat) => (
             <li key={stat.caption} className="text-center lg:text-left">
-              <div className="apple-stat whitespace-nowrap text-[34px] md:text-[38px] mb-2.5 text-[#d97706]">
+              <div className="apple-stat whitespace-nowrap text-[30px] md:text-[36px] mb-2.5 text-[#d97706]">
                 {stat.value}
               </div>
               <p className="text-[15px] font-medium apple-caption leading-snug m-0 text-balance">

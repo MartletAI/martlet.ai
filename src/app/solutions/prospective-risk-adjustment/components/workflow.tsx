@@ -53,7 +53,7 @@ export function Workflow() {
                 <h3 className="text-lg font-bold tracking-tight text-[#0a0a12] mb-2">
                   {item.title}
                 </h3>
-                <p className="text-[15px] apple-body leading-relaxed m-0">{item.detail}</p>
+                <p className="text-base apple-body leading-relaxed m-0">{item.detail}</p>
               </li>
             ))}
           </Reveal>

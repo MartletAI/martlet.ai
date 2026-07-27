@@ -10,7 +10,7 @@ export function Bridge() {
     <section className="bg-white py-20 md:py-28" aria-labelledby="retro-bridge-heading">
       <div className="container-main text-center max-w-[820px] mx-auto">
         <Reveal>
-          <h2 id="retro-bridge-heading" className="apple-display text-[32px] md:text-[52px] mb-6">
+          <h2 id="retro-bridge-heading" className="apple-display text-[30px] md:text-[40px] mb-6">
             Code it right once.
             <br />
             <span className="text-gradient-blue">The audit is already answered.</span>

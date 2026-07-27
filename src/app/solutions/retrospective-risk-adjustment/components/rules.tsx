@@ -2,6 +2,16 @@ import { EvidenceDemo } from "@/app/(landing-page)/components/evidence/evidence-
 import { Reveal } from "@/components/reveal";
 import { SourceLink } from "@/components/source-link";
 
+/** Numerals carry the colour and the weight, matching the checks grid on the
+ *  RADV page — they anchor the item rather than caption it. */
+const RULE_COLORS = [
+  "text-[#0165dc]",
+  "text-[#7c3aed]",
+  "text-[#0d9488]",
+  "text-[#d97706]",
+  "text-[#067647]",
+] as const;
+
 /** Each entry describes the check we run, not what the rule says. Guidance
  *  moves and carries exceptions; a description of our own behaviour stays
  *  true when it does. The sources are kept for credibility. */
@@ -81,7 +91,7 @@ export function Rules() {
     <section className="bg-white py-20 md:py-28" aria-labelledby="rules-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[780px] mx-auto mb-12">
-          <h2 id="rules-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
+          <h2 id="rules-heading" className="apple-display text-[30px] md:text-[40px] mb-5">
             The documentation rules, enforced on every chart.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
@@ -99,13 +109,15 @@ export function Rules() {
         >
           {RULES.map((rule, index) => (
             <li key={rule.title} className="rounded-3xl bg-[#fbfbfd] border border-border p-6">
-              <div className="evidence-mono text-xs text-muted mb-3">
+              <div
+                className={`evidence-mono text-[22px] font-bold leading-none mb-3 ${RULE_COLORS[index]}`}
+              >
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <h3 className="text-base font-bold tracking-tight text-[#0a0a12] leading-snug mb-2">
+              <h3 className="text-[17px] font-bold tracking-tight text-[#0a0a12] leading-snug mb-2">
                 {rule.title}
               </h3>
-              <p className="text-sm apple-body leading-relaxed m-0">{rule.detail}</p>
+              <p className="text-[15px] apple-body leading-relaxed m-0">{rule.detail}</p>
             </li>
           ))}
         </Reveal>

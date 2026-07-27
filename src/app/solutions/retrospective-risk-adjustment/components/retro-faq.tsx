@@ -69,7 +69,7 @@ export function RetroFaq() {
       />
       <div className="container-main max-w-[880px]!">
         <Reveal as="header" className="text-center mb-12">
-          <h2 id="retro-faq-heading" className="apple-display text-[32px] md:text-[48px]">
+          <h2 id="retro-faq-heading" className="apple-display text-[30px] md:text-[40px]">
             What operators ask about retrospective coding.
           </h2>
         </Reveal>

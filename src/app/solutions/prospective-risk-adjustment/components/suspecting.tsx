@@ -80,7 +80,7 @@ export function Suspecting() {
               <h3 className="text-lg font-bold tracking-tight text-[#0a0a12] leading-snug mb-2">
                 {source.title}
               </h3>
-              <p className="text-[15px] apple-body leading-relaxed m-0 mb-4">{source.detail}</p>
+              <p className="text-base apple-body leading-relaxed m-0 mb-4">{source.detail}</p>
               <p className="evidence-mono text-xs text-muted leading-relaxed m-0 mt-auto border-t border-border-light pt-3">
                 {source.example}
               </p>

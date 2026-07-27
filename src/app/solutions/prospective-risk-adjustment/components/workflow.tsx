@@ -33,9 +33,13 @@ export function Workflow() {
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-14">
           <h2 id="workflow-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            The workflow, built around the visit rather than around our
-            software.
+            How it actually works.
           </h2>
+          <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
+            Martlet AI prepares a suggestion before the visit, puts it in
+            front of the clinician during it, and carries the outcome forward
+            once the visit is over.
+          </p>
         </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center max-w-[1160px] mx-auto">

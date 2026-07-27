@@ -25,7 +25,7 @@ const SEGMENTS = [
  */
 export function Segments() {
   return (
-    <section className="bg-white py-20 md:py-24" aria-labelledby="segments-heading">
+    <section className="apple-section-gray py-20 md:py-24" aria-labelledby="segments-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-12">
           <h2 id="segments-heading" className="apple-display text-[32px] md:text-[48px]">

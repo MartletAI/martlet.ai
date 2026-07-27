@@ -44,8 +44,8 @@ const SOURCES = [
 ] as const;
 
 /**
- * Suspecting - the methodology, published. Every suspect class, its logic,
- * and its confidence tier — the transparency competitors don't offer.
+ * Suspecting - what backs every suspect we raise: the signal, the tier, the
+ * proof. Stated as what we provide, not as a walkthrough of the mechanism.
  */
 export function Suspecting() {
   return (
@@ -57,13 +57,14 @@ export function Suspecting() {
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[800px] mx-auto mb-12">
           <h2 id="suspecting-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            How suspecting works, and the signals behind every suggestion.
+            See the evidence behind every suggestion we raise.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
-            Every suspect Martlet AI raises comes from one of five signal
-            classes, each with its own confidence tier and full provenance —
-            the note, the lab, the claim it came from. Thresholds are yours to
-            configure. No black box.
+            Five signal types feed what Martlet AI raises — prior-year
+            recapture, labs, pharmacy, unstructured notes, and claims history
+            — each tagged with a confidence tier and carrying the exact note,
+            lab or claim it came from. You set the thresholds; nothing
+            surfaces without its evidence attached.
           </p>
         </Reveal>
 

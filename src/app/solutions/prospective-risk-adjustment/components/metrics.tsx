@@ -34,7 +34,7 @@ const METRICS = [
  */
 export function Metrics() {
   return (
-    <section className="apple-section-gray py-20 md:py-24" aria-labelledby="metrics-heading">
+    <section className="bg-white py-20 md:py-24" aria-labelledby="metrics-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[800px] mx-auto mb-12">
           <h2 id="metrics-heading" className="apple-display text-[32px] md:text-[48px] mb-5">

@@ -36,20 +36,23 @@ export default function Page() {
       {/* Hero + our numbers */}
       <Hero />
 
-      {/* The clinician-burden problem + AAFP evidence */}
-      <Burden />
+      {/* Pre/in/post-visit workflow + suspect card demo — how it works,
+          before the problem or the methodology behind it */}
+      <Workflow />
 
       {/* The suspecting methodology, published */}
       <Suspecting />
-
-      {/* Pre/in/post-visit workflow + suspect card demo */}
-      <Workflow />
 
       {/* The adoption metrics buyers should demand */}
       <Metrics />
 
       {/* MA plans vs ACOs */}
       <Segments />
+
+      {/* The clinician-burden problem + AAFP evidence, placed right before
+          the case study so it flows straight into a real health system
+          running the fix */}
+      <Burden />
 
       {/* WVU Medicine in production */}
       <Wvu />

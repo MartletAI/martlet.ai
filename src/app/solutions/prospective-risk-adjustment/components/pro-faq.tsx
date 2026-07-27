@@ -63,7 +63,7 @@ export function ProFaq() {
   };
 
   return (
-    <section className="apple-section-gray py-20 md:py-24" aria-labelledby="pro-faq-heading">
+    <section className="bg-white py-20 md:py-24" aria-labelledby="pro-faq-heading">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

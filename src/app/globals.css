@@ -590,6 +590,25 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Brand sweep, sampled from the brochure covers: crimson → magenta → violet
+   → blue, flowing across the whole headline. Used once per page, on the H1
+   only — the brochures use it exactly once, on the cover. */
+.text-gradient-brand {
+  background: linear-gradient(
+    103deg,
+    #f0235b 0%,
+    #f32786 12%,
+    #b339da 28%,
+    #7e2fec 44%,
+    #4c3be3 64%,
+    #2145f9 82%,
+    #0c51f6 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Evidence section: white fading into a cool blue wash */
 .gradient-evidence {
   background: linear-gradient(180deg, #ffffff 0%, #f2f6fd 100%);

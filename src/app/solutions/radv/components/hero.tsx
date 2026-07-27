@@ -24,11 +24,11 @@ export function Hero() {
       >
         <h1
           id="radv-hero-heading"
-          className="container-main apple-display text-[38px] md:text-[64px] animate-fade-in mb-6 max-w-[1000px]"
+          className="container-main apple-display text-gradient-brand text-[38px] md:text-[64px] animate-fade-in mb-6 max-w-[1000px]"
         >
-          <span className="text-gradient-steel">{HERO.TITLE_1}</span>
+          {HERO.TITLE_1}
           <br />
-          <span className="text-gradient-blue">{HERO.TITLE_2}</span>
+          {HERO.TITLE_2}
         </h1>
 
         <p className="container-main text-lg md:text-[21px] apple-body font-medium leading-relaxed animate-fade-in animation-delay-100 mb-9 max-w-[800px]">

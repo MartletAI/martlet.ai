@@ -4,7 +4,27 @@ const FAQ_ITEMS = [
   {
     question: "What is a RADV audit?",
     answer:
-      "Risk Adjustment Data Validation (RADV) is CMS's audit program for verifying that the diagnoses Medicare Advantage plans submitted for payment are supported by medical records. CMS samples 35–200 enrollees per contract, requests records for each audited HCC, and certified coders re-validate every diagnosis against the medical record. Since 2025, CMS audits every eligible MA contract every payment year — roughly 550 contracts, up from about 60.",
+      "Risk Adjustment Data Validation (RADV) is CMS's audit program for verifying that the diagnoses Medicare Advantage plans submitted for payment are supported by medical records. CMS samples 35 to 200 enrollees per contract, requests records for each audited HCC, and certified coders re-validate every diagnosis against the record. Since 2025, CMS audits every eligible MA contract every payment year, which is roughly 550 contracts rather than the 60 or so it audited before.",
+  },
+  {
+    question: "Is CMS extrapolating audit findings right now?",
+    answer:
+      "Not currently. The February 2023 rule that authorized extrapolation was vacated by a federal court in September 2025 (Humana v. Becerra), and CMS's appeal is pending at the Fifth Circuit. In the meantime CMS collects overpayments for the sampled enrollees only, but it designs audits to support extrapolation and has reserved the right to extrapolate later if it prevails, so it is worth preparing as though extrapolation returns.",
+  },
+  {
+    question: "My contract was selected. What happens now?",
+    answer:
+      "CMS notifies you through HPMS, then posts your Enrollee Data List in CDAT with the sampled enrollees and audited HCCs. You have a five-month window to retrieve and submit medical records, with up to two records per audited HCC and one valid record enough to support it. For the PY2020 cycle now underway, records are due August 28, 2026. After certified-coder review CMS issues findings, and you have 60 days to request reconsideration.",
+  },
+  {
+    question: "What records does CMS accept as evidence?",
+    answer:
+      "Documentation of a single face-to-face encounter, or qualifying real-time audio-video telehealth, from an acceptable provider type and physician specialty, with dates of service inside the data-collection year and a valid, credentialed signature. Superbills, standalone problem lists, claim forms and lab results on their own do not qualify. A missing or illegible signature on an outpatient record can be cured only with the CMS-generated attestation form.",
+  },
+  {
+    question: "Can we fix documentation after we're selected?",
+    answer:
+      "In most cases no. Plans may not amend medical records or ask providers to amend them once an audit begins, and signatures obtained in response to the record request are invalid. The only cure CMS accepts is its own attestation form, for missing or illegible signatures on outpatient records, and that form cannot validate a diagnosis. This is the reason proactive mock audits matter: gaps found before selection can still be fixed at the source.",
   },
   {
     question: "Does this work on codes we didn't code?",
@@ -12,34 +32,14 @@ const FAQ_ITEMS = [
       "Yes. RADV runs against what was submitted, so it does not matter who did the original coding or which platform they used. Martlet AI ingests your submitted codes and the underlying records and validates them independently. That is the common case for plans whose retrospective coding was outsourced, or who have changed vendors since the payment year under audit.",
   },
   {
-    question: "My contract was selected — what happens now?",
+    question: "Who reviews what the engine finds?",
     answer:
-      "CMS notifies you through HPMS, then posts your Enrollee Data List in CDAT with the sampled enrollees and audited HCCs. You have a five-month window to retrieve and submit medical records — up to two records per audited HCC, with one valid record sufficient. For the PY2020 cycle, records are due August 28, 2026. After certified-coder review, CMS issues findings, and you have 60 days to request reconsideration.",
+      "Four levels run by default. Automated validation scores every code and closes the ones that are clearly supported or clearly unsupported, which is about 95% of them. Everything else reaches a certified coder as an exception, with the evidence already attached and ranked. A QA or audit lead re-reviews a sample for consistency, and compliance signs off. You configure how many levels run and where the thresholds sit, and every decision at every level is recorded against the evidence as it stood and cannot be altered afterwards.",
   },
   {
-    question: "Is CMS extrapolating audit findings right now?",
+    question: "How quickly can you run a mock RADV audit?",
     answer:
-      "Not currently. The February 2023 rule that authorized extrapolation was vacated by a federal court in September 2025 (Humana v. Becerra), and CMS's appeal is pending at the Fifth Circuit. In the meantime, CMS collects overpayments for the sampled enrollees only, but it designs audits to support extrapolation and has reserved the right to extrapolate later if it prevails. Prudent plans prepare as if extrapolation returns.",
-  },
-  {
-    question: "What records does CMS accept as evidence?",
-    answer:
-      "Documentation of a single face-to-face encounter (or qualifying real-time audio-video telehealth), from an acceptable provider type and physician specialty, with dates of service inside the data-collection year and a valid, credentialed signature. Superbills, standalone problem lists, claim forms, and lab results alone do not qualify. A missing or illegible signature on outpatient records can only be cured with the CMS-generated attestation form.",
-  },
-  {
-    question: "Can we fix documentation after we're selected?",
-    answer:
-      "Mostly no. Plans may not amend medical records or ask providers to amend them once an audit begins, and signatures obtained in response to the record request are invalid. The only cure CMS accepts is its own attestation form, for missing or illegible signatures on outpatient records, and it cannot validate diagnoses. That is why proactive mock audits matter: documentation gaps found before selection can still be fixed.",
-  },
-  {
-    question: "How fast can Martlet AI run a mock RADV audit?",
-    answer:
-      "Days, not quarters. Martlet AI ingests your charts and submitted codes, samples the contract using CMS's stratified methodology, validates every sampled HCC against the same checks CMS applies at 99% precision, and returns findings by HCC with evidence packets and an exposure estimate — on-premises or in your private cloud, without PHI leaving your network.",
-  },
-  {
-    question: "How is it priced?",
-    answer:
-      "An annual license, based on how many contracts and lives you run. Not per chart, not per code validated, and not a percentage of anything recovered. The fee stays fixed for the year, so you can add contracts or payment years without renegotiating.",
+      "A mock audit on a single contract runs in days rather than quarters. Martlet AI ingests your charts and submitted codes, samples the contract on CMS's own stratified methodology, validates every sampled HCC against the same checks CMS applies, and returns findings by HCC with evidence packets and an exposure estimate. It runs on-premises or in your private cloud, so no PHI leaves your network.",
   },
 ] as const;
 

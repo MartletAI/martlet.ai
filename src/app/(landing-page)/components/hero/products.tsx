@@ -20,7 +20,7 @@ const WORKFLOW_CONTENT = {
       subtitle: "high volume",
       title: "95% of cases closed automatically",
       description:
-        "Prioritized chase lists, undercoded HCC capture, MEAT validation, and 837-ready submission deltas. Reviewers work exceptions, not stacks of PDFs.",
+        "Prioritized chase lists, undercoded HCC capture, MEAT validation, and submission-ready deltas. Reviewers work exceptions, not stacks of PDFs.",
       href: "/solutions/retrospective-risk-adjustment",
       linkText: "View Retrospective",
     },

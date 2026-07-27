@@ -4,7 +4,7 @@ const HERO_CONTENT = {
   TITLE_1: "Regulatory-grade risk adjustment.",
   TITLE_2: "Run inside your environment.",
   TAGLINE:
-    "From chase list to submission-ready 837s: Martlet AI closes 95% of cases automatically at 99% precision, links every HCC to page-level evidence, and packages CMS-ready RADV audit packets. PHI never leaves your network.",
+    "From chase list to submission-ready files: Martlet AI closes 95% of cases automatically at 99% precision, links every HCC to page-level evidence, and packages CMS-ready RADV audit packets. PHI never leaves your network.",
   CTA_PRIMARY: "See it on your charts",
   CTA_SECONDARY: "Explore RADV readiness",
 } as const;

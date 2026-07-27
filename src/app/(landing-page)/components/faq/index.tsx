@@ -22,9 +22,9 @@ const FAQ_ITEMS: FaqItem[] = [
       "No. Martlet AI deploys on-premises, in your private cloud (AWS, Azure, or GCP), or fully air-gapped. There are no external AI API calls in the data path, and PHI never leaves your network — your existing security controls, SIEM, and IAM stay in effect.",
   },
   {
-    question: "Can Martlet AI produce 837 / EDPS submission files?",
+    question: "What does Martlet AI hand off to our submission pipeline?",
     answer:
-      "Yes. Validated results export as submission-ready add and delete deltas formatted for your 837/EDPS pipeline, including date of service, provider, and the linked evidence for each code. Unsupported codes identified during validation flow out as deletes, closing the loop on RADV exposure.",
+      "Adds and deletes, exported in the format your submission pipeline already expects, each carrying the date of service, the provider and the linked evidence behind the code. Unsupported codes identified during validation flow out as deletes, closing the loop on RADV exposure.",
   },
   {
     question: "Does Martlet AI support the v28 transition?",

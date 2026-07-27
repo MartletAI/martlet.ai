@@ -22,7 +22,7 @@ import { WhyMartletAI } from "./components/why-martlet-ai";
 export const metadata: Metadata = {
   title: "Risk Adjustment AI Software — HCC Coding & RADV | Martlet AI",
   description:
-    "HCC coding software that closes 95% of retrospective cases automatically: chase list prioritization, MEAT validation, mock RADV audits, and 837/EDPS submission-ready outputs — run inside your environment.",
+    "HCC coding software that closes 95% of retrospective cases automatically: chase list prioritization, MEAT validation, mock RADV audits, and submission-ready outputs — run inside your environment.",
   alternates: {
     canonical: "/",
   },

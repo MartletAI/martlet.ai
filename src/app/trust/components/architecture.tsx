@@ -21,7 +21,7 @@ const INSIDE = [
   "Document store (notes, PDFs, scans)",
   "Martlet AI engine — models, validation, audit log",
   "Reviewer UI + exception queues",
-  "Exports: 837/EDPS deltas, packets, reports",
+  "Exports: submission deltas, packets, reports",
 ] as const;
 
 /**

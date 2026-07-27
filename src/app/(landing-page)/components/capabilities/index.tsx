@@ -22,9 +22,9 @@ const CAPABILITIES: Capability[] = [
       "Monitor, Evaluate, Assess, Treat — validated at the sentence level, with v24/v28 dual mapping and payment-year discipline.",
   },
   {
-    title: "Submission-ready 837 outputs",
+    title: "Submission-ready outputs",
     description:
-      "Add and delete deltas formatted for your 837/EDPS pipeline. Validated codes flow to submission; unsupported codes flow out.",
+      "Adds and deletes exported in the format your submission pipeline expects. Validated codes flow to submission; unsupported codes flow out.",
   },
   {
     title: "One-click evidence packets",

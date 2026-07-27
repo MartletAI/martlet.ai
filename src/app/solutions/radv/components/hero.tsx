@@ -1,5 +1,7 @@
 import { SmartLink, Icon } from "@/components";
+import type { IconProps } from "@/components/icon";
 
+/** Stat accents sampled from the brochure covers. */
 const HERO = {
   TITLE_1: "Audit-grade RADV validation.",
   TITLE_2: "99% precision.",
@@ -8,10 +10,30 @@ const HERO = {
   CTA_PRIMARY: "Run a mock RADV on one contract",
   CTA_SECONDARY: "See what gets checked",
   STATS: [
-    { value: "99%", caption: "precision on automated codes", accent: "text-[#0165dc]" },
-    { value: "95%", caption: "of codes closed automatically", accent: "text-[#0090e8]" },
-    { value: "100,000+", caption: "lives on the platform", accent: "text-[#0d9488]" },
-    { value: "Zero", caption: "PHI leaving your network", accent: "text-[#067647]" },
+    {
+      value: "99%",
+      caption: "precision on automated codes",
+      accent: "text-[#0c51f6]",
+      icon: "badge-check" as IconProps["name"],
+    },
+    {
+      value: "95%",
+      caption: "of codes closed automatically",
+      accent: "text-[#7526e4]",
+      icon: "file-checked" as IconProps["name"],
+    },
+    {
+      value: "100,000+",
+      caption: "lives on the platform",
+      accent: "text-[#f0235b]",
+      icon: "users" as IconProps["name"],
+    },
+    {
+      value: "Zero",
+      caption: "PHI leaving your network",
+      accent: "text-[#067647]",
+      icon: "shield-check" as IconProps["name"],
+    },
   ],
 } as const;
 
@@ -51,17 +73,25 @@ export function Hero() {
           </a>
         </div>
 
-        {/* Our numbers */}
+        {/* Our numbers — white cards on the wash, matching the brochure */}
         <div className="container-main pb-16 md:pb-20">
-          <ul className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 list-none p-0 m-0 border-t border-[#d2d2d7] pt-10 animate-stagger">
+          <ul className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 list-none p-0 m-0 animate-stagger">
             {HERO.STATS.map((stat) => (
-              <li key={stat.caption} className="text-center lg:text-left">
+              <li
+                key={stat.caption}
+                className="rounded-2xl bg-white border border-white/70 shadow-[0_2px_14px_rgba(10,30,80,0.06)] p-5 md:p-6 text-left"
+              >
+                <Icon
+                  name={stat.icon}
+                  className={`w-6 h-6 mb-4 ${stat.accent}`}
+                  aria-hidden
+                />
                 <div
-                  className={`apple-stat whitespace-nowrap text-[30px] md:text-[36px] mb-2.5 ${stat.accent}`}
+                  className={`apple-stat whitespace-nowrap text-[26px] md:text-[32px] mb-1.5 ${stat.accent}`}
                 >
                   {stat.value}
                 </div>
-                <p className="text-[15px] font-medium apple-caption leading-snug m-0 text-balance">
+                <p className="text-[14px] md:text-[15px] font-medium apple-caption leading-snug m-0">
                   {stat.caption}
                 </p>
               </li>

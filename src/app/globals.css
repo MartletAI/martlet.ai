@@ -515,32 +515,27 @@ body {
    Apple-theme homepage utilities
    ======================================== */
 
-/* Hero: silver sheen — brushed metallic base with color glows on top */
+/* Hero: the brochure's light-blue wash — a soft white bloom through the
+   centre over a blue base, with faint brand-gradient glows at the corners.
+   Base and bloom values sampled from the brochure covers. */
 .apple-hero {
   background:
     radial-gradient(
-      55% 45% at 50% 0%,
-      rgba(1, 101, 220, 0.10) 0%,
-      rgba(255, 255, 255, 0) 60%
+      58% 48% at 50% 42%,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0) 72%
     ),
     radial-gradient(
-      42% 36% at 88% 10%,
-      rgba(124, 58, 237, 0.09) 0%,
-      rgba(255, 255, 255, 0) 65%
+      44% 38% at 88% 8%,
+      rgba(124, 58, 237, 0.07) 0%,
+      rgba(255, 255, 255, 0) 68%
     ),
     radial-gradient(
-      42% 36% at 8% 16%,
-      rgba(13, 148, 136, 0.07) 0%,
-      rgba(255, 255, 255, 0) 65%
+      44% 38% at 8% 14%,
+      rgba(240, 35, 91, 0.05) 0%,
+      rgba(255, 255, 255, 0) 68%
     ),
-    linear-gradient(
-      165deg,
-      #fbfcfe 0%,
-      #eef1f6 32%,
-      #f6f8fb 55%,
-      #e9edf4 82%,
-      #f3f5f9 100%
-    );
+    linear-gradient(168deg, #e8f0fb 0%, #edf4fd 48%, #e7f0fd 100%);
 }
 
 /* Dark metallic gradient for the hero's lead line — polished steel */

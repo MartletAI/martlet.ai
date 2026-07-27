@@ -111,10 +111,6 @@ export function ReviewLevels() {
     return () => clearTimeout(timer);
   }, [step, reducedMotion]);
 
-  /** Track fills from the first node to the last as levels activate. */
-  const fillPercent =
-    step <= 1 ? 0 : ((step - 1) / (LEVELS.length - 1)) * 100;
-
   return (
     <section className="bg-white py-20 md:py-24" aria-labelledby="review-levels-heading">
       <div className="container-main">
@@ -134,17 +130,15 @@ export function ReviewLevels() {
 
         <div ref={ref} className="max-w-[1140px] mx-auto">
           <div className="rounded-[28px] bg-[#f7f9fc] border border-border p-7 md:p-10">
-            {/* Desktop: horizontal track behind the nodes */}
-            <div className="hidden lg:block relative mb-7">
-              <div className="absolute left-0 right-0 top-[7px] h-px bg-[#dfe3ea]" aria-hidden />
-              <div
-                className="absolute left-0 top-[7px] h-px bg-[#0165dc] transition-[width] duration-500 ease-out"
-                style={{ width: `${fillPercent}%` }}
-                aria-hidden
-              />
-              <ol className="relative grid grid-cols-4 list-none p-0 m-0">
+            {/* Desktop: node per column, each carrying its own connector.
+                The grid must match the content grid below exactly — same
+                columns, same gap — or the nodes drift out of their columns.
+                Segments beat one absolute track here: the line can only ever
+                start and end on a node, whatever the container width. */}
+            <div className="hidden lg:block mb-7">
+              <ol className="grid grid-cols-4 gap-x-8 list-none p-0 m-0">
                 {LEVELS.map((item, index) => (
-                  <li key={item.level}>
+                  <li key={item.level} className="relative">
                     <span
                       className={cn(
                         "block w-3.5 h-3.5 rounded-full transition-all duration-500",
@@ -155,6 +149,20 @@ export function ReviewLevels() {
                       }}
                       aria-hidden
                     />
+                    {/* Reaches from this node to the next column's left edge:
+                        -right-8 is exactly the gap-x-8 between columns. */}
+                    {index < LEVELS.length - 1 && (
+                      <span
+                        className="absolute left-[18px] -right-8 top-[7px] h-px transition-colors duration-500"
+                        style={{
+                          backgroundColor:
+                            step > index + 1
+                              ? LEVELS[index + 1].color
+                              : "#dfe3ea",
+                        }}
+                        aria-hidden
+                      />
+                    )}
                   </li>
                 ))}
               </ol>

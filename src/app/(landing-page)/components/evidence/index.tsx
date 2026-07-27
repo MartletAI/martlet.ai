@@ -4,7 +4,6 @@ import { Reveal } from "@/components/reveal";
 import { EvidenceDemo } from "./evidence-demo";
 
 const EVIDENCE_CONTENT = {
-  EYEBROW: "Regulatory-grade HCC coding",
   TITLE: "Every code, verified the way CMS verifies it.",
   SUBTITLE:
     "A detected encounter. A credentialed provider. A signed note. MEAT-supported documentation. Martlet AI runs the checks CMS applies at audit — automatically, on every chart — and links page-level evidence to every HCC. Codes that pass close on their own. Codes that don't get caught before CMS catches them.",
@@ -30,11 +29,6 @@ export function EvidenceShowcase() {
     >
       <div className="container-main">
         <Reveal className="text-center max-w-[780px] mx-auto mb-14">
-          <p className="mb-6">
-            <span className="eyebrow-chip bg-[#067647]/10 text-[#067647]">
-              {EVIDENCE_CONTENT.EYEBROW}
-            </span>
-          </p>
           <h2
             id="evidence-heading"
             className="apple-display text-[32px] md:text-[48px] mb-5"

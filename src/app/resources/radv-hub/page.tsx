@@ -46,7 +46,6 @@ export default function Page() {
       {/* CTA */}
       <SharedCTA
         title="Selected, or expecting to be?"
-        subtitle="Working session"
         description="Bring one contract. We'll run a mock RADV on it — sampled per CMS's methodology, with evidence packets and an exposure estimate — inside your environment."
         submitLabel="Run a mock RADV"
         backgroundColor="bg-white"

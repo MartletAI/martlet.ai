@@ -39,7 +39,6 @@ const FAQ_ITEMS: FaqItem[] = [
 ] as const;
 
 const CONTENT = {
-  LABEL: "FAQ",
   TITLE: "Questions buyers ask first.",
 } as const;
 
@@ -72,11 +71,6 @@ export function FAQ() {
       />
       <div className="container-main max-w-[880px]!">
         <Reveal as="header" className="text-center mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-              {CONTENT.LABEL}
-            </span>
-          </p>
           <h2
             id="faq-heading"
             className="apple-display text-[32px] md:text-[48px]"

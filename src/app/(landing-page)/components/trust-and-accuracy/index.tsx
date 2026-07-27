@@ -12,7 +12,6 @@ interface TrustPillar {
 }
 
 const TRUST_CONTENT = {
-  LABEL: "Compliance",
   TITLE: "Built for the review that happens three years later.",
   SUBTITLE:
     "RADV auditors read every output long after submission. Martlet AI is engineered so each one holds up.",
@@ -56,11 +55,6 @@ export function TrustAndAccuracy() {
     >
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[720px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0f1f3a]/8 text-[#0f1f3a]">
-              {TRUST_CONTENT.LABEL}
-            </span>
-          </p>
           <h2
             id="trust-and-accuracy-heading"
             className="apple-display text-[32px] md:text-[48px] mb-5"

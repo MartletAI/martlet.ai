@@ -76,7 +76,6 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
       <SharedCTA
         title="Bring your charts. We'll show you the evidence."
-        subtitle="Talk to us"
         description="A working session: watch the engine run inside your environment, and see every regulatory claim on this site demonstrated on your own data."
         submitLabel="Schedule a walkthrough"
         backgroundColor="bg-white"

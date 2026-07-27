@@ -2,7 +2,6 @@ import { Reveal } from "@/components/reveal";
 import { WorkflowCard } from "./workflow-card";
 
 const WORKFLOW_CONTENT = {
-  LABEL: "One platform",
   TITLE: "Three workflows. One engine. One audit trail.",
   ITEMS: [
     {
@@ -47,11 +46,6 @@ export function Products() {
       <div className="container-main">
         {/* Section Header */}
         <Reveal as="header" className="text-center mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-              {WORKFLOW_CONTENT.LABEL}
-            </span>
-          </p>
           <h2
             id="products-heading"
             className="apple-display text-[32px] md:text-[48px]"

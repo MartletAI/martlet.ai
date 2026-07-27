@@ -7,7 +7,6 @@ import { LeadForm } from "../lead-form";
 
 interface CTAProps {
   title: string;
-  subtitle: string;
   description: string;
   /** Button label before it expands into the form. */
   submitLabel?: string;
@@ -25,7 +24,7 @@ const PROOF_STATS = [
  * side shows proof stats + a button by default, and expands in place into
  * the lead form on click — no navigation to a separate page.
  */
-export function CTA({ title, subtitle, description, submitLabel = "Get in touch", backgroundColor }: CTAProps) {
+export function CTA({ title, description, submitLabel = "Get in touch", backgroundColor }: CTAProps) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -34,12 +33,6 @@ export function CTA({ title, subtitle, description, submitLabel = "Get in touch"
         <div className="apple-section-dark relative overflow-hidden rounded-[32px] grid grid-cols-1 lg:grid-cols-[1.1fr_1fr]">
           {/* Left: pitch */}
           <div className="flex flex-col justify-center px-6 py-12 md:px-14 md:py-16 text-left">
-            <p className="mb-6">
-              <span className="eyebrow-chip bg-white/10 text-[#9dc2ff]">
-                {subtitle}
-              </span>
-            </p>
-
             <h2
               id="cta-heading"
               className="apple-display text-white! text-[26px] md:text-[36px] mb-5 max-w-[520px]"

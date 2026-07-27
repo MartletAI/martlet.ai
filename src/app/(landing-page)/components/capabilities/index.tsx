@@ -77,7 +77,6 @@ const CAPABILITY_RULE_COLORS = [
 ] as const;
 
 const CONTENT = {
-  LABEL: "Platform",
   TITLE: "Everything a risk-adjustment program runs on.",
   SUBTITLE:
     "One engine under retrospective, RADV, and prospective — with the operational machinery around it.",
@@ -95,11 +94,6 @@ export function Capabilities() {
     >
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-12 md:mb-14">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#7c3aed]/10 text-[#6d28d9]">
-              {CONTENT.LABEL}
-            </span>
-          </p>
           <h2
             id="capabilities-heading"
             className="apple-display text-[32px] md:text-[48px] mb-5"

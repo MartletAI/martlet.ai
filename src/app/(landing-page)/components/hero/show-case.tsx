@@ -1,8 +1,7 @@
 import { SmartLink, Icon } from "@/components";
 
 const HERO_CONTENT = {
-  EYEBROW: "Regulatory-grade risk adjustment",
-  TITLE_1: "HCC coding, automated end-to-end.",
+  TITLE_1: "Regulatory-grade risk adjustment.",
   TITLE_2: "Run inside your environment.",
   TAGLINE:
     "From chase list to submission-ready 837s: Martlet AI closes 95% of cases automatically at 99% precision, links every HCC to page-level evidence, and packages CMS-ready RADV audit packets. PHI never leaves your network.",
@@ -20,13 +19,6 @@ export function ShowCase() {
       className="pt-32 md:pt-[168px] pb-4 relative z-10 text-center"
       aria-labelledby="hero-heading"
     >
-      {/* Eyebrow */}
-      <p className="animate-fade-in mb-6">
-        <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-          {HERO_CONTENT.EYEBROW}
-        </span>
-      </p>
-
       {/* Headline */}
       <h1
         id="hero-heading"

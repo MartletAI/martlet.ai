@@ -44,7 +44,6 @@ const DIFFERENTIATORS: Differentiator[] = [
 ];
 
 const CONTENT = {
-  LABEL: "Why Martlet AI",
   TITLE: "Built for in-house, end-to-end, audit-grade work.",
 } as const;
 
@@ -56,11 +55,6 @@ export function WhyMartletAI() {
     >
       <div className="container-main">
         <Reveal as="header" className="text-center mb-12 md:mb-14">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#d97706]/10 text-[#b45309]">
-              {CONTENT.LABEL}
-            </span>
-          </p>
           <h2
             id="why-martlet-heading"
             className="apple-display text-[32px] md:text-[48px]"

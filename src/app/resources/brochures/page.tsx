@@ -30,7 +30,6 @@ export default function Page() {
       {/* CTA */}
       <SharedCTA
         title="Want to see it running on your charts, not a slide?"
-        subtitle="Talk to us"
         description="A working session: watch the engine run inside your environment, and see every claim in these brochures demonstrated live."
         submitLabel="Schedule a walkthrough"
         backgroundColor="bg-white"

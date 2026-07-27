@@ -2,7 +2,6 @@ import { SmartLink, Icon } from "@/components";
 import { Reveal } from "@/components/reveal";
 
 const RADV_CONTENT = {
-  EYEBROW: "Why now",
   TITLE: "CMS now audits every eligible Medicare Advantage contract.",
   BODY: "CMS moved from auditing roughly 60 contracts a year to all eligible contracts — on a quarterly selection cadence, with payment year 2020 audits already underway and about 2,000 certified coders reviewing submissions. Every HCC you submit needs evidence that survives a reader three years from now.",
   CTA: "Get RADV-ready",
@@ -26,11 +25,6 @@ export function RadvNow() {
     >
       <div className="container-main">
         <Reveal className="max-w-[820px]">
-          <p className="mb-6">
-            <span className="eyebrow-chip bg-white/10 text-[#9dc2ff]">
-              {RADV_CONTENT.EYEBROW}
-            </span>
-          </p>
           <h2
             id="radv-now-heading"
             className="apple-display text-[32px] md:text-[48px] text-white! mb-6"

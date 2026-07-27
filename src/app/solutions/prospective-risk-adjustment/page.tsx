@@ -1,6 +1,5 @@
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
-import { Bridge } from "./components/bridge";
 import { Burden } from "./components/burden";
 import { CTA } from "./components/cta";
 import { Hero } from "./components/hero";
@@ -54,9 +53,6 @@ export default function Page() {
 
       {/* WVU Medicine in production */}
       <Wvu />
-
-      {/* Bridge to retrospective */}
-      <Bridge />
 
       {/* FAQ + schema */}
       <ProFaq />

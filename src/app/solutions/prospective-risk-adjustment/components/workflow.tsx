@@ -32,13 +32,9 @@ export function Workflow() {
     <section className="bg-white py-20 md:py-28" aria-labelledby="workflow-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-14">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-              The workflow
-            </span>
-          </p>
           <h2 id="workflow-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            Built around the visit, not around our software.
+            The workflow, built around the visit rather than around our
+            software.
           </h2>
         </Reveal>
 

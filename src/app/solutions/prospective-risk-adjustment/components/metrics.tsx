@@ -28,13 +28,8 @@ export function Metrics() {
     <section className="apple-section-gray py-20 md:py-24" aria-labelledby="metrics-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[800px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#7c3aed]/10 text-[#6d28d9]">
-              Hold every vendor to this
-            </span>
-          </p>
           <h2 id="metrics-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            The four numbers that decide adoption.
+            The four numbers that decide whether clinicians use it.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
             Ask for these in every point-of-care evaluation — ours included.

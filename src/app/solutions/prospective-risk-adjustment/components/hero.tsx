@@ -1,17 +1,19 @@
 import { SmartLink, Icon } from "@/components";
 
 const HERO = {
-  EYEBROW: "Prospective — point of care",
   TITLE_1: "Every visit, prepped.",
   TITLE_2: "Every suggestion, proven.",
   TAGLINE:
     "Martlet AI surfaces suspected conditions from structured and unstructured data — labs, meds, notes, claims — and delivers them as concise, evidence-linked suggestions inside your EHR workflow. Clinicians see the proof, act in seconds, and stay in charge of every clinical decision.",
   CTA_PRIMARY: "See it on your panel",
   CTA_SECONDARY: "How suspecting works",
+  /** No precision figure here. Precision is measurable against a record that
+   *  already exists; a suggestion raised before the visit has nothing to score
+   *  against yet, so the number would not mean what it means on the
+   *  retrospective and RADV pages. Adoption is what this page argues. */
   STATS: [
     { value: "100,000+", caption: "lives served by our platform", accent: "text-[#0d9488]" },
     { value: "10", caption: "health systems and payers in production", accent: "text-[#d97706]" },
-    { value: "99%", caption: "precision on every code the engine automates", accent: "text-[#0090e8]" },
     { value: "Zero", caption: "PHI leaves your network — on-prem, VPC, or air-gapped", accent: "text-[#067647]" },
   ],
 } as const;
@@ -23,12 +25,6 @@ export function Hero() {
         className="max-w-[1440px] m-auto pt-32 md:pt-[168px] pb-4 relative z-10 text-center"
         aria-labelledby="pro-hero-heading"
       >
-        <p className="animate-fade-in mb-6">
-          <span className="eyebrow-chip bg-[#0d9488]/10 text-[#0f766e]">
-            {HERO.EYEBROW}
-          </span>
-        </p>
-
         <h1
           id="pro-hero-heading"
           className="container-main apple-display text-[38px] md:text-[64px] animate-fade-in mb-6 max-w-[1000px]"
@@ -60,7 +56,7 @@ export function Hero() {
 
         {/* Our numbers */}
         <div className="container-main pb-16 md:pb-20">
-          <ul className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 list-none p-0 m-0 border-t border-[#d2d2d7] pt-10 animate-stagger">
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-10 list-none p-0 m-0 border-t border-[#d2d2d7] pt-10 animate-stagger max-w-[900px] mx-auto">
             {HERO.STATS.map((stat) => (
               <li key={stat.caption} className="text-center lg:text-left">
                 <div className={`apple-stat whitespace-nowrap text-[30px] md:text-[36px] mb-2.5 ${stat.accent}`}>

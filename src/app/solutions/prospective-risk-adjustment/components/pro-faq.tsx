@@ -1,35 +1,49 @@
 import { Reveal } from "@/components/reveal";
 
+/** The objections a clinical leader actually raises about a tool that will
+ *  appear in front of their physicians. Questions that restate a section
+ *  sitting above them have been dropped — suspecting, segments and the WVU
+ *  deployment are all covered on the page already. */
 const FAQ_ITEMS = [
   {
-    question: "What is prospective risk adjustment?",
+    question: "Does this add time to the visit?",
     answer:
-      "Prospective risk adjustment identifies suspected conditions before or during the patient visit — from labs, medications, prior coding, claims, and clinical notes — so clinicians can evaluate and document them at the point of care. It replaces the retrospective chase with capture at the moment the clinician can still act, and it matters because every RAF score resets on January 1.",
+      "The intent is the opposite: the pre-visit summary collects what a clinician would otherwise go hunting for across prior notes, labs and claims, and puts it on one screen. During the visit, suggestions are short, capped per encounter, and dismissible in a single action. We would rather you measured it than took our word for it — chart-prep minutes before and after, on your own panel, is the number to hold us to.",
   },
   {
-    question: "What data feeds Martlet AI's suspects?",
+    question: "How many suggestions will a clinician see in one encounter?",
     answer:
-      "Five signal classes, each with its own confidence tier: prior-year dropped HCCs, lab results meeting diagnostic thresholds, active medications implying undocumented conditions, conditions documented in narrative notes but never coded, and claims/ADT history. Every suspect carries full provenance — the exact note, lab, or claim it came from — and thresholds are configurable to your standards.",
+      "As many as you allow, and no more. The cap per encounter is a setting you control, as is the confidence threshold a suspect has to clear before it surfaces at all. Raising the bar shows fewer, stronger suggestions. This is the single most important dial in the system: a tool that interrupts a clinician too often stops being read, and after that its accuracy is irrelevant.",
   },
   {
-    question: "How does it fit into clinician workflow?",
+    question: "What happens when a clinician disagrees with a suggestion?",
     answer:
-      "Suggestions are delivered inside the EHR using native patterns — Epic Best Practice Advisories and FHIR CDS Hooks — plus a pre-visit prep summary that takes minutes to read. Suggestions are concise, capped per encounter to prevent alert fatigue, and dismissible in one action. Confirmed conditions flow to validation and submission automatically.",
+      "They dismiss it, and that is the end of it for that encounter. Dismissals are recorded — not to challenge the clinician, but because the pattern of what gets dismissed is the clearest signal of where the suspecting logic is wrong. Those rates come back to you by condition and by signal type, so thresholds can be tightened where the tool is being noisy.",
   },
   {
-    question: "Does it prompt clinicians toward unsupported codes?",
+    question: "Can it prompt a clinician toward something the record can't support?",
     answer:
-      "No. Martlet AI is MEAT-aware by design: it never suggests a condition the documentation cannot support, and suggestions are framed as documentation cues with evidence attached — not bare codes to click. Clinicians make every clinical decision; the engine's job is to make the evidence easy to see.",
+      "It is built not to. A suspect surfaces as a documentation cue with the evidence behind it attached — the note, the lab, the medication it came from — so the clinician is being shown why something is worth considering, not handed a code to accept. The clinical decision is the clinician's, and a condition that is never addressed at the encounter never becomes a submitted diagnosis.",
   },
   {
-    question: "How is prospective different for ACOs than for MA plans?",
+    question: "Who decides what counts as a suspect?",
     answer:
-      "MA plans buy prospective coding for accurate, timely capture, since payment follows documented risk. ACOs in MSSP and ACO REACH operate under risk-score growth caps, so they buy defensible completeness: an accurate severity picture for benchmarking, two-way suspecting, and evidence trails that stand up to compliance review. Martlet AI supports both configurations from the same engine.",
+      "You do. The signal types are published rather than hidden behind a score, so your clinical and coding leadership can review the logic and decide which sources to trust and at what threshold. Conditions, signal types and confidence tiers can each be turned up, turned down, or switched off entirely for your organization.",
   },
   {
-    question: "Is Martlet AI's prospective engine in production?",
+    question: "What does it take to get this into our EHR?",
     answer:
-      "Yes. WVU Medicine, a 25-hospital academic health system, runs Martlet AI's prospective engine for longitudinal chart analysis and point-of-care suggestions inside Epic workflows — presented publicly at the NLP Summit. Across the platform, Martlet AI serves 100,000+ lives at 10 health systems and payers.",
+      "Suggestions are delivered through the patterns your EHR already supports — Epic Best Practice Advisories and FHIR CDS Hooks — so clinicians see them where they already look, rather than in another tab. The work is mostly on the data feeds and the tuning, not on building a new interface for your physicians to learn.",
+  },
+  {
+    question: "Where does it run, and does patient data leave our network?",
+    answer:
+      "It runs inside your own environment — on-premises, in your private cloud, or air-gapped. No PHI leaves your network and there are no external API calls in the data path, so your existing security controls, IAM and monitoring stay in effect. Updates ship as versioned releases your team applies on its own schedule.",
+  },
+  {
+    question: "How do we know it's working once it's live?",
+    answer:
+      "Suggestion acceptance rate is the number that matters most, tracked by condition, by signal type and by clinician, because it tells you whether the people using it trust it. Alongside it: alerts per encounter, dismissal patterns, and how much of the panel had its conditions addressed during a visit rather than chased afterwards. If acceptance is falling, the logic needs tightening — and you will see that before it becomes a coding problem.",
   },
 ] as const;
 
@@ -56,11 +70,6 @@ export function ProFaq() {
       />
       <div className="container-main max-w-[880px]!">
         <Reveal as="header" className="text-center mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-              FAQ
-            </span>
-          </p>
           <h2 id="pro-faq-heading" className="apple-display text-[32px] md:text-[48px]">
             What clinical and quality leaders ask.
           </h2>

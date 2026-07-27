@@ -10,13 +10,8 @@ export function Wvu() {
     <section className="apple-section-gray py-20 md:py-24" aria-labelledby="wvu-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[800px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#d97706]/10 text-[#b45309]">
-              In production
-            </span>
-          </p>
           <h2 id="wvu-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            WVU Medicine runs this, inside Epic.
+            WVU Medicine runs this in production, inside Epic.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
             A 25-hospital academic health system uses Martlet AI&rsquo;s

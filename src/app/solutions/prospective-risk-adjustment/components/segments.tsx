@@ -28,13 +28,8 @@ export function Segments() {
     <section className="bg-white py-20 md:py-24" aria-labelledby="segments-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0d9488]/10 text-[#0f766e]">
-              Who buys this, and why
-            </span>
-          </p>
           <h2 id="segments-heading" className="apple-display text-[32px] md:text-[48px]">
-            Plans buy capture. ACOs buy defensibility.
+            What plans, ACOs and health systems each get out of it.
           </h2>
         </Reveal>
 

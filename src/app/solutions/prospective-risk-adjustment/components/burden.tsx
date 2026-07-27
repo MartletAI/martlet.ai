@@ -17,13 +17,8 @@ export function Burden() {
     <section className="bg-white py-20 md:py-24" aria-labelledby="burden-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[800px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#d97706]/10 text-[#b45309]">
-              The pre-visit problem
-            </span>
-          </p>
           <h2 id="burden-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            The treadmill restarts every January 1.
+            What re-documenting every condition each year costs the visit.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
             Chronic conditions don&rsquo;t carry forward — every HCC must be

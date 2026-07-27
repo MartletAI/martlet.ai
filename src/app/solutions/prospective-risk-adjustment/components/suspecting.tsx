@@ -56,13 +56,8 @@ export function Suspecting() {
     >
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[800px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0d9488]/10 text-[#0f766e]">
-              How suspecting works
-            </span>
-          </p>
           <h2 id="suspecting-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            We publish the logic. Judge it yourself.
+            How suspecting works, and the signals behind every suggestion.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
             Every suspect Martlet AI raises comes from one of five signal

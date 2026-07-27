@@ -40,12 +40,6 @@ export default function Page() {
       {/* Animated pipeline: chase list → submission file */}
       <Pipeline />
 
-      {/* Two-way coding + submission calendar */}
-      <Submissions />
-
-      {/* v28 in real numbers */}
-      <V28 />
-
       {/* The rules, enforced + live verification demo */}
       <Rules />
 
@@ -54,6 +48,12 @@ export default function Page() {
           from a source the reader has already seen do the work. */}
       <Problem />
       <Economics />
+
+      {/* Reference material below the case for the product, not above it:
+          the submission calendar and the v28 transition are useful once
+          you're evaluating, not reasons to keep reading. */}
+      <Submissions />
+      <V28 />
 
       {/* Bridge to RADV */}
       <Bridge />

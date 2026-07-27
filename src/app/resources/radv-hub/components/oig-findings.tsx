@@ -1,6 +1,5 @@
 import { Reveal } from "@/components/reveal";
-
-import { SourceLink } from "./source-link";
+import { SourceLink } from "@/components/source-link";
 
 const OIG_AUDITS = [
   {
@@ -9,7 +8,7 @@ const OIG_AUDITS = [
     years: "2017–18",
     sample: "240",
     unsupported: "84%",
-    refund: "$6.8M refund",
+    finding: "$6.8M refund",
   },
   {
     plan: "Humana of Louisiana (H1951)",
@@ -17,7 +16,7 @@ const OIG_AUDITS = [
     years: "2017–18",
     sample: "240",
     unsupported: "91%",
-    refund: "≥$10.5M est.",
+    finding: "≥$10.5M est.",
   },
   {
     plan: "UCare Minnesota (H2459)",
@@ -25,7 +24,7 @@ const OIG_AUDITS = [
     years: "2018–19",
     sample: "294",
     unsupported: "86%",
-    refund: "$4.7M refund",
+    finding: "$4.7M refund",
   },
   {
     plan: "Blue Care Network of Michigan (H5883)",
@@ -33,7 +32,7 @@ const OIG_AUDITS = [
     years: "2017–18",
     sample: "210",
     unsupported: "91%",
-    refund: "$3.4M refund",
+    finding: "$3.4M refund",
   },
   {
     plan: "Triple-S Advantage (H5774)",
@@ -41,7 +40,7 @@ const OIG_AUDITS = [
     years: "2016–17",
     sample: "281",
     unsupported: "73%",
-    refund: "$297K refund",
+    finding: "$297K refund",
   },
   {
     plan: "Industry-wide acute-stroke audit",
@@ -49,46 +48,41 @@ const OIG_AUDITS = [
     years: "PY2021",
     sample: "97",
     unsupported: "100%",
-    refund: "~$462M est.*",
+    finding: "~$462M est.*",
   },
 ];
 
 const PATTERNS = [
-  "Acute stroke or MI coded from an office claim with no matching inpatient claim — OIG found over 90% of these unsupported",
-  "Cancers coded as active with no treatment or management in the service year (history-of codes don't risk-adjust)",
-  "Sepsis without an inpatient claim; embolism without anticoagulant management",
-  "Major depressive disorder without documented severity or treatment",
-  "Conditions supported only by a problem list, with no evidence in the encounter",
+  "Acute stroke or myocardial infarction coded from an office claim with no matching inpatient claim. OIG found over 90% of these unsupported.",
+  "Cancers coded as active with no treatment or management in the service year, where a history-of code would apply and does not risk-adjust.",
+  "Sepsis without an inpatient claim, and embolism without anticoagulant management.",
+  "Major depressive disorder without documented severity or treatment.",
+  "Conditions supported only by a problem list, with no evidence in the encounter itself.",
 ];
 
 /**
- * Failures - the OIG audit record: published error rates by plan, and the
- * failure patterns behind them.
+ * OigFindings - the published OIG audit record. Reference material: every row
+ * links to the report it came from, and figures are OIG's own.
  */
-export function Failures() {
+export function OigFindings() {
   return (
-    <section className="bg-white py-20 md:py-24" aria-labelledby="failures-heading">
-      <div className="container-main">
-        <Reveal as="header" className="text-center max-w-[780px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#b42318]/10 text-[#b42318]">
-              Why codes fail
-            </span>
-          </p>
-          <h2 id="failures-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            The OIG has been publishing the answers.
+    <section className="bg-white py-16 md:py-20" aria-labelledby="oig-heading">
+      <div className="container-main max-w-[980px]!">
+        <Reveal as="header" className="mb-8">
+          <h2 id="oig-heading" className="apple-display text-[28px] md:text-[40px] mb-3">
+            What OIG has found, by plan
           </h2>
-          <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
-            HHS-OIG audits of high-risk diagnosis codes at named MA plans.
-            Across the series, roughly <strong>70% of audited high-risk codes
-            were unsupported</strong> by the medical record.{" "}
+          <p className="text-base md:text-lg apple-body leading-relaxed m-0">
+            HHS-OIG audits high-risk diagnosis codes at named Medicare Advantage
+            plans and publishes the results. Across the series, roughly 70% of
+            audited high-risk codes were unsupported by the medical record.{" "}
             <SourceLink href="https://oig.hhs.gov/reports/all/2023/toolkit-to-help-decrease-improper-payments-in-medicare-advantage-through-the-identification-of-high-risk-diagnosis-codes/">
-              OIG toolkit
+              OIG high-risk toolkit
             </SourceLink>
           </p>
         </Reveal>
 
-        <Reveal className="max-w-[900px] mx-auto mb-12">
+        <Reveal className="mb-8">
           <div className="rounded-3xl border border-border overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-[15px] border-collapse">
@@ -110,28 +104,28 @@ export function Failures() {
                       <td className="px-5 py-3 evidence-mono text-muted">{row.years}</td>
                       <td className="px-5 py-3 evidence-mono text-muted">{row.sample}</td>
                       <td className="px-5 py-3 evidence-mono font-bold text-[#b42318]">{row.unsupported}</td>
-                      <td className="px-5 py-3 evidence-mono text-[#0a0a12]">{row.refund}</td>
+                      <td className="px-5 py-3 evidence-mono text-[#0a0a12]">{row.finding}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
-          <p className="text-sm apple-caption mt-4 mb-0 text-center max-w-[720px] mx-auto">
-            Each row links to the published HHS-OIG report; figures are
-            OIG&rsquo;s findings and recommendations as stated in each report.
-            *Estimated industry-wide overpayment; OIG recommended preventive
-            edits. In their published responses, the audited plans generally
-            disputed OIG&rsquo;s findings, methodology, or recommendations —
-            each report includes the plan&rsquo;s response.
+          <p className="text-sm apple-caption mt-4 mb-0">
+            Each row links to the published HHS-OIG report, and the figures are
+            OIG&rsquo;s findings and recommendations as stated in each one.
+            *Estimated industry-wide overpayment, where OIG recommended
+            preventive edits. In their published responses, the audited plans
+            generally disputed OIG&rsquo;s findings, methodology, or
+            recommendations, and each report includes the plan&rsquo;s response.
           </p>
         </Reveal>
 
-        <Reveal className="max-w-[780px] mx-auto">
-          <h3 className="text-xl font-bold tracking-tight text-[#0a0a12] mb-4 text-center">
-            The patterns behind the numbers
+        <Reveal>
+          <h3 className="text-xl font-bold tracking-tight text-[#0a0a12] mb-4">
+            The patterns behind the findings
           </h3>
-          <ul className="list-none p-0 m-0 flex flex-col gap-3 mb-8">
+          <ul className="list-none p-0 m-0 flex flex-col gap-3">
             {PATTERNS.map((pattern) => (
               <li key={pattern} className="flex gap-3 items-start text-base apple-body leading-relaxed">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#b42318] shrink-0" aria-hidden />
@@ -139,10 +133,6 @@ export function Failures() {
               </li>
             ))}
           </ul>
-          <p className="text-lg font-semibold text-[#0a0a12] text-center m-0">
-            Martlet AI screens every one of these patterns before submission —
-            and flags the deletes.
-          </p>
         </Reveal>
       </div>
     </section>

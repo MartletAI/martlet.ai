@@ -2,26 +2,24 @@ import { SmartLink, Icon } from "@/components";
 import { Reveal } from "@/components/reveal";
 
 /**
- * Bridge - the land-and-expand loop: RADV readiness as a permanent property
- * of regulatory-grade retrospective coding.
+ * Bridge - the cross-link to retrospective, earned by explaining the shared
+ * mechanism rather than asserting a platform benefit.
  */
 export function Bridge() {
   return (
     <section className="bg-white py-20 md:py-28" aria-labelledby="bridge-heading">
       <div className="container-main text-center max-w-[820px] mx-auto">
         <Reveal>
-          <h2 id="bridge-heading" className="apple-display text-[32px] md:text-[52px] mb-6">
-            Audit-readiness isn&rsquo;t a project.
-            <br />
-            <span className="text-gradient-blue">
-              It&rsquo;s how your coding should run all year.
-            </span>
+          <h2 id="bridge-heading" className="apple-display text-[32px] md:text-[44px] mb-6">
+            The same checks, one step earlier.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed mb-9">
-            Every chart Martlet AI closes retrospectively is verified against
-            the same checklist CMS coders apply — so the evidence packet exists
-            the day the code is submitted, not five months into an audit. Run
-            coding at regulatory grade, and RADV becomes a report you print.
+            The validation that answers a RADV audit is the same validation that
+            should run before a code is ever submitted. Teams that run it at
+            coding time find the gaps while the documentation can still be
+            fixed, and when a letter arrives the packets already exist. That is
+            the retrospective engine, and it uses the same checks and the same
+            evidence model you see here.
           </p>
           <SmartLink
             href="/solutions/retrospective-risk-adjustment"

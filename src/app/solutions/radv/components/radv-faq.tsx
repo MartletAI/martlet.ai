@@ -7,14 +7,19 @@ const FAQ_ITEMS = [
       "Risk Adjustment Data Validation (RADV) is CMS's audit program for verifying that the diagnoses Medicare Advantage plans submitted for payment are supported by medical records. CMS samples 35–200 enrollees per contract, requests records for each audited HCC, and certified coders re-validate every diagnosis against the medical record. Since 2025, CMS audits every eligible MA contract every payment year — roughly 550 contracts, up from about 60.",
   },
   {
+    question: "Does this work on codes we didn't code?",
+    answer:
+      "Yes. RADV runs against what was submitted, so it does not matter who did the original coding or which platform they used. Martlet AI ingests your submitted codes and the underlying records and validates them independently. That is the common case for plans whose retrospective coding was outsourced, or who have changed vendors since the payment year under audit.",
+  },
+  {
     question: "My contract was selected — what happens now?",
     answer:
-      "CMS notifies you through HPMS, then posts your Enrollee Data List in CDAT with the sampled enrollees and audited HCCs. You have a five-month window to retrieve and submit medical records — up to two records per audited HCC, with one valid record sufficient. For the PY2020 cycle, records are due August 28, 2026. After certified-coder review (up to three rounds), CMS issues findings, and you have 60 days to request reconsideration.",
+      "CMS notifies you through HPMS, then posts your Enrollee Data List in CDAT with the sampled enrollees and audited HCCs. You have a five-month window to retrieve and submit medical records — up to two records per audited HCC, with one valid record sufficient. For the PY2020 cycle, records are due August 28, 2026. After certified-coder review, CMS issues findings, and you have 60 days to request reconsideration.",
   },
   {
     question: "Is CMS extrapolating audit findings right now?",
     answer:
-      "Not currently. The February 2023 rule that authorized extrapolation was vacated by a federal court in September 2025 (Humana v. Becerra), and CMS's appeal is pending at the Fifth Circuit. In the meantime, CMS collects overpayments for the sampled enrollees only — but it designs audits to support extrapolation and has reserved the right to extrapolate later if it prevails. Prudent plans prepare as if extrapolation returns.",
+      "Not currently. The February 2023 rule that authorized extrapolation was vacated by a federal court in September 2025 (Humana v. Becerra), and CMS's appeal is pending at the Fifth Circuit. In the meantime, CMS collects overpayments for the sampled enrollees only, but it designs audits to support extrapolation and has reserved the right to extrapolate later if it prevails. Prudent plans prepare as if extrapolation returns.",
   },
   {
     question: "What records does CMS accept as evidence?",
@@ -24,19 +29,19 @@ const FAQ_ITEMS = [
   {
     question: "Can we fix documentation after we're selected?",
     answer:
-      "Mostly no. Plans may not amend medical records or ask providers to amend them once an audit begins, and signatures obtained in response to the record request are invalid. The only cure CMS accepts is its own attestation form, for missing or illegible signatures on outpatient records — and it cannot validate diagnoses. That is why proactive mock audits matter: documentation gaps found before selection can still be fixed.",
+      "Mostly no. Plans may not amend medical records or ask providers to amend them once an audit begins, and signatures obtained in response to the record request are invalid. The only cure CMS accepts is its own attestation form, for missing or illegible signatures on outpatient records, and it cannot validate diagnoses. That is why proactive mock audits matter: documentation gaps found before selection can still be fixed.",
   },
   {
     question: "How fast can Martlet AI run a mock RADV audit?",
     answer:
-      "Days, not quarters. Martlet AI ingests your charts and submitted codes, samples the contract using CMS's stratified methodology, validates every sampled HCC against the CMS coder checklist at 99% precision, and returns findings by HCC with evidence packets and an exposure estimate — on-premises or in your private cloud, without PHI leaving your network.",
+      "Days, not quarters. Martlet AI ingests your charts and submitted codes, samples the contract using CMS's stratified methodology, validates every sampled HCC against the same checks CMS applies at 99% precision, and returns findings by HCC with evidence packets and an exposure estimate — on-premises or in your private cloud, without PHI leaving your network.",
+  },
+  {
+    question: "How is it priced?",
+    answer:
+      "An annual license, based on how many contracts and lives you run. Not per chart, not per code validated, and not a percentage of anything recovered. The fee stays fixed for the year, so you can add contracts or payment years without renegotiating.",
   },
 ] as const;
-
-const CONTENT = {
-  LABEL: "FAQ",
-  TITLE: "What compliance teams ask us about RADV.",
-} as const;
 
 /**
  * RadvFaq - RADV-specific questions with definition-first answers and
@@ -61,13 +66,8 @@ export function RadvFaq() {
       />
       <div className="container-main max-w-[880px]!">
         <Reveal as="header" className="text-center mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-              {CONTENT.LABEL}
-            </span>
-          </p>
           <h2 id="radv-faq-heading" className="apple-display text-[32px] md:text-[48px]">
-            {CONTENT.TITLE}
+            What compliance teams ask us about RADV.
           </h2>
         </Reveal>
 

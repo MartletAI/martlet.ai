@@ -11,12 +11,6 @@ export function HubHero() {
         className="max-w-[1440px] m-auto pt-32 md:pt-[160px] pb-14 relative z-10 text-center"
         aria-labelledby="hub-heading"
       >
-        <p className="animate-fade-in mb-6">
-          <span className="eyebrow-chip bg-[#d97706]/10 text-[#b45309]">
-            Maintained reference
-          </span>
-        </p>
-
         <h1
           id="hub-heading"
           className="container-main apple-display text-[38px] md:text-[60px] animate-fade-in mb-6 max-w-[900px]"

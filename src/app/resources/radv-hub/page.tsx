@@ -2,7 +2,9 @@ import { CTA as SharedCTA } from "@/components/cta";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 import { ChangeLog } from "./components/change-log";
+import { Exposure } from "./components/exposure";
 import { HubHero } from "./components/hub-hero";
+import { OigFindings } from "./components/oig-findings";
 import { PyStatus } from "./components/py-status";
 import { QuickReference } from "./components/quick-reference";
 import { SourceLibrary } from "./components/source-library";
@@ -12,7 +14,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "CMS RADV Tracker — Audit Schedule, Deadlines, Litigation Status | Martlet AI",
   description:
-    "A maintained reference for Medicare Advantage RADV: audit status by payment year, PY2020/PY2021 submission windows, the rule-change log since 2023, and Humana v. Becerra appeal status — every entry primary-sourced.",
+    "A maintained reference for Medicare Advantage RADV: audit status by payment year, submission windows, the rule-change log since 2023, published OIG findings by plan, and Humana v. Becerra appeal status — every entry primary-sourced.",
   alternates: {
     canonical: "/resources/radv-hub",
   },
@@ -36,6 +38,12 @@ export default function Page() {
 
       {/* Rule-change log + litigation tracker */}
       <ChangeLog />
+
+      {/* Published OIG findings, by plan */}
+      <OigFindings />
+
+      {/* Extrapolation methodology + current legal status */}
+      <Exposure />
 
       {/* Submission rules + coder checklist */}
       <QuickReference />

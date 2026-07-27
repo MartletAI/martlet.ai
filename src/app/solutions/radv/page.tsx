@@ -1,22 +1,23 @@
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
-import { AuditSteps } from "./components/audit-steps";
+import { Beyond } from "./components/beyond";
 import { Bridge } from "./components/bridge";
 import { CoderChecks } from "./components/coder-checks";
 import { CTA } from "./components/cta";
-import { Exposure } from "./components/exposure";
-import { Failures } from "./components/failures";
+import { Engagement } from "./components/engagement";
 import { Hero } from "./components/hero";
 import { Postures } from "./components/postures";
 import { RadvFaq } from "./components/radv-faq";
+import { ReviewLevels } from "./components/review-levels";
 import { WhatChanged } from "./components/timeline";
+import { WhatYouGet } from "./components/what-you-get";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "RADV Audit Software — Mock Audits, Evidence Packets, 2026 Schedule | Martlet AI",
+  title: "RADV Audit Software — Validate Submitted Codes, Build CMS-Ready Packets | Martlet AI",
   description:
-    "CMS now audits all ~550 MA contracts annually. Run mock RADV audits on CMS's methodology, assemble CMS-ready evidence packets, and track the 2026 audit schedule — PY2020 records due August 28, 2026.",
+    "CMS now audits every eligible MA contract, every year. Martlet AI verifies your submitted codes against the record at 99% precision, links page-level evidence, and builds CMS-ready packets — inside your environment.",
   alternates: {
     canonical: "/solutions/radv",
   },
@@ -31,31 +32,34 @@ export default function Page() {
           { name: "RADV", href: "/solutions/radv" },
         ]}
       />
-      {/* Hero + audit-environment stats */}
+      {/* Hero — our numbers, one line of CMS context */}
       <Hero />
 
-      {/* The 2023→2026 timeline + CMS's published audit schedule */}
+      {/* The four concrete outcomes */}
+      <WhatYouGet />
+
+      {/* The regulatory record, 2023–2026, primary-sourced */}
       <WhatChanged />
 
-      {/* The audit lifecycle, step by step, with Martlet's role */}
-      <AuditSteps />
-
-      {/* What CMS coders check + the packet assembling live */}
+      {/* What CMS reads for, and the same checks run here first */}
       <CoderChecks />
 
-      {/* The OIG failure record */}
-      <Failures />
+      {/* Human oversight: four levels */}
+      <ReviewLevels />
 
-      {/* The extrapolation math, honestly stated */}
-      <Exposure />
-
-      {/* Proactive vs reactive */}
+      {/* Proactive vs reactive, with the operational facts */}
       <Postures />
+
+      {/* Why readiness is a standing capability */}
+      <Beyond />
+
+      {/* Pricing and engagement model */}
+      <Engagement />
 
       {/* Bridge to retrospective */}
       <Bridge />
 
-      {/* FAQ + FAQPage schema */}
+      {/* FAQ + schema */}
       <RadvFaq />
 
       {/* CTA */}

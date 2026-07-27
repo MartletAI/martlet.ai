@@ -1,19 +1,17 @@
 import { SmartLink, Icon } from "@/components";
 
 const HERO = {
-  EYEBROW: "RADV — Risk Adjustment Data Validation",
-  TITLE_1: "RADV audit readiness,",
-  TITLE_2: "year-round.",
+  TITLE_1: "Audit-grade RADV validation.",
+  TITLE_2: "99% precision.",
   TAGLINE:
-    "CMS now audits every eligible Medicare Advantage contract, every year. Martlet AI runs the same verification CMS coders run — on your submitted codes, whoever coded them, on whatever platform — and assembles CMS-ready evidence packets before the letter arrives.",
+    "CMS is now auditing every eligible Medicare Advantage contract, every year, with multiple payment years in flight at once. Martlet AI verifies your submitted codes against the record, links the evidence to the page, and builds the submission packets — for the audit you're in now, and every one after.",
   CTA_PRIMARY: "Run a mock RADV on one contract",
-  CTA_SECONDARY: "How the audit works",
-  STATS_KICKER: "What you're up against — CMS's audit machine, in CMS's numbers",
+  CTA_SECONDARY: "See what gets checked",
   STATS: [
-    { value: "~550", caption: "MA contracts CMS now audits annually, up from ~60" },
-    { value: "Quarterly", caption: "CMS's audit initiation cadence — when, not whether" },
-    { value: "35–200", caption: "enrollees CMS samples per contract, by plan size" },
-    { value: "2,000", caption: "certified coders CMS hired to review submissions, up from 40" },
+    { value: "99%", caption: "precision on automated codes", accent: "text-[#0165dc]" },
+    { value: "95%", caption: "of codes closed automatically", accent: "text-[#0090e8]" },
+    { value: "100,000+", caption: "lives on the platform", accent: "text-[#0d9488]" },
+    { value: "Zero", caption: "PHI leaving your network", accent: "text-[#067647]" },
   ],
 } as const;
 
@@ -24,12 +22,6 @@ export function Hero() {
         className="max-w-[1440px] m-auto pt-32 md:pt-[168px] pb-4 relative z-10 text-center"
         aria-labelledby="radv-hero-heading"
       >
-        <p className="animate-fade-in mb-6">
-          <span className="eyebrow-chip bg-[#7c3aed]/10 text-[#6d28d9]">
-            {HERO.EYEBROW}
-          </span>
-        </p>
-
         <h1
           id="radv-hero-heading"
           className="container-main apple-display text-[38px] md:text-[64px] animate-fade-in mb-6 max-w-[1000px]"
@@ -39,7 +31,7 @@ export function Hero() {
           <span className="text-gradient-blue">{HERO.TITLE_2}</span>
         </h1>
 
-        <p className="container-main text-lg md:text-[21px] apple-body font-medium leading-relaxed animate-fade-in animation-delay-100 mb-9 max-w-[780px]">
+        <p className="container-main text-lg md:text-[21px] apple-body font-medium leading-relaxed animate-fade-in animation-delay-100 mb-9 max-w-[800px]">
           {HERO.TAGLINE}
         </p>
 
@@ -52,32 +44,29 @@ export function Hero() {
             <Icon name="arrow-right" className="h-4 w-4" aria-hidden />
           </SmartLink>
           <a
-            href="#audit-steps"
+            href="#checks"
             className="btn btn-outline btn-lg h-[52px]! py-3! px-7! text-lg! font-semibold! leading-6.5"
           >
             {HERO.CTA_SECONDARY}
           </a>
         </div>
 
-        {/* CMS audit-environment stats — their machine, not our capability */}
+        {/* Our numbers */}
         <div className="container-main pb-16 md:pb-20">
-          <div className="border-t border-[#d2d2d7] pt-8">
-            <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#b45309] mb-8 text-center lg:text-left">
-              {HERO.STATS_KICKER}
-            </p>
-            <ul className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 list-none p-0 m-0 animate-stagger">
-              {HERO.STATS.map((stat) => (
-                <li key={stat.caption} className="text-center lg:text-left">
-                  <div className="apple-stat whitespace-nowrap text-[34px] md:text-[38px] mb-2.5 text-[#d97706]">
-                    {stat.value}
-                  </div>
-                  <p className="text-[15px] font-medium apple-caption leading-snug m-0 text-balance">
-                    {stat.caption}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 list-none p-0 m-0 border-t border-[#d2d2d7] pt-10 animate-stagger">
+            {HERO.STATS.map((stat) => (
+              <li key={stat.caption} className="text-center lg:text-left">
+                <div
+                  className={`apple-stat whitespace-nowrap text-[30px] md:text-[36px] mb-2.5 ${stat.accent}`}
+                >
+                  {stat.value}
+                </div>
+                <p className="text-[15px] font-medium apple-caption leading-snug m-0 text-balance">
+                  {stat.caption}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </div>

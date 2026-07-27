@@ -4,14 +4,17 @@ import { Reveal } from "@/components/reveal";
 
 import { SourceLink } from "./source-link";
 
+const INTERNAL_LINK_CLASS =
+  "text-[#0165dc] underline decoration-[#0165dc]/30 decoration-1 underline-offset-2 hover:decoration-[#0165dc]";
+
 const EVENTS = [
   {
     date: "February 2023",
     title: "The RADV Final Rule",
     body: (
       <>
-        CMS finalizes extrapolation of audit findings beginning with payment
-        year 2018 and eliminates the fee-for-service adjuster, projecting{" "}
+        CMS finalized extrapolation of audit findings beginning with payment
+        year 2018 and eliminated the fee-for-service adjuster, projecting{" "}
         <strong>$4.7&nbsp;billion in recoveries over 2023–2032</strong>.{" "}
         <SourceLink href="https://www.cms.gov/newsroom/fact-sheets/medicare-advantage-risk-adjustment-data-validation-final-rule-cms-4185-f2-fact-sheet">
           CMS fact sheet
@@ -22,13 +25,14 @@ const EVENTS = [
   },
   {
     date: "May 2025",
-    title: "CMS audits everyone",
+    title: "CMS moved to auditing everyone",
     body: (
       <>
-        From ~60 contracts a year to <strong>all ~550 eligible contracts,
-        every year</strong>. Coder workforce scaled from 40 to ~2,000;
-        AI-assisted record review with human coders making all final
-        determinations; samples of 35–200 enrollees per contract.{" "}
+        CMS moved from auditing roughly 60 contracts a year to{" "}
+        <strong>all ~550 eligible contracts, every year</strong>. It scaled its
+        review workforce from 40 coders to about 2,000 and raised sample sizes
+        to between 35 and 200 enrollees per contract. Records are reviewed with
+        AI assistance, with certified coders making every final determination.{" "}
         <SourceLink href="https://www.cms.gov/newsroom/press-releases/cms-rolls-out-aggressive-strategy-enhance-accelerate-medicare-advantage-audits">
           CMS press release
         </SourceLink>
@@ -38,14 +42,14 @@ const EVENTS = [
   },
   {
     date: "September 2025",
-    title: "Extrapolation vacated — audits continue",
+    title: "Extrapolation vacated, audits continue",
     body: (
       <>
-        In <em>Humana v. Becerra</em>, the Northern District of Texas vacates
-        the 2023 rule on procedural grounds. CMS appeals to the Fifth Circuit
-        (No. 25-11293, pending). Meanwhile CMS collects sampled-enrollee
-        overpayments and designs audits to support extrapolation later,
-        &ldquo;if legally permissible.&rdquo;{" "}
+        In <em>Humana v. Becerra</em>, the Northern District of Texas vacated
+        the 2023 rule on procedural grounds, and CMS appealed to the Fifth
+        Circuit (No. 25-11293, still pending). CMS now collects
+        sampled-enrollee overpayments and designs audits to support
+        extrapolation later, &ldquo;if legally permissible.&rdquo;{" "}
         <SourceLink href="https://www.crowell.com/en/insights/client-alerts/court-vacates-cmss-2023-final-rule-on-radv-audits">
           Crowell analysis
         </SourceLink>
@@ -55,13 +59,13 @@ const EVENTS = [
   },
   {
     date: "January–March 2026",
-    title: "The machine starts",
+    title: "The current cycle begins",
     body: (
       <>
-        CMS confirms a quarterly audit cadence with a five-month record window
-        and publishes the schedule. <strong>PY2020 audits initiated March 20,
-        2026; PY2021 on May 29, 2026.</strong> Up to two records per audited
-        HCC; one valid record validates.{" "}
+        CMS confirmed a quarterly audit cadence with a five-month record window
+        and published its schedule. <strong>PY2020 audits were initiated on
+        March 20, 2026, and PY2021 on May 29, 2026.</strong> Up to two records
+        may be submitted per audited HCC, and one valid record validates it.{" "}
         <SourceLink href="https://www.cms.gov/data-research/monitoring-programs/medicare-advantage-risk-adjustment-data-validation-radv-program/radv-announcements">
           CMS RADV announcements
         </SourceLink>
@@ -81,24 +85,19 @@ const SCHEDULE = [
 ];
 
 /**
- * WhatChanged - the 2023→2026 regulatory timeline plus CMS's published audit
- * schedule. Objective facts, primary-sourced — the section no competitor has.
+ * WhatChanged - the 2023→2026 regulatory record, primary-sourced, plus CMS's
+ * published audit schedule. Establishes that this is real and current.
  */
 export function WhatChanged() {
   return (
-    <section className="bg-white py-20 md:py-24" aria-labelledby="changed-heading">
+    <section className="apple-section-gray py-20 md:py-24" aria-labelledby="changed-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-14">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#d97706]/10 text-[#b45309]">
-              Why now
-            </span>
-          </p>
           <h2 id="changed-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
-            Three years that changed RADV.
+            What changed between 2023 and 2026.
           </h2>
           <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
-            Every date below is from a CMS publication or a federal court
+            Every date below comes from a CMS publication or a federal court
             docket. This is the environment your submissions now live in.
           </p>
         </Reveal>
@@ -106,7 +105,7 @@ export function WhatChanged() {
         {/* Timeline */}
         <Reveal as="ol" stagger className="list-none p-0 m-0 max-w-[860px] mx-auto mb-16">
           {EVENTS.map((event) => (
-            <li key={event.date} className="relative pl-8 pb-10 last:pb-0 border-l-2 border-[#e7e5e4] last:border-transparent ml-2">
+            <li key={event.date} className="relative pl-8 pb-10 last:pb-0 border-l-2 border-[#e0e0e4] last:border-transparent ml-2">
               <span className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full ${event.accent}`} aria-hidden />
               <p className="evidence-mono text-sm text-muted m-0 mb-1">{event.date}</p>
               <h3 className="text-xl font-bold tracking-tight text-[#0a0a12] mb-2">
@@ -121,8 +120,8 @@ export function WhatChanged() {
 
         {/* Published audit schedule */}
         <Reveal className="max-w-[860px] mx-auto">
-          <div className="rounded-3xl border border-border overflow-hidden">
-            <div className="bg-[#f5f5f7] px-6 py-4 flex items-baseline justify-between flex-wrap gap-2">
+          <div className="rounded-3xl border border-border bg-white overflow-hidden">
+            <div className="bg-[#fbfbfd] border-b border-border px-6 py-4 flex items-baseline justify-between flex-wrap gap-2">
               <h3 className="text-lg font-bold tracking-tight text-[#0a0a12] m-0">
                 CMS&rsquo;s published audit schedule
               </h3>
@@ -162,18 +161,30 @@ export function WhatChanged() {
             </div>
           </div>
           <p className="text-sm apple-caption mt-4 mb-0 text-center">
-            PY2018 findings are expected from mid-2026; PY2019 findings begin in
-            2026. The order is deliberately non-sequential — CMS&rsquo;s
+            The order is deliberately non-sequential, because CMS&rsquo;s
             data-processing schedule dictates it. We maintain this schedule,
             every live deadline, and the litigation status on the{" "}
-            <Link
-              href="/resources/radv-hub"
-              className="text-[#0165dc] underline decoration-[#0165dc]/30 decoration-1 underline-offset-2 hover:decoration-[#0165dc]"
-            >
+            <Link href="/resources/radv-hub" className={INTERNAL_LINK_CLASS}>
               RADV Hub
             </Link>
             .
           </p>
+        </Reveal>
+
+        {/* OIG pointer — full table lives on the hub */}
+        <Reveal className="max-w-[860px] mx-auto mt-10">
+          <div className="rounded-3xl border border-[#b42318]/20 bg-[#fef6f5] p-6 md:p-7">
+            <p className="text-base apple-body leading-relaxed m-0">
+              In published audits of named Medicare Advantage plans, OIG has
+              found between <strong>73% and 91% of sampled high-risk diagnosis
+              codes unsupported</strong> by the medical record. The full table,
+              by plan and payment year, is on the{" "}
+              <Link href="/resources/radv-hub" className={INTERNAL_LINK_CLASS}>
+                RADV Hub
+              </Link>
+              .
+            </p>
+          </div>
         </Reveal>
       </div>
     </section>

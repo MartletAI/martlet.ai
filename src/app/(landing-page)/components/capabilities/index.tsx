@@ -64,7 +64,7 @@ const CAPABILITIES: Capability[] = [
   {
     title: "Your deployment, your terms",
     description:
-      "On-premises, private cloud (AWS, Azure, GCP), or air-gapped. Licensed as software — no per-chart fees, no success commission.",
+      "On-premises, private cloud (AWS, Azure, GCP), or air-gapped. Your existing security controls stay in effect, because nothing leaves them.",
   },
 ];
 

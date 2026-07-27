@@ -4,7 +4,6 @@ import { Beyond } from "./components/beyond";
 import { Bridge } from "./components/bridge";
 import { CoderChecks } from "./components/coder-checks";
 import { CTA } from "./components/cta";
-import { Engagement } from "./components/engagement";
 import { Hero } from "./components/hero";
 import { Postures } from "./components/postures";
 import { RadvFaq } from "./components/radv-faq";
@@ -52,9 +51,6 @@ export default function Page() {
 
       {/* Why readiness is a standing capability */}
       <Beyond />
-
-      {/* Pricing and engagement model */}
-      <Engagement />
 
       {/* Bridge to retrospective */}
       <Bridge />

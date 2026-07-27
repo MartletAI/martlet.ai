@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Capabilities } from "./components/capabilities";
 import { CaseStudies } from "./components/case-studies";
 import { CTA } from "./components/cta";
+import { Engagement } from "./components/engagement";
 import { EvidenceShowcase } from "./components/evidence";
 import { FAQ } from "./components/faq";
 import { Hero } from "./components/hero";
@@ -53,6 +54,9 @@ export default function Home() {
 
       {/* Compliance pillars */}
       <TrustAndAccuracy />
+
+      {/* Pricing and engagement model — stated once, sitewide */}
+      <Engagement />
 
       {/* Partners strip */}
       <IndustryPartners />

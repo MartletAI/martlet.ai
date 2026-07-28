@@ -1,8 +1,6 @@
-import { CTA as SharedCTA } from "@/components/cta";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
-import { Principles } from "./components/principles";
-import { Story } from "./components/story";
+import { AdvisoryBoard } from "./components/advisory-board";
 
 import type { Metadata } from "next";
 
@@ -48,19 +46,8 @@ export default function Page() {
         </section>
       </div>
 
-      {/* The JSL story + inherited proof */}
-      <Story />
-
-      {/* Operating principles */}
-      <Principles />
-
-      {/* CTA */}
-      <SharedCTA
-        title="See what regulatory-grade looks like on your charts."
-        description="A working session: bring your charts, watch the engine run inside your environment, and see every claim on this site demonstrated live."
-        submitLabel="Schedule a walkthrough"
-        backgroundColor="bg-white"
-      />
+      {/* Advisory board */}
+      <AdvisoryBoard />
     </main>
   );
 }

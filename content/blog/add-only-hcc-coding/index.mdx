@@ -1,0 +1,113 @@
+---
+title: Add-Only HCC Coding
+date: '2026-07-28'
+thumbnail: /assets/blog/add-only-hcc-coding/cover.jpg
+description: 'Two settlements in 3 months: $117.7M + $556M. Why add-only programs are now high-risk. Learn two-way HCC review requirements, MEAT standards, and how to rebuild compliance.'
+metaTitle: 'Add-Only HCC Coding: Why $673.7M in DOJ Settlements Changed Everything | Martlet AI'
+tag: Insights
+authors:
+- Hasham Ul Haq
+definedTerm:
+  name: Two-Way HCC Coding
+  description: A retrospective review design that acts on everything a chart review finds — submitting newly supported diagnosis codes and deleting previously submitted codes the current documentation doesn't support — as distinct from add-only programs, which perform only the first action.
+---
+
+![Add-Only HCC Review Creates One-Way Compliance Risk: validate additions and deletions with equal evidence](/assets/blog/add-only-hcc-coding/add-only-hcc-coding-infographic.jpg)
+
+Two-way retrospective review validates every HCC a chart review touches: it submits newly supported codes and deletes previously submitted codes the record doesn't support. In March 2026 the Department of Justice announced a $117.7 million False Claims Act settlement over a chart review program alleged to have done the first half only. If your retrospective program still runs add-only, this post covers what the settlements say, what an add-only program misses at chart level, and how to rebuild the workflow.
+
+## $556 million in January, $117.7 million in March, and the docket isn't empty: how 2026 enforcement is progressing
+
+The year opened with the largest settlement the category has ever produced. On January 14, 2026, [the DOJ announced](https://www.justice.gov/opa/pr/kaiser-permanente-affiliates-pay-556m-resolve-false-claims-act-allegations) that five affiliates of a large integrated health system agreed to pay $556 million to resolve allegations that they submitted invalid diagnosis codes for their MA enrollees to receive higher payments. The government's allegations, covering 2009 through 2018, centered on data-mining and medical-record addenda programs that added diagnoses after patient visits, and the two whistleblowers will share approximately $95 million of the recovery. Counsel tracking the case call it [the largest FCA settlement involving MA risk-adjustment allegations to date](https://www.insidethefalseclaimsact.com/kaiser-permanente-affiliates-settle-medicare-risk-adjustment-fraud-case-556-million/).
+
+Two months later came the settlement that describes add-only review most precisely. On March 11, [the DOJ announced](https://www.justice.gov/opa/pr/aetna-agrees-pay-1177-million-resolve-false-claims-act-allegations) that a national MA organization agreed to pay $117.7 million. For payment year 2015, per the allegations, the organization ran a chart review program in which coders reviewed medical records and identified all conditions the charts supported. The results were used in one direction: new diagnosis codes went to CMS for additional payment, while previously submitted codes that the same reviews failed to substantiate were left standing rather than deleted, which would have required repaying CMS. The settlement also resolved separate allegations that, for payment years 2018 through 2023, the organization submitted or failed to withdraw morbid obesity codes the records didn't support, including for patients whose recorded BMI values [were below 30](https://whistleblower.law/news/aetna-settlement-doj-crackdown-medicare-advantage-upcoding). [Counsel analysis of the agreements](https://www.whistleblowerllc.com/aetna-agrees-to-pay-117-7-million-to-settle-medicare-part-c-case/) puts roughly $106.2 million against the general diagnosis-code allegations, with the remainder resolving the morbid obesity claims. The whistleblower, a former risk-adjustment coding auditor, receives about $2 million, and the agreement involves [no determination of liability](https://www.healthcarefinancenews.com/news/aetna-pay-1177-million-risk-adjustment-settlement). The DOJ Civil Division's Assistant Attorney General said the department will continue to "hold accountable insurers that knowingly submit inaccurate or unsupported diagnoses" ([DOJ, March 2026](https://www.justice.gov/opa/pr/aetna-agrees-pay-1177-million-resolve-false-claims-act-allegations)).
+
+And the progression hasn't stopped at two. DOJ's False Claims Act litigation against other major MA organizations over one-way chart review and failure-to-delete practices [remains active in federal court](https://www.mintz.com/insights-center/viewpoints/2406/2026-01-13-medicare-advantage-under-microscope-enforcement), with the January settlement widely expected to intensify both government and relator activity. Trade coverage of the settlements reports that [DOJ has named MA fraud its top enforcement priority for 2026](https://www.risehealth.org/insights-articles/article/landmark-settlement-kaiser-permanente-affiliates-to-pay-556m-to-resolve-ma-risk-adjustment-fraud-allegations/). Payment policy is moving the same direction: CMS finalized the exclusion of unlinked chart review diagnoses from CY2027 risk scores, a change we cover separately, at an estimated impact of $7.12 billion. Read the two settlements as points on a line that is still being drawn.
+
+## Why add-only review creates the exposure: the review already found both answers
+
+The legal theory behind these cases is worth understanding, because it explains why add-only is a design flaw rather than a paperwork problem.
+
+A retrospective chart review produces symmetric information. The same coder reading the same chart finds the supported diagnoses that were never submitted and the submitted diagnoses that aren't supported. The review doesn't have a direction; the program built around it does. Once an organization knows a submitted diagnosis lacks support, the Medicare overpayment rule requires reporting and returning the resulting overpayment within 60 days of identifying it. Retaining it converts a coding error into potential reverse-false-claims liability, and certifying the accuracy of risk-adjustment data while holding known unsupported codes is exactly the pattern the March settlement describes.
+
+That's why the allegation focuses on the program design. The government didn't claim the chart reviews were wrong. It claimed they were right, in both directions, and acted on in one. The pattern is industry-wide and measured: in its [2019 review of chart review records](https://oig.hhs.gov/reports/all/2019/billions-in-estimated-medicare-advantage-payments-from-chart-reviews-raise-concerns/), HHS-OIG found that MA organizations used chart reviews almost exclusively to add diagnoses, with more than 99% of the reviews analyzed adding rather than deleting.
+
+For risk-adjustment leaders, the uncomfortable implication is that a high-performing add-only program is the riskiest kind: the more charts it reads, the more unsupported codes it has documentably identified and left in place.
+
+## Three charts an add-only program submits and a two-way program deletes
+
+Here's what the difference looks like at the level where coders and reviewers actually work.
+
+### Example 1: the carried-forward acute stroke.
+
+> Problem list: CVA (2022). Today's note: "History of stroke, no residual deficits. Continue aspirin 81 mg."
+
+The claim carries I63.9, acute cerebral infarction, refreshed from the problem list every year since the event. An acute infarction code risk-adjusts; the correct code for this documentation, Z86.73 (personal history of stroke without residual deficits), does not. An add-only program never looks at this code because it's already submitted and already paying. A two-way program validates it against the current year's documentation, finds no acute event and no deficits, and files a deletion for the payment year with the note text attached as evidence.
+
+### Example 2: morbid obesity the vitals contradict.
+
+> Assessment/Plan: "Obesity, BMI 33.4. Counseled on diet and exercise, follow up 6 months." Z68.33 documented.
+
+The claim carries E66.01, morbid (severe) obesity, which risk-adjusts. A documented BMI of 33.4, without the clinical picture that supports a morbid-obesity diagnosis, doesn't sustain that code. This fact pattern isn't hypothetical: unsupported morbid obesity codes were a named component of the March settlement, covering six payment years. Two-way review flags the mismatch between the diagnosis code and the recorded BMI, deletes the unsupported code, and routes the pattern to provider education so it stops recurring at the source.
+
+### Example 3: the problem-list COPD with no MEAT.
+
+> J44.9 appears on every claim this year. The year's notes contain no inhaler on the medication list, no spirometry, and no mention of COPD in any assessment or plan.
+
+MEAT requires that the condition be monitored, evaluated, assessed, or treated in the documentation of the encounter. A diagnosis that exists only as problem-list residue fails that standard, and it's precisely what a RADV reviewer will find when the chart is pulled. Two-way review catches it the same way the auditor would, three years earlier, while the options are a provider query or a clean deletion instead of an extrapolated recovery.
+
+*All patient data shown is synthetically generated for illustration.*
+
+## What a two-way program requires: every submitted HCC re-validated, with evidence on the deletes
+
+Rebuilding retrospective review around two-way coding changes four things operationally.
+
+First, the validation population changes. The review target stops being "charts likely to contain missed HCCs" and becomes every member's full set of submitted HCCs, re-validated against the current payment year's documentation and the current V28 map. Suspecting and confirming new codes continues; it just stops being the whole job.
+
+Second, deletions become a first-class workflow. A deletion needs the same rigor as an addition: the specific documentation reviewed, the reason the code fails (no MEAT, contradicting evidence, wrong code family, resolved condition), and a submission path through the encounter data system. "We stopped submitting it going forward" doesn't address the year already paid.
+
+Third, the evidence has to run in both directions. Martlet AI attaches page-level evidence to every validation verdict, positive or negative: the chart sentence, encounter ID, date of service, provider name and credentials, and signature status. When the compliance team is asked, three years from now, why a code was deleted or why a code was kept, the answer is in the audit packet rather than in a departed coder's memory.
+
+Fourth, the decisions have to be reconstructible. An append-only audit log recording who acted, what changed, when, and under which model version turns "we ran a compliant program" from an assertion into a record. That log is also what makes the program defensible against the opposite accusation, that deletions were selective.
+
+## The economics: two-way review doubles the work, so the majority has to run without manual touches
+
+Here's the objection every risk-adjustment VP raises, and it's correct: validating 100% of submitted HCCs on top of finding new ones roughly doubles the review surface. Under a model where a human reviews every AI suggestion, that means doubling coder capacity, and total cost of ownership goes up faster than compliance improves.
+
+The math only works when the high-confidence majority of validations run end-to-end, with reviewers concentrated on the exceptions: the contradicted codes, the borderline MEAT calls, the deletion candidates. That's the design point of Martlet AI's [retrospective workflow](/solutions/retrospective-risk-adjustment), which finds undercoded HCCs and validates existing codes with MEAT-aware evidence in the same pass, on the same engine, inside your environment.
+
+The incentive structure matters too, and you should examine it in any review arrangement. A reviewer paid a success commission on captured RAF is structurally paid to find additions; the audit exposure from what wasn't deleted stays with you. Martlet AI is licensed software with no success commission and no per-chart fee, so there is no economic pull in either direction on any individual code.
+
+## The takeaway
+
+Two settlements in three months, totaling $673.7 million, describe the same program design: chart reviews that found both answers and acted on one. The fix is structural. Validate every submitted HCC with the same rigor used to find new ones, submit deletions with evidence, and keep an append-only record of both. Martlet AI's [RADV workflow runs mock audits year-round](/solutions/radv) on exactly this validation logic, so the delete decisions and their evidence exist before any auditor asks. If you want to see what two-way validation finds in your own data, [run a mock RADV audit on a sample of your charts](/contact), and read our companion piece on [what compliance teams should ask their vendors](/resources/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors).
+
+## FAQ
+
+### What is two-way HCC coding?
+
+A retrospective review design that acts on everything the review finds: newly supported diagnoses are submitted, and previously submitted diagnoses that the documentation doesn't support are deleted through the encounter data system. Add-only programs perform the first action without the second.
+
+### What did the March 2026 settlement resolve?
+
+False Claims Act allegations that a chart review program submitted additional diagnosis codes identified in retrospective review while failing to delete previously submitted codes the same reviews didn't substantiate, plus separate allegations involving unsupported morbid obesity codes across payment years 2018–2023. The organization paid $117.7 million; the agreement involves no determination of liability.
+
+### Is the 2026 enforcement wave over?
+
+No. Beyond the January and March settlements, DOJ False Claims Act litigation over one-way chart review and failure-to-delete practices remains active against other major MA organizations, and trade coverage reports DOJ has named MA fraud a top enforcement priority for 2026. CMS payment policy is moving the same direction with the CY2027 unlinked chart review exclusion.
+
+### Is add-only chart review illegal?
+
+The settlements resolve allegations rather than establish liability, so read them as enforcement posture. The underlying obligation is the Medicare overpayment rule: once an organization identifies an overpayment, including one revealed by its own chart review, it must report and return it within 60 days. A program designed never to look at the delete side sits badly against that obligation.
+
+### How do you delete a previously submitted risk-adjustment diagnosis?
+
+Through delete records in the encounter data system for the relevant payment year, backed by documentation of why the code fails. The mechanics matter less than the discipline: the deletion needs the same evidentiary support and audit trail as an addition.
+
+### What does MEAT require for an HCC to stand?
+
+Documentation from a face-to-face encounter showing the condition was monitored, evaluated, assessed, or treated in the payment year. Problem-list entries and historical references without current-year clinical engagement don't meet the standard.
+
+### How does Martlet AI support the deletion side of two-way review?
+
+The retrospective workflow validates every submitted HCC against MEAT criteria and the current V28 map, routes failures to exception review, and attaches page-level evidence to each verdict. Every action lands in an append-only audit log, and audit packets assemble in one click for the codes you kept and the codes you removed.

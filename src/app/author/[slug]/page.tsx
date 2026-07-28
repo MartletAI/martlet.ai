@@ -90,9 +90,9 @@ export default async function AuthorPage({ params }: { params: Params }) {
 
         <div className="flex-1">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">{author.name}</h1>
-          <div className="flex flex-col gap-0.5 mb-2">
+          <div className="flex flex-col gap-1 mb-2">
             {author.titles.map((title) => (
-              <p key={title} className="text-xl text-primary font-medium m-0">
+              <p key={title} className="text-xl text-primary font-bold m-0">
                 {title}
               </p>
             ))}

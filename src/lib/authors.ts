@@ -45,25 +45,18 @@ const AUTHORS: Author[] = [
     slug: "bryan-lee",
     name: "Bryan W. Lee",
     titles: [
-      "Chief Compliance Officer at Reveleer",
-      "Medicare Finance & Government Programs, Kaiser Permanente",
+      "Former Chief Compliance Officer at Reveleer",
+      "Former Medicare Finance & Government Programs Leader, Kaiser Permanente",
     ],
     image: "/assets/advisors/bryan-lee.jpg",
     bio: "Bryan W. Lee is the Founder and Chief Solutions Officer of Anshin Health Solutions. He was previously Chief Compliance Officer and Vice President of Payer Solutions at Health Data Vision (now Reveleer), and co-founded Pyxis Health Solutions. Earlier in his career he spent more than 20 years in Medicare Advantage leadership at Kaiser Permanente and Regence BlueCross BlueShield, working in Medicare finance, risk adjustment, and government programs, followed by senior product and strategy roles at Change Healthcare, Apixio, and FJA. As Executive Advisor to Martlet AI, he brings payer-side, regulatory, and product experience across risk adjustment, RADV/IVA, HCC coding, and encounter-data integrity.",
   },
   {
-    slug: "advisor-two",
-    name: "Advisor Name",
-    titles: ["Title, Organization"],
-    image: "",
-    bio: "One or two sentences on background and the focus area they advise on.",
-  },
-  {
-    slug: "advisor-three",
-    name: "Advisor Name",
-    titles: ["Title, Organization"],
-    image: "",
-    bio: "One or two sentences on background and the focus area they advise on.",
+    slug: "david-talby",
+    name: "David Talby",
+    titles: ["CEO, John Snow Labs", "CEO, Pacific AI"],
+    image: "/assets/advisors/david-talby.png",
+    bio: "David Talby is the CEO of John Snow Labs and Pacific AI, and the creator of Spark NLP, the most widely used natural language processing library in the enterprise. He holds a PhD and MBA from the Hebrew University of Jerusalem, and built web-scale platforms earlier in his career at Microsoft Bing and Amazon before serving as CTO at Usermind. He has been named CTO of the Year multiple times, including by the Global 100 Awards, and leads the fairness and bias-mitigation workgroup at the Coalition for Health AI. Martlet AI's underlying medical language models and AI governance framework come from the John Snow Labs and Pacific AI stack David leads.",
   },
 ];
 
@@ -83,7 +76,7 @@ export function getAllAuthors(): Author[] {
 /** Who counts as an advisor, in display order. Defined once here so the
  *  About page's advisory-board card is the single source of truth on
  *  who's included. */
-export const ADVISOR_SLUGS = ["bryan-lee", "advisor-two", "advisor-three"];
+export const ADVISOR_SLUGS = ["bryan-lee", "david-talby"];
 
 export function getAdvisors(): Author[] {
   return ADVISOR_SLUGS.map(getAuthorBySlug).filter((a) => a !== undefined);

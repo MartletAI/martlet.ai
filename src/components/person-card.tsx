@@ -38,12 +38,12 @@ export function PersonCard({ slug, name, titles, image }: PersonCardProps) {
           {initials(name)}
         </div>
       )}
-      <h3 className="text-lg font-bold tracking-tight text-[#0a0a12] leading-snug mb-2">
+      <h3 className="text-xl font-bold tracking-tight text-[#0a0a12] leading-snug mb-3">
         {name}
       </h3>
-      <div className="flex flex-col gap-0.5 mb-4">
+      <div className="flex flex-col gap-1 pt-3 mb-4 border-t border-border w-full">
         {titles.map((title) => (
-          <p key={title} className="text-sm font-medium text-muted m-0">
+          <p key={title} className="text-base font-medium text-text-secondary-700 leading-snug m-0">
             {title}
           </p>
         ))}

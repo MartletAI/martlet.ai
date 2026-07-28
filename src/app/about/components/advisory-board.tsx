@@ -7,7 +7,7 @@ const CONTENT = {
 } as const;
 
 /**
- * AdvisoryBoard - the three current advisors, each linking to its full
+ * AdvisoryBoard - the current advisors, each linking to its full
  * /author/[slug] page. Who's included is defined once in src/lib/authors.ts
  * (ADVISOR_SLUGS).
  */
@@ -26,7 +26,7 @@ export function AdvisoryBoard() {
         <Reveal
           as="ul"
           stagger
-          className="grid grid-cols-1 md:grid-cols-3 gap-5 list-none p-0 m-0 max-w-[1100px] mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-5 list-none p-0 m-0 max-w-[760px] mx-auto"
         >
           {advisors.map((advisor) => (
             <li key={advisor.slug}>

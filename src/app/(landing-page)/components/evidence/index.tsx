@@ -4,7 +4,7 @@ import { Reveal } from "@/components/reveal";
 import { EvidenceDemo } from "./evidence-demo";
 
 const EVIDENCE_CONTENT = {
-  TITLE: "Every code, verified the way CMS verifies it.",
+  TITLE: "RADV — verify every code the way CMS verifies it.",
   SUBTITLE:
     "A detected encounter. A credentialed provider. A signed note. MEAT-supported documentation. Martlet AI runs the checks CMS applies at audit — automatically, on every chart — and links page-level evidence to every HCC. Codes that pass close on their own. Codes that don't get caught before CMS catches them.",
   CHECKS: [
@@ -31,7 +31,7 @@ export function EvidenceShowcase() {
         <Reveal className="text-center max-w-[780px] mx-auto mb-14">
           <h2
             id="evidence-heading"
-            className="apple-display text-[32px] md:text-[48px] mb-5"
+            className="apple-display text-[30px] md:text-[40px] mb-5"
           >
             {EVIDENCE_CONTENT.TITLE}
           </h2>

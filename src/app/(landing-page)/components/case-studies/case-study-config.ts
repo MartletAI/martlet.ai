@@ -16,7 +16,17 @@ interface CaseStudyDefinition {
   Content: ComponentType;
 }
 
+/** Arkos leads: it's the one case study that names all three workflows,
+ *  including RADV — the site's current emphasis. */
 export const CASE_STUDIES = [
+  {
+    id: "arkosHealth",
+    name: "Arkos Health",
+    logoSrc: `${CASE_STUDY_ASSET_BASE}/arkos-health.svg`,
+    description:
+      "Arkos Health runs Martlet AI across the full risk cycle: retrospective recapture, prospective capture at point of care, and mock RADV testing with automated evidence packets.",
+    Content: ArkosHealth,
+  },
   {
     id: "johnSnowLabs",
     name: "John Snow Labs",
@@ -32,14 +42,6 @@ export const CASE_STUDIES = [
     description:
       "WVU Medicine, a 25-hospital academic health system, surfaced previously missed HCCs with automated longitudinal chart analysis and point-of-care suggestions inside Epic workflows — presented publicly at the NLP Summit.",
     Content: WVUMedicine,
-  },
-  {
-    id: "arkosHealth",
-    name: "Arkos Health",
-    logoSrc: `${CASE_STUDY_ASSET_BASE}/arkos-health.svg`,
-    description:
-      "Arkos Health runs Martlet AI across the full risk cycle: retrospective recapture, prospective capture at point of care, and mock RADV testing with automated evidence packets.",
-    Content: ArkosHealth,
   },
 ] as const satisfies readonly CaseStudyDefinition[];
 

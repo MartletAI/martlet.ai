@@ -5,6 +5,8 @@ interface Capability {
   description: string;
 }
 
+/** RADV and retrospective lead, since that's the site's current emphasis;
+ *  shared/operational capabilities follow, then prospective and deployment. */
 const CAPABILITIES: Capability[] = [
   {
     title: "Chase list prioritization",
@@ -22,9 +24,9 @@ const CAPABILITIES: Capability[] = [
       "Monitor, Evaluate, Assess, Treat — validated at the sentence level, with v24/v28 dual mapping and payment-year discipline.",
   },
   {
-    title: "Submission-ready outputs",
+    title: "Mock RADV sampling",
     description:
-      "Adds and deletes exported in the format your submission pipeline expects. Validated codes flow to submission; unsupported codes flow out.",
+      "RADV-style sampling and extrapolation modeling against your own contracts. See your exposure before CMS measures it.",
   },
   {
     title: "One-click evidence packets",
@@ -32,14 +34,24 @@ const CAPABILITIES: Capability[] = [
       "Chart sentence, encounter ID, date of service, provider, credentials, signature — assembled into a CMS-ready packet per HCC.",
   },
   {
-    title: "Mock RADV sampling",
+    title: "Submission-ready outputs",
     description:
-      "RADV-style sampling and extrapolation modeling against your own contracts. See your exposure before CMS measures it.",
+      "Adds and deletes exported in the format your submission pipeline expects. Validated codes flow to submission; unsupported codes flow out.",
   },
   {
     title: "Reviewer UI + exception queues",
     description:
       "The 5% that needs judgment lands in queues with linked evidence. QA sampling and dual review built in.",
+  },
+  {
+    title: "Complete audit trail",
+    description:
+      "Who coded what, when, and based on which evidence — every action recorded, ready to hand to an auditor.",
+  },
+  {
+    title: "RAF analytics",
+    description:
+      "RAF lift, capture rate, coder throughput, and cost per chart — measured continuously, reportable to the CFO.",
   },
   {
     title: "EHR + claims ingestion",
@@ -52,34 +64,29 @@ const CAPABILITIES: Capability[] = [
       "Suspected conditions surfaced from structured and unstructured data — labs, meds, notes — prioritized for pre-visit review.",
   },
   {
-    title: "RAF analytics",
-    description:
-      "RAF lift, capture rate, coder throughput, and cost per chart — measured continuously, reportable to the CFO.",
-  },
-  {
-    title: "Complete audit trail",
-    description:
-      "Who coded what, when, and based on which evidence — every action recorded, ready to hand to an auditor.",
-  },
-  {
     title: "Your deployment, your terms",
     description:
       "On-premises, private cloud (AWS, Azure, GCP), or air-gapped. Your existing security controls stay in effect, because nothing leaves them.",
   },
 ];
 
-/** Rules cycle through the brand accent hues so the grid reads designed, not templated */
-const CAPABILITY_RULE_COLORS = [
-  "border-[#0165dc]",
-  "border-[#7c3aed]",
-  "border-[#0d9488]",
-  "border-[#f5a623]",
+/** Numerals carry the colour, matching the checks grid on the RADV page and
+ *  the rules grid on the retrospective page — the numeral is the anchor, so
+ *  the tiles need no rule above them. Cycles through the six brand accents
+ *  twice across the twelve tiles. */
+const CAPABILITY_COLORS = [
+  "text-[#0165dc]",
+  "text-[#7c3aed]",
+  "text-[#0d9488]",
+  "text-[#d97706]",
+  "text-[#067647]",
+  "text-[#c026a3]",
 ] as const;
 
 const CONTENT = {
   TITLE: "Everything a risk-adjustment program runs on.",
   SUBTITLE:
-    "One engine under retrospective, RADV, and prospective — with the operational machinery around it.",
+    "Every capability behind RADV, retrospective, and prospective — from ingestion to submission.",
 } as const;
 
 /**
@@ -89,14 +96,14 @@ const CONTENT = {
 export function Capabilities() {
   return (
     <section
-      className="bg-white py-20 md:py-24"
+      className="apple-section-gray py-20 md:py-24"
       aria-labelledby="capabilities-heading"
     >
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-12 md:mb-14">
           <h2
             id="capabilities-heading"
-            className="apple-display text-[32px] md:text-[48px] mb-5"
+            className="apple-display text-[30px] md:text-[40px] mb-5"
           >
             {CONTENT.TITLE}
           </h2>
@@ -111,10 +118,12 @@ export function Capabilities() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-9 list-none p-0 m-0"
         >
           {CAPABILITIES.map((capability, index) => (
-            <li
-              key={capability.title}
-              className={`border-t-2 pt-5 ${CAPABILITY_RULE_COLORS[index % CAPABILITY_RULE_COLORS.length]}`}
-            >
+            <li key={capability.title}>
+              <div
+                className={`evidence-mono text-[22px] font-bold leading-none mb-3 ${CAPABILITY_COLORS[index % CAPABILITY_COLORS.length]}`}
+              >
+                {String(index + 1).padStart(2, "0")}
+              </div>
               <h3 className="text-[17px] font-bold tracking-tight text-[#0a0a12] leading-snug mb-2">
                 {capability.title}
               </h3>

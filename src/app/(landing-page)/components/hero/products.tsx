@@ -2,7 +2,9 @@ import { Reveal } from "@/components/reveal";
 import { WorkflowCard } from "./workflow-card";
 
 const WORKFLOW_CONTENT = {
-  TITLE: "Three workflows. One engine. One audit trail.",
+  TITLE: "Martlet AI covers all three risk-adjustment workflows.",
+  SUBTITLE:
+    "RADV, retrospective, and prospective — each covers a different part of the cycle, and you can run one or all three.",
   ITEMS: [
     {
       type: "radv",
@@ -45,13 +47,16 @@ export function Products() {
     >
       <div className="container-main">
         {/* Section Header */}
-        <Reveal as="header" className="text-center mb-12">
+        <Reveal as="header" className="text-center max-w-[720px] mx-auto mb-12">
           <h2
             id="products-heading"
-            className="apple-display text-[32px] md:text-[48px]"
+            className="apple-display text-[30px] md:text-[40px] mb-5"
           >
             {WORKFLOW_CONTENT.TITLE}
           </h2>
+          <p className="text-lg md:text-xl apple-body leading-relaxed m-0">
+            {WORKFLOW_CONTENT.SUBTITLE}
+          </p>
         </Reveal>
 
         {/* Cards Grid */}

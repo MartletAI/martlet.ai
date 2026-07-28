@@ -73,7 +73,7 @@ export function FAQ() {
         <Reveal as="header" className="text-center mb-12">
           <h2
             id="faq-heading"
-            className="apple-display text-[32px] md:text-[48px]"
+            className="apple-display text-[30px] md:text-[40px]"
           >
             {CONTENT.TITLE}
           </h2>

@@ -57,7 +57,7 @@ export function TrustAndAccuracy() {
         <Reveal as="header" className="text-center max-w-[720px] mx-auto mb-12">
           <h2
             id="trust-and-accuracy-heading"
-            className="apple-display text-[32px] md:text-[48px] mb-5"
+            className="apple-display text-[30px] md:text-[40px] mb-5"
           >
             {TRUST_CONTENT.TITLE}
           </h2>

@@ -9,7 +9,7 @@ import { FAQ } from "./components/faq";
 import { Hero } from "./components/hero";
 import { Products } from "./components/hero/products";
 import { IndustryPartners } from "./components/industry-partners";
-import { RadvNow } from "./components/radv-now";
+import { Pipeline } from "./components/pipeline";
 import { TrustAndAccuracy } from "./components/trust-and-accuracy";
 import { WhyMartletAI } from "./components/why-martlet-ai";
 
@@ -34,32 +34,32 @@ export default function Home() {
       {/* Hero + proof bar */}
       <Hero />
 
-      {/* The star: regulatory-grade HCC coding, shown live */}
+      {/* What we offer: all three risk-adjustment workflows, plainly stated */}
+      <Products />
+
+      {/* RADV, in practice: the checks run live, the same ones CMS runs */}
       <EvidenceShowcase />
 
-      {/* Why now: CMS RADV expansion */}
-      <RadvNow />
-
-      {/* Three workflows */}
-      <Products />
+      {/* Retrospective, in practice: chart in, submission-ready file out */}
+      <Pipeline />
 
       {/* Full platform capabilities */}
       <Capabilities />
 
-      {/* Three differentiators */}
+      {/* Why this beats the alternatives */}
       <WhyMartletAI />
 
-      {/* Customer proof */}
+      {/* Proof: who's already running it */}
       <CaseStudies />
+
+      {/* Broader proof: the logo strip */}
+      <IndustryPartners />
 
       {/* Compliance pillars */}
       <TrustAndAccuracy />
 
       {/* Pricing and engagement model — stated once, sitewide */}
       <Engagement />
-
-      {/* Partners strip */}
-      <IndustryPartners />
 
       {/* FAQ + FAQPage schema */}
       <FAQ />

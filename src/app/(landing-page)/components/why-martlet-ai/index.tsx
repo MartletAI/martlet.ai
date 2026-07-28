@@ -20,14 +20,14 @@ const DIFFERENTIATORS: Differentiator[] = [
     eyebrow: "Regulatory-grade accuracy",
     title: "Healthcare-specific AI, not a wrapper",
     body: "Martlet AI runs on John Snow Labs' production medical language models — ranked #1 on 12 of 13 medical benchmarks against frontier general-purpose LLMs. Every HCC links to MEAT evidence at the chart-sentence level, so every output is reproducible and defensible under RADV.",
-    linkText: "See how accuracy compares",
-    href: "/solutions/retrospective-risk-adjustment",
+    linkText: "See how accuracy holds up under audit",
+    href: "/solutions/radv",
   },
   {
     card: "bg-gradient-to-b from-[#f8f5ff] to-[#f0eafe]",
     accent: "text-[#7c3aed]",
     eyebrow: "Run in-house",
-    title: "Your environment. Your data. Your audit trail.",
+    title: "Runs inside your environment, under your controls.",
     body: "Deploy on-premises, in your private cloud, or air-gapped. No external API in the data path, PHI that never leaves your network, and no services contract paid on success commission — you keep the coding, the knowledge, and the controls.",
     linkText: "How deployment works",
     href: "/trust",
@@ -37,7 +37,7 @@ const DIFFERENTIATORS: Differentiator[] = [
     accent: "text-[#067647]",
     eyebrow: "Automation, not assistance",
     title: "95% closed automatically. Reviewers see the exceptions.",
-    body: "Most AI risk adjustment still routes every suggestion to a human, so total cost of ownership goes up. Martlet AI runs at 99% precision on the codes it automates — high enough to close 95% of cases end-to-end and cut review time by 95%. Coders see only the cases that need judgment.",
+    body: "Martlet AI runs at 99% precision on the codes it automates — high enough to close 95% of cases end-to-end and cut review time by 95%. Coders see only the cases that need judgment.",
     linkText: "See the workflow",
     href: "/solutions/retrospective-risk-adjustment",
   },
@@ -57,7 +57,7 @@ export function WhyMartletAI() {
         <Reveal as="header" className="text-center mb-12 md:mb-14">
           <h2
             id="why-martlet-heading"
-            className="apple-display text-[32px] md:text-[48px]"
+            className="apple-display text-[30px] md:text-[40px]"
           >
             {CONTENT.TITLE}
           </h2>

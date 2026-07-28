@@ -24,7 +24,7 @@ export function Engagement() {
     <section className="bg-white py-20 md:py-24" aria-labelledby="engagement-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[720px] mx-auto mb-12">
-          <h2 id="engagement-heading" className="apple-display text-[32px] md:text-[48px]">
+          <h2 id="engagement-heading" className="apple-display text-[30px] md:text-[40px]">
             How the engagement works.
           </h2>
         </Reveal>

@@ -12,12 +12,12 @@ export function CaseStudies() {
   return (
     <section
       aria-labelledby="case-studies-heading"
-      className="py-20 md:py-24 flex flex-col items-center justify-center mx-auto gap-11.5"
+      className="apple-section-gray py-20 md:py-24 flex flex-col items-center justify-center mx-auto gap-11.5"
     >
       <Reveal as="header" className="container-main text-center">
         <h2
           id="case-studies-heading"
-          className="apple-display text-[32px] md:text-[48px] text-center max-w-[900px] mx-auto"
+          className="apple-display text-[30px] md:text-[40px] text-center max-w-[900px] mx-auto"
         >
           {CONTENT.TITLE}
         </h2>

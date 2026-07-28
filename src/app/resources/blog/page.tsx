@@ -1,4 +1,3 @@
-import { CTA as SharedCTA } from "@/components/cta";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 import { Blogs } from "./components/blogs";
@@ -31,14 +30,6 @@ export default async function Page({ searchParams }: PageProps) {
 
       {/* Post grid */}
       <Blogs activeTag={tag} />
-
-      {/* CTA */}
-      <SharedCTA
-        title="Bring your charts. We'll show you the evidence."
-        description="A working session: watch the engine run inside your environment, and see every regulatory claim on this site demonstrated on your own data."
-        submitLabel="Schedule a walkthrough"
-        backgroundColor="bg-white"
-      />
     </main>
   );
 }

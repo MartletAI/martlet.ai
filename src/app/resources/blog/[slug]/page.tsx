@@ -5,7 +5,6 @@ import remarkGfm from "remark-gfm";
 import { PostHeader } from "../components/post-header";
 import { PostSidebar } from "../components/post-sidebar";
 import { mdxComponents } from "../components/mdx-components";
-import { CTA as SharedCTA } from "@/components/cta";
 import { Metadata } from "next";
 
 type Params = Promise<{ slug: string }>;
@@ -73,13 +72,6 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
         <PostSidebar headings={headings} tag={post.tag} latestPosts={latestPosts} />
       </div>
-
-      <SharedCTA
-        title="Bring your charts. We'll show you the evidence."
-        description="A working session: watch the engine run inside your environment, and see every regulatory claim on this site demonstrated on your own data."
-        submitLabel="Schedule a walkthrough"
-        backgroundColor="bg-white"
-      />
     </article>
   );
 }

@@ -1,4 +1,3 @@
-import { CTA as SharedCTA } from "@/components/cta";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 import { Architecture } from "./components/architecture";
@@ -37,14 +36,6 @@ export default function Page() {
 
       {/* Security-review FAQ + schema */}
       <TrustFaq />
-
-      {/* CTA */}
-      <SharedCTA
-        title="Send this page to your security team."
-        description="Then bring us their questions. We'll walk your reviewers through deployment, controls, and AI governance — and leave them a compliance packet they can file."
-        submitLabel="Request the compliance packet"
-        backgroundColor="bg-white"
-      />
     </main>
   );
 }

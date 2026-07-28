@@ -30,11 +30,6 @@ export default function Page() {
           className="max-w-[1440px] m-auto pt-32 md:pt-[160px] pb-16 md:pb-20 relative z-10 text-center"
           aria-labelledby="about-heading"
         >
-          <p className="animate-fade-in mb-6">
-            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-              About Martlet AI
-            </span>
-          </p>
           <h1
             id="about-heading"
             className="container-main apple-display text-[38px] md:text-[60px] animate-fade-in mb-6 max-w-[960px]"

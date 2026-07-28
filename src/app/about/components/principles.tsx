@@ -35,11 +35,6 @@ export function Principles() {
     <section className="apple-section-gray py-20 md:py-24" aria-labelledby="principles-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[720px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0d9488]/10 text-[#0f766e]">
-              How we operate
-            </span>
-          </p>
           <h2 id="principles-heading" className="apple-display text-[32px] md:text-[48px]">
             Four rules we don&rsquo;t break.
           </h2>

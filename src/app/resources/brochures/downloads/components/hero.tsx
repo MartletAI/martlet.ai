@@ -18,12 +18,6 @@ export function Hero({ brochure }: HeroProps) {
           pdfFilename={brochure.pdfFilename}
         />
 
-        <p className="animate-fade-in mb-6">
-          <span className="eyebrow-chip bg-[#0d9488]/10 text-[#0f766e]">
-            Download started
-          </span>
-        </p>
-
         <h1
           id="download-heading"
           className="container-main apple-display text-[32px] md:text-[52px] animate-fade-in mb-6 max-w-[640px]"

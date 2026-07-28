@@ -33,11 +33,6 @@ export function Architecture() {
     <section className="bg-white py-20 md:py-24" aria-labelledby="architecture-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[760px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-              The architecture
-            </span>
-          </p>
           <h2 id="architecture-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
             One boundary. Everything inside it.
           </h2>

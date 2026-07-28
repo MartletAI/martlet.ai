@@ -48,11 +48,6 @@ export function Controls() {
     <section className="apple-section-gray py-20 md:py-24" aria-labelledby="controls-heading">
       <div className="container-main">
         <Reveal as="header" className="text-center max-w-[820px] mx-auto mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0f1f3a]/8 text-[#0f1f3a]">
-              What your reviewers will ask
-            </span>
-          </p>
           <h2 id="controls-heading" className="apple-display text-[32px] md:text-[48px] mb-5">
             SOC 2 attests to how a vendor handles your data.
             <br className="hidden md:block" />

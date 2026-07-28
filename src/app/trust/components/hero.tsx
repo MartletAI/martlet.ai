@@ -1,5 +1,4 @@
 const HERO = {
-  EYEBROW: "Trust & security",
   TITLE_1: "Your data never",
   TITLE_2: "meets our servers.",
   TAGLINE:
@@ -19,12 +18,6 @@ export function Hero() {
         className="max-w-[1440px] m-auto pt-32 md:pt-[168px] pb-4 relative z-10 text-center"
         aria-labelledby="trust-hero-heading"
       >
-        <p className="animate-fade-in mb-6">
-          <span className="eyebrow-chip bg-[#0f1f3a]/8 text-[#0f1f3a]">
-            {HERO.EYEBROW}
-          </span>
-        </p>
-
         <h1
           id="trust-hero-heading"
           className="container-main apple-display text-[38px] md:text-[64px] animate-fade-in mb-6 max-w-[1000px]"

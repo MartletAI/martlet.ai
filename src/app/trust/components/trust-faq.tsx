@@ -56,11 +56,6 @@ export function TrustFaq() {
       />
       <div className="container-main max-w-[880px]!">
         <Reveal as="header" className="text-center mb-12">
-          <p className="mb-5">
-            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-              FAQ
-            </span>
-          </p>
           <h2 id="trust-faq-heading" className="apple-display text-[32px] md:text-[48px]">
             What security reviewers ask us.
           </h2>

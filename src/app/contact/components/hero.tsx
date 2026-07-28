@@ -5,13 +5,6 @@ export function Hero() {
     <div className="apple-hero">
       <section className="max-w-[1440px] m-auto pt-32 md:pt-[168px] pb-16 md:pb-20 relative z-10 text-center">
         <div className="container-main flex flex-col justify-center items-center">
-          <p className="animate-fade-in mb-6">
-            <span className="eyebrow-chip bg-[#067647]/10 text-[#067647]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] inline-block" aria-hidden />
-              Contact us
-            </span>
-          </p>
-
           <h1 className="apple-display text-[38px] md:text-[60px] animate-fade-in mb-6 max-w-[900px]">
             <span className="text-gradient-steel">Let&rsquo;s look at</span>
             <br />

@@ -15,11 +15,6 @@ export function Story() {
     <section className="bg-white py-20 md:py-24" aria-labelledby="story-heading">
       <div className="container-main">
         <Reveal className="max-w-[760px] mx-auto mb-14">
-          <p className="mb-5 text-center">
-            <span className="eyebrow-chip bg-[#0165dc]/10 text-[#0154b8]">
-              Where we come from
-            </span>
-          </p>
           <h2 id="story-heading" className="apple-display text-[32px] md:text-[48px] mb-6 text-center">
             A John Snow Labs company.
           </h2>

@@ -26,7 +26,7 @@ export function AdvisoryBoard() {
         <Reveal
           as="ul"
           stagger
-          className="grid grid-cols-1 sm:grid-cols-2 gap-5 list-none p-0 m-0 max-w-[760px] mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 list-none p-0 m-0 max-w-[1100px] mx-auto"
         >
           {advisors.map((advisor) => (
             <li key={advisor.slug}>

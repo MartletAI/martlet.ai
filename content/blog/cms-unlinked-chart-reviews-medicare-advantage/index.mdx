@@ -1,0 +1,121 @@
+---
+title: 'CMS ends unlinked chart reviews in Medicare Advantage: preparing HCC coding for the $7.12B change'
+date: '2026-07-30'
+description: 'CMS finalized excluding unlinked chart review and audio-only diagnoses from CY2027 risk scores, a $7.12B change. What it means for your HCC coding pipeline.'
+metaTitle: 'CMS Ends Unlinked Chart Reviews in MA: The $7.12B HCC Change | Martlet AI'
+thumbnail: /assets/blog/cms-unlinked-chart-reviews-medicare-advantage/cover.jpg
+tag: Insights
+authors:
+- Hasham Ul Haq
+definedTerm:
+  name: Unlinked Chart Review Record (CRR)
+  description: A CRR submitted through the Encounter Data System that adds a diagnosis without referencing the internal control number of any previously submitted encounter, introducing a risk-adjustable diagnosis into CMS's data with no documented service behind it — excluded from Medicare Advantage risk scores starting with CY2027 payment.
+---
+
+![The End of Unlinked Chart Reviews: CMS now requires HCCs to be linked and documented at the encounter level](/assets/blog/cms-unlinked-chart-reviews-medicare-advantage/cms-unlinked-chart-reviews-medicare-advantage-infographic.jpg)
+
+An unlinked chart review record (CRR) adds a diagnosis to a Medicare Advantage member's risk profile without tying it to any submitted encounter. Starting with 2026 dates of service, those diagnoses stop counting: CMS finalized their exclusion from CY2027 risk scores in April, at an estimated payment impact of $7.12 billion. If retrospective review feeds a meaningful share of your RAF, this rule changes what a "find" is worth. Here's what CMS finalized, three chart-level examples, and how to rebuild review around linked, evidenced submissions.
+
+## Finalized in April 2026: unlinked CRR and audio-only diagnoses leave the risk score
+
+The timeline was short. CMS proposed the change in the [CY2027 Advance Notice](https://www.cms.gov/newsroom/press-releases/cms-proposes-2027-medicare-advantage-part-d-payment-policies-improve-payment-accuracy-sustainability) on January 26, 2026, and [finalized it in the CY2027 Rate Announcement](https://www.cms.gov/newsroom/press-releases/cms-finalizes-2027-medicare-advantage-part-d-payment-policies-strengthen-accountability-long-term) in April. Three specifics matter for planning.
+
+First, the effective window is already open. The exclusion applies to CY2027 payment, which is calculated from 2026 dates of service. The charts your review teams are working right now are the first ones the rule governs.
+
+Second, the exclusion covers two submission paths: diagnoses from unlinked CRRs, and diagnoses from audio-only encounters, identified by [telehealth modifiers 93 and FQ](https://www.forvismazars.us/forsights/2026/02/insights-on-cms-2027-medicare-advantage-rates). CMS's stated principle is that, with one exception, diagnoses not associated with a service will no longer be considered for risk adjustment.
+
+Third, there is one finalized exception: unlinked CRRs remain allowed for beneficiaries who switch from one MA organization to another, a practical concession to the fact that a member's new plan can't reference encounter records it never submitted.
+
+The estimated impact is a 1.53% reduction in MA payments per the [CMS Rate Announcement fact sheet](https://www.cms.gov/newsroom/fact-sheets/2027-medicare-advantage-part-d-rate-announcement), which CMS sized at roughly [$7.12 billion in net savings for 2027](https://www.dentonshealthlaw.com/cms-issues-proposed-changes-to-ma-risk-adjustment-process-and-radv-audit-update/). The history behind the rule explains why. In its [2019 report on chart review records](https://oig.hhs.gov/reports/all/2019/billions-in-estimated-medicare-advantage-payments-from-chart-reviews-raise-concerns/), HHS-OIG found that CMS based an estimated $2.7 billion in risk-adjusted payments on chart review diagnoses that plans didn't link to any service, and that almost half of the MA organizations reviewed had payments from unlinked chart reviews for beneficiaries with no record of any service at all that year. OIG's [2024 follow-up on health risk assessments](https://oig.hhs.gov/reports/all/2024/medicare-advantage-questionable-use-of-health-risk-assessments-continues-to-drive-up-payments-to-plans-by-billions) found the pattern growing: diagnoses reported only on HRAs and HRA-linked chart reviews, with no other 2022 service records, drove an estimated $7.5 billion in 2023 risk-adjusted payments across 1.7 million enrollees.
+
+## What "unlinked" means in encounter data: a diagnosis with no encounter behind it
+
+The mechanics decide which of your submissions survive, so it's worth being precise.
+
+Plans submit two record types through the Encounter Data System. Encounter data records (EDRs) represent actual services: a visit happened, a claim exists, and the diagnoses on it come from that documented service. Chart review records (CRRs) let a plan add or correct diagnoses found in medical-record review. A linked CRR references the internal control number (ICN) of a previously submitted encounter, anchoring the diagnosis to a specific documented service. An unlinked CRR carries no ICN: it introduces a diagnosis into CMS's data with no service behind it, which is exactly the property CMS is eliminating.
+
+The rule doesn't end retrospective review. It ends the version of retrospective review whose output couldn't be traced to a visit.
+
+## Three finds that paid before this rule and what happens to them now
+
+Retrospective review surfaces diagnoses from many places. Under the new rule, where the diagnosis was found determines whether it's worth anything.
+
+### Example 1: the specialist note with no encounter in EDS.
+
+> A scanned consult letter in the chart documents "COPD, GOLD group B, on LAMA therapy" from an out-of-network pulmonologist. No corresponding encounter was ever submitted through EDS.
+
+Before: the plan's review vendor submits an unlinked CRR adding J44.9, and it risk-adjusts. Now: with no ICN to reference, the same submission is worth zero for CY2027. The diagnosis is real and well documented, and it still doesn't count, because it isn't associated with a submitted service. The recovery path is upstream: getting the encounter into EDS, or capturing the condition at the member's next in-network visit, where it can be documented, coded, and born linked.
+
+### Example 2: the HRA-only diagnosis.
+
+> An in-home health risk assessment documents "diabetes with polyneuropathy, monofilament exam abnormal." No other encounter in the entire year mentions polyneuropathy, and the member's PCP notes list diabetes without complications.
+
+This is the pattern behind OIG's $7.5 billion figure: a condition that surfaces once, in an assessment setting, and never appears in the treatment record, a situation OIG measured across 1.7 million enrollees. Before, it reached the risk score through the unlinked path. Now it doesn't, and the honest operational reading is that it shouldn't have been a coding artifact in the first place: if the polyneuropathy is real, it belongs in the PCP's assessment and plan, examined and managed, which is also what makes it audit-defensible.
+
+### Example 3: the audio-only follow-up.
+
+> A telephone check-in note documents "CHF, stable on current diuretic dose, will continue." The service was audio-only.
+
+Starting with 2026 dates of service, diagnoses from audio-only encounters are excluded from risk adjustment alongside unlinked CRRs. The condition needs a qualifying encounter, in person or audio-video, to contribute to the score.
+
+*All patient data shown is synthetically generated for illustration.*
+
+## Linkage is the payment floor; page-level evidence is the audit standard
+
+It would be a mistake to read this rule as "add an ICN and continue as before." Linkage gets a diagnosis paid. It doesn't get the diagnosis through a RADV audit, and the distance between those two standards is where clawback risk lives.
+
+A linked CRR tells CMS which encounter a diagnosis belongs to. A RADV auditor then opens that encounter's documentation and asks whether it actually supports the code: is the condition monitored, evaluated, assessed, or treated in that note, by a credentialed provider, with a valid signature? A diagnosis can be perfectly linked and completely unsupported, and the stakes on a sampled failure remain high: CMS's authority to extrapolate audit findings across a contract is currently contested in court, with the 2023 rule vacated on procedural grounds and CMS pursuing the appeal while continuing payment-year audits, and the False Claims Act route the [2026 settlements](/resources/blog/add-only-hcc-coding) ran on operates regardless.
+
+That's why the standard worth building to is provenance at the level of the words in the chart. Every HCC Martlet AI produces ships with page-level evidence: the chart sentence supporting the code, the encounter ID, the date of service, the provider's name and credentials, and the signature status, with MEAT-aware validation applied before anything is submitted. The linkage requirement is satisfied as a by-product, because every diagnosis is anchored to a specific encounter from the start, and the [audit packet](/solutions/radv) that RADV will eventually demand assembles in one click from evidence that already exists.
+
+## What this does to the economics of outsourced review
+
+The rule quietly reprices retrospective review. When an unlinked add was worth its full coefficient, high-volume review that swept charts for any supportable diagnosis paid for itself easily, and the linkage question was someone else's problem. With unlinked adds worth zero, the value of review concentrates in work that requires encounter-level precision: anchoring each find to the right ICN, validating MEAT at the source note, and maintaining evidence that survives the audit.
+
+That shifts the in-house versus outsource calculation. Encounter-anchored review runs on your encounter data, your document stores, and your EHR, and the tighter the loop between review and your own systems, the less sense it makes to ship charts outside them. Martlet AI runs inside your environment, on-premises, in your private cloud, or air-gapped, with no external AI API calls in the data path, so PHI never leaves your network and your existing security controls remain the ones in effect. Taking HCC coding in-house stops being an aspiration and becomes an operating decision, and the [prospective](https://martlet.ai/solutions/prospective-risk-adjustment) and [retrospective](https://martlet.ai/solutions/retrospective-risk-adjustment) workflows run on the same engine and the same evidence model, so the review program and the point-of-care program stop diverging.
+
+## What to do before the 2026 dates-of-service window closes
+
+Four moves, in order of urgency.
+
+Quantify your exposure first. CMS's 1.53% is a program-wide average; your number depends on how much of your current RAF rides on unlinked CRRs, HRA-only diagnoses, and audio-only encounters. That analysis is a join between your encounter data and your CRR submissions, and it should be on the CFO's desk before 2027 bids are built.
+
+Second, re-anchor the review pipeline. Every retrospective find needs a home encounter: retrieval should start from submitted encounters and their documentation, and a find without an ICN should route to an exception queue rather than a submission batch.
+
+Third, move capture forward. The cheapest linked diagnosis is the one documented during the visit. Point-of-care suggestions that are evidence-linked and specific mean the encounter, the documentation, and the code come into existence together, already compliant with the rule.
+
+Fourth, keep the switcher exception in scope. New members arriving from other MA organizations remain eligible for unlinked CRRs, so enrollment-driven review keeps a distinct workflow with its own controls.
+
+## The takeaway
+
+CMS has finalized a simple principle with a $7.12 billion price tag: a diagnosis that can't be traced to a service doesn't count. The plans that come out ahead will treat that as a floor and build to the audit standard above it, where every HCC carries the chart sentence, the encounter, the provider, and the signature that prove it. If you want to see what encounter-anchored, evidence-first coding looks like on your own data, [request the compliance packet](/contact), and read our guide on [what compliance teams should ask their vendors](/resources/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors).
+
+## FAQ
+
+### What is an unlinked chart review record?
+
+A CRR submitted through the Encounter Data System that adds a diagnosis without referencing the internal control number of any previously submitted encounter. It introduces a risk-adjustable diagnosis into CMS's data with no documented service behind it.
+
+### When does the exclusion take effect?
+
+It applies to CY2027 payment, which is calculated from 2026 dates of service, so the affected charts are current ones. CMS finalized the policy in the CY2027 Rate Announcement in April 2026.
+
+### Are there exceptions?
+
+One: unlinked CRRs remain allowed for beneficiaries who switch from one MA organization to another, since the new plan can't reference encounter submissions made by the previous plan.
+
+### How large is the financial impact?
+
+CMS estimates a 1.53% reduction in MA payments, roughly $7.12 billion in 2027. Plan-level impact varies with how heavily a plan's risk scores depended on unlinked CRRs, HRA-only diagnoses, and audio-only encounters.
+
+### Do health risk assessment diagnoses still count?
+
+The concern, measured by HHS-OIG, was diagnoses appearing only on HRAs and HRA-linked chart reviews, which drove an estimated $7.5 billion in 2023 risk-adjusted payments with no other service records behind them. Under the finalized principle, a diagnosis needs an associated service to count, so a condition surfaced in an assessment should be evaluated and managed in a clinical encounter to contribute to the score.
+
+### Does linking a diagnosis to an encounter make it audit-proof?
+
+No. Linkage satisfies the payment rule; RADV then tests whether the encounter's documentation supports the code under MEAT criteria, with a valid provider signature. A linked but unsupported diagnosis fails the audit, which is why page-level evidence is the standard worth operating to.
+
+### Can retrospective review still add value under this rule?
+
+Yes, and arguably more than before: validated, encounter-anchored finds are undiluted by the unlinked volume that previously drew regulator attention. The work changes from sweeping charts for any supportable diagnosis to precise validation against specific encounters, which rewards accuracy and evidence over volume.

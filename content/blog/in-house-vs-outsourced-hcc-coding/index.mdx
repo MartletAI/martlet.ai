@@ -1,0 +1,119 @@
+---
+title: 'In-house vs. outsourced HCC coding in 2026: the cost model and the accountability gap'
+date: '2026-08-04'
+description: 'Automated in-house HCC coding costs about $1.4M per million charts vs $4.2M outsourced. See the cost model and who repays CMS when the codes fail audit.'
+metaTitle: 'In-house vs outsourced HCC coding in 2026: the cost model | Martlet AI'
+thumbnail: /assets/blog/in-house-vs-outsourced-hcc-coding/cover.jpg
+tag: Insights
+authors:
+- Hasham Ul Haq
+definedTerm:
+  name: Accountability Gap (HCC Coding)
+  description: The structural mismatch in outsourced HCC coding where a vendor's fee is fully paid regardless of audit outcome, while the repayment obligation, RADV audit exposure, and False Claims Act liability for unsupported diagnoses attach solely to the health plan or provider that certifies the data to CMS.
+---
+
+![The Accountability Gap: vendors earn contingency fees on chart reviews that find new HCCs, but the MA organization signs the CMS attestation and carries the settlement, repayment, and audit exposure](/assets/blog/in-house-vs-outsourced-hcc-coding/in-house-vs-outsourced-hcc-coding-infographic.jpg)
+
+The case for outsourcing HCC coding rested on two premises: an external vendor reviews charts more cheaply than an in-house team, and the vendor carries the performance burden. In 2026 both premises are broken. Healthcare-specific language models now handle the high-confidence majority of charts end-to-end, which rewrites the cost per chart, and a string of False Claims Act settlements has shown who carries the risk when vendor-driven coding fails an audit: you. This post works through both, with numbers and stated assumptions.
+
+## Why outsourcing won for a decade: coder scarcity and a wide technology gap
+
+The outsourcing default wasn't irrational. It was arithmetic.
+
+Certified risk-adjustment coding talent is scarce and priced accordingly. [AAPC's 2025 salary survey](https://www.aapc.com/blog/93909-salary-survey-shows-aapc-members-income-potential/) puts the average medical records specialist at $65,007, and [CRC-credentialed coders average roughly $74,600](https://open-exam-prep.com/blog/crc-vs-cpc-certification-worth-it-2026), a premium over general coding credentials that reflects demand for the specialization. The underlying labor market is tight: Bureau of Labor Statistics figures show a $50,250 median for medical records specialists with 7% projected growth through 2034 and roughly 14,200 openings a year ([data compiled here](https://open-exam-prep.com/blog/crc-vs-cpc-certification-worth-it-2026)), so the scarcity isn't easing.
+
+Against that labor market, a plan or risk-bearing provider facing hundreds of thousands of retrospective charts a year had three options: build a large coding department, buy review by the chart, or buy review on commission. The math below shows why the first option lost every time under manual technology, and why it wins now.
+
+## The cost model, line by line: outsourced, manual in-house, and automated in-house
+
+The model uses a retrospective review program of 1,000,000 charts per year, roughly a mid-size MA plan or a large risk-bearing provider organization. Every input is listed so you can replace it with your own.
+
+Stated assumptions:
+
+| Input | Value used | Basis |
+| --- | --- | --- |
+| Loaded cost per coder FTE | $100,000/year | $75,000 salary (consistent with AAPC CRC data) × 1.33 benefits-and-overhead load. Assumption; substitute your loaded rate. |
+| Productive review hours | 1,320/FTE/year | 6 focused hours/day × 220 working days. Assumption. |
+| De novo review throughput | 4 charts/hour | Full manual read of a multi-encounter chart. Assumption; typical range 3–6 depending on chart size. |
+| Exception-validation throughput | 10 charts/hour | Reviewer confirms or rejects a machine-produced code with evidence attached, rather than reading cold. Assumption. |
+| Outsourced flat-fee rate | $4.00/chart | Assumption; substitute your quotes. Sensitivity shown at $2.50 and $6.00. |
+| Contingency-fee rate | 20% of incremental revenue | The rate a coding vendor charged in a case documented by KFF Health News: up to 20% of the new revenue its reviews generated. |
+| Net-new validated HCC yield | 5% of charts | Assumption; V28's code removals push historical yields down, so test lower values too. |
+| Revenue per incremental HCC | $3,600/year | 0.3 average coefficient × an assumed $12,000 annual payment per 1.0 risk score. Assumption; derive yours from your bid. |
+| End-to-end automation share | 85% of charts | The high-confidence majority handled without a human touch; 15% routes to exception review. Assumption for the model; measure it in a pilot. |
+
+Scenario A: outsourced, flat fee. 1,000,000 charts × $4.00 = $4.0M per year, plus roughly two internal FTEs for vendor oversight and QA sampling (~$0.2M). Total ≈ $4.2M. At $2.50/chart the total is ≈ $2.7M; at $6.00 it's ≈ $6.2M.
+
+Scenario B: in-house, manual. At 4 charts/hour and 1,320 productive hours, one coder covers 5,280 charts a year. One million charts needs ~190 coder FTEs, or ≈ $19M per year at the loaded rate. Even at an aggressive 6 charts/hour it's ~126 FTEs and ≈ $12.6M. This is the number that made outsourcing the default for a decade: manual in-house review cost three to four times the vendor's flat fee before a single hiring difficulty was considered, and hiring 190 CRC-credentialed coders in the current labor market is its own problem.
+
+Scenario C: in-house, automated with exception review. With 85% of charts handled end-to-end, 150,000 charts route to exception review. At 10 charts/hour, that's ~11 reviewer FTEs (≈ $1.1M), plus ~3 FTEs for QA, program management, and provider education (≈ $0.3M), plus the software license. Total ≈ $1.4M per year + license.
+
+That last line is deliberately a variable. Rather than quote a license fee in a blog post, here is the break-even: against Scenario A at $4.00/chart, the license pays for itself at anything below roughly $2.8M per year for this volume, and against the mid-range of Scenario B at anything below roughly $14M. Run the same formula against your own quotes; the conclusion survives wide swings in every assumption, because removing the human pass from 850,000 charts is a step change no per-chart discount matches.
+
+Now the commission model, which deserves its own paragraph. Under a 20% contingency arrangement, the same 1,000,000 charts at a 5% net-new yield produce 50,000 incremental HCCs worth $180M in annual revenue at the assumed $3,600 each, and the vendor's fee is $36M, roughly nine times the flat-fee cost for the same review work. Halve the yield and halve the HCC value and the fee is still $9M. Contingency pricing decouples the fee from the work performed and couples it to the volume of codes added, which is precisely the property regulators keep flagging. And note what the contingency vendor is never paid for: validating or deleting the codes you already submitted, the activity the [March 2026 settlement](https://www.justice.gov/opa/pr/aetna-agrees-pay-1177-million-resolve-false-claims-act-allegations) turned into a nine-figure liability.
+
+## The risk side of the ledger: what an audit adds back
+
+Cost per chart is half the model. The other half is the expected cost of the codes that don't survive scrutiny, and 2025–2026 repriced it.
+
+The False Claims Act route is fully active: $556 million in January 2026 and $117.7 million in March, both resolving allegations that retrospective programs added diagnoses without deleting unsupported ones, with FCA exposure running to treble damages plus per-claim penalties for conduct that crosses the knowledge line. On the audit route, CMS had announced an expansion to [audit every eligible MA contract annually](https://www.rebellisgroup.com/post/humana-s-radv-court-win-what-it-means-for-medicare-advantage-plans-and-what-comes-next), with record samples growing from ~35 to as many as 200 per plan and a coder ramp from ~40 to nearly 2,000 reviewers. A federal court [vacated the 2023 RADV extrapolation rule](https://www.mintz.com/insights-center/viewpoints/2146/2025-10-01-radv-odyssey-extrapolation-vacated) on procedural grounds in September 2025; CMS [appealed in November](https://www.crowell.com/en/insights/client-alerts/cms-appeals-humana-v-becerra) and states it is continuing payment-year audits while the appeal runs. Treat extrapolation as contested, and plan for the version of the world where it returns: [Groom Law Group's worked example](https://www.groom.com/resources/court-rules-that-cms-cannot-extrapolate-medicare-advantage-risk-adjustment-audit-results/) shows a 5% sampled error rate on a $1 billion contract becoming a $50 million recovery under extrapolation.
+
+Fold even a conservative version into the model: if 10% of contingency-era additions later fail validation, the repayment on the scenario above is $18M a year of revenue handed back, plus interest, defense costs, and remediation, none of which appears in the vendor's pricing sheet. A coding program's true cost is the fee plus the expected give-back, and the give-back scales with exactly the aggressiveness the commission rewarded.
+
+## The accountability gap: the fee was the vendor's, the certification and the repayment are yours
+
+Here is the structural problem no contract clause has solved. Your organization signs the annual attestation to CMS that submitted risk-adjustment data is accurate, complete, and truthful. The vendor doesn't. When codes fail, the repayment obligation, the audit, the corporate integrity agreement, and the FCA exposure all attach to the certifying party. The vendor's exposure is a commercial dispute at most, and it has already been paid.
+
+One case documents the asymmetry end to end. In December 2024, [the DOJ announced](https://www.justice.gov/archives/opa/pr/medicare-advantage-provider-independent-health-pay-98m-settle-false-claims-act-suit) that an MA plan agreed to pay up to $98 million ($34.5M guaranteed, up to $63.5M contingent on ability to pay) to resolve allegations that it knowingly submitted invalid diagnosis codes identified through its coding vendor's retrospective reviews. The vendor, per [KFF Health News](https://kffhealthnews.org/news/article/medicare-advantage-fraud-lawsuit-settlement-new-york/), mined records for missed diagnoses and kept up to 20% of the new revenue it generated, a pitch the DOJ complaint says was marketed to plans as "too attractive to pass up." The vendor ceased operations in 2021, before the settlement. Its founder and chief executive personally paid $2 million, in what counsel described as [one of the first vendor-side risk-adjustment settlements ever](https://icd10monitor.medlearn.com/doj-reaches-historic-settlement-with-ma-plan-independent-health-and-former-executive-in-whistleblower-case/). A second plan that had used the same vendor [settled separately for $6.4 million](https://www.insurancejournal.com/news/east/2024/12/19/805579.htm). Add it up: across the alleged conduct, the plans' combined exposure ran to more than $100 million and a five-year corporate integrity agreement; the vendor side's recoverable share was $2 million from an individual, because the corporate entity no longer existed to pursue.
+
+The pattern generalizes beyond one case. OIG's [2020 review of health risk assessments](https://oig.hhs.gov/oei/reports/oei-03-17-00471.asp) found that in-home HRAs generated 80% of the estimated payments from HRA-only diagnoses, and that most in-home HRAs were conducted by companies that partner with MA organizations: vendor-performed capture, plan-borne payments, and now, under the CY2027 rules, plan-borne exclusions. Every 2026 settlement dollar discussed in [our companion piece on two-way coding](/resources/blog/add-only-hcc-coding) was paid by a plan, not by the review vendors whose programs the allegations describe.
+
+Indemnification clauses don't close this gap in practice. They're capped at fees paid, they exclude consequential and extrapolated damages, they don't reach FCA penalties tied to your own certification, and they're only as good as the counterparty's continued existence, which the case above puts in sharp relief.
+
+In-housing closes the gap structurally rather than contractually. When the same balance sheet holds the incremental revenue and the audit liability, the rational operating point moves: you want every addition validated, every existing code re-checked, every decision evidenced, and your confidence thresholds calibrated to what survives an audit three years out, because you're the one who'll be standing there. No commission-paid third party shares that objective function, however good its coders are.
+
+## What changed technically: the high-confidence majority no longer needs a human pass
+
+None of this mattered while in-house meant Scenario B. What collapsed the cost side is that healthcare-specific medical language models now read clinical documentation well enough to handle the high-confidence majority of HCC decisions end-to-end, with reviewers concentrated on exceptions. The models underneath Martlet AI come from the John Snow Labs production stack, ranked #1 on 12 of 13 medical benchmarks against frontier general-purpose LLMs, and run in production at WVU Medicine, a 25-hospital academic health system, as presented at the [NLP Summit](https://www.nlpsummit.org/maximizing-patient-care-through-ai-enhanced-hcc-code-discovery/).
+
+Two properties make the automation usable for a regulated workflow rather than merely impressive. First, [in-environment deployment](/solutions/retrospective-risk-adjustment): the engine runs on-premises, in your private cloud, or air-gapped, with no external AI API calls in the data path, so PHI never leaves your network and in-housing doesn't require building an ML platform team. Second, the control layer an in-house program needs to defend itself: page-level evidence on every HCC (chart sentence, encounter ID, date of service, provider and credentials, signature status), MEAT-aware validation in both directions, deterministic and reproducible outputs under versioned models, and an append-only audit log. That's the difference between automating coding and automating coding you can [take into a RADV audit](/solutions/radv).
+
+The commercial model completes the incentive repair: Martlet AI is licensed annually, scaled by operational volume, with no per-chart fees and no success commission. Nothing in the fee structure gets larger when a code is added, which is the property you should demand from anything touching your submissions.
+
+## How to run the transition without betting the program
+
+In-housing a million-chart program is a migration, and the low-risk path is well worn. Pilot on one contract or one provider group, running the engine side by side with your incumbent process on the same charts, and measure four things: agreement rate, exception rate, cost per chart, and, most tellingly, what MEAT-aware validation says about the codes your incumbent process added historically. A mock RADV on last year's additions tells you what your current expected give-back looks like before CMS does. Keep your coders: the exception queue, provider education, and CDI work absorb experienced reviewers far better than de novo chart reading ever used them, and the labor-market numbers above say you couldn't have hired 190 more anyway.
+
+## The takeaway
+
+Under manual technology, outsourced review at $4 a chart beat a $13–19M in-house department, and the accountability gap was the price of admission. With the high-confidence majority running end-to-end, the in-house cost structure drops to roughly $1.4M plus a license for the same million charts, and the organization that signs the CMS attestation finally holds the tooling, the evidence, and the incentives in the same place. Test the model against your own numbers, then [scope a pilot on one contract or one provider group](/contact) and see what the exception rate and the mock audit say about your charts.
+
+## FAQ
+
+### Is outsourced HCC coding cheaper than in-house?
+
+Against a manual in-house department, yes, historically by a factor of three or more. Against automated in-house review with exception-only human touches, the ordering reverses: the model above puts automated in-house at roughly $1.4M per year plus license for one million charts, versus about $4.2M outsourced at $4.00 per chart. Substitute your own volumes and rates; the break-even survives wide changes in the assumptions.
+
+### What is contingency or success-fee pricing, and why does it matter?
+
+The vendor is paid a percentage of the incremental risk-adjustment revenue its reviews generate, documented at up to 20% in DOJ-alleged cases. The structure ties the vendor's income to codes added rather than codes validated, makes the effective fee many times the flat-fee equivalent at realistic yields, and pays nothing for the deletion work that recent settlements show is legally required.
+
+### Who is liable when a vendor's codes fail an audit?
+
+The MA organization or risk-bearing entity that certified the data to CMS. Repayments, RADV findings, corporate integrity agreements, and False Claims Act exposure attach to the certifying party; vendor indemnities are typically capped, exclusionary, and dependent on the vendor still existing.
+
+### Has a coding vendor ever actually been held accountable?
+
+Rarely, which is the point. The December 2024 settlement was described by counsel as among the first vendor-side risk-adjustment resolutions: the plan agreed to pay up to $98 million, while the vendor's founder and CEO personally paid $2 million and the vendor itself had already ceased operations.
+
+### How many reviewers does an automated in-house program need?
+
+In the model above, a million-chart program with an 85% end-to-end share and 10 charts per hour on exceptions needs roughly 11 reviewer FTEs plus a small QA and program team. Your exception rate is the number to measure in a pilot, since it drives the whole staffing line.
+
+### What happened to RADV extrapolation?
+
+A federal district court vacated the 2023 RADV final rule in September 2025 on procedural grounds; CMS appealed in November 2025 and is continuing payment-year audits in the meantime. Plan for both outcomes: the FCA enforcement route operates regardless of the rule's fate, and CMS's audit expansion to every eligible contract was announced independently of it.
+
+### Does taking HCC coding in-house require building an AI team?
+
+No. In-environment deployment means the engine runs inside your existing infrastructure, on-premises, private cloud, or air-gapped, under your existing security controls, with PHI never leaving your network. The operational work is the pilot, the exception workflow, and provider education, all of which use the team you already have.

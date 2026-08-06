@@ -1,0 +1,91 @@
+---
+title: The break-even on bringing HCC coding in-house
+date: '2026-08-06'
+description: 'Model the break-even on bringing HCC coding in-house: direct cost, RAF capture lift, and audit liability, run for a 200,000-life Medicare Advantage plan.'
+metaTitle: 'In-House HCC Coding: Where the Break-Even Lands | Martlet AI'
+thumbnail: /assets/blog/in-house-hcc-coding-break-even/cover.png
+tag: Insights
+authors:
+- Ritwik Jain
+definedTerm:
+  name: In-House HCC Coding Break-Even
+  description: The plan size and cost threshold above which bringing HCC coding in-house outperforms an outsourced vendor relationship on direct cost, RAF capture lift, and audit liability combined — typically 100,000 to 150,000 lives for a Medicare Advantage plan, or 40,000 to 80,000 attributed lives for a risk-bearing provider organization.
+---
+
+![When In-House HCC Coding Pays Off: the cost advantage shifts at 100K–150K Medicare Advantage lives](/assets/blog/in-house-hcc-coding-break-even/in-house-hcc-coding-break-even-infographic.jpg)
+
+*By Ritwik Jain, Co-founder and CRO, Martlet AI*
+
+I've spent the last year having the same conversation with CFOs at health plans and risk-bearing provider organizations. It starts with a number, usually the line item their outsourced coding vendor invoiced last year, and ends with a model. Three inputs to the model: what the outsourced relationship costs, what an in-house build would cost at steady state, and what the audit liability differential is worth on a risk-adjusted basis. The math has shifted; most plans haven't rerun it since 2023.
+
+What follows is the model walked through for a 200,000-life Medicare Advantage plan, with illustrative numbers. Your plan's will differ. The structure of the calculation is what matters.
+
+## Why this conversation is louder now
+
+The [MedCity News piece](https://medcitynews.com/2025/11/why-its-time-to-bring-hcc-coding-in-house/) from November 2025 anchored to the FY2024 Part C payment error of $19.07 billion, the systemic context every CFO recognizes. The [OIG's October 2024 report](https://oig.hhs.gov/reports/all/2024/medicare-advantage-questionable-use-of-health-risk-assessments-continues-to-drive-up-payments-to-plans-by-billions) put $7.5 billion in unsupported HRA-driven captures into the conversation. The RADV expansion announced in 2025 ran from approximately 60 contracts audited per year to all 550 eligible Medicare Advantage contracts annually, with records reviewed per plan rising from roughly 35 to as many as 200 ([Ropes & Gray, May 2025](https://www.ropesgray.com/en/insights/alerts/2025/05/cms-announces-significant-changes-to-radv-auditing-efforts-considerations-and-next-steps)). The enforcement cadence has changed.
+
+The CFO question isn't whether something has changed. It's whether the change has moved the in-house break-even, and by how much.
+
+## The three components of the model
+
+Direct cost. Outsourced HCC coding typically prices on per-chart fees, success commissions, or platform-plus-services bundles. Per-chart retrospective coding usually runs $15 to $50 per chart; success commissions run 15 to 30% of recovered RAF revenue; platform fees run from $200,000 to over $1 million annually. For the 200,000-life plan reviewing 95% of its book at $25 per chart, the outsourced annual cost runs around $4.75 million before platform fees.
+
+In-house at the same volume looks different. Engine licensing runs $500,000 to $2 million annually for the relevant volume. A coding team of 12 to 15 internal coders at $90,000 fully loaded runs $1.1 to 1.4 million. Management overhead, including a program director, technical lead, and quality assurance lead, adds $500,000 to $700,000. IT infrastructure or VPC compute runs $200,000 to $500,000. Total in-house: $2.3 to 4.6 million at steady state.
+
+On direct cost, the comparison is competitive: outsourced $4.75M versus in-house $2.3-4.6M.
+
+RAF capture lift. In-house programs typically achieve higher RAF capture per chart than outsourced equivalents because in-house has better access to ancillary data (claims history, longitudinal records, prior encounter coding) and can integrate prospective and retrospective workflows on the same data layer. Mid-range estimates put the lift at 5 to 15% additional RAF capture in-house versus outsourced. For a 200,000-life plan with $850 million in baseline risk-adjusted revenue, that's $42 to 127 million in additional capture annually, substantially larger than the direct cost differential.
+
+Audit liability differential. This is the variable I think most CFOs underweight. In an outsourced model, the plan carries the audit liability while the vendor captures revenue tied to gross capture. The structural conflict was reinforced by the DOJ's March 2026 False Claims Act settlement: chart review programs surfacing codes selectively now carry False Claims Act exposure that didn't exist three years ago. The expected value of future clawback shifts from a vendor-driven probability distribution to a plan-controlled one. The number worth fighting for is audit-adjusted recovery, not the headline RAF lift.
+
+## Where the break-even lands
+
+For a Medicare Advantage plan, the in-house build typically pays off above approximately 100,000 to 150,000 lives. Below that, the fixed cost of running the in-house program is harder to amortize. Above it, gross RAF lift in-house, plus the audit liability differential, plus direct cost competitiveness, compound into a strong case.
+
+For a risk-bearing provider organization, the threshold sits lower, often 40,000 to 80,000 attributed lives. The prospective workflow has direct clinical workflow benefits beyond pure coding that an outsourced model can't fully deliver.
+
+For the 200,000-life plan with $850M baseline risk-adjusted revenue, modeled at midpoints:
+
+- Direct cost saving: $1.2M annually (in-house advantage)
+- Gross RAF lift: $85M annually (mid-range)
+- Audit liability reduction (expected value): high seven figures to low eight figures, depending on prior coding posture
+
+The structural answer is clear. The operational question, can we run this internally, is what most CFOs spend the next six months working through.
+
+## The 90-day decision sprint
+
+For plans considering the move, the first three months are about getting to a credible go/no-go decision, not about building anything. The work splits into four streams.
+
+The procurement stream documents the current outsourced contract, per-chart or commission rates, and actual annual spend including platform fees. Most plans find the line items are larger and more fragmented than they expected.
+
+The operational stream audits current capture rates against benchmarks (the [Health Affairs Scholar coding intensity literature](https://academic.oup.com/healthaffairsscholar/article/4/1/qxag010/8430651) is one anchor) and identifies the gap to in-house realistic ceiling.
+
+The technical stream evaluates engine vendors against the deployment posture needed (on-premises, private cloud, air-gapped) and the integration pattern with existing EHR and claims systems.
+
+The audit-posture stream models the expected clawback distribution under current capture practices and tighter in-house discipline. This is where the audit liability differential gets quantified.
+
+By day 90, the CFO has a model defensible at the board level. By day 180, the build (if approved) is underway.
+
+The plans I've watched work through this last year are now operating on math the rest of the industry is calibrating to. For plans wanting to model the break-even against their own numbers, [the Martlet AI commercial team](https://martlet.ai/contact) can run the exercise on your data. The engine is licensed annually with no per-chart fees, no per-token charges, and no success commissions, the cost structure the in-house case requires.
+
+## FAQ
+
+### At what plan size does in-house break even?
+
+For Medicare Advantage plans, typically 100,000 to 150,000 lives. For risk-bearing provider organizations, lower (40,000 to 80,000 attributed lives) because the prospective workflow has clinical workflow benefits beyond coding.
+
+### What's the most underestimated cost of an in-house build?
+
+Management overhead: program director, technical lead, QA leadership. Engine license and coder labor are easier to size; the leadership layer gets missed.
+
+### How long does in-house migration take?
+
+Typically 9 to 18 months from decision to fully operational, depending on existing infrastructure and approach (phased versus parallel-run).
+
+### Can we run in-house and outsourced in parallel during transition?
+
+Yes, and many plans do for the first cycle. Running parallel produces a direct comparison of capture rates and audit defensibility useful for steady-state planning.
+
+### Does in-house require on-premises deployment?
+
+No. In-house refers to operational control. The engine can run on-premises, in private cloud, or in a Databricks or Snowflake environment.

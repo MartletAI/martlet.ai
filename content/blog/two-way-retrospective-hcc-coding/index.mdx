@@ -1,0 +1,88 @@
+---
+title: 'Two-way retrospective coding: the new standard after 2026 settlements'
+date: '2026-08-13'
+description: 'A $117.7M DOJ settlement made one-way chart review a liability. See what two-way HCC coding requires and how to phase the redesign this cycle.'
+metaTitle: 'Two-way retrospective HCC coding: the 2026 standard | Martlet AI'
+thumbnail: /assets/blog/two-way-retrospective-hcc-coding/cover.png
+tag: Insights
+authors:
+- Ritwik Jain
+definedTerm:
+  name: Two-Way Retrospective HCC Coding
+  description: A retrospective chart review program that surfaces both diagnoses to add and diagnoses to delete from the same chart pass, using the same MEAT-based evidence standard for each — as distinct from one-way programs, which surface only additions.
+---
+
+![Two-Way Retrospective Coding: retrospective review produces both add and delete outputs, backed by MEAT criteria and the V28 map](/assets/blog/two-way-retrospective-hcc-coding/two-way-retrospective-hcc-coding-infographic.png)
+
+On March 11, 2026, the Department of Justice [announced a $117.7 million False Claims Act settlement](https://www.justice.gov/opa/pr/aetna-agrees-pay-1177-million-resolve-false-claims-act-allegations) tied to a Medicare Advantage chart review program. The press release is short. The structural finding is industry-wide: chart reviews that surface diagnoses to add must also surface diagnoses to delete. Programs doing one without the other now carry False Claims Act exposure.
+
+If you run a retrospective HCC coding program in 2026 and your reviews are one-way, your audit posture is behind the line. The compliance review I'd recommend taking to your board this quarter is whether to redesign mid-cycle or accept the exposure for a full year. Most plans I've talked to over the last two months are choosing the redesign. The plans deferring it are gambling on enforcement patience that I wouldn't bet on.
+
+## What the structural finding actually says
+
+The government's complaint described chart reviews that identified diagnoses supporting additional risk-adjusted payments, which were submitted to CMS, while leaving in place previously submitted diagnoses the same charts didn't support. The DOJ framed this as selective use of chart review results: claim the payment when favorable, ignore the obligation when unfavorable.
+
+The legal mechanism is the False Claims Act's continuing-obligation framework. Each year a Medicare Advantage organization certifies that its risk-adjustment data is accurate. If subsequent chart review reveals a previously submitted diagnosis is unsupported, the plan has a duty to delete it and repay the resulting overpayment.
+
+This isn't new law. What's new is enforcement.
+
+## Why the cost of one-way capture has changed
+
+For years, one-way retrospective coding worked for plans because the audit risk was diffuse and the enforcement cadence was slow. Both conditions changed in 2025-2026.
+
+CMS expanded its RADV program to all 550 eligible Medicare Advantage contracts annually, up from approximately 60, with records per plan rising from roughly 35 to as many as 200 ([Ropes & Gray, May 2025](https://www.ropesgray.com/en/insights/alerts/2025/05/cms-announces-significant-changes-to-radv-auditing-efforts-considerations-and-next-steps)). The systemic improper-payments picture has been visible for a year: the [OIG's October 2024 report](https://oig.hhs.gov/reports/all/2024/medicare-advantage-questionable-use-of-health-risk-assessments-continues-to-drive-up-payments-to-plans-by-billions) tracked $7.5 billion in 2023 risk-adjusted payments tied specifically to diagnoses with no supporting encounter data. Industry-wide annual coding intensity overpayments are estimated at $17 to 43 billion ([HCI Innovation Group, May 2025](https://www.hcinnovationgroup.com/policy-value-based-care/medicare-advantage/news/55294434/implications-of-cmss-expansion-of-radv-audits-could-be-far-reaching)).
+
+The diffuse-risk era is over. The expected value of the audit liability on a one-way program is no longer a footnote in the model.
+
+## What two-way coding looks like operationally
+
+A symmetric retrospective program runs the same engine against the same chart and produces three outputs: diagnoses to add, diagnoses to delete, and diagnoses to confirm. Each output carries the same evidence model: chart sentence, encounter ID, date of service, provider name and credentials, signature status.
+
+Operational consequences:
+
+- Deletion candidates often outnumber additions on mature charts. Charts coded across multiple prior cycles accumulate diagnoses that may have lacked MEAT support from the start or lost it as the patient's condition evolved.
+- Reviewer workload shifts. Reviewers who previously focused on add candidates now split time roughly evenly between add and delete review queues. Workflow software that only routes adds is the wrong tool.
+- Reporting metrics change. Net RAF change becomes the operative number rather than gross additions. The board-level question shifts from "how many codes did we capture this quarter" to "what is our net audit-defended RAF position."
+- Vendor scope expands. A retrospective vendor whose contract scope is "find additional codes" can't deliver this work under the existing statement of work.
+
+## The phased redesign
+
+A health plan with a current one-way program and 2026 chart review cycles already in motion can move toward symmetry in three phases.
+
+Phase one: instrument for symmetric output. Configure the chart review engine to surface delete candidates alongside add candidates, even if delete actions queue separately at first. This produces an audit trail showing the plan is identifying unsupported diagnoses, regardless of where downstream workflow stands.
+
+Phase two: staff the deletion queue. Build the coder workflow for evaluating delete candidates against the same evidence standard as adds. This is more operational lift than technical.
+
+Phase three: close the loop with CMS. Submit deletion-driven adjustments through the standard risk-adjustment correction pathway, documented as identified through the plan's own chart review. This is the step the False Claims Act framework expects.
+
+Plans completing phase one before their next CMS submission deadline reduce False Claims Act exposure materially, even if phases two and three lag.
+
+## What changes about your vendor contract review
+
+If your retrospective coding runs through a vendor on success commission, the two-way standard isn't just an operational change. It's a contractual one. A vendor paid as a function of gross adds has no economic incentive to surface deletions. The contract either gets rewritten to compensate for symmetric work, or the operation moves to a different commercial model: flat license, fixed per-chart fee with explicit two-way scope, or in-house.
+
+I'd push every plan I work with to put the contract review on the same timeline as the operational redesign. Phase one is operational urgency; the contract is commercial urgency. Doing them out of sequence costs more than doing both at once.
+
+For plans evaluating the engine layer for a two-way operation, Martlet AI's [retrospective risk adjustment engine](https://martlet.ai/solutions/retrospective-risk-adjustment) produces add, delete, and confirm candidates from each chart pass with identical evidence packets and a unified audit log. The commercial structure (annual license, no per-chart or success-commission fees) removes the incentive misalignment the False Claims Act framework now penalizes. Our existing [RADV audit readiness piece](/resources/blog/radv-audit-readiness-for-health-plans) covers the audit posture work this redesign sits inside.
+
+## FAQ
+
+### What is two-way retrospective HCC coding?
+
+A retrospective chart review program that surfaces both diagnoses to add and diagnoses to delete, using the same evidence standard for each.
+
+### Why does the March 2026 settlement matter industry-wide?
+
+The structural finding (selective use of chart review results triggers False Claims Act liability) applies to any plan operating a one-way program, not just the named insurer.
+
+### Does symmetric coding reduce risk-adjustment revenue?
+
+Net RAF change is what matters. On charts over-coded in prior years, deletions reduce gross adds. On under-coded charts, additions still net positive. The audit-defensibility benefit shows up over the multi-year horizon.
+
+### Can a vendor on success commission run a symmetric program?
+
+The structural incentive misaligns: vendor revenue scales with additions, not deletions. A symmetric program is feasible only if the contract explicitly compensates for deletion identification.
+
+### How long does the phased redesign take?
+
+Phase one (symmetric instrumentation) is weeks if the engine supports it. Phase two (deletion queue staffing) is several months for a mid-sized plan. Phase three (CMS correction loop) ties to the next correction window.

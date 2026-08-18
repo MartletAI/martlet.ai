@@ -1,0 +1,102 @@
+---
+title: 'V28 in production: the 2,000 codes that no longer count'
+date: '2026-08-18'
+description: 'V28 now drives 100% of MA risk-adjustment payment. Why hard-coded model versions break RADV backfill, and how payment-year-aware mapping fixes it.'
+metaTitle: 'HCC V28 in Production: 2,000 Codes That No Longer Count | Martlet AI'
+thumbnail: /assets/blog/cms-hcc-v28-production-mapping/cover.png
+tag: Insights
+authors:
+- Hasham Ul Haq
+definedTerm:
+  name: Payment-Year-Aware HCC Mapping
+  description: A coding architecture where the ICD-10-to-HCC mapping, model version, and coefficient weights applied to a chart are parameterized by the payment year being submitted for — not by the engine's current date — so retrospective backfill, prospective alerts, and RADV packets each apply the CMS-HCC model version that was actually in effect for that payment year.
+---
+
+![V28 Removed More Than 2,000 Codes: ~9,797 valid ICD-10-CM codes under V24 to 7,770 under V28, an aggregate 5.8% risk score reduction](/assets/blog/cms-hcc-v28-production-mapping/cms-hcc-v28-production-mapping-infographic.png)
+
+January 1, 2026 was the first day Medicare Advantage risk-adjustment payment was calculated entirely from the V28 model. The blended V24/V28 transition is over. Most teams I talk to about V28 migration treat it as a configuration change. It's not. It's a mapping discipline that has to hold across three workflows, multiple payment years, and a forward stream of dates of service for the next decade.
+
+The structural changes are in CMS's published materials. The engineering response is where most production deployments still have gaps, and the gaps compound silently.
+
+## What V28 changed
+
+From the [CMS 2026 Rate Announcement](https://www.cms.gov/newsroom/fact-sheets/2026-medicare-advantage-part-d-rate-announcement):
+
+- HCC categories: 86 under V24 to 115 under V28
+- Valid ICD-10-CM codes mapping to HCCs: approximately 9,797 to 7,770 (net reduction of more than 2,000 codes)
+- Reweighting of chronic conditions, with substantial changes for diabetes, depression, and vascular disease families
+- Calibration against newer fee-for-service Medicare data
+
+The aggregate effect: a measured 5.8% risk score reduction under V28 versus V24 in the peer-reviewed analysis published in [Health Affairs Scholar, April 2026](https://academic.oup.com/healthaffairsscholar/article/4/5/qxag092/8655583). [Albanese et al. in the January 2026 issue](https://academic.oup.com/healthaffairsscholar/article/4/1/qxag010/8430651) document how the impact varies across insurers.
+
+## The mapping discipline problem
+
+Most engineering teams encode the V24-to-V28 transition as a mapping layer: ICD-10 code in, HCC out, model version selects which mapping applies. The trap: the right model version depends on the payment year being submitted for, which depends on the date of service, which depends on which workflow is running.
+
+The dependency graph for a 2026 production deployment:
+
+| Workflow | Model version applied |
+| --- | --- |
+| A retrospective sweep for 2024 DOS | V28 at 67%, V24 at 33% |
+| A retrospective sweep for 2025 DOS | V28 at 100% (used for 2026 payment year) |
+| A prospective alert in May 2026 | V28 at 100% (for 2027 payment year) |
+| A RADV packet for 2021 payment year | V24 at 100% (V28 wasn't in effect) |
+| A RADV packet for 2024 payment year | V28 at 33%, V24 at 67% blend |
+
+Programs that hard-coded "V28 = current" risk miscoding either historical work (RADV backfill) or future-payment-year work. Programs that never built an explicit model-version selection layer have to add one this year. I've seen teams treat this as a two-week sprint and discover it's a multi-month one because the assumption was buried across half the codebase.
+
+## What the 2,000 removed codes look like
+
+V28 removed about 2,000 ICD-10 codes from HCC mapping. The removals concentrate in diagnosis families CMS recalibration found weakly predictive of cost: certain renal disease stages, peripheral vascular disease subtypes, depression and anxiety variants without complications, chronic conditions where V24 was thought to be inflated by selective coding.
+
+The practical implication for a retrospective sweep: surfacing a diagnosis whose ICD-10 code is on the removed list for the relevant payment year is wasted reviewer time. The sweep shouldn't produce these candidates. Engines that surface every diagnosis regardless of HCC mapping push false positives to reviewers; engines that filter against the current model version don't.
+
+Conversely, V28 added 268 new diagnosis-to-HCC mappings. These need to be in the engine's mapping table or the engine silently misses valid HCC opportunities. Silently is the word I'd emphasize. Missing captures don't surface as errors; they show up as RAF that should have been there and isn't.
+
+## The reweighting problem
+
+The HCCs that survived the V28 transition often did so at different RAF weights. The diabetes family is the most-studied example, with substantial changes in the weighting of complicated versus uncomplicated diabetes documented across multiple analyses.
+
+For an engineering team, the reweighting is straightforward to encode (a coefficient table per payment year) but consequential downstream. The prospective alert prioritization logic, which surfaces highest-RAF opportunities first, has to use the right year's weights. Ranking that worked under V24 produces a different ranking under V28 for the same patient.
+
+The trade-off worth thinking about explicitly: a prospective system using last year's weights to rank this year's suggestions is faster to ship but produces a worse experience for the physician. A prospective system that recalibrates with each payment year update is slower to roll out but produces clinically relevant rankings. I'd take the slower roll-out every time. The cost of the recalibration is bounded; the cost of bad rankings is provider abrasion that erodes the program over years.
+
+## The four properties of a V28-clean coding stack
+
+Explicit model versioning. Every code suggestion carries the model version that generated it: the medical language model version, the ICD-10 mapping version, and the CMS-HCC version. The audit log records all three. Submitting a 2026 payment year correction in 2028 with the wrong CMS-HCC version is a finding waiting to happen.
+
+Payment-year-aware mapping. The mapping layer is parameterized by the payment year being submitted for, not by the engine's current date. Reprocessing 2023 DOS uses V24 (or the appropriate blend); reprocessing 2025 DOS uses V28.
+
+Filtered candidate surfacing. Candidates surfaced to reviewers or providers in prospective alerts are pre-filtered against the relevant payment year's mapping. Codes removed in V28 don't get suggested for V28 payment years.
+
+Reweighted prioritization. Ranking logic uses the relevant payment year's weights. Highest-RAF-opportunity logic that hard-coded V24 weights produces wrong rankings under V28.
+
+## Why this matters for the next model update
+
+V28 isn't the last model CMS will publish. The [2027 Advance Notice](https://www.cms.gov/newsroom/fact-sheets/2027-medicare-advantage-part-d-rate-announcement) signals continued recalibration. Programs that build payment-year-aware mapping early operate cleanly through future updates without re-architecting each time. Programs that hard-code the current model pay migration costs on every CMS version change.
+
+If I had to pick one piece of advice for engineering leads building toward the long horizon of risk-adjustment work, it would be this: build the model-versioning abstraction now. It's the cheapest insurance policy in the stack. Every subsequent CMS update gets cheaper because of it.
+
+The Martlet AI engine carries explicit model versioning at every layer, payment-year-aware mapping, and append-only audit logging on each decision. Codes V28 removed don't surface for V28 payment years; codes V28 added are in the mapping. Reviewers see payment-year context and model versions in the audit log. This is the architecture the next model update will reward.
+
+## FAQ
+
+### Is V28 the final model, or will there be more changes?
+
+CMS has signaled in the 2027 Advance Notice that further recalibration is under consideration. Expect model updates every few years.
+
+### Most common engineering mistake on V28?
+
+Hard-coding "current model" instead of payment-year-aware mapping. Breaks both historical backfill and forward-payment-year work.
+
+### How do we know which dates of service map to which model version?
+
+The CMS Rate Announcement for each payment year specifies the model and blend. The 2026 Rate Announcement specified V28 at 100% for the 2026 payment year using 2025 dates of service.
+
+### What happens if we submit a 2026 correction in 2028 with the wrong CMS-HCC version?
+
+The submission processes but produces different RAF effects than the original, and audit reconstruction three years later won't match. Use the correct model version for the payment year being corrected.
+
+### Are the 268 newly mapped codes already in our claims data?
+
+Yes. These are existing ICD-10 codes that V28 newly maps to HCCs. They're in the standard ICD-10-CM code set. The question is whether the coding stack's HCC mapping has been updated.

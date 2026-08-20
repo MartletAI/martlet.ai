@@ -1,0 +1,94 @@
+---
+title: 'Success-commission HCC coding: the structural conflict of interest'
+date: '2026-08-20'
+description: 'Success-commission vendors are paid 15-30% of captures while the plan repays CMS at RADV. How to restructure your HCC coding contract in 2026.'
+metaTitle: 'Success-commission HCC coding: the plan absorbs audit risk | Martlet AI'
+thumbnail: /assets/blog/success-commission-hcc-coding-conflict/cover.png
+tag: Insights
+authors:
+- Ritwik Jain
+definedTerm:
+  name: Success-Commission HCC Coding
+  description: A vendor pricing model in which an HCC coding vendor is paid 15 to 30% of the additional risk-adjustment revenue it captures for a health plan — creating a structural incentive to maximize gross diagnosis additions while leaving audit liability, RADV clawback, and False Claims Act exposure entirely with the plan.
+---
+
+![The Structural Conflict in Success-Commission Coding: capture revenue flow rewards the vendor while audit liability flow leaves the plan bearing 100% of audit risk](/assets/blog/success-commission-hcc-coding-conflict/success-commission-hcc-coding-conflict-infographic.png)
+
+Picture a tax firm paid 20% of every deduction it finds. The firm has every incentive to find more deductions and push the envelope on what's defensible. If you get audited, you pay; the firm keeps its cut.
+
+This is the analogy the [MedCity News piece in November 2025](https://medcitynews.com/2025/11/why-its-time-to-bring-hcc-coding-in-house/) used to describe success-commission HCC coding. It's a good analogy. The structural conflict isn't a vendor-by-vendor question; it's built into the business model.
+
+What surprises me, and I've watched this for years, is how few CFOs have rerun the procurement math since the audit landscape changed. The model worked while audits were rare; it doesn't work now.
+
+## The model in plain terms
+
+A success-commission vendor is paid a share, typically 15 to 30%, of the additional risk-adjustment revenue the vendor captures for the plan. The vendor's revenue scales with the volume and value of additional HCCs surfaced. Three structural consequences follow.
+
+The vendor's incentive is to maximize gross captures. The more codes found, the more the vendor is paid. Whether each code survives audit in three years isn't the vendor's problem.
+
+The audit liability stays with the plan. When CMS identifies an unsupported code at RADV, the plan repays. The vendor was paid years earlier and has no liability for the clawback.
+
+The vendor has no incentive to identify deletions. A diagnosis the vendor finds unsupported, which the plan should delete and repay CMS for, generates no vendor revenue and reduces future captures. The vendor's economic interest is in not finding these.
+
+This isn't a claim about any specific vendor. It's a structural feature of the model that holds regardless of vendor intent or capability.
+
+## Why the model worked, and why it stopped
+
+Success commission proliferated in HCC coding because it solved a real procurement problem. No upfront commitment, no fixed-cost exposure: the vendor was paid out of revenue it generated. The model aligned vendor revenue with a measurable outcome.
+
+The problem: the measurable outcome was gross capture, not audit-defensible capture. While RADV audits were rare and clawbacks small relative to gross capture, the math worked. Three things changed in 2025-2026.
+
+Audit volume increased. CMS expanded RADV from approximately 60 contracts annually to all 550 eligible contracts, with records per plan rising from ~35 to up to 200 ([Ropes & Gray, May 2025](https://www.ropesgray.com/en/insights/alerts/2025/05/cms-announces-significant-changes-to-radv-auditing-efforts-considerations-and-next-steps)).
+
+Audit findings became public. The total improper-payments picture is now visible in published reporting: the systemic CMS Part C payment error figure approaches $19 billion annually; OIG analysis has documented $7.5 billion specifically attributable to HRA-driven unsupported captures.
+
+Enforcement intensified. The [DOJ March 2026 False Claims Act settlement](https://www.justice.gov/opa/pr/aetna-agrees-pay-1177-million-resolve-false-claims-act-allegations) established that selective use of chart review results triggers FCA liability. Plans running one-way capture programs (exactly what success commission incentivizes) now carry exposure they didn't have three years ago.
+
+Gross capture without two-way discipline is a liability the plan absorbs. The cost of that liability, under conventional RADV plus False Claims Act exposure, is no longer a footnote.
+
+## Restructuring the relationship
+
+Three options exist for a plan that wants to remove the structural conflict. None require a single year-end decision; each can phase in.
+
+Option one: license-based pricing with the existing vendor. Some coding vendors offer license-based commercial terms as an alternative to success commission. The vendor is paid a fixed annual fee regardless of capture volume. The incentive to push the envelope disappears. Operationally lightest if you're satisfied with vendor capability.
+
+Option two: in-house build with engine licensing. Bring the operation in-house and license the engine. The structural conflict goes away because no third party's revenue is tied to capture volume. The break-even math sits in the in-house break-even article in this series.
+
+Option three: hybrid with audit-defensible contracting. Retain a vendor for capacity reasons but restructure the contract to remove success commission. Pricing moves to per-chart fixed fees or per-FTE retainer; the contract includes explicit two-way coding requirements with vendor accountability for flagged-and-submitted codes. Operationally heavier than option one, lighter than option two.
+
+## What to put in your next vendor RFP
+
+For plans renewing or re-bidding their HCC coding vendor relationship in 2026, the RFP framework I'd recommend:
+
+- Commercial model: license-based or fixed-fee. Success commission acceptable only if explicit contractual terms transfer audit liability to the vendor (rare and usually negotiated out).
+- Two-way coding scope: the vendor's deliverable includes both diagnoses to add and diagnoses to delete, with equal evidentiary support required for each.
+- Evidence model: page-level evidence on every code (chart sentence, encounter, DOS, provider, credentials, signature). No code without provenance.
+- Audit log: append-only, capturing every decision and reviewer action, with model version tracked.
+- Deployment posture: in-environment options if PHI sovereignty matters to you.
+- Reporting: net RAF change as the primary metric, with audit-adjusted RAF as a separate line.
+
+Plans that put these requirements in the RFP find the vendor field narrows quickly. That's information.
+
+For plans evaluating the engine layer as part of an in-house or hybrid path, Martlet AI's commercial structure was designed to remove the structural conflict: annual license, no per-chart or per-token fees, no success commission. The engine produces add, delete, and confirm candidates from every chart pass, so the operating posture is two-way by default. The break-even modeling and the two-way coding standard pieces in this series cover the financial and operational sides of the same decision.
+
+## FAQ
+
+### Is the conflict specific to success-commission models, or to outsourced coding generally?
+
+Sharpest in success-commission models. Per-chart-fee models have a milder version. License-based pricing removes it.
+
+### Can a contract clause transfer audit liability to the vendor?
+
+In principle yes; in practice, vendors negotiate hard against this, and the contract structures that survive typically cap vendor liability well below the plan's exposure.
+
+### What share of captures surface deletions in a well-run two-way program?
+
+For mature charts (coded multiple cycles), deletion candidates often run 15 to 30% of total surfaced items. First-cycle charts are lower. Plan history drives the number.
+
+### Does this argument apply to ACOs and risk-bearing provider organizations?
+
+Yes. The structural conflict exists wherever a third party is paid based on captures and the audit-liable entity is someone else.
+
+### Timeline to migrate from success commission to license-based pricing?
+
+Vendor swap: 3 to 6 months. In-house build: 9 to 18 months. Hybrid restructure: depends on contractual flexibility.

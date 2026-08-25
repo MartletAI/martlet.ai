@@ -1,0 +1,91 @@
+---
+title: 'Modeling prospective versus retrospective HCC capture economics'
+date: '2026-08-25'
+description: 'Model prospective vs retrospective HCC capture for a 200,000-life MA plan: cost per RAF point, audit posture after the DOJ March 2026 settlement.'
+metaTitle: 'Prospective vs Retrospective HCC Coding: Cost per RAF Point | Martlet AI'
+thumbnail: /assets/blog/prospective-vs-retrospective-hcc-capture-economics/cover.jpg
+tag: Insights
+authors:
+- Ritwik Jain
+definedTerm:
+  name: Cost per RAF Point
+  description: A unit-economics measure for HCC capture programs — total program cost divided by total RAF score lift delivered — used to compare prospective point-of-care capture against retrospective chart-review capture on a common basis, distinct from audit-defensibility, which must be modeled separately.
+---
+
+![Prospective vs. Retrospective HCC Economics: prospective costs $80–120 per RAF point with stronger audit evidence, retrospective costs $670–1,330 per RAF point and depends on existing chart quality](/assets/blog/prospective-vs-retrospective-hcc-capture-economics/prospective-vs-retrospective-hcc-capture-economics-infographic.jpg)
+
+For a 200,000-life Medicare Advantage plan trying to maximize defensible RAF capture in 2026, the question isn't whether to invest in prospective or retrospective coding. Both are necessary. The question is how to allocate the dollars between them.
+
+The allocation question is one I'd push every CFO to model explicitly. Most don't, and they're leaving money on both sides of the analysis. The math is below, with the audit posture difference that shifts the analysis once you factor it in.
+
+## Two workflows, different unit economics
+
+Prospective and retrospective HCC capture both aim to surface defensible diagnoses for risk-adjustment payment. The cost structure differs materially.
+
+Prospective coding catches the diagnosis at the visit. The provider documents the condition with MEAT-compliant evidence at the time of treatment. The diagnosis flows through claims, and risk-adjustment data carries it from claim data directly. Cost components: the prospective platform, EHR integration, marginal provider time documenting in-scope conditions that would have otherwise gone uncoded.
+
+Retrospective coding catches the diagnosis after the fact. A coder (human or engine-with-reviewer) reads completed charts, identifies missed HCCs, validates MEAT compliance, submits diagnosis adjustments through CMS's correction pathway. Cost components: retrospective platform, chart retrieval infrastructure, coder labor, chart review cycle time.
+
+The [Commonwealth Fund's January 2026 explainer](https://www.commonwealthfund.org/publications/explainer/2026/jan/how-risk-adjustment-affects-payment-medicare-advantage-plans) notes CMS has been moving the risk-adjustment basis toward encounter data and away from supplemental chart-review-only diagnoses since 2016. The [CMS Report to Congress on Risk Adjustment in Medicare Advantage](https://www.cms.gov/files/document/report-congress-risk-adjustment-medicare-advantage-december-2024.pdf) documents the transition. The structural implication: prospective capture, producing encounter-data-supported diagnoses, has stronger downstream payment posture than retrospective capture that only surfaces diagnoses in chart review.
+
+## Cost per RAF point: the comparison
+
+A simplified model for a 200,000-life MA plan using illustrative round numbers:
+
+Prospective program. Suppose the plan runs prospective across 80% of its lives. Platform cost, EHR integration, and provider workflow overhead total $4 to 6 per member per year for the addressable population, or roughly $640,000 to $960,000 annually. If the program lifts RAF capture by 0.05 points per addressable member on average (a defensible mid-range estimate) total RAF lift is approximately 8,000 RAF points. Cost per RAF point: roughly $80 to $120.
+
+Retrospective program. Suppose the same plan runs retrospective across 95% of its lives. At an outsourced cost of $20 to $40 per chart at one chart per member per year, annual cost is $3.8 to 7.6 million. If the program lifts RAF capture by 0.03 points per member on average (defensible after a strong prospective program) total RAF lift is approximately 5,700 RAF points. Cost per RAF point: roughly $670 to $1,330.
+
+These numbers are illustrative; yours will vary based on starting capture rate, provider documentation maturity, vendor contract terms, and the structural lift available under V28. The directional finding is robust: prospective is meaningfully cheaper per RAF point at the margin, provided the program is well-designed.
+
+## The audit posture difference
+
+Cost per RAF point is one dimension. Audit posture is another. A diagnosis captured prospectively, documented in the encounter note by the treating provider with MEAT-compliant language, flows through claims as encounter data. It's audit-defensible by design.
+
+A diagnosis captured retrospectively through chart review carries different audit posture. If the chart review surfaces a diagnosis the original provider documented but didn't code, posture is similar to prospective. If the chart review surfaces a diagnosis inferred from medications, lab values, or narrative without the original provider having documented it, the posture depends on how the evidence is assembled and how MEAT-validated the supporting documentation is.
+
+The DOJ's [March 2026 settlement](https://www.justice.gov/opa/pr/aetna-agrees-pay-1177-million-resolve-false-claims-act-allegations) reinforced this distinction. Chart review programs that surface diagnoses unilaterally, without addressing whether the underlying documentation supports the diagnosis at time of service, carry False Claims Act exposure. Retrospective done well is audit-clean; retrospective done sloppily is the problem.
+
+The implication: the cost-per-RAF-point math should be adjusted for risk-adjusted audit exposure. A retrospective program with 60% of captures supported by MEAT-compliant documentation already in the chart is materially safer than one with 30% relying on inference. The two have similar pre-audit unit economics and very different post-audit unit economics three years down the line.
+
+## Where the allocation actually lands
+
+The structural answer for most well-run plans in 2026: invest heavily in prospective to capture high-value, audit-defensible diagnoses at the point of care, and run retrospective as a coverage layer for what prospective missed, particularly chronic conditions documented in the chart by providers who didn't code them on the encounter.
+
+This is the integrated three-workflow approach: prospective at the visit, retrospective on the same engine catching what prospective missed, RADV preparation drawing on the same evidence model for both. The plans achieving best combined RAF capture per dollar at lowest audit exposure are running this stack rather than two separate vendors for prospective and retrospective.
+
+## What I'd do for a 200,000-life plan today
+
+Concretely, for a CFO modeling the allocation in May 2026:
+
+On the prospective side: invest if prospective capture currently sits below ~70% of the engine-modeled ceiling for your population. The marginal dollar here has the best cost-per-RAF-point return.
+
+On the retrospective side: maintain coverage but shift the operational discipline toward two-way capture. Don't accelerate gross capture without simultaneously tightening MEAT validation.
+
+On the integration: the highest-leverage decision is whether your prospective and retrospective work runs on the same engine and evidence model or on separate stacks. Same engine, same evidence packets, same audit log: this is the operational state to aim for.
+
+On the contractual structure: if either workflow runs on success commission, the False Claims Act framework after the DOJ March 2026 settlement makes restructuring urgent.
+
+Martlet AI runs all three workflows on a single engine with a unified evidence model. The unit economics work out because the same chart, processed once, feeds [prospective](https://martlet.ai/solutions/prospective-risk-adjustment), [retrospective](https://martlet.ai/solutions/retrospective-risk-adjustment), and [RADV](https://martlet.ai/solutions/radv). For a plan modeling its own allocation, this is the architectural choice that determines whether you operate one program or three.
+
+## FAQ
+
+### Are the cost-per-RAF-point numbers above industry benchmarks?
+
+Numbers are illustrative ranges from publicly cited per-chart and per-member costs. The order-of-magnitude difference between prospective and retrospective is the load-bearing claim.
+
+### Why is prospective audit-cleaner than retrospective?
+
+Prospective diagnoses flow through claims as encounter data, documented by the treating provider at time of treatment. Retrospective diagnoses added through chart review carry audit posture only as strong as the underlying chart documentation.
+
+### What share of RAF capture can move from retrospective to prospective?
+
+For plans starting from a low prospective baseline, 40 to 60% of historical retrospective lift can typically move prospective over 18 to 24 months. Remainder stays retrospective because some chronic conditions aren't addressed in visits.
+
+### Does this analysis change with V28?
+
+V28 reduces total RAF capture (measured at 5.8% per peer-reviewed analysis) but doesn't change the relative economics between prospective and retrospective.
+
+### How does in-house versus outsource interact with this?
+
+In-house and outsourced have different cost structures within each workflow. The prospective-versus-retrospective allocation question and the in-house-versus-outsource question are largely independent and should be modeled separately.

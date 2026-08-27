@@ -1,0 +1,100 @@
+---
+title: 'Prospective HCC coding without query fatigue: a point-of-care design'
+date: '2026-08-27'
+description: 'Physician attention is the budget your prospective HCC program spends. A four-pass pre-visit filter cuts point-of-care alerts to 1–3 per visit.'
+metaTitle: 'Prospective HCC coding without query fatigue: alert design | Martlet AI'
+thumbnail: /assets/blog/prospective-hcc-coding-query-fatigue/cover.jpg
+tag: Insights
+authors:
+- Hasham Ul Haq
+definedTerm:
+  name: Query Fatigue (Prospective HCC Coding)
+  description: The point at which physicians turn off, ignore, or stop documenting in response to point-of-care HCC suggestions, typically measured by suggestion acceptance rate — rates below roughly 30% indicate fatigue, and are usually the result of a prospective program surfacing too many low-confidence or out-of-scope candidates per visit.
+---
+
+![Prospective Coding Without Fatigue: four filters narrow a broad pool to actionable point-of-care suggestions](/assets/blog/prospective-hcc-coding-query-fatigue/prospective-hcc-coding-query-fatigue-infographic.jpg)
+
+A primary care physician sees twenty patients in a clinic day. If half get a prospective HCC suggestion in the EHR ("diabetic neuropathy not coded this year, please confirm") and a third of those are wrong or already coded, the physician has spent real clinic time dismissing noise. Two quarters later, the suggestion alerts get turned off in the workflow. The prospective program has failed not because the AI was inaccurate in aggregate but because it surfaced too much, too noisily, at the wrong threshold.
+
+I have strong opinions about prospective HCC coding design. The strongest is that physician attention is the budget you spend, and most programs spend it badly. The engineering decisions matter. The operational ones matter more.
+
+## The three properties of a usable point-of-care alert
+
+A prospective HCC suggestion the physician will act on has three properties.
+
+Small. A typical clinic encounter absorbs one or two HCC opportunities per patient, addressed in the closing minute of the visit. A list of seven suggestions isn't a list; it's homework. The engineering choice is to set a high confidence floor and surface only suggestions above it. The remainder aren't lost; they go to retrospective sweep.
+
+Carries its own evidence. A physician confirming a diagnosis needs to see why the system thinks the diagnosis is present, in one glance. The evidence is the chart sentence (with DOS and provider) that motivated the suggestion. If the physician disagrees, they dismiss it. If they agree, they document it in the note, where the documentation is the primary record.
+
+Scoped to the visit. A prospective suggestion asking a cardiologist to address dementia is misdirected. The system needs to know what the visit is for (chief complaint, specialty, visit type) and only surface what's reasonably addressable. Out-of-scope suggestions route to a longitudinal queue for the appropriate care team member.
+
+## The architecture, component by component
+
+A point-of-care prospective system delivering these properties has four layers.
+
+Longitudinal patient view. Pulls the patient's history across encounters: prior diagnoses, problem list, recent labs, current medications, plan-side care gaps. Input to inference.
+
+Clinical inference layer. Runs the same healthcare-specific extraction pipeline used in retrospective coding: NER, negation and temporality classification, medication-condition relation extraction, cross-document reasoning. Output: a ranked list of candidate HCCs with associated evidence and confidence scores.
+
+Pre-visit filter. Applies the small/evidence/scoped filter. Removes candidates already documented for the current payment year, candidates outside the visit's specialty scope, and candidates below the confidence threshold. This filter is the difference between a usable list and a noisy one.
+
+Point-of-care interface. Surfaces the filtered list inside the EHR workflow at encounter open, with the chart sentence visible on hover or click. Documentation flows into the encounter note as primary record.
+
+After the visit, a pre-claim audit verifies that diagnoses documented in the note match the encounter coding and that each new diagnosis carries MEAT-compliant supporting language. Discrepancies surface as exceptions for the coder, not as additional queries to the physician.
+
+## The engineering trade-offs
+
+The confidence floor. Single most consequential decision. Set it high and the list is short and accurate but misses HCCs a lower threshold would capture. Set it low and the physician disengages. The right floor varies by specialty and HCC family. For specialists, the floor can be tighter (a cardiologist accepts heart-failure suggestions at lower confidence than a generalist would). For high-RAF codes, the floor can loosen if evidence is shown clearly.
+
+In production, I'd recommend setting the initial floor at the 85th to 90th percentile of the engine's measured precision curve and adjusting against physician acceptance rate over the first quarter. Acceptance rate below 60% is a signal the floor's too low; above 90% is a signal it might be too high (you're leaving capture on the table).
+
+Point-of-care alert vs. pre-visit summary. A pre-visit summary lets the physician prepare; an in-visit alert delivers context at the moment of need but adds cognitive load. The right answer for most programs is both, with the pre-visit summary populating the suggestion list that surfaces at the visit. The in-visit alert acts as confirmation rather than discovery.
+
+Engine end-to-end vs. human-in-the-loop verification. End-to-end is faster but riskier. A safety net of human review before suggestions reach the physician is safer but slower. For high-confidence suggestions in a calibrated system, end-to-end is fine. For low-confidence suggestions, the safety net is the workflow.
+
+FHIR integration vs. proprietary EHR API. FHIR R4 is the right default for portability across EHR systems. Proprietary integrations can be faster to ship for a single EHR but lock you in. Most production deployments I'd recommend use FHIR R4 with a thin EHR-specific adapter for surface integration.
+
+## How the pre-visit filter actually works
+
+The filter has four passes:
+
+1. Already-coded filter. Remove candidates already coded for the current payment year. Trivial in concept, easy to get wrong if the candidate database isn't tightly synced with claims.
+2. Specialty filter. Match candidate HCC families against the physician's specialty and the visit's chief complaint. A primary care physician sees a broader candidate pool than a subspecialist. Rule-based and configurable per organization.
+3. V28 mapping filter. Apply the relevant payment year's CMS-HCC version. Codes V28 doesn't map to HCCs for the 2026 payment year shouldn't surface as RAF opportunities (they may still surface as clinical alerts, separately).
+4. Confidence threshold filter. Drop candidates below the calibrated floor. This is where the precision-recall trade-off plays out.
+
+What survives all four passes is the list the physician sees. A correctly tuned system produces 1 to 3 items per visit for most primary care encounters; less for specialists, more for high-complexity multi-specialty visits.
+
+## What this looks like in production
+
+The Martlet AI prospective engine runs the architecture above on the John Snow Labs medical language model stack, the same stack benchmarked at the 8.6-point accuracy gap against frontier general LLMs ([JSL benchmarks](https://www.johnsnowlabs.com/healthcare-llm/), [Stanford HAI evaluation](https://hai.stanford.edu/news/holistic-evaluation-of-large-language-models-for-medical-applications)). The pre-visit filter is configurable per specialty and per HCC family. FHIR R4 integration delivers suggestions to the major EHR systems without proprietary integration work.
+
+Running inside the customer's environment means inference happens with single-digit-millisecond round-trips to the EHR (relevant for the in-visit alert latency that determines whether the alert feels integrated or grafted on). The engine surfaces page-level evidence on every suggestion and logs each physician action against a versioned model.
+
+If you're designing or rebuilding a prospective program, the architectural choices above are where the work lives. Get the pre-visit filter right and the rest is execution; get it wrong and accuracy benchmarks don't save you.
+
+## FAQ
+
+### What counts as query fatigue in operational terms?
+
+The point at which physicians turn off, ignore, or stop documenting in response to system suggestions. Usually measured by suggestion acceptance rate; rates below ~30% typically indicate fatigue.
+
+### How small should the suspect list be?
+
+A reasonable ceiling for a primary care visit is one or two HCC opportunities per patient. Specialist visits can absorb more if suggestions are in-specialty.
+
+### Does this approach miss codes a more aggressive program would catch?
+
+Yes, deliberately. Codes below the prospective confidence floor go to retrospective sweep, where the human-in-the-loop is structured to evaluate them.
+
+### What does "scoped to the visit" mean in practice?
+
+The system considers the visit's chief complaint, physician specialty, and visit type, and only surfaces suggestions a physician of that specialty addressing that complaint can reasonably document in this encounter.
+
+### How does this interact with V28 mapping?
+
+The mapping layer applies V28 rules to candidate HCCs before they surface. Codes V28 removed don't get suggested; codes V28 reweighted get prioritized by new weights.
+
+### How should we tune the confidence floor over time?
+
+Start at the 85th to 90th percentile of the engine's measured precision curve. Watch physician acceptance rate by specialty for the first quarter. Acceptance rate below 60% means the floor's too low; consistently above 90% means it might be too high.

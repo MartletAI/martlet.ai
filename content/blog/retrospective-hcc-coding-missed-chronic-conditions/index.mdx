@@ -1,0 +1,102 @@
+---
+title: 'Why retrospective HCC sweeps miss chronic conditions documented in the chart'
+date: '2026-09-01'
+description: 'Chronic conditions documented in the chart go uncoded. Cross-document reasoning and MEAT validation close the capture gap in retrospective HCC coding.'
+metaTitle: 'Retrospective HCC Coding: Why Chronic Conditions Get Missed | Martlet AI'
+thumbnail: /assets/blog/retrospective-hcc-coding-missed-chronic-conditions/cover.jpg
+tag: Insights
+authors:
+- Hasham Ul Haq
+definedTerm:
+  name: Retrospective Coding Miss Patterns
+  description: The three recurring failure modes that cause a retrospective HCC sweep to miss chronic conditions that are clinically documented — diagnoses recorded only as medications and lab values rather than ICD codes, diagnoses buried under negation or hypotheticals, and diagnoses whose most specific code lives in a different encounter than the one being read.
+---
+
+![Three Patterns That Account for Most Misses: HCC sweeps miss conditions when evidence needs context — medication-implied diagnoses, negation or context patterns, cross-document dependencies](/assets/blog/retrospective-hcc-coding-missed-chronic-conditions/retrospective-hcc-coding-missed-chronic-conditions-infographic.jpg)
+
+A diabetic patient sees their primary care doctor twice in a year. First visit, the encounter note reads "A1c 8.2, refilling metformin and adding glipizide." Second visit, "BP elevated, increased lisinopril; will continue diabetic regimen." Neither note carries a structured ICD-10 code for type 2 diabetes with hyperglycemia. But every clinical signal in the chart says the condition is active and being treated.
+
+A retrospective HCC sweep that misses this isn't missing rare data. It's missing the most common pattern in chronic-condition documentation. If you ask me where retrospective coding programs leak the most revenue, I'll point you at the three patterns below.
+
+## Three patterns that account for most misses
+
+Pattern 1: diagnoses recorded as medications and lab values, not ICD codes. The diabetic patient above is the textbook case. The provider treats the condition every visit; the structured field doesn't get refreshed. To catch this, a sweep has to read the medication list, recognize metformin and glipizide together indicate active type 2 diabetes, and connect the inferred diagnosis to the in-scope DOS.
+
+This is a relation extraction problem layered on entity recognition. The model needs to know not just that metformin is a diabetes medication but that this combination of medications at these doses for this patient at this DOS supports an active diagnosis of E11.65 (or similar) under V28.
+
+Pattern 2: diagnoses buried under negation, hypotheticals, or family history. "Mother had breast cancer at 52" is family history, not active malignancy. "No evidence of heart failure on echo" is negation. "Could be early Parkinson's, will refer to neurology" is a hypothesis, not a documented diagnosis.
+
+The negation and temporality classifiers handle this in healthcare-specific NLP pipelines. ConText and NegEx are the foundational rule-based approaches; modern systems combine these with learned classifiers trained on clinical text. The [Med-HALT benchmark](https://arxiv.org/pdf/2307.15343) is one of the published evaluations for clinical hallucination on these patterns.
+
+Pattern 3: diagnoses across encounters where the most specific code lives elsewhere. A neurologist's consult note from August documents Alzheimer's with behavioral disturbance (F02.81). The primary care follow-up in November records "memory issues, continues on donepezil." The November note alone supports F03.90 (unspecified dementia), but in the context of the August consult, F02.81 is the more specific and correct code.
+
+A sweep operating one note at a time can't make this connection. Cross-document reasoning over a longitudinal record is its own engineering problem, involving coreference resolution, document ordering, and reconciliation when documents disagree on specificity or status.
+
+The [Albanese et al. January 2026 Health Affairs Scholar analysis](https://academic.oup.com/healthaffairsscholar/article/4/1/qxag010/8430651) documents the wide variance in how chronic-condition documentation translates to risk-adjustment data. The variance reflects, in part, exactly these gaps between what's in the chart and what gets coded.
+
+## Why general-purpose LLMs miss the same patterns
+
+General-purpose LLMs handle medical vocabulary at the surface level. They struggle with the three patterns above for predictable reasons.
+
+Negation and temporality. General models trained on conversational text learn that "no evidence of X" and "X" are different, but the negation cue can sit several tokens away from the entity. Clinical text is dense with phrases ("rule out," "deny," "denies," "without," "history of," "status post") each with a distinct effect on whether the entity is active. Healthcare-specific pipelines have explicit classifiers for these; general models infer probabilistically and fail in the long tail.
+
+Medical abbreviation disambiguation. "MS" can mean multiple sclerosis, mitral stenosis, or morphine sulfate, depending on section, surrounding text, and patient context. A model that hasn't seen large volumes of clinical text disambiguates these noisily.
+
+Cross-document reasoning. A general LLM given a single encounter note has the context of that note. Stitching together a consult, a follow-up, and a medication list across a longitudinal record requires a retrieval and reasoning pipeline built around clinical conventions.
+
+The [peer-reviewed evaluation of medical LLMs across clinical safety and effectiveness](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12855988/) and the [Stanford HAI Holistic Evaluation](https://hai.stanford.edu/news/holistic-evaluation-of-large-language-models-for-medical-applications) document the same pattern: frontier general models perform competitively on multiple-choice medical knowledge tests but lag on tasks requiring clinical extraction from real notes.
+
+## What a healthcare-specific extraction pipeline looks like
+
+A pipeline built for HCC coding doesn't look like a chat interface wrapping an LLM. It looks like a sequence of trained components, each handling a specific clinical task:
+
+1. Named entity recognition. Identifies diagnoses, medications, procedures, lab values, anatomical sites in clinical text. Trained on annotated clinical corpora.
+2. Negation and temporality classification. Determines whether each identified entity is active, historical, negated, hypothetical, or attributed to a family member.
+3. Relation extraction. Links medications to conditions they treat, lab values to abnormalities they indicate, findings to diagnoses they support.
+4. Multi-document reasoning. Resolves coreference across notes and reconciles conflicting specificity.
+5. Code assignment. Maps the extracted clinical state to ICD-10-CM, then to the current CMS-HCC model with payment-year-aware versioning.
+6. MEAT validation. Verifies that surfaced diagnoses carry MEAT-compliant supporting language in the chart, not just the presence of the entity.
+
+Each component is evaluated on its own benchmark before the pipeline is evaluated end-to-end. The published medical NLP benchmark literature gives the reference scores: peer-reviewed work like [MedHallu](https://arxiv.org/pdf/2502.14302), [MedHallBench](https://arxiv.org/pdf/2412.18947), Med-HALT, and the i2b2 corpora.
+
+## Where the engineering work actually is
+
+For an engineering team building or evaluating a retrospective sweep, the load-bearing decisions sit in a few places.
+
+The choice of underlying medical language model. Pretraining distribution determines the ceiling everything else operates within. The 8.6-point benchmark gap between healthcare-specific models and frontier general models shows up here.
+
+The negation and temporality layer. This is a high-leverage component, and I'd argue it's the most under-invested layer in the typical retrospective stack. Errors here propagate to false positives that get bounced at MEAT validation or, worse, survive validation and surface at audit.
+
+The cross-document reasoning layer. The harder of the engineering problems. Requires retrieval over the longitudinal record, document ordering with correct temporal semantics, and reconciliation logic when documents disagree.
+
+The MEAT validation layer. Often shipped as an afterthought. Should be designed as a first-class component, because MEAT-validated capture is the difference between defensible RAF and audit clawback.
+
+The Martlet AI retrospective coding engine implements the pipeline above on the John Snow Labs medical language model stack. The same underlying stack powers John Snow Labs' own medical coding products and is in production at WVU Medicine across 25 hospitals. Every HCC surfaced carries page-level evidence: the chart sentence, encounter ID, DOS, provider, credentials, signature status. The same engine runs across prospective, retrospective, and RADV workflows; you don't operate three separate stacks.
+
+If you're evaluating retrospective sweep engines, the failure modes above are where I'd benchmark. Aggregate accuracy on a clean test set is a starting point; performance on negation-heavy notes, abbreviation-dense specialty documentation, and cross-document chronic-condition tracking is where the engine choice plays out.
+
+## FAQ
+
+### Why don't general-purpose LLMs handle clinical text well?
+
+They handle vocabulary at a surface level but struggle with negation, temporality, abbreviation disambiguation, and cross-document reasoning in the long tail. The Stanford HAI evaluation documents the gap.
+
+### What is MEAT, and why does it matter for retrospective coding?
+
+MEAT (Monitor, Evaluate, Assess, Treat) is the documentation standard for risk-adjustment diagnoses. A retrospective sweep finding a diagnosis without MEAT-compliant supporting evidence won't survive audit.
+
+### Can a general LLM be fine-tuned for these cases?
+
+Fine-tuning improves performance but doesn't change the underlying training distribution. A model pretrained on general internet text and fine-tuned on a few thousand clinical examples doesn't match a model pretrained on clinical text at scale.
+
+### How is page-level evidence different from a confidence score?
+
+A confidence score tells you how sure the model is. Page-level evidence tells you which sentence in which note on which DOS supports the diagnosis. The audit team needs the second.
+
+### Does this only apply to retrospective, or to prospective too?
+
+The extraction problem is the same in both. Prospective has the added constraint of running at the point of care, where latency and provider abrasion matter more.
+
+### How do we measure the negation-handling quality of a sweep engine?
+
+Build a held-out test set from your own chart data with annotated negations. Sample heavily from psych, neurology, and oncology notes where negation is dense. Measure precision and recall at the entity level, then at the diagnosis-status level. The gap between the two tells you how much negation error is propagating.

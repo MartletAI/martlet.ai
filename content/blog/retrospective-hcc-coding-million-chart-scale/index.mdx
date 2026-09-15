@@ -1,0 +1,109 @@
+---
+title: 'What changes in retrospective HCC coding at million-chart scale'
+date: '2026-09-15'
+description: 'Where retrospective HCC coding breaks past 500,000 charts a year, and how to design for it: accuracy floors, reviewer capacity, evidence packets, audit logs.'
+metaTitle: 'Retrospective HCC coding at million-chart scale | Martlet AI'
+thumbnail: /assets/blog/retrospective-hcc-coding-million-chart-scale/cover.jpg
+tag: Insights
+authors:
+- Hasham Ul Haq
+definedTerm:
+  name: Accuracy Floor
+  description: The per-HCC model confidence threshold below which a code is routed to human review rather than submitted directly, set as a function of code value and downstream audit risk — the central operational decision in a retrospective coding program scaled past roughly 500,000 charts a year.
+---
+
+![What changes in retrospective HCC coding at million-chart scale: 50,000 charts works cleanly with human review, 500,000 charts requires triage and continuous evidence assembly, 5 million charts requires chart staging, parallel coding, and layered storage with an append-only audit log](/assets/blog/retrospective-hcc-coding-million-chart-scale/retrospective-hcc-coding-million-chart-scale-infographic.jpg)
+
+A retrospective HCC coding program that runs cleanly at 50,000 charts a year often hits hard walls at 500,000 and breaks outright at 5 million. The walls are not where engineering teams expect them. Latency per chart matters less than evidence packet generation; throughput is bounded by reviewer attention, not compute; and audit log overhead tolerable at small scale becomes the largest operational cost at million-chart volume.
+
+Most teams I've worked with at scale-up made the same three mistakes I'll describe below. I made some of them myself. The mistakes are predictable because the architecture was right for last year's volume and gets bolted onto for this year's. By the time the team realizes the architecture is wrong, the migration is two quarters away from the next CMS submission deadline.
+
+## Where small-scale programs break first
+
+A small-scale retrospective program rests on three load-bearing assumptions: every chart will be coded by a human, the audit packet assembles at year-end, and the underlying engine's throughput is fast enough that no one thinks about it. All three break above 100,000 charts a year.
+
+Assumption 1, human coder per chart, breaks first. At 50,000 charts annually, you can staff coders to read each one. At 500,000, you can't. The triage decision becomes which charts get a human read and which the engine codes with exception-only review. Triage is an accuracy floor problem, not a throughput problem.
+
+Assumption 2, end-of-year packet assembly, breaks next. A program coding 500,000 charts a year and assembling the audit packet in Q4 cannot deliver the packet by the CMS submission deadline. The work has to be continuous: every coded HCC needs its evidence assembled at the moment of coding.
+
+Assumption 3, throughput as an afterthought, breaks last but most visibly. Engines taking 15 seconds per chart are fine at 50,000 charts (about 9 days of continuous compute) and painful at 5 million (about 868 days). At scale, compute cost becomes a line item, as does GPU footprint if the engine is GPU-dependent.
+
+## The accuracy floor problem
+
+If your engine codes a chart and you can't read it, the engine's accuracy is the program's accuracy on that chart. Choosing the per-chart accuracy floor below which a human reviewer steps in is the most important operational decision in a scaled program.
+
+A floor too high ("every HCC with anything less than 95% model confidence goes to review") produces a reviewer queue larger than the program can staff. A floor too low submits codes that may not survive audit.
+
+The right floor depends on three things:
+
+1. The engine's measured precision at each confidence band. Statistical property of the model, not a marketing claim. You need calibration curves from production data, not benchmark performance.
+2. The cost of a false positive at audit. A code that gets clawed back, plus any extrapolation exposure (currently contested in court but historically a multiplier of 10 to 50× the original payment).
+3. The cost of a false negative. A code missed entirely, plus operational cost of recapturing it next cycle.
+
+A program with a clear, defensible accuracy curve can set the floor as a function of code value: high-RAF codes get a tighter floor, lower-RAF codes can be coded end-to-end. The [Albanese et al. January 2026 Health Affairs Scholar analysis](https://academic.oup.com/healthaffairsscholar/article/4/1/qxag010/8430651) gives baseline numbers on coding pattern variance; programs operating well above the mean are usually doing the floor calculation explicitly.
+
+## Evidence packet generation at the moment of coding
+
+A retrospective program shipping 500,000 charts a year cannot afford to rebuild the audit packet at year-end. Evidence (chart sentence, encounter ID, DOS, provider, credentials, signature status) has to be assembled and stored at the moment a code is suggested, indexed by HCC, retrievable in milliseconds during a RADV audit. Three years later, when CMS asks for the chart supporting a diabetes diagnosis on a 2026 DOS, the packet should resolve to that chart in one click.
+
+The engineering work is straightforward in principle but exacting in detail:
+
+- The evidence model has to be schema-stable across model versions so an HCC coded by model v3.2.1 in March 2026 still resolves the same evidence in 2029 when model v4.1.0 is in production.
+- The audit log has to be append-only; nothing edits in place.
+- Storage cost grows linearly with chart volume, so indexing strategy matters. At 5M charts per year × multiple HCCs per chart × evidence sentences per HCC, the index gets large. Compression and tiered storage become operational considerations.
+
+Programs that get this right deliver audit packets in days rather than months. Programs that don't spend the audit window doing chart retrieval and evidence reconstruction work that should have been done at coding time.
+
+## The throughput question, properly framed
+
+Compute throughput is the easiest of the scaling problems to solve and the one most teams over-index on. Modern healthcare NLP pipelines hitting 1 to 3 seconds per chart at the GPU layer are achievable; a few hundred GPUs gets you to millions of charts in days.
+
+The harder ceilings are organizational.
+
+Reviewer attention is the real bottleneck. A team of 40 reviewers working 200 chart-equivalents a day caps at roughly 2 million reviewer-actions a year. A program structured around per-chart human review supports about 2 million charts at one review per chart, or 1 million at two. Growth beyond requires reducing reviews per chart, which loops back to the accuracy floor question.
+
+Upstream data infrastructure is the other organizational ceiling. Chart retrieval from EHRs at million-chart scale is a substantial engineering problem; the FHIR R4 endpoints of most major EHRs weren't designed for bulk extract. Programs at this scale typically build a chart staging layer that materializes records from production EHRs and serves the coding engine from staging. Most of the operational complexity lives there.
+
+## The design choices you're committing to
+
+For a technical lead planning a scale-up, the architecture decisions that will define operations for the next five years.
+
+Where does inference run? In-environment (on-premises, VPC, air-gapped) or vendor cloud SaaS. At million-chart scale, the data egress problem of SaaS becomes the bottleneck; in-environment removes it.
+
+How is evidence indexed? By HCC, encounter, DOS, provider, at minimum. The query patterns at audit time determine the index design.
+
+What's the model versioning policy? Frequent updates with explicit version tracking, or fewer larger updates with longer evaluation cycles? At scale, audit reconstruction over a multi-year horizon argues for explicit versioning and longer release cycles.
+
+Where does the reviewer interface live? Inside the coding engine or as a separate workflow tool. Tightly coupled is faster to build, harder to extend. Loosely coupled is the opposite.
+
+The decision I see teams regret most: not building the model-versioning abstraction early. Every other architectural choice can be fixed mid-stream. Model versioning, retrofitted after the fact, requires going back and re-stamping years of historical decisions with the version that produced them. I've watched teams attempt this twice; both times it took longer than the original build.
+
+The Martlet AI engine was built around the assumption of eventual million-chart scale. It runs in-environment, removing the egress bottleneck. The evidence model is assembled at coding time and stored in an append-only audit log indexed by HCC, encounter, and DOS. Model versions are explicit; the same chart coded by the same engine version produces the same code, so audit reconstruction is deterministic. The [WVU Medicine deployment](https://martlet.ai/) is one of the public examples of a system architected for this scale from the start.
+
+For an engineering team scaling a retrospective program, the design choices above are where the next five years of operations get committed. Get them right early and the program grows into scale. Bolt on patches at each ceiling hit and you spend your engineering time fixing yesterday's architecture.
+
+## FAQ
+
+### At what chart volume do these problems start to bite?
+
+First signs between 100,000 and 250,000 charts a year. Full set of constraints arrives by 500,000.
+
+### Can we just buy more compute?
+
+Compute throughput is the easiest constraint to solve and not the binding one. Reviewer attention, evidence packet assembly, and chart retrieval are the harder problems.
+
+### What's an "accuracy floor" in operational terms?
+
+The per-HCC model confidence (or equivalent statistical measure) below which a code is routed to human review rather than submitted directly. Set as a function of code value and downstream audit risk.
+
+### How long should evidence packet assembly take?
+
+At million-chart scale, effectively zero. Packet is materialized at the moment the code is suggested and retrieved on demand. End-of-year batch assembly doesn't scale.
+
+### Does running in-environment slow things down?
+
+The opposite, usually. PHI doesn't need to leave the network for the coding engine to run, removing the data-egress bottleneck that limits cloud-SaaS coding throughput.
+
+### What's the most-regretted architectural decision teams make at scale-up?
+
+Not building model versioning into the audit log from day one. Retrofitting it after the fact requires re-stamping historical decisions with the model versions that produced them, which is more work than the original build.

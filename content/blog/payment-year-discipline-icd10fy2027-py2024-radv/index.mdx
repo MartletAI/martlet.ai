@@ -1,0 +1,105 @@
+---
+title: 'Payment-year discipline: FY2027 ICD-10-CM and the first blended V24/V28 RADV audit'
+date: '2026-09-22'
+description: 'See how 190 new FY2027 ICD-10-CM codes and the 67/33 PY2024 V24/V28 blend affect HCC mapping, audit evidence, eligibility rules, and submission.'
+metaTitle: 'FY2027 ICD-10-CM & the First V24/V28 RADV Audit'
+thumbnail: /assets/blog/payment-year-discipline-icd10fy2027-py2024-radv/cover.jpg
+tag: Insights
+authors:
+- Hasham Ul Haq
+definedTerm:
+  name: Payment-Year Discipline
+  description: The requirement that every HCC an engine produces be resolved against the ICD-10-CM code set, HCC model version, mapping table version, and eligibility ruleset that applied on its date of service and payment year — with submission blocked whenever any of the four don't match.
+---
+
+![FY2027 ICD-10-CM & V24/V28 RADV audit: 2026 dates of service split at the October 1 ICD-10-CM cutover between FY2026 and FY2027 code sets, and 2023 dates of service risk-adjusted on a 67% V24 / 33% V28 blend applied in the PY2024 RADV audit](/assets/blog/payment-year-discipline-icd10fy2027-py2024-radv/payment-year-discipline-icd10fy2027-py2024-radv-infographic.jpg)
+
+Payment-year discipline means every HCC an engine produces is resolved against the code set, risk model, and eligibility rules that applied on its date of service and payment year, and is blocked when any of them don't match. Two version boundaries made that concrete. FY2027 ICD-10-CM took effect October 1, so 2026 dates of service span two code sets. And the PY2024 RADV window opened on 2023 dates of service, the first audited year paid on a V24/V28 blend.
+
+## FY2027 code set: 190 new codes, 30 deletions, no HCC crosswalk yet
+
+The [FY2027 update](https://www.cms.gov/medicare/coding-billing/icd-10-codes) took effect October 1, 2026 for encounters through September 30, 2027. [AAPC's summary](https://www.aapc.com/blog/94184-sneak-a-peek-at-the-2027-icd-10-cm-updates/) counts 190 new codes, 4 revisions, and 30 deletions. Most cluster in injury, pregnancy, and musculoskeletal chapters and don't touch risk adjustment. These do:
+
+| Change | What happened October 1 | Why it matters for HCC coding |
+|---|---|---|
+| Dilated cardiomyopathy, I42.0 | Stopped being billable; became a header with new child codes | Cardiomyopathy carries risk weight under both models; a template or problem list still carrying I42.0 stops validating |
+| Secondary malignant neoplasm | Site-specific codes added (C78.31, C78.32, C79.83 among them) | Metastatic disease maps to the highest-weight cancer HCCs; the new codes need a confirmed mapping before use |
+| Hepatic fibrosis, K74.0A | New code for stage F2 (moderate) fibrosis | Distinguishes a stage with higher mortality; mapping pending |
+| FY2027 V28 crosswalk | CMS lists a 2027 model software and ICD-10 mapping; confirm it carries the October 1 additions | Until it posts, no new code has a confirmed HCC assignment |
+
+That last row is the one engineering teams get wrong. When a new code has no published HCC mapping, the correct behavior is to hold it in an exception queue and flag it, not to infer a mapping from the parent code. A guessed mapping that turns out wrong is an unsupported HCC with a clean-looking evidence trail, which is the worst combination for an audit. The [V28 mapping piece](https://martlet.ai/resources/blog/cms-hcc-v28-production-mapping) from August covered the roughly 2,300 codes that stopped mapping when the model changed. The FY2027 update is the smaller, annual version of the same problem, and it recurs every October.
+
+## Two code sets in one service year
+
+A 2026 date of service before October 1 is coded under FY2026. One on or after October 1 is coded under FY2027. Both feed the same PY2027 risk score.
+
+Rule. The code table is a function of date of service, not of when the chart was read. CMS abstracts diagnoses in RADV per the ICD-10-CM guidelines and Coding Clinic in effect at the encounter date ([PY2024 methods, section 8](https://www.cms.gov/files/document/radv-py2024-audit-methods-guidance.pdf)).
+
+An engine that stores one code table per calendar year, or applies whichever table is current at processing time, will submit I42.0 for a November visit and get it rejected, or apply an FY2027 code to a March visit and fail the guideline check at audit. Our [V28 at 100%](https://martlet.ai/resources/blog/cms-hcc-v28-100-percent) explainer covered the model side of this. The code-set side is the same discipline one level down.
+
+## PY2024 audit: one note, two HCC assignments, 67/33
+
+PY2024 risk scores were calculated as 67% of the V24 (2020 model) score plus 33% of the V28 (2024 model) score, per the [CY2024 Rate Announcement](https://www.cms.gov/files/document/2024-announcement-pdf.pdf), on 2023 dates of service. The RADV enrollee data list for this audit lists each audited HCC with its model version. CMS's own example in the methods document is "V24HCC19," and the recommended file name includes the model version too.
+
+A single progress note can support an HCC under one model and not the other:
+
+| Condition in the 2023 note | V24 (2020 model) | V28 (2024 model) | Packet needs |
+|---|---|---|---|
+| Diabetes with a chronic complication | HCC 18 | HCC 37 | Both assignments, with the mapping version for each |
+| Protein-calorie malnutrition | HCC 21 | No HCC | V24 assignment only, with a note that V28 carries no weight |
+| Conditions split into finer hierarchies under V28 | One HCC | A different, more specific HCC or none | Both, with the specificity the V28 mapping requires |
+
+The payment error calculation in section 9 of the methods document runs the abstracted codes through the blended model, "after normalization, adjustment, and blending." So the evidence packet for a PY2024 HCC has to show, for the same chart sentence, the V24 assignment and the V28 assignment, each with its mapping version. If a reviewer sees only one, the packet is incomplete for the year it is defending.
+
+There is a second version dependency inside PY2024 that trips up retrieval teams. Telehealth records satisfy the face-to-face requirement for dates of service from January 1 through May 11, 2023, under the public health emergency memo. After May 11, only real-time audio-video encounters qualify. A note dated May 12, 2023 from a telephone visit is invalid at intake, and the engine should know that before the record is chased.
+
+## Four version keys on every HCC
+
+Here is how I think about the data model. An HCC output is a tuple with four version keys attached, each resolved from a date rather than from the current configuration:
+
+ICD-10-CM code set version, resolved from date of service (FY2026 for a July 2026 visit, FY2027 for a November one).
+
+HCC model version, resolved from payment year; for blended years it is a pair with weights.
+
+Mapping table version connecting the two, since CMS publishes the crosswalk separately and sometimes later than the code set.
+
+Eligibility ruleset, covering provider type, encounter type, telehealth windows, and the signature rules that changed between the PY2018 and PY2019 audits.
+
+With those keys stored on every output, four things become possible. Reproducibility: rerun the same chart under the same four keys and get the same HCC, which is what an auditor asks for three years later. Blocking: a submission gate that refuses any code whose keys don't match its date of service and payment year. Explanation: the packet states which table produced each assignment, which is the difference between "the model said so" and an answer. And diffing: when a mapping table updates, the engine lists every HCC whose assignment would change before anyone decides whether to adopt it.
+
+If I had to pick one of the four to over-invest in, it would be the mapping version. Code sets and models are published on known dates. The crosswalk is the piece that arrives late, changes without an announcement, and gets patched in production by someone who forgets to bump the version.
+
+## Checks to run this month
+
+1. Pull ten charts with 2026 dates of service on either side of October 1 and confirm the code table applied to each.
+2. Pull five PY2024 enrollees from your own RADV sampling frame and confirm the engine produces both model assignments with the mapping version recorded.
+3. Find every I42.0 on a 2026 problem list and check what the pipeline does with it after October 1. If it maps the header to an HCC, that is a defect.
+4. Search 2023 telehealth encounters for dates after May 11 and confirm audio-only visits are excluded from the PY2024 chase list.
+
+Martlet AI stores all four keys on every HCC, validates MEAT at the sentence level against the ruleset for the date, and blocks outdated codes at submission. The [RADV workflow](https://martlet.ai/solutions/radv) assembles the packet with both model versions for blended years, and the [retrospective workflow](https://martlet.ai/solutions/retrospective-risk-adjustment) applies the same keys to every submission file. If you want to see how a chart from 2023 resolves under V24 and V28 side by side, [bring one](https://martlet.ai/contact).
+
+## FAQ
+
+### When did the FY2027 ICD-10-CM update take effect?
+
+October 1, 2026, for encounters and discharges through September 30, 2027. It adds 190 codes, revises 4, and deletes 30. There is no grace period. The code set is selected by date of service for outpatient encounters and by discharge date for inpatient stays.
+
+### Which FY2027 changes affect HCC coding?
+
+Dilated cardiomyopathy (I42.0) became a non-billable header with new child codes, secondary malignancies gained site-specific codes, and hepatic fibrosis gained a stage F2 code. CMS publishes the ICD-10-CM to V28 crosswalk separately, and until it does, new codes have no confirmed HCC assignment.
+
+### How was PY2024 risk-adjusted?
+
+On a blend of 67% V24 and 33% V28, calculated from 2023 dates of service. The PY2024 RADV audit lists audited HCCs by model version and runs the payment error calculation through the blended model.
+
+### Can a note support an HCC under V24 but not V28?
+
+Yes. The two models map different code sets to different hierarchies, and several V24 HCCs, including protein-calorie malnutrition, have no V28 equivalent. For a blended year, the evidence packet should show both assignments for the same chart evidence.
+
+### What is the telehealth rule for PY2024 records?
+
+Telehealth records satisfy the face-to-face requirement for dates of service through May 11, 2023, when the public health emergency declaration expired. After that date, only real-time audio-video encounters qualify, and audio-only visits do not.
+
+### What does "blocked at submission" mean in Martlet AI?
+
+Every HCC carries its code set version, model version, mapping version, and eligibility ruleset. A code whose versions don't match its date of service and payment year is held in an exception queue rather than exported to the submission file.

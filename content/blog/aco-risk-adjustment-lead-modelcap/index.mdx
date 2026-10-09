@@ -1,0 +1,89 @@
+---
+title: 'ACO coding under LEAD’s 3% cap: accuracy over capture in 2027'
+date: '2026-10-08'
+description: 'Above LEAD’s 3% risk-score cap, a captured HCC adds nothing to the benchmark and still carries full audit exposure. Here is the 2027 ACO coding plan.'
+metaTitle: 'ACO Coding Under LEAD’s 3% Cap: Accuracy Over Capture'
+thumbnail: /assets/blog/aco-risk-adjustment-lead-modelcap/cover.jpg
+tag: Insights
+authors:
+- Ritwik Jain
+---
+
+![Chart showing ACO risk-score growth under the LEAD 3% cap, with growth above the cap earning no benchmark credit while still carrying audit exposure](/assets/blog/aco-risk-adjustment-lead-modelcap/aco-risk-adjustment-lead-modelcap-infographic.jpg)
+
+A risk-score cap limits how much an ACO’s average risk score can raise its benchmark relative to a reference year. The Long-term Enhanced ACO Design (LEAD) model, which replaces ACO REACH on January 1, 2027, caps growth at 3% for aged, disabled, and ESRD populations and 4% for High Needs, against a fixed 2026 reference. Above the cap, another captured HCC adds nothing to the benchmark and still carries full audit exposure. That asymmetry should reorganize an ACO’s coding program.
+
+## LEAD and MSSP: what the 2027 caps are
+
+CMS announced [LEAD](https://www.cms.gov/priorities/innovation/innovation-insight-cms-invites-acos-apply-new-lead-model) in late 2025, published the request for applications on March 31, 2026, and closed applications May 17, per [Benesch’s summary](https://www.beneschlaw.com/insight/cms-bets-on-the-long-game-with-10-year-lead-aco-model/). Accepted ACOs are in an implementation period through December and start performance year one on January 1, 2027, with a ten-year term and no benchmark rebasing.
+
+| Risk-adjustment term | ACO REACH (through 2026) | LEAD (from PY2027) |
+|---|---|---|
+| Aged/disabled and ESRD cap | Symmetric 3%; rolling reference year through PY2023, static CY2022 reference from PY2024 | 3%, static reference year (BY3, calendar 2026) for at least PY2027–2028 |
+| High Needs cap | No cap through PY2023, then the same symmetric 3% from PY2024 | 4%, symmetric |
+| Coding intensity factor | Retrospective, model-wide, zero-sum | Specified in methodology papers |
+| Benchmark rebasing | Periodic | None over the ten-year term |
+
+Sources: the [ACO REACH financial FAQ](https://www.cms.gov/priorities/innovation/media/document/aco-reach-finfaqs) and Wakely’s [summary of the LEAD RFA risk-adjustment section](https://www.wakely.com/lead-model/risk-adjustment/). On the Shared Savings Program side, the [CY2027 Physician Fee Schedule proposed rule](https://www.wakely.com/blog/cy-2027-mssp-proposed-rule-analysis-what-the-medicare-shared-savings-program-changes-mean-for-acos/) (CMS-1848-P, July 2026) would apply risk adjustment to the caps on positive benchmark adjustments. The details were still in rulemaking at publication, and the direction is the same as LEAD’s.
+
+For the plans that read this blog, the ACO version of the story is the cleaner one. There is no coding-pattern adjustment to argue about and no extrapolation litigation. There is a ceiling, and everything above it is exposure without revenue.
+
+## A 20,000-life ACO: $4.2M credited, the rest worth zero
+
+Take a Standard ACO with 20,000 aligned lives and an average 2026 normalized risk score of 1.00, so the 3% cap sets the 2027 ceiling at 1.03. Suppose the population ages and gets sicker at a demographic pace worth about 1.5% a year, which LEAD accounts for separately in normalization. That leaves roughly 1.5 points of headroom for anything coding contributes.
+
+| Line | Illustrative value |
+|---|---|
+| Aligned lives | 20,000 |
+| Benchmark per beneficiary per year | $14,000 |
+| Value of 1 risk-score point across the ACO | ~$2.8M |
+| Coding-driven growth in 2027 | 4 points |
+| Credited under the cap (1.5 points) | ~$4.2M |
+| Uncredited (2.5 points) | $0 in 2027, and $0 in 2028, since the reference year is static |
+| Audit and FCA exposure | On all 4 points |
+
+REACH’s reference year was rolling only through PY2023 and was fixed at CY2022 from PY2024. LEAD keeps a static reference too, but anchors it to 2026 and holds the benchmark unrebased for ten years, so uncredited growth never returns. Your ACO’s numbers differ. The structure is what matters: the marginal captured HCC has a value of zero above the cap and a liability of full weight at audit.
+
+**The asymmetry, in one line.** Above the cap, an unsupported HCC gains nothing and takes on the exposure the August 2026 settlements priced. Two of the three provider-side False Claims Act settlements that month were with organizations in risk-sharing arrangements ([Aug 24](https://www.justice.gov/opa/pr/medicare-advantage-provider-monogram-health-agrees-pay-24m-settle-false-claims-act-suit), [Aug 3](https://www.justice.gov/opa/pr/medicare-advantage-provider-complete-health-pay-14100000-settle-false-claims-act-suit)). The [October enforcement piece](https://martlet.ai/resources/blog/medicare-advantage-fca-enforcement-risk-bearingproviders) covers them.
+
+## Four sources of return under a cap, none of them more capture
+
+- **Accuracy of what is submitted.** A code that fails MEAT validation is pure downside in a capped model, so the validation step earns more than the capture step.
+- **Specificity of what is already documented.** A condition the treating provider assessed at the visit, coded to the specificity V28 rewards, is credited growth with the provider’s own note as evidence. That is where the remaining headroom under the cap should go.
+- **Deletes.** Removing an unsupported code lowers liability. If the ACO is above the cap, the delete does not lower the benchmark, because the benchmark was already capped. That is the one situation in risk adjustment where two-way coding is free.
+- **Prospective capture at the point of care.** If the program is going to touch a chart, the cheapest defensible HCC is the one documented during the visit, where the encounter, the note, and the code come into existence together. The [prospective versus retrospective economics](https://martlet.ai/resources/blog/prospective-vs-retrospective-hcc-capture-economics) piece has the per-RAF-point comparison, and the [earlier explainer](https://martlet.ai/resources/blog/prospective-vs-retrospective-risk-adjustment) covers which approach closes more gaps. Under a cap, the retrospective sweep loses most of its rationale, since its output is uncredited growth plus audit risk.
+
+## The 2027 program plan: four changes
+
+1. **Stop measuring the program on RAF lift.** Under LEAD that metric rewards the part of the work that pays nothing. Measure validated-code precision, delete rate, and the share of HCCs captured at the visit rather than in a later sweep.
+2. **Reprice any vendor paid on captured RAF.** A percentage-of-lift fee under a 3% cap pays the vendor for growth the ACO cannot book. The [success-commission](https://martlet.ai/resources/blog/success-commission-hcc-coding-conflict) argument was about incentives. Here it is about paying for nothing.
+3. **Move the review budget from sweeps to point-of-care support.** Under a cap the sweep produces uncredited growth and audit risk. The same money spent on pre-visit suspects and in-visit prompts produces documentation the treating provider owns, and the [query-fatigue design](https://martlet.ai/resources/blog/prospective-hcc-coding-query-fatigue) piece describes how to do that without burying clinicians in alerts.
+4. **Run a mock audit on the 2026 submissions before the base year closes.** The 2026 risk score is the reference for the next decade of LEAD benchmarks. An unsupported HCC in the base year inflates the reference and makes the cap harder to reach in every later year, on top of its own audit exposure. That is the one place where a delete has a cost, and the cost is small next to a base year you cannot revisit.
+
+Martlet AI runs the [prospective](https://martlet.ai/solutions/prospective-risk-adjustment) and [retrospective](https://martlet.ai/solutions/retrospective-risk-adjustment) workflows on the same engine with the same evidence model, validates MEAT at the sentence level, and runs inside the ACO’s own environment. For a risk-bearing organization heading into LEAD, the prospective workflow is the place to start, and a pilot on one provider group in the implementation period is enough to see what the 2027 capture-at-visit rate looks like. [Scope one](https://martlet.ai/contact).
+
+## FAQ
+
+### What is the LEAD model?
+
+The Long-term Enhanced ACO Design model, the CMS Innovation Center’s successor to ACO REACH. It runs from January 1, 2027 through December 31, 2036 with fixed historical benchmarks and no rebasing. Applications closed May 17, 2026, and accepted ACOs are in an implementation period through December 2026.
+
+### How does LEAD cap risk-score growth?
+
+Aged/disabled and ESRD populations are capped at 3% growth relative to a static 2026 reference year for at least PY2027 and PY2028. High Needs populations get a 4% symmetric cap. ACO REACH used a symmetric 3% cap against a static CY2022 reference year from PY2024, and High Needs ACOs had no growth cap at all until that same symmetric 3% cap applied to them from PY2024.
+
+### Does a captured HCC above the cap have any value?
+
+Not to the benchmark. It still counts toward audit exposure and, if unsupported, toward False Claims Act liability, which is why accuracy and deletes carry more of the program’s return under a cap than capture does.
+
+### Does deleting an unsupported code reduce an ACO’s benchmark?
+
+Only if the ACO is below the cap. At or above the cap, the benchmark is already limited, so the delete removes liability without changing the benchmark.
+
+### What changed for MSSP risk adjustment in 2027?
+
+The CY2027 Physician Fee Schedule proposed rule (CMS-1848-P) would apply risk adjustment to the caps on positive benchmark adjustments, accounting for the severity and case mix of the ACO’s assigned population. Check the final rule text, which CMS was expected to issue in late 2026.
+
+### Why does the 2026 base year matter so much under LEAD?
+
+Because the cap is measured against it for at least two years and the benchmark is not rebased for the ten-year term. An unsupported HCC in 2026 inflates the reference and reduces headroom in every later year.

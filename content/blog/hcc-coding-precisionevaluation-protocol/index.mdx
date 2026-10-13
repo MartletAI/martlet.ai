@@ -1,0 +1,118 @@
+---
+title: '99% precision on automated HCCs: the evaluation protocol'
+date: '2026-10-13'
+description: 'How Martlet AI measures 99% precision on automated HCCs: two-coder gold standard, calibrated thresholds, and the 5% exception queue. Check any vendor’s number.'
+metaTitle: '99% Precision on Automated HCCs: The Evaluation Protocol'
+thumbnail: /assets/blog/hcc-coding-precisionevaluation-protocol/cover.jpg
+tag: Insights
+authors:
+- Hasham Ul Haq
+---
+
+![Calibration chart showing predicted confidence against observed precision for HCC decisions, with the automation threshold marked](/assets/blog/hcc-coding-precisionevaluation-protocol/hcc-coding-precisionevaluation-protocol-infographic.jpg)
+
+Precision on automated HCCs is the share of codes an engine closes without human review that a certified coder, reading the same chart against MEAT criteria and CMS rules, would also have submitted. Martlet AI reports 99% on that measure and closes 95% of cases automatically. This article is the protocol behind both numbers: how the gold standard is built, why precision rather than F1 is the metric, how the threshold is set, and what the 5% exception queue holds.
+
+## Two error types, one metric: precision
+
+Most machine-learning evaluation treats a false positive and a false negative as equally bad and reports F1, their harmonic mean. Risk adjustment does not work that way.
+
+| Error | What it is | What it costs | When |
+|---|---|---|---|
+| False positive | An HCC submitted without support | RADV clawback, and after the 2026 settlements, False Claims Act exposure | Three years later |
+| False negative | A supported condition the engine did not surface | The RAF the condition was worth | This year, and recoverable at the next sweep or visit |
+
+The costs differ by an order of magnitude and in direction, so a single summary metric hides the decision that matters. We report precision and recall separately, per HCC, and we set the automation threshold on precision alone. Recall is what we work to improve between releases. Precision is what we refuse to trade.
+
+The [8.6-point accuracy gap](https://martlet.ai/resources/blog/healthcare-specific-vs-frontier-llms-hcc-coding) piece from August made the case for healthcare-specific models on extraction tasks. John Snow Labs’ current benchmarks, which underlie our engine, [rank first on all 15 medical benchmarks against GPT-5.5, Claude Opus 4.8, and Gemini 3.5 Flash, as published on johnsnowlabs.com and re-checked in September 2026](https://www.johnsnowlabs.com/healthcare-llm/):
+
+| Benchmark (task) | John Snow Labs | Best frontier model |
+|---|---|---|
+| Medec (clinical entity extraction) | 85.0 | 70.0 |
+| Med-Hallu (hallucination control) | 96.0 | 92.0 |
+| RaceBias (fairness) | 96.0 | 91.0 |
+| MedCalc (clinical calculation) | 48.0 | 44.0 |
+
+Those are model benchmarks. What follows is how we evaluate the end-to-end coding workflow on a customer’s charts, which is a different measurement.
+
+## Gold standard: two coders and an adjudicator
+
+An evaluation is only as good as its reference labels, and coder disagreement in HCC work is high enough that a single coder’s judgment is not a reference. For each deployment:
+
+1. Draw a stratified sample of charts from the customer’s own population: by HCC family, by document type (progress note, consult, discharge summary, scanned PDF), by source (EHR feed, claims attachment, HRA), and by date of service across the payment year.
+2. Have two certified risk adjustment coders review every chart independently against MEAT criteria and the CMS record rules for the payment year: encounter type, provider credential, signature, date of service in the collection period.
+3. Where they disagree, an adjudicator with audit experience makes the call and records the reason.
+4. Store the output as HCC decisions per chart with the supporting sentence, the encounter, and the reason code for each, the same structure the engine’s evidence packet uses.
+
+Inter-coder agreement on the first pass is reported alongside the results, because it bounds what any system can score. When two coders agree 94% of the time, a system reported at 99% precision is being scored against adjudicated labels, not against either coder alone, and the reader should know that. The [70% rejection rate](https://martlet.ai/resources/blog/ai-didnt-fix-hcc-coding-how-to-fix-it) we wrote about in April is what happens when this step is skipped.
+
+## Calibration and the threshold
+
+The engine emits a confidence score for every HCC decision. That score is useful only if it is calibrated: among decisions scored 0.97, about 97% should be correct. We check that with a reliability diagram on the gold set, per HCC family, before every release. A model whose 0.97 decisions are correct 91% of the time has a threshold that means nothing.
+
+**How the threshold is set.** Per HCC family, the automation threshold is the lowest calibrated confidence at which cumulative precision on the gold set stays at or above the floor, with a margin. Everything above it closes automatically. Everything below routes to a reviewer with the evidence attached. The share that closes automatically is an output of that procedure, not an input.
+
+On the customer populations we have measured, the output has been 95%, and it moves with documentation quality: a population with more scanned faxes and fewer structured notes produces a larger exception queue at the same precision floor.
+
+I want to be precise about what the 99% figure claims. It is precision on the codes the engine automates, measured on customer charts under this protocol, against adjudicated labels. It is neither accuracy across all charts nor recall, and it does not describe the exception queue, which is where the hard cases go on purpose.
+
+## The 5% exception queue: five case types
+
+The exception queue holds a specific set of chart conditions that the engine is designed to refuse:
+
+- **Conflicting evidence inside the record.** A note that says “history of CVA” in the assessment and “acute CVA” on the problem list.
+- **MEAT present but ambiguous.** A medication continued with no assessment of the condition it treats.
+- **Documentation integrity questions.** A diagnosis that appears only in an addendum, or a signature whose credential does not match the encounter’s provider type.
+- **Version-boundary cases.** A code with no published HCC mapping yet, which the [payment-year discipline](https://martlet.ai/resources/blog/payment-year-discipline-icd10fy2027-py2024-radv) piece covered.
+- **Low-confidence extractions.** Cases where the calibrated score sits below the family threshold.
+
+Reviewers see the chart sentence, the encounter, the provider and credential, the signature status, and the reason the case was routed. In practice they spend their time on the second and third categories, which is where coder judgment earns its keep. The [missed chronic conditions](https://martlet.ai/resources/blog/retrospective-hcc-coding-missed-chronic-conditions) piece has synthetic examples of each.
+
+## Four controls between releases
+
+A precision figure measured once is a marketing claim. A precision figure re-measured on every release is an engineering control.
+
+1. Every model, mapping table, and prompt is versioned, and a chart re-run under the same versions produces the same output, which is what makes an audit answer possible three years later.
+2. Every release is tested against the frozen gold set before it touches production charts, and per-family precision has to clear the floor or the release does not ship.
+3. Every automated decision is written to an append-only log with the versions that produced it.
+4. The distribution of confidence scores is monitored over time, so drift shows up as a measurable shift in that distribution long before it could show up as an audit finding.
+
+Those controls are also what a compliance team asks for when it reviews an AI vendor, and they are the substance behind our [Pacific AI certification](https://pacific.ai/): version-controlled models, controlled releases with rollback, bias and red-team testing, and a log of every AI decision. The [trust page](https://martlet.ai/trust) lists them.
+
+## How to check any vendor’s number
+
+Ask for the protocol behind the percentage:
+
+- Who produced the reference labels, how many coders reviewed each chart, what was their agreement rate, and who adjudicated?
+- Is the number precision or accuracy, and on which denominator?
+- Is the score calibrated, and per what grouping?
+- What happens to a case below the threshold, and what share of your charts would fall there?
+- Can the vendor re-run a chart from last year under last year’s versions and show that it gets last year’s answer?
+
+The [WVU Medicine NLP Summit talk](https://www.nlpsummit.org/maximizing-patient-care-through-ai-enhanced-hcc-code-discovery/) and John Snow Labs’ [peer-reviewed catalog](https://www.johnsnowlabs.com/peer-reviewed-papers/) are the public references behind ours. If you want the protocol run on your own population, bring a set of anonymized charts and we will run the gold-set process inside your environment and show you the reliability diagram. [Schedule a walkthrough](https://martlet.ai/contact).
+
+## FAQ
+
+### What does “99% precision on automated codes” mean?
+
+Of the HCCs Martlet AI closes without human review, 99% match the decision an adjudicated panel of certified coders reached on the same chart. It is measured on customer charts against a gold standard built by two independent coders and an adjudicator.
+
+### Why not report accuracy or F1?
+
+Accuracy hides which error type occurred, and F1 weights false positives and false negatives equally. In risk adjustment a false positive carries audit and False Claims Act exposure while a false negative is recoverable, so precision is the metric the automation threshold is set on, with recall reported separately.
+
+### How is the automation threshold chosen?
+
+Per HCC family, as the lowest calibrated confidence at which cumulative precision on the gold set stays at or above the floor. The share of cases above the threshold is the automation rate, and on the populations measured so far it has been 95%.
+
+### What kinds of cases go to the exception queue?
+
+Conflicting evidence within a record, ambiguous MEAT support, documentation integrity questions such as addenda or credential mismatches, codes with no published HCC mapping, and low-confidence extractions.
+
+### How do you know the confidence score is calibrated?
+
+With a reliability diagram on the gold set per HCC family before each release: decisions scored 0.97 should be correct about 97% of the time. A model that fails that check does not ship.
+
+### Does the 99% figure apply to every customer?
+
+It is the measured result on the populations evaluated under this protocol. Precision is held at the floor by design. What varies between populations is the automation rate, which falls when documentation quality is lower.

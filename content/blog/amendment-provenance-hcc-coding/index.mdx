@@ -1,0 +1,94 @@
+---
+title: 'Amendment provenance: catching late addenda before submission'
+date: '2026-10-15'
+description: 'Amendment provenance records who changed a clinical note and when. See five fields and four checks that flag late addenda before an HCC is submitted.'
+metaTitle: 'Amendment Provenance: Catching Late Addenda in HCC Coding'
+thumbnail: /assets/blog/amendment-provenance-hcc-coding/cover.jpg
+tag: Insights
+authors:
+- Hasham Ul Haq
+---
+
+![Diagram of an original clinical note and a later amendment, showing the timestamp, author, and added text that route an HCC to exception review](/assets/blog/amendment-provenance-hcc-coding/amendment-provenance-hcc-coding-infographic.jpg)
+
+Amendment provenance is the record of who changed a clinical note, when, and how. It became a coding-engine requirement in 2026. The August 26 False Claims Act settlement described codes based on amendments “not initiated by the rendering provider.” The January settlement described addenda added months after the visit in response to plan queries. An evidence packet that quotes a note rewritten after the fact is not defensible, and the engine has to know.
+
+## 2026 settlements: $1.1 billion tied to how notes were amended
+
+| Settlement | Amount | What DOJ alleged about the record |
+|---|---|---|
+| [January 14](https://www.justice.gov/opa/pr/kaiser-permanente-affiliates-pay-556m-resolve-false-claims-act-allegations) | $556M | Data mining identified candidate diagnoses, providers were queried, and addenda were obtained, sometimes more than a year after the visit; DOJ said internal compliance audits had flagged the addenda practice |
+| [August 26](https://www.justice.gov/opa/pr/villages-health-system-llc-agrees-5415m-settlement-resolve-false-claims-act-allegations) | $541.5M | Codes without adequate support, or based on amendments “not initiated by the rendering provider and were not timely or were not approved by the rendering provider” |
+
+The court in the January case had allowed a theory to proceed under which a diagnosis can be clinically accurate and still noncompliant because of how and when it entered the record, per [Bass Berry & Sims’ summary](https://www.insidethefalseclaimsact.com/kaiser-permanente-affiliates-settle-medicare-risk-adjustment-fraud-case-556-million/). That second point is the one engineers should notice. A validation pipeline that asks only “does this sentence support this code under MEAT?” will pass an addendum written thirteen months after the encounter by a coder. The sentence is there and the code is supported, and the record is still a problem.
+
+CMS’s audit rules already assume this. The [PY2024 methods](https://www.cms.gov/files/document/radv-py2024-audit-methods-guidance.pdf) invalidate signatures obtained in response to a record request, forbid asking providers to amend records after the audit notice, and allow only CMS’s own attestation form as a cure for a missing signature. The [Medical Record Reviewer Guidance](https://www.cms.gov/files/document/medical-record-reviewer-guidance-january-2020.pdf) treats late entries and amendments as items reviewers must evaluate rather than accept.
+
+## Five provenance fields per supporting sentence
+
+Provenance exists in the source systems. The work is getting it into the pipeline and keeping it attached to every HCC.
+
+| Field | Where it comes from in a FHIR feed | Where it comes from in a scanned PDF |
+|---|---|---|
+| Document version the sentence appears in | [DocumentReference](https://hl7.org/fhir/R4/documentreference.html) relatesTo (replaces, appends, transforms) and docStatus (final, amended) | PDF metadata; “Addendum” or “Late entry” headers; a second signature block |
+| Timestamp of that version | [Provenance](https://hl7.org/fhir/R4B/provenance.html) recorded; AuditEvent | Creation and modification timestamps; the date beside the second signature |
+| Author of that version | Provenance agent.who | Name and credential in the second signature block |
+| Rendering provider of the encounter | Encounter participant; claim rendering NPI | Signature block of the original note |
+| Whether a query preceded the version | The plan’s query system, when integrated | Query references in the addendum text |
+
+Scanned records are harder and more common than anyone would like. PDF metadata is often wrong but rarely blank, and the page text usually carries the signal: an “Addendum” header, a “Late entry” label, a second signature block with a later date, or a paragraph whose font and formatting differ from the note around it. Layout analysis picks those up. Our OCR and document-structure models were built for exactly this kind of visual cue, and it is where a text-only pipeline fails silently.
+
+## Four checks, and where each case routes
+
+| Check | Default | Fact pattern it catches | Routing |
+|---|---|---|---|
+| Amendment date versus date of service | Flag past 30 days; treat past 90 as an integrity question | Addenda “not timely” (August 26) | Exception queue with the diff |
+| Amendment author versus rendering provider | Flag any author who is not the rendering or a covering clinician | Coder, scribe, or plan reviewer as author (August 26) | Exception queue |
+| Diagnosis present only in the amended version | Flag when the original signed note lacks the assessment | Conditions that first appear in an addendum | Exception queue; specificity-only addenda pass |
+| Amendment following a query event | Flag and attach the query to the packet | Query-driven addenda with no clinical basis in the encounter (January 14) | Exception queue with query attached |
+
+The thresholds are compliance decisions, and the engine exposes them as configuration. Queries are allowed. What DOJ described is a query that produced a diagnosis with no clinical basis in the original encounter, and the packet should let a reviewer tell the two apart. Any flag moves the HCC out of the automated path. The reviewer sees the original note, the amended note, the diff between them, the author and timestamp of each, and the query if there was one. That is a two-minute decision for a coder with audit experience and an impossible one for a pipeline that only stored the final text.
+
+## Packet field: amendment status next to signature status
+
+Signature status has been a field in every packet since the first RADV audit: present or missing, credentialed or not, electronic authentication language or not. Amendment status belongs next to it. For every HCC, the packet records:
+
+- the document version the evidence came from;
+- whether that version was the original or an amendment;
+- the amendment date and author, if it was;
+- any linked query;
+- the flag state at validation time.
+
+Two things follow. The packet is now an answer to the question a relator’s counsel asks first: was this in the note when the provider signed it? And the plan can report, across its whole submission, what share of HCCs rest on amended documentation and how that share moves over time. A rising share is a program running queries. A falling one is a program capturing conditions at the visit, which is the [prospective design](https://martlet.ai/solutions/prospective-risk-adjustment) we prefer for exactly this reason, and the [query-fatigue piece](https://martlet.ai/resources/blog/prospective-hcc-coding-query-fatigue) explains how it keeps clinicians in the loop without a query program.
+
+## Where to spend the engineering quarter
+
+If a team has a quarter for this, I would spend it on two things. First, the scanned-document path, because that is where amendments hide and where most retrospective volume still comes from. Second, the diff view for reviewers, because a flag without a readable comparison becomes a queue nobody clears.
+
+Everything else here is configuration on top of a pipeline that already tracks versions. Martlet AI records document version, author, and timestamp on every supporting sentence, applies these checks at validation, routes flagged HCCs to the reviewer UI with the diff, and writes the whole decision, including the model version, to an append-only log ([trust page](https://martlet.ai/trust)). The same discipline we apply to our own outputs applies to the notes we read. If you want to see what share of your current submissions rest on amended documentation, [bring a contract’s worth of charts](https://martlet.ai/contact) and we will run the check inside your environment.
+
+## FAQ
+
+### What is amendment provenance in HCC coding?
+
+The record of which version of a clinical note contains the evidence for a code, when that version was created, who authored it, and whether it followed a query. It lets a reviewer distinguish a diagnosis documented at the visit from one added afterward.
+
+### Why did amended records become an enforcement issue in 2026?
+
+The August 26 False Claims Act settlement described codes based on amended records that the rendering providers had not initiated, timely made, or approved, and the January settlement described addenda obtained through queries long after the visit. Both treated how and when the documentation was created, as well as what it said, as the basis for liability.
+
+### Does CMS allow amended records in a RADV audit?
+
+Records cannot be amended, and providers cannot be asked to amend them, once an audit begins. Signatures obtained in response to the record request are invalid. Amendments made before the audit are evaluated by CMS reviewers rather than accepted at face value.
+
+### How does an engine detect an amendment in a scanned PDF?
+
+Through document metadata where it exists and, more reliably, through layout cues on the page: addendum or late-entry headers, a second signature block with a later date, or formatting that differs from the surrounding note. Visual document models catch these, and text-only pipelines usually miss them.
+
+### Are query-driven diagnoses prohibited?
+
+No. Compliant queries that lead a provider to document a condition assessed at the visit are standard practice. The 2026 settlements described queries that produced diagnoses with no clinical basis in the original encounter, which is why the packet should carry the query alongside the addendum.
+
+### What should the evidence packet record about amendments?
+
+For each HCC: the document version the evidence came from, whether it was the original or an amendment, the amendment date and author, any linked query, and the flag state at validation, stored next to the signature status.

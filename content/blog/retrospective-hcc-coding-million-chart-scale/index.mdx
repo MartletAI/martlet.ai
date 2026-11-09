@@ -14,7 +14,7 @@ definedTerm:
 
 ![What changes in retrospective HCC coding at million-chart scale: 50,000 charts works cleanly with human review, 500,000 charts requires triage and continuous evidence assembly, 5 million charts requires chart staging, parallel coding, and layered storage with an append-only audit log](/assets/blog/retrospective-hcc-coding-million-chart-scale/retrospective-hcc-coding-million-chart-scale-infographic.jpg)
 
-A retrospective HCC coding program that runs cleanly at 50,000 charts a year often hits hard walls at 500,000 and breaks outright at 5 million. The walls are not where engineering teams expect them. Latency per chart matters less than evidence packet generation; throughput is bounded by reviewer attention, not compute; and audit log overhead tolerable at small scale becomes the largest operational cost at million-chart volume.
+A [retrospective HCC coding](/solutions/retrospective-risk-adjustment) program that runs cleanly at 50,000 charts a year often hits hard walls at 500,000 and breaks outright at 5 million. The walls are not where engineering teams expect them. Latency per chart matters less than evidence packet generation; throughput is bounded by reviewer attention, not compute; and audit log overhead tolerable at small scale becomes the largest operational cost at million-chart volume.
 
 Most teams I've worked with at scale-up made the same three mistakes I'll describe below. I made some of them myself. The mistakes are predictable because the architecture was right for last year's volume and gets bolted onto for this year's. By the time the team realizes the architecture is wrong, the migration is two quarters away from the next CMS submission deadline.
 

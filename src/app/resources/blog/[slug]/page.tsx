@@ -9,6 +9,42 @@ import { Metadata } from "next";
 
 type Params = Promise<{ slug: string }>;
 
+// Per-post Open Graph / Twitter tags. Posts not listed here keep the site-wide defaults from the root layout.
+const SITE_URL = "https://martlet.ai";
+const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">> = {
+  "radv-audit-readiness-for-health-plans": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/radv-audit-readiness-for-health-plans`,
+      title: "RADV Audit Readiness for Health Plans | Martlet AI",
+      description:
+        "Strengthen RADV audit readiness with Martlet AI's AI-driven workflows, reducing financial risks and improving documentation accuracy for health plans.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/radv-audit-readiness-for-health-plans/radv-audit-readiness-for-health-plans-infographic.jpg`,
+          width: 1200,
+          height: 628,
+          alt: "How Martlet AI makes HCCs audit-ready: HCC match, MEAT support, source citation, and packet validity turn diagnosis data into defensible, CMS-ready evidence",
+        },
+      ],
+      publishedTime: "2025-12-15T00:00:00Z",
+      authors: [`${SITE_URL}/author/hasham-ul-haq`],
+      section: "Product",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "RADV Audit Readiness for Health Plans | Martlet AI",
+      description:
+        "Strengthen RADV audit readiness with Martlet AI's AI-driven workflows, reducing financial risks and improving documentation accuracy for health plans.",
+      images: [
+        `${SITE_URL}/assets/blog/radv-audit-readiness-for-health-plans/radv-audit-readiness-for-health-plans-infographic.jpg`,
+      ],
+    },
+  },
+};
+
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
@@ -25,6 +61,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     alternates: {
       canonical: post.canonical || `/resources/blog/${slug}`,
     },
+    ...OPEN_GRAPH_BY_SLUG[slug],
   };
 }
 

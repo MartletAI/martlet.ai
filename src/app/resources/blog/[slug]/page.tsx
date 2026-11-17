@@ -105,6 +105,35 @@ const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">
       ],
     },
   },
+  "hcc-coding": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/hcc-coding`,
+      title: "HCC Coding: Hierarchical Condition Categories Explained",
+      description:
+        "Learn what HCC coding is, how it supports risk adjustment, and why accurate Hierarchical Condition Category coding is essential for value-based healthcare payment models.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/hcc-coding/hcc-coding-infographic.jpg`,
+          width: 1200,
+          height: 647,
+          alt: "Hierarchical Condition Category (HCC) coding maps documented diagnoses to risk-adjusted categories",
+        },
+      ],
+      publishedTime: "2026-06-10T00:00:00Z",
+      authors: [`${SITE_URL}/author/hasham-ul-haq`],
+      section: "Insights",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "HCC Coding: Hierarchical Condition Categories Explained",
+      description:
+        "Learn what HCC coding is, how it supports risk adjustment, and why accurate Hierarchical Condition Category coding is essential for value-based healthcare payment models.",
+      images: [`${SITE_URL}/assets/blog/hcc-coding/hcc-coding-infographic.jpg`],
+    },
+  },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {

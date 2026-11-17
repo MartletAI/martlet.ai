@@ -250,6 +250,37 @@ const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">
       images: [`${SITE_URL}/assets/blog/risk-adjustment-factor/risk-adjustment-factor-infographic.jpg`],
     },
   },
+  "prospective-vs-retrospective-risk-adjustment": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/prospective-vs-retrospective-risk-adjustment`,
+      title: "Prospective vs Retrospective Risk Adjustment | Martlet AI",
+      description:
+        "Learn the difference between prospective and retrospective risk adjustment, how each approach works, and how they affect RAF scores and healthcare reimbursement.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/prospective-vs-retrospective-risk-adjustment/prospective-vs-retrospective-risk-adjustment-infographic.jpg`,
+          width: 1200,
+          height: 647,
+          alt: "Prospective vs Retrospective Risk Adjustment infographic",
+        },
+      ],
+      publishedTime: "2026-06-30T00:00:00Z",
+      authors: [`${SITE_URL}/author/ritwik-jain`],
+      section: "Insights",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Prospective vs Retrospective Risk Adjustment | Martlet AI",
+      description:
+        "Learn the difference between prospective and retrospective risk adjustment, how each approach works, and how they affect RAF scores and healthcare reimbursement.",
+      images: [
+        `${SITE_URL}/assets/blog/prospective-vs-retrospective-risk-adjustment/prospective-vs-retrospective-risk-adjustment-infographic.jpg`,
+      ],
+    },
+  },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {

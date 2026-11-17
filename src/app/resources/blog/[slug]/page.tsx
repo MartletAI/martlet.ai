@@ -339,6 +339,35 @@ const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">
       images: [`${SITE_URL}/assets/blog/hcc-risk-adjustment-coding/hcc-risk-adjustment-coding-infographic.jpg`],
     },
   },
+  "medicare-advantage-rates": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/medicare-advantage-rates`,
+      title: "Medicare Advantage Rates and How Payments Are Calculated",
+      description:
+        "Learn what Medicare Advantage rates are, how CMS calculates payments to health plans, and how risk adjustment and benchmarks affect reimbursement.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/medicare-advantage-rates/medicare-advantage-rates-infographic.jpg`,
+          width: 1200,
+          height: 647,
+          alt: "Medicare Advantage Rates infographic",
+        },
+      ],
+      publishedTime: "2026-07-09T00:00:00Z",
+      authors: [`${SITE_URL}/author/ritwik-jain`],
+      section: "Insights",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Medicare Advantage Rates and How Payments Are Calculated",
+      description:
+        "Learn what Medicare Advantage rates are, how CMS calculates payments to health plans, and how risk adjustment and benchmarks affect reimbursement.",
+      images: [`${SITE_URL}/assets/blog/medicare-advantage-rates/medicare-advantage-rates-infographic.jpg`],
+    },
+  },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {

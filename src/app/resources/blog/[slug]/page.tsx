@@ -163,6 +163,35 @@ const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">
       images: [`${SITE_URL}/assets/blog/risk-adjustment-coding/risk-adjustment-coding-infographic.jpg`],
     },
   },
+  "ai-in-medical-coding-and-billing": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/ai-in-medical-coding-and-billing`,
+      title: "AI in Medical Coding and Billing | Martlet AI",
+      description:
+        "Explore how artificial intelligence is transforming medical coding and billing, including automation, accuracy improvements, workflow impacts, and implementation challenges.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/ai-in-medical-coding-and-billing/ai-in-medical-coding-and-billing-infographic.jpg`,
+          width: 1200,
+          height: 628,
+          alt: "Martlet AI across the HCC coding lifecycle: prospective capture, retrospective validation, and RADV audit readiness",
+        },
+      ],
+      publishedTime: "2026-06-18T00:00:00Z",
+      authors: [`${SITE_URL}/author/hasham-ul-haq`],
+      section: "Insights",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "AI in Medical Coding and Billing | Martlet AI",
+      description:
+        "Explore how artificial intelligence is transforming medical coding and billing, including automation, accuracy improvements, workflow impacts, and implementation challenges.",
+      images: [`${SITE_URL}/assets/blog/ai-in-medical-coding-and-billing/ai-in-medical-coding-and-billing-infographic.jpg`],
+    },
+  },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {

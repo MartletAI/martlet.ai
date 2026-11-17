@@ -192,6 +192,35 @@ const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">
       images: [`${SITE_URL}/assets/blog/ai-in-medical-coding-and-billing/ai-in-medical-coding-and-billing-infographic.jpg`],
     },
   },
+  "ai-risk-adjustment-in-healthcare": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/ai-risk-adjustment-in-healthcare`,
+      title: "AI Risk Adjustment in Healthcare | Martlet AI",
+      description:
+        "Learn how artificial intelligence is transforming risk adjustment in healthcare, including clinical documentation, coding accuracy, and prediction of patient risk scores.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/ai-risk-adjustment-in-healthcare/ai-risk-adjustment-in-healthcare-infographic.jpg`,
+          width: 1200,
+          height: 647,
+          alt: "AI Risk Adjustment: from diagnosis capture to claim validation — Martlet Clinical NLP, larger population, real-time coding, denial prevention",
+        },
+      ],
+      publishedTime: "2026-06-23T00:00:00Z",
+      authors: [`${SITE_URL}/author/hasham-ul-haq`],
+      section: "Insights",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "AI Risk Adjustment in Healthcare | Martlet AI",
+      description:
+        "Learn how artificial intelligence is transforming risk adjustment in healthcare, including clinical documentation, coding accuracy, and prediction of patient risk scores.",
+      images: [`${SITE_URL}/assets/blog/ai-risk-adjustment-in-healthcare/ai-risk-adjustment-in-healthcare-infographic.jpg`],
+    },
+  },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {

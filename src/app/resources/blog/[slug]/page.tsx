@@ -43,6 +43,37 @@ const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">
       ],
     },
   },
+  "radv-audit-readiness-what-compliance-teams-should-ask-their-vendors": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors`,
+      title: "Key Questions Compliance Teams Should Ask Their Vendors | Martlet AI",
+      description:
+        "Ensure your HCC coding platform is audit-ready with Martlet AI's guide to RADV audit readiness. Learn key questions to ask vendors and improve compliance.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors-infographic.jpg`,
+          width: 1200,
+          height: 628,
+          alt: "Martlet AI RADV Readiness: 100% traceability, HCC V28 current rules, and 10 years of audit logs — every coding decision should stand up to audit",
+        },
+      ],
+      publishedTime: "2025-12-15T00:00:00Z",
+      authors: [`${SITE_URL}/author/ritwik-jain`],
+      section: "Product",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Key Questions Compliance Teams Should Ask Their Vendors | Martlet AI",
+      description:
+        "Ensure your HCC coding platform is audit-ready with Martlet AI's guide to RADV audit readiness. Learn key questions to ask vendors and improve compliance.",
+      images: [
+        `${SITE_URL}/assets/blog/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors/radv-audit-readiness-what-compliance-teams-should-ask-their-vendors-infographic.jpg`,
+      ],
+    },
+  },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {

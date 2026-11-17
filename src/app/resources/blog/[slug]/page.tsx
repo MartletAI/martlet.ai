@@ -281,6 +281,35 @@ const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">
       ],
     },
   },
+  "hcc-v28": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/hcc-v28`,
+      title: "HCC v28 Explained: Changes to the CMS Risk Adjustment Model",
+      description:
+        "Learn what HCC v28 is, how it differs from earlier HCC models, and how the new CMS risk adjustment model affects RAF scores and Medicare Advantage payments.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/hcc-v28/hcc-v28-infographic.jpg`,
+          width: 1200,
+          height: 647,
+          alt: "HCC v28 infographic",
+        },
+      ],
+      publishedTime: "2026-07-02T00:00:00Z",
+      authors: [`${SITE_URL}/author/hasham-ul-haq`],
+      section: "Insights",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "HCC v28 Explained: Changes to the CMS Risk Adjustment Model",
+      description:
+        "Learn what HCC v28 is, how it differs from earlier HCC models, and how the new CMS risk adjustment model affects RAF scores and Medicare Advantage payments.",
+      images: [`${SITE_URL}/assets/blog/hcc-v28/hcc-v28-infographic.jpg`],
+    },
+  },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {

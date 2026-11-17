@@ -310,6 +310,35 @@ const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">
       images: [`${SITE_URL}/assets/blog/hcc-v28/hcc-v28-infographic.jpg`],
     },
   },
+  "hcc-risk-adjustment-coding": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/hcc-risk-adjustment-coding`,
+      title: "HCC Risk Adjustment Coding in Healthcare",
+      description:
+        "Learn how HCC risk adjustment coding works, how diagnoses influence RAF scores, and why accurate coding is critical for healthcare reimbursement.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/hcc-risk-adjustment-coding/hcc-risk-adjustment-coding-infographic.jpg`,
+          width: 1200,
+          height: 647,
+          alt: "HCC Risk Adjustment Coding infographic",
+        },
+      ],
+      publishedTime: "2026-07-07T00:00:00Z",
+      authors: [`${SITE_URL}/author/hasham-ul-haq`],
+      section: "Insights",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "HCC Risk Adjustment Coding in Healthcare",
+      description:
+        "Learn how HCC risk adjustment coding works, how diagnoses influence RAF scores, and why accurate coding is critical for healthcare reimbursement.",
+      images: [`${SITE_URL}/assets/blog/hcc-risk-adjustment-coding/hcc-risk-adjustment-coding-infographic.jpg`],
+    },
+  },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {

@@ -134,6 +134,35 @@ const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">
       images: [`${SITE_URL}/assets/blog/hcc-coding/hcc-coding-infographic.jpg`],
     },
   },
+  "risk-adjustment-coding": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/risk-adjustment-coding`,
+      title: "Risk Adjustment Coding | Martlet AI",
+      description:
+        "Learn how risk adjustment coding works, how RAF scores are calculated, and why accurate coding is critical for healthcare reimbursement.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/risk-adjustment-coding/risk-adjustment-coding-infographic.jpg`,
+          width: 1200,
+          height: 647,
+          alt: "Risk adjustment coding translates documented diagnoses into risk-adjusted payment",
+        },
+      ],
+      publishedTime: "2026-06-17T00:00:00Z",
+      authors: [`${SITE_URL}/author/hasham-ul-haq`],
+      section: "Insights",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Risk Adjustment Coding | Martlet AI",
+      description:
+        "Learn how risk adjustment coding works, how RAF scores are calculated, and why accurate coding is critical for healthcare reimbursement.",
+      images: [`${SITE_URL}/assets/blog/risk-adjustment-coding/risk-adjustment-coding-infographic.jpg`],
+    },
+  },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {

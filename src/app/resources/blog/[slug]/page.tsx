@@ -74,6 +74,37 @@ const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">
       ],
     },
   },
+  "how-healthcare-specific-language-models-are-transforming-hedis": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/how-healthcare-specific-language-models-are-transforming-hedis`,
+      title: "How Healthcare-Specific Language Models Transform HEDIS & Stars | Martlet AI",
+      description:
+        "Enhance HEDIS and Stars performance with healthcare-specific NLP and LLMs that automate data extraction and improve quality reporting accuracy.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/how-healthcare-specific-language-models-are-transforming-hedis/how-healthcare-specific-language-models-are-transforming-hedis-infographic.jpg`,
+          width: 1200,
+          height: 647,
+          alt: "How Martlet AI turns clinical data into HEDIS quality signals: unstructured clinical data becomes structured, auditable HEDIS/Stars evidence",
+        },
+      ],
+      publishedTime: "2026-02-03T00:00:00Z",
+      authors: [`${SITE_URL}/author/hasham-ul-haq`],
+      section: "Product",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "How Healthcare-Specific Language Models Transform HEDIS & Stars | Martlet AI",
+      description:
+        "Enhance HEDIS and Stars performance with healthcare-specific NLP and LLMs that automate data extraction and improve quality reporting accuracy.",
+      images: [
+        `${SITE_URL}/assets/blog/how-healthcare-specific-language-models-are-transforming-hedis/how-healthcare-specific-language-models-are-transforming-hedis-infographic.jpg`,
+      ],
+    },
+  },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {

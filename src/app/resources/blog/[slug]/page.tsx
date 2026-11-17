@@ -221,6 +221,35 @@ const OPEN_GRAPH_BY_SLUG: Record<string, Pick<Metadata, "openGraph" | "twitter">
       images: [`${SITE_URL}/assets/blog/ai-risk-adjustment-in-healthcare/ai-risk-adjustment-in-healthcare-infographic.jpg`],
     },
   },
+  "risk-adjustment-factor": {
+    openGraph: {
+      type: "article",
+      siteName: "Martlet AI",
+      locale: "en_US",
+      url: `${SITE_URL}/resources/blog/risk-adjustment-factor`,
+      title: "Risk Adjustment Factor (RAF) Scores | Martlet AI",
+      description:
+        "Learn what the Risk Adjustment Factor (RAF) is, how RAF scores are calculated using HCC coding, and why they matter for healthcare reimbursement.",
+      images: [
+        {
+          url: `${SITE_URL}/assets/blog/risk-adjustment-factor/risk-adjustment-factor-infographic.jpg`,
+          width: 1200,
+          height: 647,
+          alt: "Risk Adjustment Factor (RAF) infographic",
+        },
+      ],
+      publishedTime: "2026-06-25T00:00:00Z",
+      authors: [`${SITE_URL}/author/hasham-ul-haq`],
+      section: "Insights",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Risk Adjustment Factor (RAF) Scores | Martlet AI",
+      description:
+        "Learn what the Risk Adjustment Factor (RAF) is, how RAF scores are calculated using HCC coding, and why they matter for healthcare reimbursement.",
+      images: [`${SITE_URL}/assets/blog/risk-adjustment-factor/risk-adjustment-factor-infographic.jpg`],
+    },
+  },
 };
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
